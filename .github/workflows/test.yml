@@ -20,8 +20,8 @@ jobs:
       run:
         working-directory: holon
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
       - name: Tree tool
@@ -41,8 +41,8 @@ jobs:
     # spec (agentskills.io/specification), so any host that reads the spec reads these.
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install skills-ref
@@ -60,9 +60,17 @@ jobs:
     # The one-step install works from a fresh checkout: with no host named, and for every
     # host in the table by name.
     runs-on: ubuntu-latest
+    # Each step points HOME at an empty folder. The runner also sets XDG_CONFIG_HOME (to
+    # /home/runner/.config), which would send the <config> hosts outside that folder; empty
+    # values make holon.py fall back to the paths under HOME, as on a user's machine.
+    env:
+      XDG_CONFIG_HOME: ""
+      CLAUDE_CONFIG_DIR: ""
+      CODEX_HOME: ""
+      VIBE_HOME: ""
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: install with no host named, on an empty machine and on one with several hosts
@@ -95,6 +103,13 @@ jobs:
           (cd /tmp && rm -rf pkg && mkdir -p pkg && git -C "$GITHUB_WORKSPACE" archive --prefix=holon-skill-main/ -o /tmp/pkg/main.zip HEAD)
           HOLON_SKILL_ARCHIVE=file:///tmp/pkg/main.zip python -c "import pathlib; exec(pathlib.Path('install.py').read_text(encoding='utf-8'))"
           test -f "$HOME/.agents/skills/holon/scripts/holon.py"
+      - name: the pinned installer, --ref picks the archive of that tag or branch
+        run: |
+          python -c "import pathlib; exec(pathlib.Path('install.py').read_text(encoding='utf-8').replace('__main__', '_'))
+          assert archive_url('v1.0.0').endswith('/archive/v1.0.0.zip'), archive_url('v1.0.0')
+          assert split_ref(['--ref', 'v1.0.0', '--force']) == ('v1.0.0', ['--force'])
+          assert split_ref(['--ref=v1.0.0']) == ('v1.0.0', [])
+          assert split_ref(['--force']) == ('main', ['--force'])"
       - name: a fresh root
         run: |
           export HOME=$(mktemp -d)
@@ -110,8 +125,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: python scripts/check.py
