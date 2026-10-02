@@ -1,0 +1,119 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  holon:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.8", "3.10", "3.12", "3.13"]
+        exclude:
+          - os: macos-latest
+            python-version: "3.8"
+    defaults:
+      run:
+        working-directory: holon
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Tree tool
+        run: python tests/test_holon.py
+      - name: Rules checker
+        run: python organizer/tests/test_organizer_cli.py
+      - name: README outputs are real
+        run: python tests/test_readme_outputs.py
+      - name: This package is itself a valid tree
+        run: |
+          python scripts/holon.py validate .
+          python organizer/scripts/organizer_cli.py lint .
+          python organizer/scripts/organizer_cli.py replay .
+
+  agent-skills-spec:
+    # Every SKILL.md in this repository passes the reference validator of the Agent Skills
+    # spec (agentskills.io/specification), so any host that reads the spec reads these.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install skills-ref
+        run: pip install "git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref"
+      - name: Validate every skill folder
+        run: |
+          fail=0
+          for f in $(git ls-files '*/SKILL.md' 'SKILL.md' | grep -v '/\.retired/'); do
+            d=$(dirname "$f")
+            out=$(skills-ref validate "$d" 2>&1) || { echo "$out"; fail=1; }
+          done
+          exit $fail
+
+  install:
+    # The one-step install works from a fresh checkout: with no host named, and for every
+    # host in the table by name.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: install with no host named, on an empty machine and on one with several hosts
+        run: |
+          export HOME=$(mktemp -d)
+          python holon/scripts/holon.py install
+          test -f "$HOME/.agents/skills/holon/scripts/holon.py" && test ! -e "$HOME/.agents/skills/holon/examples"
+          export HOME=$(mktemp -d)
+          mkdir -p "$HOME/.claude" "$HOME/.cursor" "$HOME/.config/opencode" "$HOME/.codeium/windsurf"
+          python holon/scripts/holon.py install | tee /tmp/out
+          ! grep -q "list the tree twice" /tmp/out
+          test -f "$HOME/.claude/skills/holon/SKILL.md" && test -f "$HOME/.codeium/windsurf/skills/holon/SKILL.md"
+      - name: install for each known host by name
+        run: |
+          for h in agents $(python holon/scripts/holon.py hosts --ids); do
+            export HOME=$(mktemp -d)
+            python holon/scripts/holon.py install --host $h > /dev/null
+            d=$(find "$HOME" -name SKILL.md -path "*/skills/holon/SKILL.md" | head -1)
+            test -n "$d" && test -f "$(dirname "$d")/scripts/holon.py" || { echo "failed: $h"; exit 1; }
+          done
+      - name: install from a git URL with the script piped from stdin (no checkout in play)
+        run: |
+          export HOME=$(mktemp -d)
+          cp holon/scripts/holon.py /tmp/holon.py
+          cat /tmp/holon.py | python - install "file://$PWD"
+          test -f "$HOME/.agents/skills/holon/organizer/scripts/organizer_cli.py"
+      - name: the one-command installer, run the way the README shows (exec of the downloaded text)
+        run: |
+          export HOME=$(mktemp -d)
+          (cd /tmp && rm -rf pkg && mkdir -p pkg && git -C "$GITHUB_WORKSPACE" archive --prefix=holon-skill-main/ -o /tmp/pkg/main.zip HEAD)
+          HOLON_SKILL_ARCHIVE=file:///tmp/pkg/main.zip python -c "import pathlib; exec(pathlib.Path('install.py').read_text(encoding='utf-8'))"
+          test -f "$HOME/.agents/skills/holon/scripts/holon.py"
+      - name: a fresh root
+        run: |
+          export HOME=$(mktemp -d)
+          python holon/scripts/holon.py init mylib --root "$HOME/.agents/skills"
+          cd "$HOME/.agents/skills/mylib" && python scripts/holon.py validate . && python organizer/scripts/organizer_cli.py replay .
+
+  check-script:
+    # scripts/check.sh and scripts/check.py are what contributors run locally; both must keep
+    # passing on their own, check.py also on Windows and macOS.
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/check.py
+      - if: runner.os == 'Linux'
+        run: bash scripts/check.sh
