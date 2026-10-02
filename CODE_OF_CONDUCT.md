@@ -4,4 +4,4 @@ This project follows the [Contributor Covenant, version 2.1](https://www.contrib
 
 In short: be respectful, assume good intent, criticise ideas rather than people, and do not harass anyone. Maintainers may remove comments, commits or contributors that do not follow this.
 
-To report unacceptable behaviour, contact the maintainer privately through the contact details on the maintainer's GitHub profile. Reports are handled confidentially.
+To report unacceptable behaviour, email the maintainer at Wneil2020@163.com. Reports are read only by the maintainer and handled confidentially. For a security problem, use the private report described in [SECURITY.md](SECURITY.md) instead.

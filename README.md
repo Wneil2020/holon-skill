@@ -16,6 +16,14 @@ python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubuserco
 
 On Windows, type the same line with `py` in place of `python3` (cmd or PowerShell). The command downloads `install.py` from this repository and runs it; read [install.py](install.py) first if you want to know what it does. Options go at the end, for example `... .read())" --host claude-code` or `--force` to replace an earlier install.
 
+That line always installs the latest `main`. To install a fixed release, name its tag twice, once in the address and once as `--ref`:
+
+```bash
+python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/v1.0.0/install.py').read())" --ref v1.0.0
+```
+
+The tags are listed on the [Releases](https://github.com/Wneil2020/holon-skill/releases) page.
+
 From a downloaded copy of the repository the same thing is:
 
 ```bash
@@ -23,6 +31,8 @@ git clone https://github.com/Wneil2020/holon-skill.git
 cd holon-skill
 python3 holon/scripts/holon.py install
 ```
+
+For a fixed release, add `--branch v1.0.0` to `git clone`, or download the zip attached to that release.
 
 Either way, this copies the skill tree to where the agent tools on this machine read skills (Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI and others), checks the copy, and prints what it did. [holon/README.md](holon/README.md) walks through building a first tree in five minutes.
 

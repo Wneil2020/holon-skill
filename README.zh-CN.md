@@ -16,6 +16,14 @@ python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubuserco
 
 在 Windows 上把 `python3` 换成 `py`，在 cmd 或 PowerShell 里输入同样这一行。这条命令会从本仓库下载 `install.py` 并运行它；想先知道它做什么，可以读一下 [install.py](install.py)。选项写在最后，比如 `... .read())" --host claude-code`，或者用 `--force` 覆盖以前装过的。
 
+这一行装的总是最新的 `main`。要装固定的版本，把版本的 tag 写两次，一次在地址里，一次作为 `--ref`：
+
+```bash
+python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/v1.0.0/install.py').read())" --ref v1.0.0
+```
+
+所有 tag 列在 [Releases](https://github.com/Wneil2020/holon-skill/releases) 页面上。
+
 如果已经下载了仓库，等价的做法是：
 
 ```bash
@@ -23,6 +31,8 @@ git clone https://github.com/Wneil2020/holon-skill.git
 cd holon-skill
 python3 holon/scripts/holon.py install
 ```
+
+要固定版本，在 `git clone` 后面加 `--branch v1.0.0`，或者下载那个 release 附带的 zip。
 
 两种方式都会把 skill 树拷到这台机器上各个 agent 工具读 skill 的位置（Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 等），检查拷过去的内容，并打印做了什么。[holon/README.zh-CN.md](holon/README.zh-CN.md) 带你五分钟建出第一棵树。
 

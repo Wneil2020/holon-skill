@@ -11,6 +11,10 @@ or, from a downloaded copy of the repository:
 
     python3 install.py [--host NAME] [--project] [--force] [--dry-run] ...
 
+To install a fixed release instead of the latest `main`, add `--ref` with a tag:
+
+    python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/v1.0.0/install.py').read())" --ref v1.0.0
+
 It downloads the repository as a zip from GitHub, unpacks it in a temporary folder, and runs
 `holon/scripts/holon.py install` on the `holon/` package inside, which copies the tree to
 every agent tool on this machine and checks the copy. Any option is passed on to that command.
@@ -24,12 +28,31 @@ import tempfile
 import zipfile
 
 REPO = "Wneil2020/holon-skill"   # the GitHub repository, owner/name; a fork changes this line
-BRANCH = "main"
+REF = "main"                     # the branch or tag downloaded when --ref is not given
 
 
-def archive_url():
+def split_ref(argv):
+    """Take `--ref TAG` (or `--ref=TAG`) out of the options; the rest go to holon.py install."""
+    ref, rest, i = REF, [], 0
+    while i < len(argv):
+        a = argv[i]
+        if a == "--ref":
+            if i + 1 >= len(argv):
+                sys.exit("error: --ref needs a tag or branch, e.g. --ref v1.0.0")
+            ref, i = argv[i + 1], i + 2
+            continue
+        if a.startswith("--ref="):
+            ref = a[len("--ref="):]
+        else:
+            rest.append(a)
+        i += 1
+    return ref, rest
+
+
+def archive_url(ref=REF):
     # HOLON_SKILL_ARCHIVE points at another zip (a mirror, a fork, or a test archive).
-    return os.environ.get("HOLON_SKILL_ARCHIVE") or "https://github.com/%s/archive/refs/heads/%s.zip" % (REPO, BRANCH)
+    # github.com/OWNER/REPO/archive/REF.zip serves both branches and tags.
+    return os.environ.get("HOLON_SKILL_ARCHIVE") or "https://github.com/%s/archive/%s.zip" % (REPO, ref)
 
 
 def local_package():
@@ -41,9 +64,9 @@ def local_package():
     return pkg if os.path.isfile(os.path.join(pkg, "scripts", "holon.py")) else None
 
 
-def download(tmp):
+def download(tmp, ref=REF):
     import urllib.request
-    url = archive_url()
+    url = archive_url(ref)
     if REPO == "OWNER/REPO" and "HOLON_SKILL_ARCHIVE" not in os.environ:
         sys.exit("error: install.py does not name its repository yet (REPO = \"OWNER/REPO\"). "
                  "Set REPO at the top of install.py to the repository's owner/name.")
@@ -73,13 +96,15 @@ def download(tmp):
 
 
 def main(argv=None):
-    argv = list(sys.argv[1:] if argv is None else argv)
+    ref, argv = split_ref(list(sys.argv[1:] if argv is None else argv))
     tmp = None
     pkg = local_package()
+    if pkg is not None and ref != REF:
+        print("note: running from a local copy, so --ref %s is ignored" % ref, flush=True)
     try:
         if pkg is None:
             tmp = tempfile.mkdtemp(prefix="holon-skill-")
-            pkg = download(tmp)
+            pkg = download(tmp, ref)
         env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONDONTWRITEBYTECODE="1")
         cmd = [sys.executable, os.path.join(pkg, "scripts", "holon.py"), "install", pkg] + argv
         return subprocess.call(cmd, env=env)
