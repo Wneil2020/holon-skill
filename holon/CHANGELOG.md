@@ -14,12 +14,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 - `move SRC... --parent DIR [--as NAME] [--copy]` moves or copies skill folders under a parent; `move --plan FILE` applies one `SRC -> DEST` line per folder (`DEST` is parent and name; `parent/` keeps the name). Every line is checked first (source is a skill, parent exists, target is free, not into itself, valid name) and nothing moves if one fails. The header's `name:` is set to the new folder name, and the old and new trees are re-synced.
 - Until now `init` only created empty templates and folders had to be moved by hand. `move` is the mechanical half of placement; where each skill goes is still decided with `organizer/SKILL.md`, and the plan file is where that decision is written down.
 
-### Evaluation harness: `eval/` (repository only, not installed)
-- `eval/harness.py` measures what `replay` cannot: whether an agent picks the expected skill on a flat folder (A), on the tree's skills laid flat (B, from `harness.py flatten`) and on the tree (C), and how much it reads. Runners: `word-model` (no cost, what CI runs), `claude-code` (`claude -p` in a scratch project with an empty `HOME`, parsed from stream-json), and `command` for any other agent. `freeze` fixes the test sentences before tuning, and `run` refuses a split that changed. A run that reached no model is reported and left out of every rate.
-- `eval/example/`: a five-skill flat library, a plan and twelve test sentences; `build.py` builds the tree and the trimmed copy from them, and CI runs the word model on it. No result with a real agent is published yet.
+### Repository scope
+- Experimental agent-evaluation tools and examples are kept outside this repository. The public repository contains the skill package, installer, documentation and package checks. No result with a real agent has been published yet.
+- The six `holon.py move` regression tests are part of `holon/tests/test_holon.py`, so the existing Linux, Windows and macOS package checks still run them without an evaluation harness.
 
 ### Documentation
-- `eval/README.md` replaces the protocol drafted as `references/evaluation.md`, which was prose with no tool behind it.
+- Removed the draft evaluation protocol from the package; the README retains the distinction between word-model checks and unmeasured real-agent behavior.
 - The README's limits section now says that `replay` checks the word model and not the agent, that negation and two-task sentences are not understood, that the "Use for every task" root description competes with other top-level skills, and that the §17 measurements are bytes of `SKILL.md`, mostly saved by trimming bodies.
 
 ### CI

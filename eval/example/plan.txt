@@ -1,6 +1,0 @@
-# Where each flat skill goes in the tree (decided with organizer/SKILL.md, carried out by `holon.py move --plan`).
-flat/word-docs -> tree/library/office-docs/docx
-flat/pdf-tools -> tree/library/office-docs/pdf
-flat/slides    -> tree/library/office-docs/pptx
-flat/poster    -> tree/library/
-flat/sql-query -> tree/library/sql

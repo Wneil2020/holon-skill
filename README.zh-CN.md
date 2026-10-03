@@ -44,7 +44,6 @@ python3 holon/scripts/holon.py install
 | 文件夹 | 是什么 |
 |---|---|
 | [`holon/`](holon/README.zh-CN.md) | 主体包：skill 树、把 skill 放进树的规则（`organizer/`），以及检查这两者的工具 |
-| [`eval/`](eval/README.zh-CN.md) | 测量树对 agent 有没有帮助的工具，拿同一批 skill 的平铺文件夹做对照；不随包安装 |
 | `install.py` | 用户运行的一条命令安装程序（见“快速开始”） |
 | `scripts/` | `check.py`（任何系统）和 `check.sh`（bash）在本地跑一遍 CI 的检查 |
 

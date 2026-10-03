@@ -248,7 +248,7 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 
 路由比对的是词，不是意思。一句话里一个 skill 的词都没出现，就到不了那个 skill。办法是在 `synonyms.md` 里加一行；agent 遇到这种情况时会记到 `_feedback.md` 里，等人来补。同样的比对不懂否定（"什么都不要 absorb"里仍然有 `absorb`）；一句话同时要两件不相干的事时，可能被两个分支的 `excludes` 同时挡住，停在根上。
 
-`replay` 和 `route` 检查的是词的模型，不是 agent。读路由表的 agent 按意思判断，可能去到词的模型不会去的地方，两个方向都有可能。路由表的每一行都列出工具用来匹配的词，包括父级通过下面的 skill 接住的词（`also takes, through its sub-skills: ...`），所以两者至少读的是同一批词；某个模型会不会照着走，还没有测过。仓库根目录的 [`eval/`](../eval/README.zh-CN.md) 是测这个的工具，拿同一批 skill 的平铺文件夹做对照；目前还没有发布过真实 agent 的结果。
+`replay` 和 `route` 检查的是词的模型，不是 agent。读路由表的 agent 按意思判断，可能去到词的模型不会去的地方，两个方向都有可能。路由表的每一行都列出工具用来匹配的词，包括父级通过下面的 skill 接住的词（`also takes, through its sub-skills: ...`），所以两者至少读的是同一批词；某个模型会不会照着走，还没有测过。目前还没有发布过让真实 agent 分别使用树和平铺文件夹、对照同一批 skill 的结果。
 
 根的描述写的是"Use for every task"，这样只列顶层文件夹的工具会选中这棵树。如果同一个 skills 文件夹里还有别的顶层 skill，这一句会和它们抢；这时给根写一个说明这棵树管什么的描述（`init 名字 --desc ...`）。
 

@@ -1277,6 +1277,99 @@ class TestInstallPlan(unittest.TestCase):
             self.assertIn(h, out)
 
 
+class TestMove(unittest.TestCase):
+    """Moving skills is a tree-tool feature; these tests need no evaluation harness."""
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp, ignore_errors=True)
+        self.tool = Path(ns.__file__).resolve()
+        flat = self.tmp / "flat"
+        for name, desc in (("word-docs", "Use when editing Word files: covers Word, docx"),
+                           ("slides", "Use when making slides: covers deck, slides"),
+                           ("poster", "Use for posters: covers poster, flyer")):
+            make_skill(flat / name, name, desc, body="1. Do it.")
+        (flat / "word-docs" / "references").mkdir()
+        (flat / "word-docs" / "references" / "styles.md").write_text("styles\n", encoding="utf-8")
+        self.plan = self.tmp / "plan.txt"
+        self.plan.write_text("flat/word-docs -> tree/lib/office/docx\n"
+                             "flat/slides -> tree/lib/office/pptx\n"
+                             "flat/poster -> tree/lib/\n", encoding="utf-8")
+        rc, out = self.sh(self.tool, "init", "lib", "--root", self.tmp / "tree")
+        self.assertEqual(rc, 0, out)
+        self.root = self.tmp / "tree" / "lib"
+        rc, out = self.sh(self.root / "scripts" / "holon.py", "init", "office", "--parent", self.root,
+                          "--desc", "Use for office files: covers office document")
+        self.assertEqual(rc, 0, out)
+
+    def sh(self, *args):
+        import subprocess
+        env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONDONTWRITEBYTECODE="1")
+        p = subprocess.run([sys.executable] + [str(a) for a in args], env=env,
+                           capture_output=True, text=True, encoding="utf-8")
+        return p.returncode, p.stdout + p.stderr
+
+    def move(self, *extra):
+        return self.sh(self.root / "scripts" / "holon.py", "move", "--plan", self.plan, *extra)
+
+    def test_plan_copies_renames_and_syncs(self):
+        rc, out = self.move("--copy")
+        self.assertEqual(rc, 0, out)
+        self.assertTrue((self.tmp / "flat" / "slides").is_dir(), "--copy must leave the source")
+        md = (self.root / "office" / "pptx" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("name: pptx", md)
+        self.assertTrue((self.root / "office" / "docx" / "references" / "styles.md").is_file())
+        self.assertTrue((self.root / "poster" / "SKILL.md").is_file())
+        root_md = (self.root / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("also takes, through its sub-skills: Word, docx, deck, slides", root_md)
+        rc, out = self.sh(self.root / "scripts" / "holon.py", "sync", self.root, "--dry-run")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("done: 0 file(s) would be updated", out)
+
+    def test_plan_is_all_or_nothing(self):
+        with open(self.plan, "a", encoding="utf-8") as f:
+            f.write("flat/missing -> tree/lib/\n")
+        rc, out = self.move("--copy")
+        self.assertEqual(rc, 1)
+        self.assertIn("nothing was moved", out)
+        self.assertFalse((self.root / "office" / "docx").exists())
+
+    def test_refuses_existing_target_and_moving_into_itself(self):
+        rc, out = self.move("--copy")
+        self.assertEqual(rc, 0, out)
+        rc, out = self.move("--copy")
+        self.assertEqual(rc, 1)
+        self.assertIn("already exists", out)
+        rc, out = self.sh(self.root / "scripts" / "holon.py", "move", self.root / "office",
+                          "--parent", self.root / "office" / "pptx")
+        self.assertEqual(rc, 1)
+        self.assertIn("into itself", out)
+
+    def test_move_within_tree_resyncs_old_and_new_parent(self):
+        rc, out = self.move("--copy")
+        self.assertEqual(rc, 0, out)
+        rc, out = self.sh(self.root / "scripts" / "holon.py", "move", self.root / "poster",
+                          "--parent", self.root / "office")
+        self.assertEqual(rc, 0, out)
+        self.assertFalse((self.root / "poster").exists())
+        self.assertTrue((self.root / "office" / "poster" / "SKILL.md").is_file())
+        self.assertIn("**poster**", (self.root / "office" / "SKILL.md").read_text(encoding="utf-8"))
+        rc, out = self.sh(self.tool, "validate", self.root)
+        self.assertNotIn("out of date", out)
+
+    def test_dry_run_changes_nothing(self):
+        rc, out = self.move("--copy", "--dry-run")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("[dry-run] would copy", out)
+        self.assertFalse((self.root / "office" / "docx").exists())
+
+    def test_plan_destination_does_not_depend_on_disk(self):
+        moves, errors = ns.read_plan(str(self.plan))
+        self.assertEqual(errors, [])
+        self.assertEqual([(Path(p).name, n) for _, p, n in moves],
+                         [("office", "docx"), ("office", "pptx"), ("lib", "poster")])
+
+
 def argparse_ns(**kw):
     import argparse
     return argparse.Namespace(**kw)
