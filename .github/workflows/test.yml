@@ -117,6 +117,30 @@ jobs:
           python holon/scripts/holon.py init mylib --root "$HOME/.agents/skills"
           cd "$HOME/.agents/skills/mylib" && python scripts/holon.py validate . && python organizer/scripts/organizer_cli.py replay .
 
+  eval:
+    # The evaluation harness and `holon.py move`, with the word-model runner and a fake agent.
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.8", "3.13"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python eval/tests/test_harness.py
+      - name: the worked example end to end, word model only
+        shell: bash
+        run: |
+          cd eval
+          python example/build.py
+          python ../holon/organizer/scripts/organizer_cli.py replay example/tree/library
+          python harness.py run example/sentences.tsv --tree example/tree/library --flat example/flat \
+            --trimmed example/trimmed --names example/plan.txt --runs 1 --out /tmp/ci-results.csv
+          python harness.py report /tmp/ci-results.csv
+
   check-script:
     # scripts/check.sh and scripts/check.py are what contributors run locally; both must keep
     # passing on their own, check.py also on Windows (macOS: see macos.yml).
