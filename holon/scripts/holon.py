@@ -10,6 +10,9 @@ Zero-dependency (Python 3.8+ stdlib only), so any agent sandbox can run:
 Commands:
     init <name> [--root DIR | --parent DIR] [--desc D]
                                   Create a new skill (optionally nested)
+    move SRC... --parent DIR [--copy] [--as NAME]
+                                  Move (or copy) skill folders under a parent and re-sync both trees
+    move --plan FILE [--copy]     Apply a placement plan: one `SRC -> DEST` per line (`DEST/` = into DEST)
     sync [PATH]                   Inject sub-skill name+description into parent SKILL.md
     tree [PATH]                   Print the skill hierarchy as a tree
     validate [PATH]               Validate frontmatter / TODO placeholders / cycles / sync freshness
@@ -798,11 +801,13 @@ def cmd_init(args):
 
 def _sync_ancestors(path):
     """Re-render the routing table of every skill above `path`. A parent's line lists the
-    cover words of the skills below it, so a new grandchild changes the grandparent's table."""
-    cur = os.path.abspath(path)
+    cover words of the skills below it, so a new grandchild changes the grandparent's table.
+    Paths are printed in the form they were given (`office-docs` -> `.`), never through
+    os.path.relpath, which fails across Windows drives (a tree under %TEMP% on C:, run from D:)."""
+    cur = os.path.normpath(path)
     while True:
-        up = os.path.dirname(cur)
-        if up == cur or not is_skill_dir(up):
+        up = os.path.dirname(cur) or "."
+        if os.path.abspath(up) == os.path.abspath(cur) or not is_skill_dir(up):
             return
         cur = up
         text, _, err = read_skill(cur)
@@ -812,7 +817,7 @@ def _sync_ancestors(path):
         if status == "updated":
             with open(os.path.join(cur, SKILL_FILE), "w", encoding="utf-8", newline="\n") as f:
                 f.write(new_text)
-            print("also synced %s/SKILL.md (it lists the words of the skills below it)" % os.path.relpath(cur))
+            print("also synced %s/SKILL.md (it lists the words of the skills below it)" % cur.replace(os.sep, "/"))
 
 
 def cmd_sync(args):
@@ -870,6 +875,129 @@ def cmd_sync(args):
         else:
             print("ok     %s/SKILL.md is up to date" % sk)
     print("done: %d file(s) %s" % (changed, "would be updated" if args.dry_run else "updated"))
+    return 0
+
+
+def tree_root_of(path):
+    """The top skill of the tree `path` belongs to: walk up while the parent folder is a skill."""
+    cur = os.path.abspath(path)
+    while is_skill_dir(os.path.dirname(cur)) and os.path.dirname(cur) != cur:
+        cur = os.path.dirname(cur)
+    return cur
+
+
+def read_plan(path):
+    """A placement plan: one `SRC -> DEST` per line, `#` comments. DEST is where the skill
+    folder ends up, parent and name together (`flat/word-docs -> lib/office-docs/docx`); a DEST
+    ending in `/` is a parent and the folder keeps its name. The meaning of a line does not
+    depend on what exists on disk, so a plan reads the same before and after it is applied.
+    Relative paths are relative to the plan file. Returns ([(src, parent, name)], errors)."""
+    base = os.path.dirname(os.path.abspath(path))
+    moves, errors = [], []
+    with open(path, "r", encoding="utf-8") as f:
+        lines = f.read().lstrip("\ufeff").splitlines()
+    for n, raw in enumerate(lines, 1):
+        line = raw.split("#", 1)[0].strip()
+        if not line:
+            continue
+        src, sep, dst = line.partition("->")
+        src, dst = src.strip(), dst.strip()
+        if not sep or not src or not dst:
+            errors.append("%s line %d is not `SRC -> DEST`: %r" % (path, n, raw))
+            continue
+        src = os.path.normpath(os.path.join(base, os.path.expanduser(src)))
+        into = dst.endswith(("/", "\\"))
+        dst = os.path.normpath(os.path.join(base, os.path.expanduser(dst)))
+        if into:
+            moves.append((src, dst, os.path.basename(src)))
+        else:
+            moves.append((src, os.path.dirname(dst), os.path.basename(dst)))
+    return moves, errors
+
+
+def check_move(src, parent, name, planned=()):
+    """Why moving `src` to `parent/name` is not possible, or None."""
+    if not is_skill_dir(src):
+        return "%s is not a skill folder (no %s)" % (src, SKILL_FILE)
+    if not is_skill_dir(parent):
+        return "%s is not a skill folder; create the parent first with init" % parent
+    if spec_field_problems({"name": name, "description": "x"}):
+        return "%r is not a valid skill folder name (lowercase letters, digits, single hyphens)" % name
+    target = os.path.join(parent, name)
+    if os.path.exists(target) or os.path.abspath(target) in planned:
+        return "%s already exists" % target
+    if path_within(parent, src):
+        return "cannot move %s into itself (%s)" % (src, parent)
+    if os.path.islink(src):
+        return "%s is a link; move the folder it points to" % src
+    return None
+
+
+def _rename_skill(skill_md, name):
+    """Make `name:` in the header equal the new folder name (the spec requires it)."""
+    with open(skill_md, "r", encoding="utf-8") as f:
+        text = f.read()
+    new = re.sub(r"(?m)^(name:[ \t]*).*$", lambda m: m.group(1) + name, text, count=1)
+    if new != text:
+        with open(skill_md, "w", encoding="utf-8", newline="\n") as f:
+            f.write(new)
+        return True
+    return False
+
+
+def cmd_move(args):
+    """Put existing skill folders into a tree, or move them inside one. This is the mechanical
+    half of placement: where each card goes is decided by organizer/SKILL.md (or its owner),
+    written as a plan or as --parent, and this command carries it out and re-syncs."""
+    if args.plan:
+        if args.src or args.parent or args.as_name:
+            print("error: give either --plan FILE or SRC... --parent DIR, not both")
+            return 1
+        moves, errors = read_plan(args.plan)
+    else:
+        if not args.src or not args.parent:
+            print("error: give SRC... --parent DIR, or --plan FILE")
+            return 1
+        if args.as_name and len(args.src) != 1:
+            print("error: --as names one folder; give a single SRC")
+            return 1
+        errors = []
+        moves = [(s, args.parent, args.as_name or os.path.basename(os.path.normpath(s))) for s in args.src]
+    planned = set()
+    for src, parent, name in moves:
+        why = check_move(src, parent, name, planned)
+        if why:
+            errors.append(why)
+        planned.add(os.path.abspath(os.path.join(parent, name)))
+    if errors:
+        for e in errors:
+            print("error: %s" % e)
+        print("nothing was moved")
+        return 1
+    verb = "copy" if args.copy else "move"
+    roots = set()
+    for src, parent, name in moves:
+        target = os.path.join(parent, name)
+        if args.dry_run:
+            print("[dry-run] would %s %s -> %s" % (verb, src, target))
+            continue
+        old_root = None if args.copy or not is_skill_dir(os.path.dirname(os.path.abspath(src))) else tree_root_of(src)
+        if args.copy:
+            shutil.copytree(src, target, ignore=shutil.ignore_patterns(*INSTALL_SKIP_ANY - {"tests"}), symlinks=True)
+        else:
+            shutil.move(src, target)
+        renamed = _rename_skill(os.path.join(target, SKILL_FILE), name)
+        print("%s: %s -> %s%s" % ("copied" if args.copy else "moved", src, target,
+                                  " (name: set to %s)" % name if renamed else ""))
+        roots.add(tree_root_of(target))
+        if old_root and os.path.isdir(old_root):
+            roots.add(old_root)
+    if args.dry_run:
+        return 0
+    for root in sorted(roots):
+        cmd_sync(argparse.Namespace(path=root, dry_run=False, auto_append=True))
+    print("next: check each moved description has `covers` words and three example sentences "
+          "(organizer_cli.py lint), then validate and replay")
     return 0
 
 
@@ -1566,6 +1694,15 @@ def main(argv=None):
                    help="for a root: do not copy scripts/, organizer/ and editing/ in from this package")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(func=cmd_init, bare=False)
+
+    p = sub.add_parser("move", help="move or copy skill folders under a parent (or apply a plan) and re-sync")
+    p.add_argument("src", nargs="*", help="skill folders to move")
+    p.add_argument("--parent", help="the skill folder to put them under")
+    p.add_argument("--as", dest="as_name", help="new folder name (one SRC only)")
+    p.add_argument("--plan", help="a file of `SRC -> DEST` lines (DEST = parent/name; `parent/` keeps the name), applied all or nothing")
+    p.add_argument("--copy", action="store_true", help="copy instead of moving (leave the source library as it is)")
+    p.add_argument("--dry-run", action="store_true")
+    p.set_defaults(func=cmd_move)
 
     p = sub.add_parser("sync", help="inject sub-skill descriptions into parent SKILL.md files")
     p.add_argument("path", nargs="?")

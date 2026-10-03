@@ -42,6 +42,10 @@ def main():
                  ["organizer/scripts/organizer_cli.py", "replay", "."]):
         run(args, holon)
 
+    step("eval: harness and move tests (no model is called)")
+    run(["eval/tests/test_harness.py"], REPO)
+    run(["eval/example/build.py"], REPO)
+
     step("copyright: every LICENSE and source header names the same holder")
     holders = set()
     for d, dirs, files in os.walk(REPO):

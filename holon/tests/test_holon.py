@@ -438,6 +438,27 @@ class TestTableShowsWordsFromBelow(unittest.TestCase):
         text, _, _ = ns.read_skill(os.path.join(self.office, "pptx"))
         self.assertNotIn("also takes", text)
 
+    def test_ancestor_sync_does_not_need_relpath(self):
+        """On Windows CI the checkout is on D: and the temp folder on C:; os.path.relpath
+        between them raises ValueError. Ancestor sync must not depend on it."""
+        import argparse
+        real = os.path.relpath
+
+        def cross_drive(*a, **k):
+            raise ValueError("path is on mount 'C:', start on mount 'D:'")
+        os.path.relpath = cross_drive
+        try:
+            with contextlib.redirect_stdout(io.StringIO()) as out:
+                rc = ns.cmd_init(argparse.Namespace(
+                    name="speaker", parent=os.path.join(self.office, "pptx"), root=self.tmp,
+                    desc="Use for talks: covers talk track", dry_run=False, bare=True))
+        finally:
+            os.path.relpath = real
+        self.assertEqual(rc, 0)
+        self.assertIn("also synced", out.getvalue())
+        text, _, _ = ns.read_skill(self.root)
+        self.assertIn("talk track", text)
+
     def test_tree_stays_in_sync_after_init(self):
         with contextlib.redirect_stdout(io.StringIO()) as out:
             ns.cmd_sync(__import__("argparse").Namespace(path=self.root, dry_run=True, auto_append=True))

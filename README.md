@@ -44,6 +44,7 @@ The tree, the rules and the checks are one package, `holon/`. The rules live in 
 | Folder | What it is |
 |---|---|
 | [`holon/`](holon/README.md) | The package: the skill tree, the rules for placing skills in it (`organizer/`), and the tools that check both |
+| [`eval/`](eval/README.md) | the harness that measures whether a tree helps an agent, against a flat folder of the same skills; not installed |
 | `install.py` | the one-command installer that users run (see Quick start) |
 | `scripts/` | `check.py` (any system) and `check.sh` (bash) run locally what CI runs |
 

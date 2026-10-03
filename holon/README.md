@@ -91,7 +91,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 26,515 in the library (14%)
+read: 3 file(s), 3,828 bytes of 26,821 in the library (14%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -104,7 +104,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 26,515 in the library (12%)
+read: 2 file(s), 3,372 bytes of 26,821 in the library (12%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -114,7 +114,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 26,515 in the library (8%)
+read: 1 file(s), 2,374 bytes of 26,821 in the library (8%)
 ```
 
 ## Checking the tree
@@ -222,6 +222,7 @@ Nothing is deleted. A skill that was merged or replaced moves whole into `.retir
 | `holon.py hosts` | list the agent tools `install` knows, which are installed here, and the folders each reads |
 | `holon.py init NAME --parent DIR [--desc D]` | create a skill and update its parent's list |
 | `holon.py init NAME --root DIR [--bare]` | create a new root with the reading rules, the ledgers and (unless `--bare`) the tools |
+| `holon.py move SRC... --parent DIR`, `move --plan FILE` | move or copy skill folders into place (a plan line is `SRC -> DEST`), re-sync both trees; all or nothing |
 | `holon.py sync [DIR]` | regenerate every parent's list of sub-skills from the folders |
 | `holon.py tree [DIR]` | print the tree with descriptions |
 | `holon.py validate [DIR]` | check headers, placeholders, stale lists, loops and the Agent Skills spec; exit 1 on error |
@@ -247,7 +248,7 @@ What has not: the rules have been applied to two libraries, a public library of 
 
 Routing compares words, not meaning. A sentence that uses none of a skill's words does not reach it. The fix is a line in `synonyms.md`, and `_feedback.md` is where the agent records such a miss so that someone adds the line. The same comparison does not understand negation ("do not absorb anything" still contains `absorb`), and a sentence that asks for two unrelated things can be blocked by both branches' `excludes` and stay at the root.
 
-What `replay` and `route` check is the word model, not the agent. The agent that reads the routing table decides by meaning, and may go where the word model would not, in either direction. Each line of the table shows the words the tools match on, including the ones a parent takes through the skills below it (`also takes, through its sub-skills: ...`), so the two at least read the same words; whether a given model then follows them is not measured yet. [references/evaluation.md](references/evaluation.md) describes the measurement that would answer it, and what it would take to count as evidence.
+What `replay` and `route` check is the word model, not the agent. The agent that reads the routing table decides by meaning, and may go where the word model would not, in either direction. Each line of the table shows the words the tools match on, including the ones a parent takes through the skills below it (`also takes, through its sub-skills: ...`), so the two at least read the same words; whether a given model then follows them is not measured yet. [`eval/`](../eval/README.md) at the repository root is the harness that measures it, against a flat folder of the same skills; no result with a real agent has been published.
 
 The root's description says "Use for every task", so that a tool which lists only top-level folders picks the tree. In a skills folder that also holds other top-level skills, that line competes with them; give the root a description naming what the tree covers instead (`init NAME --desc ...`).
 

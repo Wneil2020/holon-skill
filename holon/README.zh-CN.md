@@ -91,7 +91,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 26,515 in the library (14%)
+read: 3 file(s), 3,828 bytes of 26,821 in the library (14%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -104,7 +104,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 26,515 in the library (12%)
+read: 2 file(s), 3,372 bytes of 26,821 in the library (12%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -114,7 +114,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 26,515 in the library (8%)
+read: 1 file(s), 2,374 bytes of 26,821 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -222,6 +222,7 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 | `holon.py hosts` | 列出 `install` 认识的 agent 工具、这里装了哪些、每个读哪些文件夹 |
 | `holon.py init NAME --parent DIR [--desc D]` | 建一个 skill，更新父级的列表 |
 | `holon.py init NAME --root DIR [--bare]` | 建一个新的根，带阅读规则、记录文件，以及工具（`--bare` 时不带） |
+| `holon.py move 源... --parent 目录`、`move --plan 文件` | 把 skill 文件夹移动或复制到位（计划的一行是 `源 -> 目标`），重新同步新旧两处；要么全做，要么全不做 |
 | `holon.py sync [DIR]` | 按文件夹重新生成每个父级的子 skill 列表 |
 | `holon.py tree [DIR]` | 打印树和每条描述 |
 | `holon.py validate [DIR]` | 检查文件头、占位文字、过期的列表、循环、Agent Skills 规范；有错时退出码为 1 |
@@ -247,7 +248,7 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 
 路由比对的是词，不是意思。一句话里一个 skill 的词都没出现，就到不了那个 skill。办法是在 `synonyms.md` 里加一行；agent 遇到这种情况时会记到 `_feedback.md` 里，等人来补。同样的比对不懂否定（"什么都不要 absorb"里仍然有 `absorb`）；一句话同时要两件不相干的事时，可能被两个分支的 `excludes` 同时挡住，停在根上。
 
-`replay` 和 `route` 检查的是词的模型，不是 agent。读路由表的 agent 按意思判断，可能去到词的模型不会去的地方，两个方向都有可能。路由表的每一行都列出工具用来匹配的词，包括父级通过下面的 skill 接住的词（`also takes, through its sub-skills: ...`），所以两者至少读的是同一批词；某个模型会不会照着走，还没有测过。[references/evaluation.zh-CN.md](references/evaluation.zh-CN.md) 写了能回答这个问题的测量方法，以及怎样才算证据。
+`replay` 和 `route` 检查的是词的模型，不是 agent。读路由表的 agent 按意思判断，可能去到词的模型不会去的地方，两个方向都有可能。路由表的每一行都列出工具用来匹配的词，包括父级通过下面的 skill 接住的词（`also takes, through its sub-skills: ...`），所以两者至少读的是同一批词；某个模型会不会照着走，还没有测过。仓库根目录的 [`eval/`](../eval/README.zh-CN.md) 是测这个的工具，拿同一批 skill 的平铺文件夹做对照；目前还没有发布过真实 agent 的结果。
 
 根的描述写的是"Use for every task"，这样只列顶层文件夹的工具会选中这棵树。如果同一个 skills 文件夹里还有别的顶层 skill，这一句会和它们抢；这时给根写一个说明这棵树管什么的描述（`init 名字 --desc ...`）。
 

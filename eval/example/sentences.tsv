@@ -1,0 +1,15 @@
+id	split	sentence	expected
+t01	test	fix the typo in this Word memo	docx
+t02	test	fill in the PDF form for my visa	pdf
+t03	test	build a pitch deck for Friday	pptx
+t04	test	design a flyer for the bake sale	poster
+t05	test	why is this join query so slow	sql
+t06	test	fill out this Acrobat document	pdf
+t07	test	make a presentation about our Q3 numbers	pptx
+t08	test	把这份 Word 文档里的错别字改掉	docx
+t09	test	do not touch the PDF, just summarise the email	none
+t10	test	turn the Word report into slides	pptx|office-docs
+t11	test	what is the capital of France	none
+t12	test	merge pages 2 and 3 of the PDF and put the result in a Word file	office-docs
+u01	tune	edit this docx	docx
+u02	tune	make me a poster	poster

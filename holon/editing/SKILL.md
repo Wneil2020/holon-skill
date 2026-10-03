@@ -14,7 +14,7 @@ Never write a sub-skills list by hand. `scripts/holon.py` at the tree root write
 
 1. Create the skill with `python3 scripts/holon.py init <name> --parent <parent-dir> --desc "<description>"`. The parent's list is updated in the same command. For a top-level skill the parent is the tree root: `--parent .`
 2. Write the description in three parts, `Use when ...: covers w, w; excludes w`, and the body as numbered steps. What goes into the description is in `organizer/SKILL.md`; background the steps need goes into `references/`.
-3. After editing any description by hand, or moving or deleting a folder, run `python3 scripts/holon.py sync .` so every parent's list matches the folders on disk.
+3. To move skill folders, or bring existing ones in from a flat folder, use `python3 scripts/holon.py move <src>... --parent <dir>` (add `--copy` to leave the source), or write one `src -> dest` line per folder in a plan and run `move --plan <file>`; it checks every line before touching anything and re-syncs the lists. After editing a description by hand, or deleting a folder, run `python3 scripts/holon.py sync .` so every parent's list matches the folders on disk.
 4. Run `python3 scripts/holon.py validate .`; it exits 1 on a missing description, leftover `TODO`, stale list, or loop. Then run `python3 organizer/scripts/organizer_cli.py lint .` and `replay .`. The change is finished when all three pass.
 
 To see the whole tree with descriptions: `python3 scripts/holon.py tree .`
