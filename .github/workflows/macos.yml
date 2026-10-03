@@ -1,0 +1,42 @@
+name: macos
+
+# The same checks as test.yml, on macOS, in one job. GitHub's macOS runners are often
+# short of capacity ("The job was not acquired by Runner ... even after multiple attempts"),
+# so this is its own workflow: when no runner is found, only this badge is affected, and it
+# can be started again from the Actions tab (Run workflow) without re-running everything.
+# The weekly run catches a change in the runner image even when nothing is pushed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+
+concurrency:
+  group: macos-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: every test suite, the package tree, a fresh tree, an install into an empty home
+        run: python scripts/check.py
+      - name: the same through bash
+        run: bash scripts/check.sh
+      - name: the oldest Python the tools support on macOS
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.10"
+      - run: |
+          cd holon
+          python tests/test_holon.py
+          python organizer/tests/test_organizer_cli.py
+          python tests/test_readme_outputs.py
