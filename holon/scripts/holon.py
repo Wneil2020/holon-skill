@@ -174,7 +174,7 @@ A skill folder may contain sub-skill folders. Any subfolder with a `SKILL.md` is
 
 When a loaded `SKILL.md` contains such a list:
 
-1. **Go down only when a line matches.** Compare the task with each sub-skill's description. When one matches, read the `SKILL.md` in that subfolder before acting.
+1. **Go down only when a line matches.** Compare the task with each sub-skill's description and with the words its line says it also takes through its sub-skills. When one matches, read the `SKILL.md` in that subfolder before acting.
 2. **Repeat at each level.** If that sub-skill lists further sub-skills, compare again and go down again.
 3. **Read only what is on the path.** Never load every sub-skill in advance.
 4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent.
@@ -567,12 +567,48 @@ def read_groups(parent_dir):
 
 # ---------------------------------------------------------------- rendering
 
+COVER_SPLIT = r"[,\uff0c\u3001/]"   # the organizer's WORD_SPLIT: comma, full-width comma, ideographic comma, slash
+
+
+def description_covers(desc):
+    """Cover words of a three-part description, in the order written."""
+    m = re.search(r"covers\s*([^;\uff1b]*)", desc or "", re.I)
+    return [w.strip() for w in re.split(COVER_SPLIT, m.group(1)) if w.strip()] if m else []
+
+
+def descendant_covers(sub):
+    """Cover words of every skill below `sub` that `sub`'s own description does not already
+    list, case-insensitively de-duplicated, nearest level first. A sub-skill is a step of its
+    parent, so the organizer's `route` lets a parent take a sentence by a word of any skill
+    below it. Listing those words in the parent's line puts the same words in front of the
+    agent that reads the table, so what `replay` checks is what the agent sees."""
+    _, meta, err = read_skill(sub)
+    seen = {w.lower() for w in description_covers(meta.get("description", ""))} if not err else set()
+    out, level = [], child_skill_dirs(sub)
+    while level:
+        nxt = []
+        for d in level:
+            _, m, e = read_skill(d)
+            if not e:
+                for w in description_covers(m.get("description", "")):
+                    if w.lower() not in seen:
+                        seen.add(w.lower())
+                        out.append(w)
+            nxt += child_skill_dirs(d)
+        level = nxt
+    return out
+
+
 def _entry_line(sub):
     name = os.path.basename(sub)
     _, meta, err = read_skill(sub)
     desc = meta.get("description", "") if not err else "(frontmatter parse error)"
     display = meta.get("name") or name
-    return "- **%s** (`%s/`): %s" % (display, name, desc or "(missing description)")
+    line = "- **%s** (`%s/`): %s" % (display, name, desc or "(missing description)")
+    below = descendant_covers(sub)
+    if below:
+        line += "\n  - also takes, through its sub-skills: " + ", ".join(below)
+    return line
 
 
 def grouped_children(parent_dir):
@@ -750,6 +786,7 @@ def cmd_init(args):
     if parent:
         ns = argparse.Namespace(path=parent, dry_run=False, auto_append=True)
         cmd_sync(ns)
+        _sync_ancestors(parent)
     elif not getattr(args, "bare", True):
         # A root is maintained where it lands, so it gets the tree tool, the rules and the
         # editing steps from the package this script belongs to. --bare leaves them out.
@@ -757,6 +794,25 @@ def cmd_init(args):
         ns = argparse.Namespace(path=target, dry_run=False, auto_append=True)
         cmd_sync(ns)
     return 0
+
+
+def _sync_ancestors(path):
+    """Re-render the routing table of every skill above `path`. A parent's line lists the
+    cover words of the skills below it, so a new grandchild changes the grandparent's table."""
+    cur = os.path.abspath(path)
+    while True:
+        up = os.path.dirname(cur)
+        if up == cur or not is_skill_dir(up):
+            return
+        cur = up
+        text, _, err = read_skill(cur)
+        if text is None or err:
+            return
+        new_text, status = inject(text, render_block(cur))
+        if status == "updated":
+            with open(os.path.join(cur, SKILL_FILE), "w", encoding="utf-8", newline="\n") as f:
+                f.write(new_text)
+            print("also synced %s/SKILL.md (it lists the words of the skills below it)" % os.path.relpath(cur))
 
 
 def cmd_sync(args):

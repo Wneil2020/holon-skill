@@ -54,7 +54,7 @@ python3 scripts/check.py      # Windows：py scripts\check.py
 bash scripts/check.sh         # 同样的检查，有 bash 时可用
 ```
 
-它会跑所有测试，检查包自带的 skill 树，用 `init` 新建一棵树并检查，往一个空的主目录里安装一次；如果装了 `skills-ref`，还会用 [Agent Skills 规范](https://agentskills.io/specification) 的验证器检查每个 `SKILL.md`。CI（`.github/workflows/test.yml`）跑的是同样的检查，另外在 Linux、macOS、Windows 上用 Python 3.8 到 3.13 跑 `holon` 的测试。
+它会跑所有测试，检查包自带的 skill 树，用 `init` 新建一棵树并检查，往一个空的主目录里安装一次；如果装了 `skills-ref`，还会用 [Agent Skills 规范](https://agentskills.io/specification) 的验证器检查每个 `SKILL.md`。CI（`.github/workflows/test.yml`）跑的是同样的检查，另外在 Linux 和 Windows 上用 Python 3.8 到 3.13 跑 `holon` 的测试。macOS 单独一个 workflow（`.github/workflows/macos.yml`，Python 3.10 和 3.13），因为 GitHub 的 macOS 机器有时会一段时间排不上；它每周也会自动跑一次，也可以在 Actions 页面手动启动。
 
 ## 参与
 

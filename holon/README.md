@@ -60,6 +60,7 @@ $ python3 scripts/holon.py init docx --parent office-docs --desc "Use when writi
 created: office-docs/docx/SKILL.md
 synced office-docs/SKILL.md (1 sub-skills)
 done: 1 file(s) updated
+also synced ./SKILL.md (it lists the words of the skills below it)
 ```
 
 ```
@@ -67,6 +68,7 @@ $ python3 scripts/holon.py init pdf --parent office-docs --desc "Use when the in
 created: office-docs/pdf/SKILL.md
 synced office-docs/SKILL.md (2 sub-skills)
 done: 1 file(s) updated
+also synced ./SKILL.md (it lists the words of the skills below it)
 ```
 
 A description has three parts. `Use when ...` names the situation. `covers` lists up to five words; a task sentence that contains one of them is routed here. `excludes` lists nearby words that belong to another skill. Words are compared literally and without regard to case, after the sentence has passed through `synonyms.md`, which maps the words users say to the words the skills use.
@@ -89,7 +91,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,683 bytes of 26,370 in the library (13%)
+read: 3 file(s), 3,828 bytes of 26,515 in the library (14%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -102,7 +104,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,227 bytes of 26,370 in the library (12%)
+read: 2 file(s), 3,372 bytes of 26,515 in the library (12%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -112,7 +114,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,229 bytes of 26,370 in the library (8%)
+read: 1 file(s), 2,374 bytes of 26,515 in the library (8%)
 ```
 
 ## Checking the tree
@@ -243,7 +245,13 @@ What has been checked: the tests run on Linux, macOS and Windows with Python 3.8
 
 What has not: the rules have been applied to two libraries, a public library of twenty skills and three skills written for this project's own work. Applying them changed two passages of the rules. They have not been tried on a library of hundreds of skills. The numbers in the rules (five cover words, nine sub-skills per parent, 0.4 overlap) are values that made those two libraries checkable, not measured best values. They are settings: [organizer/README.md](organizer/README.md#changing-the-parameters-for-your-own-library) says how to change them for your own library.
 
-Routing compares words, not meaning. A sentence that uses none of a skill's words does not reach it. The fix is a line in `synonyms.md`, and `_feedback.md` is where the agent records such a miss so that someone adds the line.
+Routing compares words, not meaning. A sentence that uses none of a skill's words does not reach it. The fix is a line in `synonyms.md`, and `_feedback.md` is where the agent records such a miss so that someone adds the line. The same comparison does not understand negation ("do not absorb anything" still contains `absorb`), and a sentence that asks for two unrelated things can be blocked by both branches' `excludes` and stay at the root.
+
+What `replay` and `route` check is the word model, not the agent. The agent that reads the routing table decides by meaning, and may go where the word model would not, in either direction. Each line of the table shows the words the tools match on, including the ones a parent takes through the skills below it (`also takes, through its sub-skills: ...`), so the two at least read the same words; whether a given model then follows them is not measured yet. [references/evaluation.md](references/evaluation.md) describes the measurement that would answer it, and what it would take to count as evidence.
+
+The root's description says "Use for every task", so that a tool which lists only top-level folders picks the tree. In a skills folder that also holds other top-level skills, that line competes with them; give the root a description naming what the tree covers instead (`init NAME --desc ...`).
+
+The context measurements in `organizer/references/design-notes.md` (§17) count bytes of `SKILL.md` files on the path, not tokens, and not what the task reads after routing. They also show that most of the saving came from moving background into `references/`, which a flat library can do as well.
 
 How to write the body of a skill, below its header, is a separate question with no settled answer yet. For now the rule is only that a body is numbered steps and that background goes into `references/`.
 

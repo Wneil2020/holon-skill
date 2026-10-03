@@ -60,6 +60,7 @@ $ python3 scripts/holon.py init docx --parent office-docs --desc "Use when writi
 created: office-docs/docx/SKILL.md
 synced office-docs/SKILL.md (1 sub-skills)
 done: 1 file(s) updated
+also synced ./SKILL.md (it lists the words of the skills below it)
 ```
 
 ```
@@ -67,6 +68,7 @@ $ python3 scripts/holon.py init pdf --parent office-docs --desc "Use when the in
 created: office-docs/pdf/SKILL.md
 synced office-docs/SKILL.md (2 sub-skills)
 done: 1 file(s) updated
+also synced ./SKILL.md (it lists the words of the skills below it)
 ```
 
 描述分三段。`Use when ...` 说明什么场合用。`covers` 列最多五个词，任务句里出现其中任何一个，就路由到这里。`excludes` 列出属于别的 skill 的相近词。比对是逐字的、不分大小写；比对之前，句子先经过 `synonyms.md`，把用户平时说的词换成 skill 里用的词。
@@ -89,7 +91,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,683 bytes of 26,370 in the library (13%)
+read: 3 file(s), 3,828 bytes of 26,515 in the library (14%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -102,7 +104,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,227 bytes of 26,370 in the library (12%)
+read: 2 file(s), 3,372 bytes of 26,515 in the library (12%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -112,7 +114,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,229 bytes of 26,370 in the library (8%)
+read: 1 file(s), 2,374 bytes of 26,515 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -243,7 +245,13 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 
 还没有验证过的：这些规则只用在过两个库上，一个是二十个 skill 的公开库，一个是为这个项目自己的工作写的三个 skill。用的过程中规则改过两处。还没有在几百个 skill 的库上试过。规则里的数字（五个覆盖词、每个父级九个子 skill、0.4 的重叠）是让这两个库能被检查的取值，不是测出来的最优值。它们是可以调的设置：怎么为你自己的库修改，见 [organizer/README.zh-CN.md](organizer/README.zh-CN.md#为你自己的库调整参数)。
 
-路由比对的是词，不是意思。一句话里一个 skill 的词都没出现，就到不了那个 skill。办法是在 `synonyms.md` 里加一行；agent 遇到这种情况时会记到 `_feedback.md` 里，等人来补。
+路由比对的是词，不是意思。一句话里一个 skill 的词都没出现，就到不了那个 skill。办法是在 `synonyms.md` 里加一行；agent 遇到这种情况时会记到 `_feedback.md` 里，等人来补。同样的比对不懂否定（"什么都不要 absorb"里仍然有 `absorb`）；一句话同时要两件不相干的事时，可能被两个分支的 `excludes` 同时挡住，停在根上。
+
+`replay` 和 `route` 检查的是词的模型，不是 agent。读路由表的 agent 按意思判断，可能去到词的模型不会去的地方，两个方向都有可能。路由表的每一行都列出工具用来匹配的词，包括父级通过下面的 skill 接住的词（`also takes, through its sub-skills: ...`），所以两者至少读的是同一批词；某个模型会不会照着走，还没有测过。[references/evaluation.zh-CN.md](references/evaluation.zh-CN.md) 写了能回答这个问题的测量方法，以及怎样才算证据。
+
+根的描述写的是"Use for every task"，这样只列顶层文件夹的工具会选中这棵树。如果同一个 skills 文件夹里还有别的顶层 skill，这一句会和它们抢；这时给根写一个说明这棵树管什么的描述（`init 名字 --desc ...`）。
+
+`organizer/references/design-notes.md`（§17）里的上下文测量，数的是路径上 `SKILL.md` 的字节，不是 token，也不包括路由之后做任务时读的内容。那里的数字也显示，大部分节省来自把背景材料移进 `references/`，而这一点平铺的库同样能做。
 
 skill 的正文，也就是文件头以下那部分该怎么写，是另一个问题，还没有定论。目前的规则只有两条：正文写成编号的步骤，背景材料放进 `references/`。
 

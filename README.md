@@ -54,7 +54,7 @@ python3 scripts/check.py      # Windows: py scripts\check.py
 bash scripts/check.sh         # the same checks, where bash is available
 ```
 
-It runs every test suite, checks the package's own skill tree, builds a fresh tree with `init` and checks it, installs into an empty home folder, and, if `skills-ref` is installed, validates every `SKILL.md` against the [Agent Skills specification](https://agentskills.io/specification). CI (`.github/workflows/test.yml`) runs the same checks, plus the `holon` tests on Linux, macOS and Windows with Python 3.8 to 3.13.
+It runs every test suite, checks the package's own skill tree, builds a fresh tree with `init` and checks it, installs into an empty home folder, and, if `skills-ref` is installed, validates every `SKILL.md` against the [Agent Skills specification](https://agentskills.io/specification). CI (`.github/workflows/test.yml`) runs the same checks, plus the `holon` tests on Linux and Windows with Python 3.8 to 3.13. macOS has its own workflow (`.github/workflows/macos.yml`, Python 3.10 and 3.13), because GitHub's macOS runners are sometimes unavailable for a while; it also runs once a week, and can be started by hand from the Actions tab.
 
 ## Contributing
 

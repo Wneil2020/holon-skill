@@ -9,7 +9,7 @@ A skill folder may contain sub-skill folders. Any subfolder with a `SKILL.md` is
 
 When a loaded `SKILL.md` contains such a list:
 
-1. **Go down only when a line matches.** Compare the task with each sub-skill's description. When one matches, read the `SKILL.md` in that subfolder before acting.
+1. **Go down only when a line matches.** Compare the task with each sub-skill's description and with the words its line says it also takes through its sub-skills. When one matches, read the `SKILL.md` in that subfolder before acting.
 2. **Repeat at each level.** If that sub-skill lists further sub-skills, compare again and go down again.
 3. **Read only what is on the path.** Never load every sub-skill in advance.
 4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent.

@@ -5,6 +5,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### Routing table shows what the checker matches on
+- A parent's line in the routing table now ends with `also takes, through its sub-skills: ...`, the cover words of every skill below it that the parent does not list itself. `route` and `replay` have let a parent take a sentence by those words since the rule change in design notes §18, but the agent reading the table did not see them: "build a pitch deck" reached `office-docs` in `replay` only through `pptx`'s `deck`, which the root's table never showed. Rule 1 in the root `SKILL.md` now tells the agent to compare against those words too.
+- `init --parent` re-syncs every ancestor, not only the direct parent, because a new grandchild changes the grandparent's line. It prints `also synced ...` for each.
+- Existing trees: routing by the word model is unchanged, so `replay` gives the same result. `validate` reports the tables as out of date until `holon.py sync` is run once.
+
+### Documentation
+- `references/evaluation.md`: how to measure whether the tree helps an agent (flat original vs flat trimmed vs tree, sentences frozen before tuning, per-run fields, what to report). No result is published yet.
+- The README's limits section now says that `replay` checks the word model and not the agent, that negation and two-task sentences are not understood, that the "Use for every task" root description competes with other top-level skills, and that the §17 measurements are bytes of `SKILL.md`, mostly saved by trimming bodies.
+
+### CI
+- macOS moved to its own workflow, `macos.yml` (one job: `scripts/check.py`, `check.sh`, and the package tests on Python 3.10). GitHub's macOS runners were repeatedly unavailable ("not acquired by Runner"), which cancelled the macOS jobs and marked the whole `tests` run as failed although every Linux and Windows job passed. `macos.yml` also runs weekly and on demand.
+- `tests` can be started by hand (`workflow_dispatch`).
+
 ## [1.0.0] - 2026-10-02
 
 First public release, under the project name **holon skill**. One package, `holon/`, with the rules in `organizer/`; it installs as a skill folder named `holon`.

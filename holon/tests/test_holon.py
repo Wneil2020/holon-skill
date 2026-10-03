@@ -406,6 +406,44 @@ class TestNestedInitDescSyncsParent(unittest.TestCase):
             shutil.rmtree(tmp)
 
 
+class TestTableShowsWordsFromBelow(unittest.TestCase):
+    """The organizer's route lets a parent take a sentence by a word of any skill below it.
+    The routing table the agent reads must show those words, or replay checks more than the
+    agent sees ("build a pitch deck" reaches office-docs only through pptx's `deck`)."""
+
+    def setUp(self):
+        import argparse
+        self.tmp = tempfile.mkdtemp()
+        self.root = os.path.join(self.tmp, "lib")
+        self.office = os.path.join(self.root, "office-docs")
+        mk = lambda name, parent, desc: ns.cmd_init(argparse.Namespace(
+            name=name, parent=parent, root=self.tmp, desc=desc, dry_run=False, bare=True))
+        with contextlib.redirect_stdout(io.StringIO()):
+            mk("lib", None, None)
+            mk("office-docs", self.root, "Use for office files: covers Word, PDF; excludes theme")
+            mk("pptx", self.office, "Use for slides: covers deck, slides, word")
+            mk("form", os.path.join(self.office, "pptx"), "Use for speaker notes: covers notes")
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp)
+
+    def test_descendant_covers_skip_own_words_and_keep_order(self):
+        self.assertEqual(ns.descendant_covers(self.office), ["deck", "slides", "notes"])
+
+    def test_root_table_lists_grandchild_words_after_init(self):
+        text, _, _ = ns.read_skill(self.root)
+        self.assertIn("also takes, through its sub-skills: deck, slides, notes", text)
+
+    def test_leaf_line_has_no_extra_line(self):
+        text, _, _ = ns.read_skill(os.path.join(self.office, "pptx"))
+        self.assertNotIn("also takes", text)
+
+    def test_tree_stays_in_sync_after_init(self):
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            ns.cmd_sync(__import__("argparse").Namespace(path=self.root, dry_run=True, auto_append=True))
+        self.assertIn("done: 0 file(s) would be updated", out.getvalue())
+
+
 class TestInjectUnit(unittest.TestCase):
     def test_no_marker_status(self):
         text, status = ns.inject("plain text", "BLOCK")
