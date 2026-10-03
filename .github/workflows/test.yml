@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+
+# macOS runs in macos.yml: GitHub's macOS runners are often unavailable for a while, and a
+# job that waits for one should not hold back or fail the checks here.
 
 jobs:
   holon:
@@ -11,11 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest]
         python-version: ["3.8", "3.10", "3.12", "3.13"]
-        exclude:
-          - os: macos-latest
-            python-version: "3.8"
     defaults:
       run:
         working-directory: holon
@@ -118,12 +119,12 @@ jobs:
 
   check-script:
     # scripts/check.sh and scripts/check.py are what contributors run locally; both must keep
-    # passing on their own, check.py also on Windows and macOS.
+    # passing on their own, check.py also on Windows (macOS: see macos.yml).
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
