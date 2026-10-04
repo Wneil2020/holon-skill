@@ -924,7 +924,7 @@ def check_move(src, parent, name, planned=()):
     if spec_field_problems({"name": name, "description": "x"}):
         return "%r is not a valid skill folder name (lowercase letters, digits, single hyphens)" % name
     target = os.path.join(parent, name)
-    if os.path.exists(target) or os.path.abspath(target) in planned:
+    if os.path.lexists(target) or os.path.normcase(os.path.realpath(target)) in planned:
         return "%s already exists" % target
     if path_within(parent, src):
         return "cannot move %s into itself (%s)" % (src, parent)
@@ -945,10 +945,162 @@ def _rename_skill(skill_md, name):
     return False
 
 
+def _move_documents(root):
+    """Preflight every document sync may write; snapshots are byte-for-byte, not parsed text."""
+    import stat
+    if os.path.islink(root):
+        raise OSError("move does not accept a linked tree root: %s" % root)
+    skills, errors = collect_skills(root)
+    if errors:
+        raise OSError("; ".join(errors))
+    documents = {}
+    for sk in skills:
+        fp = os.path.join(sk, SKILL_FILE)
+        mode = os.lstat(fp)
+        if (os.path.islink(sk) or getattr(os.lstat(sk), "st_file_attributes", 0) & 0x400
+                or not stat.S_ISREG(mode.st_mode) or mode.st_nlink != 1):
+            raise OSError("move requires unlinked, regular skill documents: %s" % fp)
+        _, _, err = read_skill(sk)
+        if err:
+            raise OSError("%s: %s" % (sk, err))
+        with open(fp, "rb") as f:
+            documents[fp] = f.read()
+    return documents
+
+
+def _check_move_files(src):
+    """Conservative move policy: no symlinks, junctions or special files, even in assets."""
+    import stat
+    def visit(path):
+        info = os.lstat(path)
+        if os.path.islink(path) or getattr(os.path, "isjunction", lambda p: False)(path):
+            raise OSError("move does not accept links or junctions: %s" % path)
+        # Windows junction detection on Python versions before os.path.isjunction.
+        if getattr(info, "st_file_attributes", 0) & 0x400:
+            raise OSError("move does not accept reparse points: %s" % path)
+        if stat.S_ISDIR(info.st_mode):
+            for name in os.listdir(path):
+                visit(os.path.join(path, name))
+        elif not stat.S_ISREG(info.st_mode):
+            raise OSError("move requires regular files: %s" % path)
+    visit(src)
+
+
+def _execute_move(moves, roots, documents, copy=False):
+    """Stage all copies, retain originals until sync succeeds, restore on caught failures.
+
+    Not an atomic multi-directory transaction: no concurrent writers or crash recovery promise.
+    A journal and original copies are retained if rollback itself fails.
+    """
+    import json
+    import tempfile
+    items, recovery, keep = [], None, False
+    outcome = 1
+    try:
+        recovery = tempfile.mkdtemp(prefix="holon-move-recovery-")
+        saved = []
+        for i, (path, data) in enumerate(sorted(documents.items())):
+            name = "%d.bin" % i
+            with open(os.path.join(recovery, name), "wb") as f:
+                f.write(data)
+            saved.append({"path": path, "backup": name})
+        for src, parent, name in moves:
+            work = tempfile.mkdtemp(prefix=".holon-move-", dir=parent)
+            item = {"src": src, "target": os.path.join(parent, name), "work": work,
+                    "new": os.path.join(work, "new"), "old_work": None, "old": None,
+                    "published": False, "hidden": False, "renamed": False}
+            items.append(item)
+            if not copy:
+                item["old_work"] = tempfile.mkdtemp(prefix=".holon-move-", dir=os.path.dirname(src))
+                item["old"] = os.path.join(item["old_work"], "old")
+        # Paths for restoring both folders and original routing tables, even after an interruption.
+        with open(os.path.join(recovery, "recovery.json"), "w", encoding="utf-8") as f:
+            json.dump({"copy": copy, "documents": saved,
+                       "note": "Path map only: inspect current files before manual recovery.",
+                       "items": [{k: item[k] for k in ("src", "target", "work", "new", "old_work", "old")}
+                                 for item in items]}, f, ensure_ascii=False, indent=2)
+        for item in items:
+            # Keep all assets, hidden files and tests; moving must not silently discard user files.
+            shutil.copytree(item["src"], item["new"], symlinks=False)
+            item["renamed"] = _rename_skill(os.path.join(item["new"], SKILL_FILE),
+                                            os.path.basename(item["target"]))
+        for item in items:
+            if os.path.lexists(item["target"]):
+                raise OSError("destination appeared during move: %s" % item["target"])
+            if not copy:
+                os.replace(item["src"], item["old"])
+                item["hidden"] = True
+            os.replace(item["new"], item["target"])
+            item["published"] = True
+        for root in sorted(roots):
+            if cmd_sync(argparse.Namespace(path=root, dry_run=False, auto_append=True)):
+                raise OSError("sync failed for %s" % root)
+        for item in items:
+            print("%s: %s -> %s%s" % ("copied" if copy else "moved", item["src"], item["target"],
+                                      " (name: set to %s)" % os.path.basename(item["target"])
+                                      if item["renamed"] else ""))
+        outcome = 0
+    except BaseException as exc:
+        failures = []
+        for item in reversed(items):
+            try:
+                if item["published"]:
+                    remove_tree(item["target"])
+                if item["hidden"]:
+                    if os.path.lexists(item["src"]):
+                        raise OSError("source reappeared; not overwriting it: %s" % item["src"])
+                    os.replace(item["old"], item["src"])
+            except OSError as err:
+                failures.append(str(err))
+        for path, data in documents.items():
+            try:
+                with open(path, "rb") as f:
+                    same = f.read() == data
+                if not same:
+                    with open(path, "wb") as f:
+                        f.write(data)
+            except OSError as err:
+                failures.append(str(err))
+        if failures:
+            keep = True
+            print("error: move rollback incomplete; recovery retained: %s" % recovery)
+            print("stop editing these trees; recovery.json maps original folders and saved SKILL.md bytes")
+            for item in items:
+                if item["old"] and os.path.exists(item["old"]):
+                    print("restore folder: %s -> %s" % (item["old"], item["src"]))
+                if os.path.exists(item["target"]):
+                    print("inspect remaining target: %s" % item["target"])
+            for error in failures:
+                print("error: " + error)
+        else:
+            print("move failed; original folders and routing tables restored")
+        if not isinstance(exc, (OSError, UnicodeError, ValueError)):
+            raise
+        print("error: %s" % exc)
+    finally:
+        if not keep:
+            cleanup = [p for item in items for p in (item["work"], item["old_work"]) if p]
+            # Clean working copies first. If cleanup fails, retain the recovery map as well.
+            for path in cleanup:
+                try:
+                    remove_tree(path)
+                except OSError as err:
+                    keep = True
+                    outcome = 1
+                    print("error: retained move work at %s: %s" % (path, err))
+            if recovery and not keep:
+                try:
+                    remove_tree(recovery)
+                except OSError as err:
+                    outcome = 1
+                    print("error: recovery cleanup incomplete at %s: %s" % (recovery, err))
+            elif recovery:
+                print("recovery retained: %s" % recovery)
+    return outcome
+
+
 def cmd_move(args):
-    """Put existing skill folders into a tree, or move them inside one. This is the mechanical
-    half of placement: where each card goes is decided by organizer/SKILL.md (or its owner),
-    written as a plan or as --parent, and this command carries it out and re-syncs."""
+    """Preflight a whole plan, stage changes and restore originals on caught execution errors."""
     if args.plan:
         if args.src or args.parent or args.as_name:
             print("error: give either --plan FILE or SRC... --parent DIR, not both")
@@ -963,39 +1115,49 @@ def cmd_move(args):
             return 1
         errors = []
         moves = [(s, args.parent, args.as_name or os.path.basename(os.path.normpath(s))) for s in args.src]
+    moves = [(os.path.abspath(s), os.path.abspath(p), n) for s, p, n in moves]
     planned = set()
-    for src, parent, name in moves:
+    for i, (src, parent, name) in enumerate(moves):
         why = check_move(src, parent, name, planned)
         if why:
             errors.append(why)
-        planned.add(os.path.abspath(os.path.join(parent, name)))
+        planned.add(os.path.normcase(os.path.realpath(os.path.join(parent, name))))
+        for other, _, _ in moves[:i]:
+            if path_within(src, other) or path_within(other, src):
+                errors.append("duplicate or overlapping sources: %s and %s" % (other, src))
+        for source, _, _ in moves:
+            if path_within(parent, source):
+                errors.append("destination parent is inside a planned source: %s" % parent)
+    roots, documents = set(), {}
+    if not errors:
+        try:
+            inspected = set()
+            for src, parent, _ in moves:
+                _check_move_files(src)
+                if os.path.islink(parent):
+                    raise OSError("move does not accept a linked destination parent: %s" % parent)
+                old_root, new_root = tree_root_of(src), tree_root_of(parent)
+                for root in (old_root, new_root):
+                    if root not in inspected:
+                        documents.update(_move_documents(root))
+                        inspected.add(root)
+                roots.add(new_root)
+                if not args.copy and old_root != src:
+                    roots.add(old_root)
+        except (OSError, UnicodeError) as exc:
+            errors.append(str(exc))
     if errors:
-        for e in errors:
-            print("error: %s" % e)
+        for error in errors:
+            print("error: %s" % error)
         print("nothing was moved")
         return 1
-    verb = "copy" if args.copy else "move"
-    roots = set()
-    for src, parent, name in moves:
-        target = os.path.join(parent, name)
-        if args.dry_run:
-            print("[dry-run] would %s %s -> %s" % (verb, src, target))
-            continue
-        old_root = None if args.copy or not is_skill_dir(os.path.dirname(os.path.abspath(src))) else tree_root_of(src)
-        if args.copy:
-            shutil.copytree(src, target, ignore=shutil.ignore_patterns(*INSTALL_SKIP_ANY - {"tests"}), symlinks=True)
-        else:
-            shutil.move(src, target)
-        renamed = _rename_skill(os.path.join(target, SKILL_FILE), name)
-        print("%s: %s -> %s%s" % ("copied" if args.copy else "moved", src, target,
-                                  " (name: set to %s)" % name if renamed else ""))
-        roots.add(tree_root_of(target))
-        if old_root and os.path.isdir(old_root):
-            roots.add(old_root)
     if args.dry_run:
+        for src, parent, name in moves:
+            print("[dry-run] would %s %s -> %s" % ("copy" if args.copy else "move", src, os.path.join(parent, name)))
         return 0
-    for root in sorted(roots):
-        cmd_sync(argparse.Namespace(path=root, dry_run=False, auto_append=True))
+    rc = _execute_move(moves, roots, documents, copy=args.copy)
+    if rc:
+        return rc
     print("next: check each moved description has `covers` words and three example sentences "
           "(organizer_cli.py lint), then validate and replay")
     return 0
@@ -1531,6 +1693,68 @@ def _check_staged_install(dest, pkg):
     return rc
 
 
+def _install_backup_dir(args, src, dirs):
+    """Backups must not live inside a source tree or any known host skills directory."""
+    directory = os.path.abspath(os.path.expanduser(getattr(args, "backup_dir", None) or "~/.holon-backups"))
+    forbidden = [src] + list(dirs) + [_resolve_dir(SHARED_USER), _resolve_dir(SHARED_PROJECT, os.getcwd())]
+    for host in HOSTS:
+        forbidden.extend(_reads(host, False, os.getcwd()))
+        forbidden.extend(_reads(host, True, os.getcwd()))
+    if any(path_within(directory, root) for root in forbidden):
+        raise ValueError("backup directory must be outside the source tree and host skills directories; use --backup-dir")
+    return directory
+
+
+def _backup_installs(dests, directory):
+    """A durable archive of ALL previous contents; never cleaned up after publishing.
+
+    Nested links are recorded, not followed. A linked installation's root is dereferenced
+    so its data is retained as well as its original link target in the manifest.
+    """
+    import datetime
+    import io
+    import json
+    import tarfile
+    import tempfile
+    os.makedirs(directory, mode=0o700, exist_ok=True)
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    fd, temporary = tempfile.mkstemp(prefix="install-%s-" % stamp, suffix=".partial", dir=directory)
+    archive_path = temporary[:-len(".partial")] + ".tar.gz"
+    manifest = {"version": 1, "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                "installs": [{"destination": dest, "archive_root": "trees/%d" % i,
+                              "root_link": os.readlink(dest) if os.path.islink(dest) else None}
+                             for i, dest in enumerate(dests)]}
+    try:
+        with os.fdopen(fd, "wb") as raw:
+            with tarfile.open(fileobj=raw, mode="w:gz", dereference=False) as archive:
+                for i, dest in enumerate(dests):
+                    archive.add(os.path.realpath(dest), arcname="trees/%d" % i)
+                data = json.dumps(manifest, ensure_ascii=False, indent=2).encode("utf-8")
+                info = tarfile.TarInfo("manifest.json")
+                info.size, info.mode = len(data), 0o600
+                archive.addfile(info, io.BytesIO(data))
+            raw.flush()
+            os.fsync(raw.fileno())
+        # Read the compressed archive back before any destination can be replaced.
+        with tarfile.open(temporary, "r:gz") as archive:
+            for member in archive:
+                if member.isfile():
+                    with archive.extractfile(member) as f:
+                        while f.read(1024 * 1024):
+                            pass
+        os.rename(temporary, archive_path)
+    except BaseException as exc:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+        if isinstance(exc, tarfile.TarError):
+            raise OSError("backup archive could not be verified: %s" % exc) from exc
+        raise
+    print("backup: %s" % archive_path)
+    print("previous contents are in trees/0, trees/1, ...; manifest.json maps them to their original locations")
+    print("restore into an empty directory, inspect it, then copy the required files back; this is replacement, not a merge upgrade")
+    return archive_path
+
+
 def _publish_install(staged, dests, link=False):
     """Prepare every copy first; keep previous installs until all replacements succeed."""
     import tempfile
@@ -1601,9 +1825,18 @@ def _install_from(src, pkg, args):
         return 1
     taken = [d for d in dests if os.path.lexists(d)]
     if taken and not getattr(args, "force", False):
-        print("error: %s already exists; give --force to replace it, or --as another-name" % ", ".join(taken))
+        print("error: %s already exists; use --as another-name to keep it, or --force to back it up and replace it (not merge)" % ", ".join(taken))
         return 1
+    backup_dir = None
+    if taken:
+        try:
+            backup_dir = _install_backup_dir(args, src, dirs)
+        except ValueError as e:
+            print("error: %s" % e)
+            return 1
     if args.dry_run:
+        if taken:
+            print("[dry-run] would backup all previous contents to %s before replacing them" % backup_dir)
         for i, d in enumerate(dests):
             how = "link" if (i and args.link) else "copy"
             who = ", ".join(covered.get(dirs[i], [])) or "any host pointed here"
@@ -1628,6 +1861,8 @@ def _install_from(src, pkg, args):
             rc = _check_staged_install(staged, pkg)
             if rc:
                 return rc
+            if taken:
+                _backup_installs(taken, backup_dir)
             hows = _publish_install(staged, dests, args.link)
     except (OSError, ValueError) as e:
         print("error: install failed: %s" % e)
@@ -1699,7 +1934,7 @@ def main(argv=None):
     p.add_argument("src", nargs="*", help="skill folders to move")
     p.add_argument("--parent", help="the skill folder to put them under")
     p.add_argument("--as", dest="as_name", help="new folder name (one SRC only)")
-    p.add_argument("--plan", help="a file of `SRC -> DEST` lines (DEST = parent/name; `parent/` keeps the name), applied all or nothing")
+    p.add_argument("--plan", help="a file of `SRC -> DEST` lines (DEST = parent/name; `parent/` keeps the name); preflight, stage, sync; restore on caught failure")
     p.add_argument("--copy", action="store_true", help="copy instead of moving (leave the source library as it is)")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(func=cmd_move)
@@ -1739,7 +1974,8 @@ def main(argv=None):
                    help="link each extra directory to the first copy instead of copying; some hosts "
                         "do not follow links to skill folders")
     p.add_argument("--force", action="store_true",
-                   help="replace an earlier install of the same name in the chosen directories")
+                   help="back up and replace earlier installs; does not merge user changes or upgrade in place")
+    p.add_argument("--backup-dir", help="archive directory for --force (default: ~/.holon-backups); must be outside skills directories")
     p.add_argument("--as", dest="as_name", help="folder name at the destination (default: the root's name)")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(func=cmd_install)

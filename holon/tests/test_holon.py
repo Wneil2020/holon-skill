@@ -916,6 +916,10 @@ class TestFunctionalRegressions(unittest.TestCase):
     def setUp(self):
         from pathlib import Path
         self.tmp = Path(tempfile.mkdtemp())
+        from unittest import mock
+        env = mock.patch.dict(os.environ, HOME=str(self.tmp), USERPROFILE=str(self.tmp))
+        env.start()
+        self.addCleanup(env.stop)
         self.src = self.tmp / "source" / "demo"
         make_skill(str(self.src), "demo", "Use for a demo task", body="1. Do the task.")
         self.dest = self.tmp / "installed"
@@ -1197,6 +1201,312 @@ class TestFunctionalRegressions(unittest.TestCase):
         converted = f.read_bytes()
         self.assertEqual(self.cli("migrate", self.src), 0)
         self.assertEqual(f.read_bytes(), converted)
+
+
+class TestWriteSafety(unittest.TestCase):
+    """Real filesystem regressions; injected failures do not depend on root/Windows permissions."""
+
+    def setUp(self):
+        from unittest import mock
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(ns.remove_tree, str(self.tmp))
+        env = mock.patch.dict(os.environ, HOME=str(self.tmp), USERPROFILE=str(self.tmp))
+        env.start()
+        self.addCleanup(env.stop)
+        self.src = self.tmp / "flat" / "alpha"
+        self.other = self.tmp / "flat" / "beta"
+        self.root = self.tmp / "lib"
+        for p in (self.src, self.other, self.root):
+            make_skill(p, p.name, "Use for %s: covers %s" % (p.name, p.name), body="1. Work.")
+        self.plan = self.tmp / "plan.txt"
+        self.plan.write_text("flat/alpha -> lib/first\nflat/beta -> lib/second\n", encoding="utf-8")
+        self.dest = self.tmp / "installed"
+        self.backups = self.tmp / ".holon-backups"
+
+    def cli(self, *args):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+            rc = ns.main(list(map(str, args)))
+        return rc, out.getvalue()
+
+    def snapshot(self, *roots):
+        result = {}
+        for root in roots:
+            for p in sorted(root.rglob("*")):
+                if p.is_symlink():
+                    result[str(p)] = ("link", os.readlink(p))
+                elif p.is_file():
+                    result[str(p)] = p.read_bytes()
+                elif p.is_dir():
+                    result[str(p)] = ("directory",)
+        return result
+
+    def link(self, target, path, directory=False):
+        try:
+            path.symlink_to(target, target_is_directory=directory)
+        except (OSError, NotImplementedError):
+            self.skipTest("symbolic links are unavailable")
+
+    def test_force_preserves_all_old_files_in_printed_backup(self):
+        import tarfile
+        self.assertEqual(self.cli("install", self.src, "--to", self.dest)[0], 0)
+        old = self.dest / "alpha"
+        make_skill(old / "my-reports", "my-reports", "reports")
+        for name in ("synonyms.md", "_feedback.md", "ABSORB.md", "custom.txt"):
+            (old / name).write_text("user-owned " + name, encoding="utf-8")
+        (old / "SKILL.md").write_bytes((old / "SKILL.md").read_bytes() + b"\nUser edit.\n")
+        files = {p.relative_to(old).as_posix(): p.read_bytes() for p in old.rglob("*") if p.is_file()}
+        rc, out = self.cli("install", self.src, "--to", self.dest, "--force")
+        self.assertEqual(rc, 0, out)
+        archives = list(self.backups.glob("*.tar.gz"))
+        self.assertEqual(len(archives), 1, out)
+        self.assertIn(str(archives[0]), out)
+        with tarfile.open(archives[0]) as archive:
+            for name, data in files.items():
+                self.assertEqual(archive.extractfile("trees/0/" + name).read(), data)
+            self.assertIn("manifest.json", archive.getnames())
+        self.assertFalse(any(p.name == "SKILL.md" for p in self.backups.rglob("*")))
+
+    def test_force_backup_failure_prevents_any_replacement(self):
+        from unittest import mock
+        import tarfile
+        self.assertEqual(self.cli("install", self.src, "--to", self.dest)[0], 0)
+        before = self.snapshot(self.dest)
+        with mock.patch.object(tarfile.TarFile, "add", side_effect=OSError("backup failed")):
+            rc, out = self.cli("install", self.src, "--to", self.dest, "--force")
+        self.assertEqual(rc, 1, out)
+        self.assertEqual(self.snapshot(self.dest), before)
+        self.assertFalse(list(self.backups.glob("*.tar.gz")))
+
+    def test_force_dry_run_writes_neither_backup_nor_destination(self):
+        self.assertEqual(self.cli("install", self.src, "--to", self.dest)[0], 0)
+        before = self.snapshot(self.dest)
+        rc, out = self.cli("install", self.src, "--to", self.dest, "--force", "--dry-run")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("backup", out.lower())
+        self.assertEqual(self.snapshot(self.dest), before)
+        self.assertFalse(self.backups.exists())
+
+    def test_force_repeated_backups_do_not_overwrite_history(self):
+        self.assertEqual(self.cli("install", self.src, "--to", self.dest)[0], 0)
+        for value in ("first", "second"):
+            (self.dest / "alpha" / "custom.txt").write_text(value, encoding="utf-8")
+            self.assertEqual(self.cli("install", self.src, "--to", self.dest, "--force")[0], 0)
+        self.assertEqual(len(list(self.backups.glob("*.tar.gz"))), 2)
+
+    def test_force_backups_capture_each_destination_and_survive_publish_failure(self):
+        import tarfile
+        from unittest import mock
+        dirs = [self.tmp / "host-a", self.tmp / "host-b"]
+        for i, directory in enumerate(dirs):
+            make_skill(directory / "alpha", "alpha", "old version")
+            (directory / "alpha" / "custom.txt").write_text("host-%d" % i, encoding="utf-8")
+        before = self.snapshot(*dirs)
+        replace = os.replace
+        def fail_second(src, dest):
+            if os.path.basename(src) == "new" and str(dest) == str(dirs[1] / "alpha"):
+                raise OSError("publish failed")
+            return replace(src, dest)
+        with mock.patch.object(ns, "plan_install", return_value=(list(map(str, dirs)), {}, [], [])), \
+                mock.patch.object(ns.os, "replace", side_effect=fail_second):
+            rc, out = self.cli("install", self.src, "--force")
+        self.assertEqual(rc, 1, out)
+        self.assertEqual(self.snapshot(*dirs), before)
+        archives = list(self.backups.glob("*.tar.gz"))
+        self.assertEqual(len(archives), 1)
+        with tarfile.open(archives[0]) as archive:
+            for i in range(2):
+                with archive.extractfile("trees/%d/custom.txt" % i) as f:
+                    self.assertEqual(f.read(), ("host-%d" % i).encode())
+
+    def test_force_backup_location_cannot_be_in_a_skills_directory(self):
+        self.assertEqual(self.cli("install", self.src, "--to", self.dest)[0], 0)
+        before = self.snapshot(self.dest)
+        for directory in (self.dest / "backups", self.src / "backups", self.tmp / ".claude/skills/backups"):
+            rc, out = self.cli("install", self.src, "--to", self.dest, "--force", "--backup-dir", directory)
+            self.assertEqual(rc, 1, out)
+            self.assertEqual(self.snapshot(self.dest), before)
+            self.assertFalse(directory.exists())
+        custom = self.tmp / "archives"
+        rc, out = self.cli("install", self.src, "--to", self.dest, "--force", "--backup-dir", custom)
+        self.assertEqual(rc, 0, out)
+        self.assertEqual(len(list(custom.glob("*.tar.gz"))), 1)
+
+    def test_force_backup_of_linked_install_contains_data_and_link_metadata(self):
+        import json
+        import tarfile
+        self.dest.mkdir()
+        self.link(self.src, self.dest / "alpha", directory=True)
+        original = (self.src / "SKILL.md").read_bytes()
+        rc, out = self.cli("install", self.other, "--as", "alpha", "--to", self.dest, "--force")
+        self.assertEqual(rc, 0, out)
+        self.assertEqual((self.src / "SKILL.md").read_bytes(), original)
+        with tarfile.open(next(self.backups.glob("*.tar.gz"))) as archive:
+            with archive.extractfile("trees/0/SKILL.md") as f:
+                self.assertEqual(f.read(), original)
+            with archive.extractfile("manifest.json") as f:
+                self.assertEqual(json.load(f)["installs"][0]["root_link"], str(self.src))
+
+    def test_move_rolls_back_keyboard_interrupt(self):
+        from unittest import mock
+        before = self.snapshot(self.tmp / "flat", self.root)
+        def interrupt(args):
+            (self.root / "SKILL.md").write_text("partial table", encoding="utf-8")
+            raise KeyboardInterrupt()
+        with mock.patch.object(ns, "cmd_sync", side_effect=interrupt):
+            with self.assertRaises(KeyboardInterrupt):
+                self.cli("move", "--plan", self.plan)
+        self.assertEqual(self.snapshot(self.tmp / "flat", self.root), before)
+
+    def test_move_rollback_failure_retains_original_and_recovery_map(self):
+        import json
+        from unittest import mock
+        original = (self.src / "SKILL.md").read_bytes()
+        replace = os.replace
+        def block_restore(src, dest):
+            if str(dest) == str(self.src):
+                raise OSError("cannot restore source yet")
+            return replace(src, dest)
+        with mock.patch.object(ns, "cmd_sync", return_value=1), \
+                mock.patch.object(ns.os, "replace", side_effect=block_restore):
+            rc, out = self.cli("move", "--plan", self.plan)
+        self.assertEqual(rc, 1, out)
+        self.assertIn("rollback incomplete", out)
+        line = next(line for line in out.splitlines() if "recovery retained: " in line)
+        recovery = Path(line.split("recovery retained: ", 1)[1])
+        self.addCleanup(ns.remove_tree, str(recovery))
+        data = json.loads((recovery / "recovery.json").read_text(encoding="utf-8"))
+        old = Path(next(item["old"] for item in data["items"] if item["src"] == str(self.src)))
+        self.assertEqual((old / "SKILL.md").read_bytes(), original)
+        self.assertTrue(all((recovery / d["backup"]).is_file() for d in data["documents"]))
+
+    def test_move_copy_keeps_hidden_assets_and_tests(self):
+        for name in (".hidden", "tests/check.py", ".git/config", "__pycache__/custom.bin"):
+            file = self.src / name
+            file.parent.mkdir(parents=True, exist_ok=True)
+            file.write_bytes(b"user asset")
+        before = self.snapshot(self.src)
+        rc, out = self.cli("move", self.src, "--parent", self.root, "--copy")
+        self.assertEqual(rc, 0, out)
+        self.assertEqual(self.snapshot(self.src), before)
+        for name in (".hidden", "tests/check.py", ".git/config", "__pycache__/custom.bin"):
+            self.assertEqual((self.root / "alpha" / name).read_bytes(), b"user asset")
+
+    def test_move_rejects_hardlinked_skill_documents(self):
+        outside = self.tmp / "hardlink.md"
+        try:
+            os.link(self.src / "SKILL.md", outside)
+        except (OSError, NotImplementedError):
+            self.skipTest("hard links unavailable")
+        before = outside.read_bytes()
+        self.assertEqual(self.cli("move", self.src, "--parent", self.root, "--as", "renamed")[0], 1)
+        self.assertEqual(outside.read_bytes(), before)
+        self.assertTrue(self.src.exists())
+
+    def test_move_rejects_duplicate_and_nested_sources_even_in_dry_run(self):
+        make_skill(self.src / "child", "child", "child")
+        for second in ("flat/alpha", "flat/alpha/child"):
+            self.plan.write_text("flat/alpha -> lib/first\n%s -> lib/second\n" % second, encoding="utf-8")
+            before = self.snapshot(self.tmp / "flat", self.root)
+            for extra in ([], ["--dry-run"], ["--copy"]):
+                rc, out = self.cli("move", "--plan", self.plan, *extra)
+                self.assertEqual(rc, 1, out)
+                self.assertEqual(self.snapshot(self.tmp / "flat", self.root), before)
+
+    def test_move_rejects_destination_parent_inside_another_source(self):
+        make_skill(self.other / "child", "child", "child")
+        self.plan.write_text("flat/alpha -> flat/beta/child/first\nflat/beta -> lib/second\n", encoding="utf-8")
+        before = self.snapshot(self.tmp / "flat", self.root)
+        self.assertEqual(self.cli("move", "--plan", self.plan)[0], 1)
+        self.assertEqual(self.snapshot(self.tmp / "flat", self.root), before)
+
+    def test_move_rejects_external_skill_file_link_before_writing(self):
+        outside = self.tmp / "outside.md"
+        original = (self.src / "SKILL.md").read_bytes()
+        outside.write_bytes(original)
+        (self.src / "SKILL.md").unlink()
+        self.link(outside, self.src / "SKILL.md")
+        for extra in ([], ["--copy"], ["--dry-run"]):
+            rc, out = self.cli("move", self.src, "--parent", self.root, "--as", "renamed", *extra)
+            self.assertEqual(rc, 1, out)
+            self.assertTrue(self.src.exists())
+            self.assertEqual(outside.read_bytes(), original)
+            self.assertFalse((self.root / "renamed").exists())
+
+    def test_move_rejects_nested_link_and_linked_parent(self):
+        outside = self.tmp / "outside.txt"
+        outside.write_text("keep", encoding="utf-8")
+        self.link(outside, self.src / "reference.txt")
+        self.assertEqual(self.cli("move", self.src, "--parent", self.root)[0], 1)
+        (self.src / "reference.txt").unlink()
+        alias = self.tmp / "alias"
+        self.link(self.root, alias, directory=True)
+        self.assertEqual(self.cli("move", self.src, "--parent", alias)[0], 1)
+        self.assertTrue(self.src.exists())
+
+    def test_move_rejects_malformed_source_and_destination_before_writing(self):
+        for path in (self.src, self.root):
+            before = (path / "SKILL.md").read_bytes()
+            (path / "SKILL.md").write_text("---\nname: bad\ndescription:\n  - wrong\n---\n", encoding="utf-8")
+            rc, out = self.cli("move", self.src, "--parent", self.root)
+            self.assertEqual(rc, 1, out)
+            self.assertTrue(self.src.exists())
+            self.assertFalse((self.root / "alpha").exists())
+            (path / "SKILL.md").write_bytes(before)
+
+    def test_move_refuses_dangling_target_link(self):
+        self.link(self.tmp / "missing", self.root / "alpha", directory=True)
+        self.assertEqual(self.cli("move", self.src, "--parent", self.root)[0], 1)
+        self.assertTrue(self.src.exists())
+        self.assertTrue((self.root / "alpha").is_symlink())
+
+    def test_move_rolls_back_second_publication_failure(self):
+        from unittest import mock
+        original_replace = os.replace
+        before = self.snapshot(self.tmp / "flat", self.root)
+        def fail_second(src, dest):
+            if str(dest) == str(self.root / "second"):
+                raise OSError("second publication failed")
+            return original_replace(src, dest)
+        with mock.patch.object(ns.os, "replace", side_effect=fail_second):
+            rc, out = self.cli("move", "--plan", self.plan)
+        self.assertEqual(rc, 1, out)
+        self.assertEqual(self.snapshot(self.tmp / "flat", self.root), before)
+        self.assertIn("restored", out)
+
+    def test_move_rolls_back_rename_failure(self):
+        from unittest import mock
+        before = self.snapshot(self.tmp / "flat", self.root)
+        with mock.patch.object(ns, "_rename_skill", side_effect=OSError("rename failed")):
+            rc, out = self.cli("move", "--plan", self.plan)
+        self.assertEqual(rc, 1, out)
+        self.assertEqual(self.snapshot(self.tmp / "flat", self.root), before)
+
+    def test_move_rolls_back_sync_failure_after_it_wrote_a_table(self):
+        from unittest import mock
+        before = self.snapshot(self.tmp / "flat", self.root)
+        def failed_sync(args):
+            (self.root / "SKILL.md").write_text("partial write", encoding="utf-8")
+            return 1
+        with mock.patch.object(ns, "cmd_sync", side_effect=failed_sync):
+            rc, out = self.cli("move", "--plan", self.plan)
+        self.assertEqual(rc, 1, out)
+        self.assertEqual(self.snapshot(self.tmp / "flat", self.root), before)
+
+    def test_move_copy_failure_leaves_no_partial_target(self):
+        from unittest import mock
+        original_copy = shutil.copytree
+        before = self.snapshot(self.tmp / "flat", self.root)
+        def fail_copy(src, dest, *args, **kwargs):
+            if os.path.realpath(src) == os.path.realpath(self.other):
+                Path(dest).mkdir()
+                (Path(dest) / "SKILL.md").write_bytes((self.other / "SKILL.md").read_bytes())
+                raise OSError("copy interrupted")
+            return original_copy(src, dest, *args, **kwargs)
+        with mock.patch.object(ns.shutil, "copytree", side_effect=fail_copy):
+            rc, out = self.cli("move", "--plan", self.plan, "--copy")
+        self.assertEqual(rc, 1, out)
+        self.assertEqual(self.snapshot(self.tmp / "flat", self.root), before)
 
 
 class TestInstallPlan(unittest.TestCase):

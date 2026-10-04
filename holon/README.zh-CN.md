@@ -29,7 +29,8 @@ python3 holon/scripts/holon.py install
 | `--host 名字` | 只装给这个工具；可以写多个（`--host windsurf --host codex`）。`--host agents` 表示只写公共文件夹 |
 | `--project` | 用当前目录下的项目级文件夹（`.agents/skills/`、`.claude/skills/` 等），而不是用户主目录下的 |
 | `--to DIR`、`--as NAME` | 任意文件夹、任意名字 |
-| `--force` | 覆盖之前装过的同名文件夹 |
+| `--force` | 先完整归档旧内容，再替换同名安装；不是合并或原地升级 |
+| `--backup-dir DIR` | 指定替换前的归档目录（默认 `~/.holon-backups/`）；必须在源树和宿主技能目录之外 |
 | `--link` | 其余位置用链接指向第一份，而不是拷贝；有的工具不跟随链接，所以默认是拷贝 |
 
 列表里没有的工具，只要遵循这个标准，就会读 `~/.agents/skills/`，照样能用。读别的文件夹的工具，用 `--to` 指定那个文件夹。
@@ -41,6 +42,14 @@ curl -sSL https://raw.githubusercontent.com/Wneil2020/holon-skill/main/holon/scr
 ```
 
 agent 工具只读 skills 文件夹下第一层文件夹的描述。它看得见 `holon/`，看不见 `holon/office-docs/pdf/`。所以整个库都应该放在 `holon/` 里面：工具只需要选中这一个文件夹，往下的路由交给树。Cursor 是例外，它会递归扫描，把每个子 skill 也单独列出来；`install` 给 Cursor 安装时会提示这一点，在 Cursor 里从根往下路由同样有效。
+
+### 替换已经存有自己资料的安装
+
+不要把新发行包覆盖到自己的库上，当成会保留分支的升级。`--force` 会替换整个目标，包括自建 skill、修改过的工具和三个记录文件。新安装器在替换任何目标之前，会先将全部旧内容保存为 `~/.holon-backups/` 中的私有 `.tar.gz` 归档，并读回检查。备份失败就不替换任何安装。每次产生新归档，不自动删除旧归档。`--dry-run` 只报告备份位置，不写文件。旧版本安装器没有此保护：应使用单独检出目录里的新工具，而不是旧安装中的脚本。
+
+打印出的归档包含 `manifest.json` 和 `trees/0/`、`trees/1/` 等目录；清单将每个快照对应到原安装位置，并记录根目录链接。备份包含全部文件，不只是新增 skill；内部链接按链接记录，不跟随读取。恢复时，先停止使用该树的 agent，用可信的归档工具检查内容，再将需要的快照解压到**所有技能目录之外的空目录**。核对文件和链接后才拷回。归档和当前安装都先保留，直到 `validate`、`lint`、`replay` 和自己的任务检查通过。备份提供恢复途径，不会自动合并。
+
+更稳妥的更新流程是先用 `--as` 把新包安装成另一个名字，再与自己维护的树比较。审阅并合并工具、规则和参数变化，保留自建分支和记录文件。`organizer/`、`editing/` 也可能被自己改过，直接替换这几个目录并不是通用的安全升级方案。`migrate` 只迁移支持的文件格式，不负责将新发行版合并进自己的库。
 
 ## 五分钟建一棵树
 
@@ -222,7 +231,7 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 | `holon.py hosts` | 列出 `install` 认识的 agent 工具、这里装了哪些、每个读哪些文件夹 |
 | `holon.py init NAME --parent DIR [--desc D]` | 建一个 skill，更新父级的列表 |
 | `holon.py init NAME --root DIR [--bare]` | 建一个新的根，带阅读规则、记录文件，以及工具（`--bare` 时不带） |
-| `holon.py move 源... --parent 目录`、`move --plan 文件` | 把 skill 文件夹移动或复制到位（计划的一行是 `源 -> 目标`），重新同步新旧两处；要么全做，要么全不做 |
+| `holon.py move 源... --parent 目录`、`move --plan 文件` | 预检、暂存并移动或复制 skill（计划的一行是 `源 -> 目标`），同步新旧两处；捕获失败时恢复 |
 | `holon.py sync [DIR]` | 按文件夹重新生成每个父级的子 skill 列表 |
 | `holon.py tree [DIR]` | 打印树和每条描述 |
 | `holon.py validate [DIR]` | 检查文件头、占位文字、过期的列表、循环、Agent Skills 规范；有错时退出码为 1 |
@@ -236,7 +245,13 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 | `organizer_cli.py counter --bump ROOT` | 每次加入别人写的 skill 之前，把计数加一 |
 | `organizer_cli.py ask ROOT` | 打印放置步骤和以前的所有决定 |
 
-会写文件的命令都支持 `--dry-run`。
+`holon.py` 中会写文件的命令支持 `--dry-run`。
+
+`move` 写入前检查整份计划：来源不得重复或互相包含，任何目标父级都不能位于计划中的任一来源之内。它拒绝来源中的链接、目录联接和特殊文件，也拒绝链接形式的目标父级、链接形式的技能文档，以及受影响树中的格式错误文档。这有意比 `install` 严格，后者能复制部分内部链接。预演会检查这些条件，但不能保证之后的磁盘写入一定成功。
+
+执行时，先在目标旁暂存完整副本，包括隐藏文件和测试；所有发布和同步成功前，原文件夹都保持可恢复。捕获到复制、改名、发布或同步错误时，命令返回非零，并尝试恢复原文件夹和 `SKILL.md` 的原始字节。Ctrl-C 取消也会尝试恢复。如果回滚本身失败，工具会保留原副本，并打印含 `recovery.json` 和文档备份的恢复目录；停止编辑受影响的树，先检查这份映射再恢复。恢复完成前，不要删除留下的 `.holon-move-*` 目录。
+
+这需要容纳临时副本的空间，不是跨多个目录的原子事务；不要并发写入。断电、强制结束进程、其他进程改动同一路径，不在自动恢复保证之内。大批量移动前仍应保留独立备份。
 
 ## 现状和局限
 

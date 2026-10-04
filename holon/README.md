@@ -29,7 +29,8 @@ Some tools read more than one folder. Cursor and OpenCode, for example, read bot
 | `--host NAME` | install for that tool only; repeat for several (`--host windsurf --host codex`). `--host agents` means the shared folder alone |
 | `--project` | use the project-level folders under the current directory (`.agents/skills/`, `.claude/skills/`, ...) instead of the home directory |
 | `--to DIR`, `--as NAME` | any folder, any name |
-| `--force` | replace an earlier install of the same name |
+| `--force` | archive all previous contents, then replace the same-name install; not a merge or an in-place upgrade |
+| `--backup-dir DIR` | choose the archive directory for replacements (default: `~/.holon-backups/`); it must be outside source trees and host skills directories |
 | `--link` | link the extra folders to the first copy instead of copying; some tools do not follow links, so copying is the default |
 
 A tool that is not in the list still works if it follows the standard, because it reads `~/.agents/skills/`. For a tool that reads somewhere else, use `--to` with that folder.
@@ -41,6 +42,14 @@ curl -sSL https://raw.githubusercontent.com/Wneil2020/holon-skill/main/holon/scr
 ```
 
 An agent tool reads only the descriptions of the folders directly inside its skills folder. It sees `holon/`, not `holon/office-docs/pdf/`. That is why the whole library is meant to live inside `holon/`: the tool has one folder to choose, and the tree does the rest of the routing. Cursor is the exception. It scans folders recursively and lists every sub-skill on its own as well; `install` says so when it writes for Cursor, and routing through the root still works there.
+
+### Replacing an installation that contains your own work
+
+Do not treat installing a fresh package over your library as an upgrade that preserves its branches. `--force` replaces the whole destination, including custom skills, modified tools and the three ledgers. Before any replacement, the new installer saves a private `.tar.gz` archive in `~/.holon-backups/` and reads it back to check it. If backup creation fails, no installation is replaced. Each run uses a new archive; archives are never automatically deleted. `--dry-run` reports the backup location without writing it. Older versions of the installer do not have this protection: use the new tool from a separate checkout, not an old installed script.
+
+The printed archive contains `manifest.json` and `trees/0/`, `trees/1/`, etc. The manifest maps each snapshot to its original installation path and records any root link. All files are included, not just new skills; nested links are recorded rather than followed. For recovery, stop the agents using the tree, inspect the archive with a trusted archive tool, and extract the required snapshot into an **empty directory outside all skills folders**. Check its files and links before copying anything back. Keep both the archive and current installation until `validate`, `lint`, `replay` and your own task checks pass. A backup is a recovery path, not an automatic merge.
+
+The safer update workflow is to install the new package under a different name with `--as`, then compare it with your maintained tree. Merge tool, rule and parameter changes deliberately, preserving your custom branches and ledgers. Even `organizer/` and `editing/` may contain your changes; blindly replacing just those directories is not a safe general upgrade. `migrate` updates supported file formats; it does not merge a new release into your library.
 
 ## A first tree in five minutes
 
@@ -222,7 +231,7 @@ Nothing is deleted. A skill that was merged or replaced moves whole into `.retir
 | `holon.py hosts` | list the agent tools `install` knows, which are installed here, and the folders each reads |
 | `holon.py init NAME --parent DIR [--desc D]` | create a skill and update its parent's list |
 | `holon.py init NAME --root DIR [--bare]` | create a new root with the reading rules, the ledgers and (unless `--bare`) the tools |
-| `holon.py move SRC... --parent DIR`, `move --plan FILE` | move or copy skill folders into place (a plan line is `SRC -> DEST`), re-sync both trees; all or nothing |
+| `holon.py move SRC... --parent DIR`, `move --plan FILE` | preflight, stage and move or copy skill folders (a plan line is `SRC -> DEST`); re-sync both trees, restore on caught failure |
 | `holon.py sync [DIR]` | regenerate every parent's list of sub-skills from the folders |
 | `holon.py tree [DIR]` | print the tree with descriptions |
 | `holon.py validate [DIR]` | check headers, placeholders, stale lists, loops and the Agent Skills spec; exit 1 on error |
@@ -236,7 +245,13 @@ Nothing is deleted. A skill that was merged or replaced moves whole into `.retir
 | `organizer_cli.py counter --bump ROOT` | increase the counter before adding a skill someone else wrote |
 | `organizer_cli.py ask ROOT` | print the placement checklist and every earlier decision |
 
-Commands that write files accept `--dry-run`.
+The writing commands of `holon.py` accept `--dry-run`.
+
+`move` checks the whole plan before writing: sources must not repeat or contain one another, and no destination parent may be inside any planned source. It refuses links, junctions and special files in a source, linked destination parents, linked skill documents, and malformed documents in the affected trees. This is deliberately stricter than `install`, which can copy some internal links. A dry run checks these conditions but cannot promise a later disk write will succeed.
+
+Execution first stages complete copies beside the targets, including hidden files and tests. Original folders remain available until every publication and sync succeeds. A caught copy, rename, publication or sync error returns nonzero and attempts to restore the original folders and exact `SKILL.md` bytes. Cancellation via Ctrl-C also attempts restoration. If rollback fails, the tool retains original copies and prints a recovery directory containing `recovery.json` and saved document bytes; stop editing the affected trees and inspect that map before restoring anything. Do not delete retained `.holon-move-*` directories until recovery is complete.
+
+This requires room for temporary copies. It is not a multi-directory atomic transaction: do not run concurrent writers. Power loss, forced process termination and other processes modifying these paths are not covered by automatic recovery. Keep an independent backup before a large move.
 
 ## Status and limits
 

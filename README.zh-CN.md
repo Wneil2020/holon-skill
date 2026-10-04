@@ -14,7 +14,7 @@
 python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/main/install.py').read())"
 ```
 
-在 Windows 上把 `python3` 换成 `py`，在 cmd 或 PowerShell 里输入同样这一行。这条命令会从本仓库下载 `install.py` 并运行它；想先知道它做什么，可以读一下 [install.py](install.py)。选项写在最后，比如 `... .read())" --host claude-code`，或者用 `--force` 覆盖以前装过的。
+在 Windows 上把 `python3` 换成 `py`，在 cmd 或 PowerShell 里输入同样这一行。这条命令会从本仓库下载 `install.py` 并运行它；想先知道它做什么，可以读一下 [install.py](install.py)。选项写在最后，比如 `... .read())" --host claude-code`，或者用 `--force` 先备份再替换以前装过的。**替换不等于合并升级自己的库：**自建 skill 和改动会离开当前使用的树，保存在命令打印出的备份归档中。详见[替换和恢复说明](holon/README.zh-CN.md#替换已经存有自己资料的安装)。
 
 这一行装的总是最新的 `main`。要装固定的版本，把版本的 tag 写两次，一次在地址里，一次作为 `--ref`：
 

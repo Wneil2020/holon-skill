@@ -14,7 +14,7 @@ Python 3.8 or newer is the only requirement; git is not needed. Install with one
 python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/main/install.py').read())"
 ```
 
-On Windows, type the same line with `py` in place of `python3` (cmd or PowerShell). The command downloads `install.py` from this repository and runs it; read [install.py](install.py) first if you want to know what it does. Options go at the end, for example `... .read())" --host claude-code` or `--force` to replace an earlier install.
+On Windows, type the same line with `py` in place of `python3` (cmd or PowerShell). The command downloads `install.py` from this repository and runs it; read [install.py](install.py) first if you want to know what it does. Options go at the end, for example `... .read())" --host claude-code` or `--force` to back up and replace an earlier install. **Replacement is not an upgrade that merges your library:** custom skills and edits leave the active tree and are retained in the printed backup archive. See [replacement and recovery](holon/README.md#replacing-an-installation-that-contains-your-own-work).
 
 That line always installs the latest `main`. To install a fixed release, name its tag twice, once in the address and once as `--ref`:
 
