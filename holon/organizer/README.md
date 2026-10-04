@@ -60,6 +60,14 @@ The last line counts them, for example `lint: 0 errors, 0 warnings, 5 skills`, a
 
 What stays with the agent is everything that needs meaning: the five rules, the removal test, the placement questions, and what to do about a hint. The tool's guarantee is narrower. Once a decision is written down as a description, an example sentence or a synonym, it is checked the same way every time. Three passing checks therefore show that the tree is well-formed and that every decision so far still holds. They do not show that every skill is in the right place; `_feedback.md` is where evidence of that arrives.
 
+### What a passing result does not promise
+
+A negative example can pass because it avoids its own skill without reaching the named target. `replay` then prints `NOTE negative did not reach its target`; this note does not change the exit code. Read notes as well as the passed count. Similarly, a missing referenced file is a lint warning, not an execution test. Three zero exit codes do not prove that every dependency exists, that a task can run, or that a real agent will follow the same path.
+
+Non-ASCII cover words are matched as substrings, not segmented words: `文件` also matches `文件夹`. Lowering COVER_MIN to 1 increases this risk; it does not add Chinese word segmentation. Synonyms are folded globally and without context, so an alias that fixes one miss can create another false match. Retest both intended and unrelated requests after each change.
+
+A skill with references to its parent/root, other skills, or a tree-relative negative-example target is not self-contained. Copy those dependencies or adjust the references and examples before validating it in another tree. The organizer script itself depends on the root's `scripts/holon.py`.
+
 ## After retiring a skill
 
 `retire` moves a folder without reading it, and `lint` and `replay` never look inside `.retired/`. It does not update other skills whose negative examples pointed at the retired one. After retiring `web/chart`, `lint` names each of them:

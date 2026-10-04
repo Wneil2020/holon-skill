@@ -219,6 +219,38 @@ ROUTING_RULE = (
 
 # ---------------------------------------------------------------- frontmatter
 
+def _yaml_scalar(value, legacy_number=False):
+    """Read our string-only YAML subset, refusing syntax we cannot interpret faithfully."""
+    import json
+    if any(ord(ch) < 32 and ch != "\t" for ch in value):
+        raise ValueError("unescaped control character in scalar")
+    if value.startswith('"'):
+        try:
+            return json.loads(value)
+        except (ValueError, UnicodeError) as exc:
+            raise ValueError("invalid or unsupported quoted scalar (use JSON-style double quotes): %s" % exc)
+    if value.startswith("'"):
+        if not re.fullmatch(r"'(?:[^']|'')*'", value):
+            raise ValueError("invalid single-quoted scalar; double embedded apostrophes")
+        return value[1:-1].replace("''", "'")
+    if (not value or value[0] in "[]{}&*!|>@`%" or re.match(r"[-?:](?:\s|$)", value)
+            or re.search(r":(?:\s|$)|(?:^|\s)#", value)):
+        raise ValueError("unsupported or ambiguous plain scalar; quote the complete value")
+    implicit = value.lower() in {"null", "~", "true", "false", "yes", "no", "on", "off", ".nan", ".inf", "-.inf", "+.inf"}
+    if implicit or (re.match(r"[-+]?(?:[0-9]|\.[0-9])", value) and not legacy_number):
+        raise ValueError("quote values that YAML could interpret as a number, boolean, null or date")
+    return value
+
+
+def _yaml_string(value):
+    import json
+    try:
+        _yaml_scalar(value)
+        return value
+    except ValueError:
+        return json.dumps(value, ensure_ascii=False)
+
+
 def split_frontmatter(text):
     """Split SKILL.md text into (meta_dict, body_text, error_or_None).
 
@@ -246,7 +278,7 @@ def split_frontmatter(text):
         return {}, text, "invalid opening frontmatter delimiter"
     end = None
     for i in range(1, len(lines)):
-        if lines[i].strip() == "---":
+        if lines[i].rstrip() == "---":
             end = i
             break
     if end is None:
@@ -258,51 +290,73 @@ def split_frontmatter(text):
     cur_block = None    # (dict, key) of the block scalar whose indented lines we are collecting
     block_sep = "\n"    # `|` keeps newlines; `>` folds continuation lines into one
     block_indent = None
+    block_parent_indent = 0
+    map_indent = None
+    list_parent_indent, list_indent = 0, None
     for raw in lines[1:end]:
         line = raw.strip()
-        if not line or line.startswith("#"):
-            continue
         indent = len(raw) - len(raw.lstrip(" \t"))
-        if cur_block is not None and indent > 0 and (block_indent is None or indent >= block_indent):
+        if "\t" in raw[:indent]:
+            return {}, body, "tabs are not supported for frontmatter indentation"
+        if not line:
+            continue
+        if cur_block is not None and indent > block_parent_indent and (block_indent is None or indent >= block_indent):
             d, k = cur_block
             block_indent = indent if block_indent is None else block_indent
             d[k] += (block_sep if d[k] else "") + line
             continue
+        if line.startswith("#"):
+            continue
         cur_block = None
         block_indent = None
         if line.startswith("- ") and cur_list is not None:
-            cur_list.append(line[2:].strip())
+            if indent < list_parent_indent or (list_indent is not None and indent != list_indent):
+                return {}, body, "inconsistent list indentation"
+            list_indent = indent
+            try:
+                cur_list.append(_yaml_scalar(line[2:].strip()))
+            except ValueError as exc:
+                return {}, body, str(exc)
             continue
-        if ":" not in line:
-            return meta, body, "invalid frontmatter line: %r" % raw
+        if not re.match(r"^[A-Za-z_][A-Za-z0-9_-]* *:(?:[ \t]|$)", line):
+            return meta, body, "invalid or unsupported frontmatter mapping line: %r" % raw
         if indent == 0:
             target = meta   # a top-level key ends the metadata map
+        elif target is meta:
+            return {}, body, "unexpected indentation outside metadata or a block scalar"
+        elif map_indent is None:
+            map_indent = indent
+        elif indent != map_indent:
+            return {}, body, "metadata must be a flat map with consistent indentation"
         key, _, value = line.partition(":")
         key = key.strip()
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_-]*", key):
+            return {}, body, "unsupported frontmatter key: %r" % key
         value = value.strip()
         if key in target:
             return {}, body, "duplicate frontmatter field: %s" % key
         if value == "" and key == METADATA_KEY and target is meta:
             meta[METADATA_KEY] = {}
             target = meta[METADATA_KEY]
+            map_indent = None
             cur_list = None
             continue
         if value == "":  # empty value => start of a list field
             target[key] = []
             cur_list = target[key]
+            list_parent_indent, list_indent = indent, None
             continue
         cur_list = None
         if value in ("|", "|-", ">", ">-"):  # start of a block scalar
             target[key] = ""
             cur_block = (target, key)
+            block_parent_indent = indent
             block_sep = " " if value[0] == ">" else "\n"
             continue
-        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
-            quote = value[0]
-            value = value[1:-1]
-            if quote == '"':  # decode YAML double-quote escapes
-                value = value.replace('\\"', '"').replace("\\\\", "\\")
-        target[key] = value
+        try:
+            target[key] = _yaml_scalar(value, legacy_number=(target is meta and key == "archive_count"))
+        except ValueError as exc:
+            return {}, body, "%s: %s" % (key, exc)
     type_error = frontmatter_type_error(meta)
     if type_error:
         return {}, body, type_error
@@ -573,10 +627,26 @@ def read_groups(parent_dir):
 COVER_SPLIT = r"[,\uff0c\u3001/]"   # the organizer's WORD_SPLIT: comma, full-width comma, ideographic comma, slash
 
 
+def description_clauses(desc):
+    """Shared, ordered covers/excludes lists; prose words are not clause markers."""
+    text = desc or ""
+    matches = list(re.finditer(r"(?:^|[:\uff1a;\uff1b])\s*(covers|excludes)(?=\s|$)", text, re.I))
+    values, errors = {"covers": [], "excludes": []}, []
+    seen = set()
+    for i, match in enumerate(matches):
+        key = match.group(1).lower()
+        if key in seen:
+            errors.append("duplicate %s clause" % key)
+        seen.add(key)
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        value = re.split(r"[;\uff1b]", text[match.end():end], maxsplit=1)[0]
+        values[key].extend(w.strip() for w in re.split(COVER_SPLIT, value) if w.strip())
+    return values["covers"], values["excludes"], errors
+
+
 def description_covers(desc):
     """Cover words of a three-part description, in the order written."""
-    m = re.search(r"covers\s*([^;\uff1b]*)", desc or "", re.I)
-    return [w.strip() for w in re.split(COVER_SPLIT, m.group(1)) if w.strip()] if m else []
+    return description_clauses(desc)[0]
 
 
 def descendant_covers(sub):
@@ -754,7 +824,8 @@ def cmd_init(args):
     # Escape for a double-quoted YAML scalar: backslashes first, then quotes.
     # parse_frontmatter() decodes these, so the description round-trips as-is.
     desc = args.desc or TODO_DESC
-    desc = desc.replace("\\", "\\\\").replace('"', '\\"')
+    import json
+    desc = json.dumps(desc)[1:-1]
     if parent:
         # Every skill below the root carries three example sentences (the organizer's replay
         # test) and a body the writer fills in.
@@ -765,10 +836,11 @@ def cmd_init(args):
         # A root is never routed to. Its body is the six reading rules, its description says
         # it is the entry point, and it carries the three ledgers the rules write to.
         root_desc = args.desc or ROOT_DESC
-        root_desc = root_desc.replace("\\", "\\\\").replace('"', '\\"')
+        root_desc = json.dumps(root_desc)[1:-1]
         content = ROOT_TEMPLATE.format(name=args.name, description=root_desc,
                                        mark_open=MARK_OPEN, mark_close=MARK_CLOSE)
         extra = ROOT_FILES
+    content = re.sub(r"(?m)^name:.*$", lambda m: "name: " + _yaml_string(args.name), content, count=1)
     if args.dry_run:
         print("[dry-run] would create %s:\n%s" % (skill_md, content))
         for fn in extra:
@@ -937,7 +1009,7 @@ def _rename_skill(skill_md, name):
     """Make `name:` in the header equal the new folder name (the spec requires it)."""
     with open(skill_md, "r", encoding="utf-8") as f:
         text = f.read()
-    new = re.sub(r"(?m)^(name:[ \t]*).*$", lambda m: m.group(1) + name, text, count=1)
+    new = re.sub(r"(?m)^(name:[ \t]*).*$", lambda m: m.group(1) + _yaml_string(name), text, count=1)
     if new != text:
         with open(skill_md, "w", encoding="utf-8", newline="\n") as f:
             f.write(new)
@@ -1801,6 +1873,33 @@ def _publish_install(staged, dests, link=False):
     return [item["how"] for item in pending]
 
 
+def _report_existing_installs(name, dirs, project=False):
+    """Inspect disk as well as this run's plan. Never remove or update unselected copies."""
+    base = os.getcwd()
+    reads = {h[0]: _reads(h, project, base) for h in HOSTS}
+    candidates = set(dirs)
+    for paths in reads.values():
+        candidates.update(paths)
+    shared = _resolve_dir(SHARED_PROJECT, base) if project else _resolve_dir(SHARED_USER)
+    candidates.add(shared)
+    key = lambda p: os.path.normcase(os.path.abspath(p))
+    selected = {key(d) for d in dirs}
+    existing = {key(d): d for d in sorted(candidates) if is_skill_dir(os.path.join(d, name))}
+    for k, directory in existing.items():
+        if k not in selected:
+            print("existing copy: %s (not selected; left unchanged)" % os.path.join(directory, name))
+    prospective = dict(existing)
+    prospective.update({key(d): d for d in dirs})
+    for host in HOSTS:
+        if not host_present(host[0]):
+            continue
+        paths = {key(d) for d in reads[host[0]]} & set(prospective)
+        if len(paths) > 1:
+            copies = ", ".join(os.path.join(prospective[k], name) for k in sorted(paths))
+            print("warning: %s may read multiple copies of %s: %s; compare them and choose a maintained source; no old copy is deleted" %
+                  (host[1], name, copies))
+
+
 def _install_from(src, pkg, args):
     _, meta, err = read_skill(src)
     if err:
@@ -1823,6 +1922,7 @@ def _install_from(src, pkg, args):
     except (OSError, ValueError) as e:
         print("error: %s" % e)
         return 1
+    _report_existing_installs(name, dirs, getattr(args, "project", False))
     taken = [d for d in dests if os.path.lexists(d)]
     if taken and not getattr(args, "force", False):
         print("error: %s already exists; use --as another-name to keep it, or --force to back it up and replace it (not merge)" % ", ".join(taken))
@@ -1855,7 +1955,7 @@ def _install_from(src, pkg, args):
                 fp = os.path.join(staged, SKILL_FILE)
                 with open(fp, encoding="utf-8") as f:
                     text = f.read()
-                text = re.sub(r"^name:[^\n]*", "name: " + name, text, count=1, flags=re.M)
+                text = re.sub(r"^name:[^\n]*", lambda m: "name: " + _yaml_string(name), text, count=1, flags=re.M)
                 with open(fp, "w", encoding="utf-8", newline="\n") as f:
                     f.write(text)
             rc = _check_staged_install(staged, pkg)
@@ -1893,7 +1993,7 @@ def _install_from(src, pkg, args):
         print("note: %s %s skill folders recursively and also %s each sub-skill on its own; "
               "routing through the root still works"
               % (", ".join(rec), "scans" if len(rec) == 1 else "scan", "lists" if len(rec) == 1 else "list"))
-    print("done. Each tool reads it at its next session; nothing else to run.")
+    print("done. Files are installed; verify discovery and task behavior in a new host session.")
     return 0
 
 

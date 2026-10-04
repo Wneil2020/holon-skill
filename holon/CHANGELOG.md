@@ -5,6 +5,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### Parsing and install diagnostics
+- Reject ambiguous YAML scalars and malformed indentation; decode quoted strings and quote generated names when necessary. Test fixtures use valid YAML, with an optional skills-ref comparison.
+- Share covers/excludes clause parsing across both tools; ignore prose occurrences and flag duplicate clauses.
+- Warn about old unselected installations and possible duplicate visibility without deleting them. Require real-host verification after installation.
+- Clarify warning/negative-note semantics, CJK matching and dependency limits. Fix the linked-install test to use the original readlink value, including Windows path prefixes; new Windows CI remains required.
+
 ### Write safety
 - `install --force` archives every previous installation before replacing any of them. The archive includes custom skills, changes to existing files, hidden files and ledgers, with a manifest of original paths. It is read back before publishing and retained after both success and failure. The default archive directory is `~/.holon-backups/`; `--backup-dir` may choose another location outside source trees and known skills directories. Backup failure prevents replacement; dry-run writes no archive. Replacement is not an in-place upgrade or merge.
 - `move` rejects duplicate/overlapping sources, destination parents inside any planned source, links/junctions/special files in sources, linked skill documents, and malformed documents before writing. It stages full copies, keeps originals until sync succeeds, and restores original folders and document bytes on caught errors or cancellation. If rollback fails, it retains recovery material and prints its location. Sync failures now return nonzero. Hidden files and tests are preserved in copied skills.

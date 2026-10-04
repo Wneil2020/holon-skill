@@ -99,14 +99,8 @@ def normalize(word, syn):
 
 def parse_desc(desc):
     """Three-part description -> (set of cover words, set of exclude words)."""
-    covers, excludes = set(), set()
-    m = re.search(r"covers\s*([^;\uff1b]*)", desc or "", re.I)
-    if m:
-        covers = {w.strip() for w in re.split(WORD_SPLIT, m.group(1)) if w.strip()}
-    m = re.search(r"excludes\s*(.*)$", desc or "", re.I)
-    if m:
-        excludes = {w.strip() for w in re.split(WORD_SPLIT, m.group(1)) if w.strip()}
-    return covers, excludes
+    covers, excludes, _ = ns.description_clauses(desc)
+    return set(covers), set(excludes)
 
 
 def split_anti(trigger):
@@ -228,8 +222,7 @@ def blocked_by(sentence_canon, meta, syn):
 
 def covers_text(meta):
     """Cover words in their original order, comma-joined (for messages)."""
-    m = re.search(r"covers\s*([^;\uff1b]*)", meta.get("description", "") or "", re.I)
-    return ",".join(w.strip() for w in re.split(WORD_SPLIT, m.group(1)) if w.strip()) if m else ""
+    return ",".join(ns.description_covers(meta.get("description", "")))
 
 
 def alias_covers(meta, syn):
@@ -385,6 +378,8 @@ def check_description(r, d, root, sk):
     if len(desc) > DESC_MAX:
         issues.append(f"[E] {r}: description is {len(desc)} characters > {DESC_MAX}")
     covers, excl = parse_desc(desc)
+    for error in ns.description_clauses(desc)[2]:
+        issues.append(f"[E] {r}: {error}; use one covers clause and at most one excludes clause")
     if d != root and not covers:
         issues.append(f"[E] {r}: description has no 'covers' word list "
                       "(three-part form: Use when ...: covers w, w; excludes w)")

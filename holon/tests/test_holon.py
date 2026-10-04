@@ -5,6 +5,7 @@
 """
 import contextlib
 import io
+import json
 import os
 import re
 import shutil
@@ -20,7 +21,7 @@ import holon as ns  # noqa: E402
 def make_skill(path, name, description, body="", markers=True):
     os.makedirs(path, exist_ok=True)
     text = "---\nname: %s\ndescription: %s\n---\n\n# %s\n\n%s\n" % (
-        name, description, name, body)
+        name, json.dumps(description, ensure_ascii=False), name, body)
     if markers:
         text += "\n%s\n%s\n" % (ns.MARK_OPEN, ns.MARK_CLOSE)
     with open(os.path.join(path, "SKILL.md"), "w", encoding="utf-8") as f:
@@ -43,11 +44,43 @@ class TestFrontmatter(unittest.TestCase):
         meta, err = ns.parse_frontmatter("---\nname: x\nno closing")
         self.assertIn("unterminated", err)
 
-    def test_colon_in_value(self):
-        meta, err = ns.parse_frontmatter(
-            "---\ndescription: use when: always\n---\n")
+    def test_unquoted_mapping_separator_is_rejected(self):
+        _, err = ns.parse_frontmatter("---\ndescription: use when: always\n---\n")
+        self.assertIsNotNone(err)
+
+    def test_quoted_colon_is_preserved(self):
+        meta, err = ns.parse_frontmatter('---\ndescription: "use when: always"\n---\n')
         self.assertIsNone(err)
         self.assertEqual(meta["description"], "use when: always")
+
+    def test_ambiguous_or_unsupported_scalars_fail_closed(self):
+        for value in ('[one, two]', '{key: value}', '&anchor text', '*alias', '!tag text',
+                      '"unterminated', "'unterminated", '"x" trailing', '"bad\\q"',
+                      'plain # silently truncated', 'text:'):
+            with self.subTest(value=value):
+                _, err = ns.parse_frontmatter('---\ndescription: ' + value + '\n---\n')
+                self.assertIsNotNone(err)
+
+    def test_quoted_escapes_follow_yaml_not_chained_replacements(self):
+        meta, err = ns.parse_frontmatter(r'''---
+name: demo
+description: "path \\\\ and quote \\\""
+---
+''')
+        self.assertIsNone(err)
+        self.assertEqual(meta['description'], 'path \\\\ and quote \\"')
+        meta, err = ns.parse_frontmatter("---\ndescription: 'it''s a skill: use it'\n---\n")
+        self.assertIsNone(err)
+        self.assertEqual(meta['description'], "it's a skill: use it")
+
+    def test_invalid_indentation_cannot_be_reinterpreted_as_top_level(self):
+        for header in (' name: demo\ndescription: task',
+                       'name: demo\n  description: task',
+                       'metadata:\n  owner: user\n    nested: value\nname: demo\ndescription: task',
+                       'name: demo\nmetadata:\n\towner: user\ndescription: task'):
+            with self.subTest(header=header):
+                _, err = ns.parse_frontmatter('---\n' + header + '\n---\n')
+                self.assertIsNotNone(err)
 
     def test_bom_before_frontmatter_is_ignored(self):
         # Some Windows editors prepend an invisible BOM; to a human the file starts with ---
@@ -1247,6 +1280,66 @@ class TestWriteSafety(unittest.TestCase):
         except (OSError, NotImplementedError):
             self.skipTest("symbolic links are unavailable")
 
+    def test_install_reports_old_copies_after_host_set_changes(self):
+        from unittest import mock
+        env = {key: "" for key in ("XDG_CONFIG_HOME", "CLAUDE_CONFIG_DIR", "CODEX_HOME", "VIBE_HOME")}
+        with mock.patch.dict(os.environ, env):
+            rc, out = self.cli("install", self.src)
+            self.assertEqual(rc, 0, out)
+            shared = self.tmp / ".agents/skills/alpha"
+            (shared / "user-data.txt").write_text("keep this", encoding="utf-8")
+            (self.tmp / ".claude").mkdir(exist_ok=True)
+            (self.tmp / ".cursor").mkdir(exist_ok=True)
+            rc, out = self.cli("install", self.src)
+            self.assertEqual(rc, 0, out)
+            self.assertIn("existing copy:", out)
+            self.assertIn(str(shared), out)
+            self.assertIn("may read multiple copies", out)
+            self.assertIn("Cursor", out)
+            self.assertEqual((shared / "user-data.txt").read_text(encoding="utf-8"), "keep this")
+            self.assertTrue((self.tmp / ".claude/skills/alpha/SKILL.md").exists())
+
+    def test_invalid_yaml_is_rejected_before_install(self):
+        (self.src / "SKILL.md").write_text('---\nname: alpha\ndescription: Use when: alpha\n---\n1. Work.\n', encoding="utf-8")
+        self.assertEqual(self.cli("validate", self.src)[0], 1)
+        self.assertEqual(self.cli("install", self.src, "--to", self.dest)[0], 1)
+        self.assertFalse(self.dest.exists())
+
+    def test_init_escapes_tabs_in_quoted_descriptions(self):
+        description = "Use for documents:\tcovers sheet"
+        rc, out = self.cli("init", "tabs", "--root", self.dest, "--bare", "--desc", description)
+        self.assertEqual(rc, 0, out)
+        meta, _, error = ns.read_skill_doc(str(self.dest / "tabs"))
+        self.assertIsNone(error)
+        self.assertEqual(meta["description"], description)
+        self.assertEqual(self.cli("validate", self.dest / "tabs")[0], 0)
+
+    def test_generated_numeric_or_boolean_names_remain_strings(self):
+        for name in ("123", "on", "true"):
+            with self.subTest(name=name):
+                rc, out = self.cli("init", name, "--root", self.dest, "--bare")
+                self.assertEqual(rc, 0, out)
+                meta, _, error = ns.read_skill_doc(str(self.dest / name))
+                self.assertIsNone(error)
+                self.assertEqual(meta["name"], name)
+                self.assertIn('name: "' + name + '"', (self.dest / name / "SKILL.md").read_text(encoding="utf-8"))
+        rc, out = self.cli("install", self.src, "--to", self.dest, "--as", "no")
+        self.assertEqual(rc, 0, out)
+        self.assertEqual(ns.read_skill_doc(str(self.dest / "no"))[0]["name"], "no")
+
+    @unittest.skipUnless(shutil.which("skills-ref"), "optional Agent Skills reference validator not installed")
+    def test_quoted_mapping_value_agrees_with_reference_validator(self):
+        import subprocess
+        document = self.src / "SKILL.md"
+        invalid = '---\nname: alpha\ndescription: Use when: alpha\n---\n1. Work.\n'
+        for text, valid in ((invalid, False), (invalid.replace('Use when: alpha', '"Use when: alpha"'), True)):
+            document.write_text(text, encoding="utf-8")
+            local, out = self.cli("validate", self.src)
+            external = subprocess.run([shutil.which("skills-ref"), "validate", str(self.src)],
+                                      capture_output=True, text=True)
+            self.assertEqual(local == 0, valid, out)
+            self.assertEqual(external.returncode == 0, valid, external.stdout + external.stderr)
+
     def test_force_preserves_all_old_files_in_printed_backup(self):
         import tarfile
         self.assertEqual(self.cli("install", self.src, "--to", self.dest)[0], 0)
@@ -1337,6 +1430,8 @@ class TestWriteSafety(unittest.TestCase):
         import tarfile
         self.dest.mkdir()
         self.link(self.src, self.dest / "alpha", directory=True)
+        # Windows readlink may return the extended \\?\ path, unlike str(Path).
+        recorded_link = os.readlink(self.dest / "alpha")
         original = (self.src / "SKILL.md").read_bytes()
         rc, out = self.cli("install", self.other, "--as", "alpha", "--to", self.dest, "--force")
         self.assertEqual(rc, 0, out)
@@ -1345,7 +1440,7 @@ class TestWriteSafety(unittest.TestCase):
             with archive.extractfile("trees/0/SKILL.md") as f:
                 self.assertEqual(f.read(), original)
             with archive.extractfile("manifest.json") as f:
-                self.assertEqual(json.load(f)["installs"][0]["root_link"], str(self.src))
+                self.assertEqual(json.load(f)["installs"][0]["root_link"], recorded_link)
 
     def test_move_rolls_back_keyboard_interrupt(self):
         from unittest import mock

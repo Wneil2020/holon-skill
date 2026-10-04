@@ -4,7 +4,7 @@ This folder, `holon/`, is the package. It installs as a skill folder named `holo
 
 > **Early stage.** holon skill works and is tested, but it has been used on two small libraries only (about thirty skills in total). The rules, the description format and the command options may still change between versions. Anything that changes is listed in [CHANGELOG.md](CHANGELOG.md), and `holon.py migrate` rewrites older files where it can.
 
-When an agent keeps all its skills in one folder, it reads every skill's description on every task, and the more skills there are, the more often it picks the wrong one. holon keeps skills in a tree instead. A skill's folder can hold other skills (its sub-skills), so the agent reads the top level, goes into the one branch that matches the task, and reads only the files on that path.
+holon organizes skills in a tree and generates a routing table at each parent. Its reading instructions ask an agent to descend into the matching branch instead of loading every skill. Whether a particular host and model follows that path, chooses more accurately or uses fewer tokens than a comparable flat library still requires real-task measurements.
 
 holon is a set of plain folders and two Python scripts. The scripts use only the standard library and need Python 3.8 or newer. They keep the tree consistent, and they check that each skill is reached by the sentences it is meant to be reached by.
 
@@ -18,9 +18,9 @@ From a checkout of this repository:
 python3 holon/scripts/holon.py install
 ```
 
-This copies the tree to `~/.agents/skills/holon/`, the shared location of the [Agent Skills](https://agentskills.io) standard. Codex, Cursor, GitHub Copilot, Gemini CLI, OpenCode and other tools read that folder. `install` then looks for tools on the machine that read skills from somewhere else, such as Claude Code (`~/.claude/skills/`) or Windsurf (`~/.codeium/windsurf/skills/`), and puts a copy there too. It checks the copy and prints which tool reads which folder. Each tool picks the tree up at its next session.
+This copies the tree to `~/.agents/skills/holon/`, the shared location of the [Agent Skills](https://agentskills.io) standard. Codex, Cursor, GitHub Copilot, Gemini CLI, OpenCode and other tools read that folder. `install` then looks for tools on the machine that read skills from somewhere else, such as Claude Code (`~/.claude/skills/`) or Windsurf (`~/.codeium/windsurf/skills/`), and puts a copy there too. It checks the copy and prints which tool reads which folder. The paths come from the host table; verify discovery and task behavior in a new host session.
 
-Some tools read more than one folder. Cursor and OpenCode, for example, read both `~/.claude/skills/` and `~/.agents/skills/`, so a copy in both places would show them the tree twice. `install` never writes a set of folders in which one tool sees two copies.
+Some tools read more than one folder. Cursor and OpenCode, for example, read both `~/.claude/skills/` and `~/.agents/skills/`, so a copy in both places would show them the tree twice. `install` plans the new destinations to avoid duplicate visibility where possible. It also checks known directories in the selected user/project scope for existing same-name trees and warns when a detected host may read multiple copies. Unselected copies are listed and left unchanged: compare their contents before deciding which to keep. This is a directory-table diagnostic, not a test of the running host.
 
 `python3 holon/scripts/holon.py hosts` lists the 32 tools `install` knows, which of them are on this machine, and every folder each one reads. To choose the target yourself:
 
@@ -50,6 +50,12 @@ Do not treat installing a fresh package over your library as an upgrade that pre
 The printed archive contains `manifest.json` and `trees/0/`, `trees/1/`, etc. The manifest maps each snapshot to its original installation path and records any root link. All files are included, not just new skills; nested links are recorded rather than followed. For recovery, stop the agents using the tree, inspect the archive with a trusted archive tool, and extract the required snapshot into an **empty directory outside all skills folders**. Check its files and links before copying anything back. Keep both the archive and current installation until `validate`, `lint`, `replay` and your own task checks pass. A backup is a recovery path, not an automatic merge.
 
 The safer update workflow is to install the new package under a different name with `--as`, then compare it with your maintained tree. Merge tool, rule and parameter changes deliberately, preserving your custom branches and ledgers. Even `organizer/` and `editing/` may contain your changes; blindly replacing just those directories is not a safe general upgrade. `migrate` updates supported file formats; it does not merge a new release into your library.
+
+### Header syntax and portability
+
+The dependency-free parser supports a restricted YAML subset, not arbitrary YAML. Quote complete descriptions containing `: `, ` #`, or values that YAML could treat as numbers, booleans or dates. For example, use `description: "Use when: alpha"`, not `description: Use when: alpha`. Double-quoted strings use JSON-style escapes; single-quoted strings escape an apostrophe by doubling it. Indented `|`/`>` blocks and a flat string-valued `metadata` map are supported; tags, aliases, flow collections, tab indentation, nested maps and inline comments on scalar values are rejected rather than guessed. Unsupported valid YAML may also need rewriting into this subset. Use the external `skills-ref` validator when importing unfamiliar headers; the built-in check is not a full YAML implementation.
+
+Descriptions use explicit routing clauses: `Use when ...: covers a, b; excludes c`. Ordinary uses of the words covers or excludes in the prose are not clauses. The renderer and organizer use the same parser; repeated clauses are lint errors.
 
 ## A first tree in five minutes
 
@@ -275,7 +281,7 @@ One person maintains this in spare time. A pull request that changes one thing a
 
 ## Why it is built this way
 
-`pdf/` is a complete skill: copy that one folder into another agent's skills folder and it works there unchanged. It is also one step of `office-docs/`, and nothing in the folder differs between the two roles. Arthur Koestler coined the word *holon* in 1967 for exactly this: a unit that is whole on its own and at the same time part of something larger. Because of this, moving a skill never means rewriting it. The folder is moved, and `sync` regenerates the parents' lists.
+A self-contained `pdf/` skill can be copied into another agent's skills folder unchanged. A skill that refers to a parent, root tool or another skill must bring those dependencies too; tree-relative examples may also need updating. It is also one step of `office-docs/`, and nothing in the folder differs between the two roles. Arthur Koestler coined the word *holon* in 1967 for exactly this: a unit that is whole on its own and at the same time part of something larger. Moving preserves the folder's contents and `sync` regenerates the parents' lists, but it does not resolve external dependencies or rewrite cross-tree references.
 
 The tools never make a judgement. `holon.py` keeps every parent's list of sub-skills equal to the folders on disk. `organizer_cli.py` checks what can be checked mechanically: the shape of each description, that example sentences land where they should, that sibling skills do not claim the same words, that nothing was deleted. Where a skill belongs is decided by the agent reading `organizer/SKILL.md`; the tools check that the decision, once written down, keeps holding. The tree still routes with `organizer/` removed.
 

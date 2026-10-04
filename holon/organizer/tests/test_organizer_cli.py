@@ -12,6 +12,7 @@ Four groups:
                constants must agree name by name and value by value
 """
 import re
+import json
 import shutil
 import subprocess
 import sys
@@ -48,7 +49,7 @@ def skill(name, desc, triggers, extra="", body=None):
     trig = "\n".join(f"    {t}" for t in triggers)
     body = BODY_FILL if body is None else body
     return (f"---\nname: {name}\nmetadata:\n  holon-triggers: |\n{trig}\n"
-            f"description: {desc}\n{extra}---\n# {name}\nBody.\n{body}\n")
+            f"description: {json.dumps(desc, ensure_ascii=False)}\n{extra}---\n# {name}\nBody.\n{body}\n")
 
 
 ROOT_BODY = "# root\n\nWhen routing misses or goes wrong, append a line to `_feedback.md` and carry on.\n"
@@ -69,7 +70,7 @@ ORG_TRIG = ["absorb this new skill into the library", "is this skill a duplicate
 
 def make_tree(root):
     write(root / "SKILL.md", "---\nname: brain\nmetadata:\n  holon-archive-count: \"12\"\n"
-          "description: Use when archiving or retrieving: covers library routing\n---\n" + ROOT_BODY)
+          'description: "Use when archiving or retrieving: covers library routing"\n---\n' + ROOT_BODY)
     write(root / "synonyms.md", "dark mode,night mode,dark theme\nchart,data visualization,dashboard\npage,front-end,landing page\n")
     write(root / "_feedback.md", "# _feedback.md\n")
     write(root / "ABSORB.md", "# ABSORB.md\n\n## @12 the web family\nlearned: web, web/dark-mode, web/chart\n")
@@ -119,6 +120,27 @@ class TestParsing(TempTree):
 
     def test_parse_desc_is_case_insensitive_on_keywords(self):
         self.assertEqual(oc.parse_desc("Use when x: Covers a, b; Excludes c"), ({"a", "b"}, {"c"}))
+
+    def test_prose_covers_and_excludes_are_not_routing_clauses(self):
+        cases = [
+            ("Use when a document covers several topics: covers summary, outline, digest",
+             {"summary", "outline", "digest"}, set()),
+            ("Use when the policy excludes contractors from payroll: covers payroll; excludes invoice",
+             {"payroll"}, {"invoice"}),
+            ("Use when comparing book covers", set(), set()),
+            ("当文档涉及多项时：covers 摘要、提纲；excludes 发票", {"摘要", "提纲"}, {"发票"}),
+        ]
+        for desc, covers, excludes in cases:
+            with self.subTest(desc=desc):
+                self.assertEqual(oc.parse_desc(desc), (covers, excludes))
+                self.assertEqual(set(ns.description_covers(desc)), covers)
+                self.assertEqual(set(oc.covers_text({"description": desc}).split(",")) - {""}, covers)
+
+    def test_duplicate_routing_clauses_are_reported_by_lint(self):
+        self.write_dark(desc="Use for dark work: covers dark mode; covers chart")
+        rc, out = self.lint()
+        self.assertEqual(rc, 1, out)
+        self.assertIn("duplicate covers clause", out)
 
     def test_synonyms_first_word_is_canonical(self):
         syn = oc.load_synonyms(self.root)
@@ -248,7 +270,7 @@ class TestLintThreeThings(TempTree):
 
     def test_intermediate_skill_also_needs_triggers(self):
         """An intermediate skill is a skill too and carries the same three sentences."""
-        write(self.root / "web" / "SKILL.md", f"---\nname: web\ndescription: {WEB_DESC}\n---\n# web\n{BODY_FILL}\n")
+        write(self.root / "web" / "SKILL.md", f"---\nname: web\ndescription: {json.dumps(WEB_DESC)}\n---\n# web\n{BODY_FILL}\n")
         rc, out = self.lint()
         self.assertEqual(rc, 1)
         self.assertIn("[E] web: triggers", out)
@@ -259,7 +281,7 @@ class TestLintThreeThings(TempTree):
 
     def test_no_legacy_fields(self):
         """Fields from an earlier design (ledger / last-verified / axis) are flagged for removal."""
-        self.write_dark(extra="ledger: |\n  [DEFERRED] @3 x\nlast-verified: 3\naxis: activity\n")
+        self.write_dark(extra='ledger: |\n  [DEFERRED] @3 x\nlast-verified: "3"\naxis: activity\n')
         rc, out = self.lint()
         self.assertEqual(rc, 0, out)
         self.assertIn("[W] web/dark-mode: legacy field(s) axis, last-verified, ledger", out)
@@ -274,7 +296,7 @@ class TestLintRootFiles(TempTree):
         self.assertIn("[W] .: library root has no _feedback.md", out)
 
     def test_root_must_mention_feedback(self):
-        write(self.root / "SKILL.md", "---\nname: brain\narchive_count: 12\ndescription: Use when archiving: covers library routing\n---\n# root\n")
+        write(self.root / "SKILL.md", '---\nname: brain\narchive_count: 12\ndescription: "Use when archiving: covers library routing"\n---\n# root\n')
         rc, out = self.lint()
         self.assertIn("[W] .: root SKILL.md does not tell the AI to report routing misses to _feedback.md", out)
 

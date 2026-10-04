@@ -4,7 +4,7 @@
 
 > **项目处于早期阶段。** holon skill 能用，也有完整的测试，但目前只在两个小型 skill 库上用过（合计约三十个 skill）。规则、描述格式和命令参数在后续版本里仍可能调整。每一处改动都会写进 [CHANGELOG.md](CHANGELOG.md)；能自动迁移的旧文件，用 `holon.py migrate` 改写。
 
-agent 把所有 skill 放在同一个文件夹里时，每接一个任务都要把全部描述读一遍；skill 越多，选错的次数越多。holon 改成把 skill 排成一棵树：一个 skill 的文件夹里可以再放 skill（叫子 skill）。agent 先读最上一层，进入和任务对得上的那一枝，只读这条路上的文件。
+holon 把 skill 组织成树，并在每个父级生成路由表。它的阅读指令要求 agent 进入匹配的分支，而不是加载所有 skill。某个宿主和模型是否照着走、选择是否更准确、是否比可比的平铺库少用 token，仍需真实任务测量。
 
 holon 就是一些普通文件夹，加两个 Python 脚本。脚本只用标准库，需要 Python 3.8 或更高版本。它们负责让树保持一致，并检查每个 skill 能不能被它该接的句子找到。
 
@@ -18,9 +18,9 @@ holon 就是一些普通文件夹，加两个 Python 脚本。脚本只用标准
 python3 holon/scripts/holon.py install
 ```
 
-它会把树拷到 `~/.agents/skills/holon/`。这是 [Agent Skills](https://agentskills.io) 标准的公共位置，Codex、Cursor、GitHub Copilot、Gemini CLI、OpenCode 等工具都读这个文件夹。接着 `install` 查找这台机器上从别处读 skill 的工具，比如 Claude Code（`~/.claude/skills/`）、Windsurf（`~/.codeium/windsurf/skills/`），在那里也放一份。它会检查拷过去的内容，并打印出哪个工具读哪个文件夹。每个工具下次启动时就能读到。
+它会把树拷到 `~/.agents/skills/holon/`。这是 [Agent Skills](https://agentskills.io) 标准的公共位置，Codex、Cursor、GitHub Copilot、Gemini CLI、OpenCode 等工具都读这个文件夹。接着 `install` 查找这台机器上从别处读 skill 的工具，比如 Claude Code（`~/.claude/skills/`）、Windsurf（`~/.codeium/windsurf/skills/`），在那里也放一份。它会检查拷过去的内容，并打印出哪个工具读哪个文件夹。这些位置来自宿主路径表；请在宿主的新会话里验证发现情况和任务行为。
 
-有的工具不止读一个文件夹。比如 Cursor 和 OpenCode 既读 `~/.claude/skills/` 也读 `~/.agents/skills/`，两处都放的话，它们会看到两棵一样的树。`install` 选文件夹时保证不会让任何一个工具看到两份。
+有的工具不止读一个文件夹。比如 Cursor 和 OpenCode 既读 `~/.claude/skills/` 也读 `~/.agents/skills/`，两处都放的话，它们会看到两棵一样的树。`install` 规划新目标时尽量避免重复可见，也会在本次选择的用户级或项目级范围内检查已知目录中的同名旧树。检测到的宿主可能读到多份时会警告；未选中的旧副本会列出并保持不动，先比较内容再决定保留哪份。这是依据路径表的诊断，不是真实宿主的加载测试。
 
 `python3 holon/scripts/holon.py hosts` 列出 `install` 认识的 32 个工具、这台机器上装了哪些、每个工具读哪些文件夹。想自己指定装到哪里：
 
@@ -50,6 +50,12 @@ agent 工具只读 skills 文件夹下第一层文件夹的描述。它看得见
 打印出的归档包含 `manifest.json` 和 `trees/0/`、`trees/1/` 等目录；清单将每个快照对应到原安装位置，并记录根目录链接。备份包含全部文件，不只是新增 skill；内部链接按链接记录，不跟随读取。恢复时，先停止使用该树的 agent，用可信的归档工具检查内容，再将需要的快照解压到**所有技能目录之外的空目录**。核对文件和链接后才拷回。归档和当前安装都先保留，直到 `validate`、`lint`、`replay` 和自己的任务检查通过。备份提供恢复途径，不会自动合并。
 
 更稳妥的更新流程是先用 `--as` 把新包安装成另一个名字，再与自己维护的树比较。审阅并合并工具、规则和参数变化，保留自建分支和记录文件。`organizer/`、`editing/` 也可能被自己改过，直接替换这几个目录并不是通用的安全升级方案。`migrate` 只迁移支持的文件格式，不负责将新发行版合并进自己的库。
+
+### 文件头语法与可移植性
+
+零依赖解析器支持的是受限 YAML 子集，不是任意 YAML。完整描述包含 `: `、` #`，或值可能被 YAML 当成数字、布尔值、日期时，请加引号。例如应写 `description: "Use when: alpha"`，不能写 `description: Use when: alpha`。双引号字符串使用 JSON 风格转义；单引号中的撇号要写两次。支持缩进的 `|`/`>` 块和只含字符串值的单层 `metadata` 映射；标签、别名、行内集合、制表符缩进、嵌套映射、标量值后的行内注释会被拒绝，而不是猜测解析。部分合法但未支持的 YAML 也需要改写成这个子集。导入陌生文件头时请同时运行外部 `skills-ref` 验证器，内置检查不是完整 YAML 实现。
+
+描述使用明确的路由子句：`Use when ...: covers a, b; excludes c`。散文里普通使用的 covers、excludes 不算子句。路由表生成器与 organizer 共用同一个解析器；重复子句会被 lint 报为错误。
 
 ## 五分钟建一棵树
 
@@ -275,7 +281,7 @@ skill 的正文，也就是文件头以下那部分该怎么写，是另一个�
 
 ## 为什么这样设计
 
-`pdf/` 本身是一个完整的 skill：把这一个文件夹拷到别的 agent 的 skills 文件夹里，不用改就能用。它同时又是 `office-docs/` 的一步，两种身份下文件夹里的内容完全一样。Arthur Koestler 在 1967 年造了 *holon* 这个词，指的正是这种东西：自己是一个整体，同时又是更大整体的一部分。也因为这样，挪动一个 skill 从来不需要改写它：挪文件夹，`sync` 会重新生成父级的列表。
+自包含的 `pdf/` skill 可以原样拷到别的 agent 的 skills 文件夹里。引用了父级、根工具或其他 skill 的目录还要带上依赖；树相对路径的例句也可能需要调整。它同时又是 `office-docs/` 的一步，两种身份下文件夹里的内容完全一样。Arthur Koestler 在 1967 年造了 *holon* 这个词，指的正是这种东西：自己是一个整体，同时又是更大整体的一部分。移动会保留文件夹内容，`sync` 会重新生成父级的列表，但不会自动补齐外部依赖或改写跨树引用。
 
 工具从不做判断。`holon.py` 保证每个父级的子 skill 列表和磁盘上的文件夹一致。`organizer_cli.py` 检查能机械检查的部分：描述的格式、例句是否落在该落的地方、同级 skill 有没有抢同一个词、有没有东西被删掉。一个 skill 该放在哪，是 agent 读了 `organizer/SKILL.md` 之后做的决定；工具检查的是这个决定写下来之后是否一直成立。把 `organizer/` 整个删掉，树照样能路由。
 
