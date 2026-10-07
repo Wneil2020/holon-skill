@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 26,821 in the library (14%)
+read: 3 file(s), 3,828 bytes of 28,036 in the library (13%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 26,821 in the library (12%)
+read: 2 file(s), 3,372 bytes of 28,036 in the library (12%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 26,821 in the library (8%)
+read: 1 file(s), 2,374 bytes of 28,036 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -238,6 +238,7 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 | `holon.py init NAME --parent DIR [--desc D]` | 建一个 skill，更新父级的列表 |
 | `holon.py init NAME --root DIR [--bare]` | 建一个新的根，带阅读规则、记录文件，以及工具（`--bare` 时不带） |
 | `holon.py move 源... --parent 目录`、`move --plan 文件` | 预检、暂存并移动或复制 skill（计划的一行是 `源 -> 目标`），同步新旧两处；捕获失败时恢复 |
+| `holon.py split 目录 --show`、`split --plan 文件` | 给 agent 列出带行号的 `SKILL.md`；再把 agent 选定的行段原样移到 `references/` 文件或新的子 skill，留下一行指引，并重新同步 |
 | `holon.py sync [DIR]` | 按文件夹重新生成每个父级的子 skill 列表 |
 | `holon.py tree [DIR]` | 打印树和每条描述 |
 | `holon.py validate [DIR]` | 检查文件头、占位文字、过期的列表、循环、Agent Skills 规范；有错时退出码为 1 |

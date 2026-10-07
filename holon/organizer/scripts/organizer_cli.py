@@ -27,6 +27,7 @@ Frontmatter parsing and the definition of "what counts as a skill" are
 imported from the mechanism layer, scripts/holon.py.
 """
 import argparse
+import functools
 import re
 import shutil
 import sys
@@ -71,6 +72,56 @@ ROOT_LABEL = "root (nobody took it)"
 Skill = namedtuple("Skill", "meta body err")
 
 
+class SkillMap(dict):
+    """The skills of ONE load (find_skills), keyed by directory. It carries an index that
+    replay and route reuse for every sentence: each directory's child skills and the cover
+    words of every skill below it. The index is built on first use from this object's own
+    entries and dropped whenever an entry changes, so it never outlives the load or describes
+    another tree. A plain dict passed in by a caller gets the same answers, computed per call."""
+
+    _index = None
+
+    def index(self):
+        if self._index is None:
+            kids, below = {}, {}
+            for k in sorted(self):
+                kids.setdefault(k.parent, []).append(k)
+                covers, _ = parse_desc(self[k].meta.get("description", ""))
+                words = [(c, k) for c in sorted(covers, key=str.lower)]
+                for p in k.parents:
+                    below.setdefault(p, []).extend(words)
+            self._index = (kids, below)
+        return self._index
+
+    def __setitem__(self, key, value):
+        self._index = None
+        super().__setitem__(key, value)
+
+    def __delitem__(self, key):
+        self._index = None
+        super().__delitem__(key)
+
+    def clear(self):
+        self._index = None
+        super().clear()
+
+    def pop(self, *args):
+        self._index = None
+        return super().pop(*args)
+
+    def popitem(self):
+        self._index = None
+        return super().popitem()
+
+    def setdefault(self, *args):
+        self._index = None
+        return super().setdefault(*args)
+
+    def update(self, *args, **kwargs):
+        self._index = None
+        super().update(*args, **kwargs)
+
+
 # ---------------- parsing ----------------
 
 def parse_frontmatter(text):
@@ -97,9 +148,19 @@ def normalize(word, syn):
     return syn.get(word.lower(), word.lower())
 
 
-def parse_desc(desc):
-    """Three-part description -> (set of cover words, set of exclude words)."""
+@functools.lru_cache(maxsize=4096)
+def _clauses(desc):
+    """description_clauses for one description string (a pure function of the string)."""
     covers, excludes, _ = ns.description_clauses(desc)
+    return tuple(covers), tuple(excludes)
+
+
+def parse_desc(desc):
+    """Three-part description -> (set of cover words, set of exclude words). New sets every call."""
+    if isinstance(desc, str):
+        covers, excludes = _clauses(desc)
+    else:
+        covers, excludes, _ = ns.description_clauses(desc)
     return set(covers), set(excludes)
 
 
@@ -114,7 +175,7 @@ def split_anti(trigger):
 
 def find_skills(root):
     dirs, cycle_errors = ns.collect_skills(str(root))
-    out = {}
+    out = SkillMap()
     errors = list(cycle_errors)
     if not dirs:
         errors.append("no skill found under %s" % root)
@@ -127,6 +188,8 @@ def find_skills(root):
 
 
 def children_of(d, skills):
+    if isinstance(skills, SkillMap):
+        return list(skills.index()[0].get(d, ()))
     return sorted(c for c in skills if c.parent == d)
 
 
@@ -146,6 +209,7 @@ def body_lines(sk):
 
 # ---------------- lexical matching (mixed scripts) ----------------
 
+@functools.lru_cache(maxsize=4096)
 def _pattern(w):
     """ASCII words match on word boundaries (so `db` does not hit `mongodb`);
     words containing other scripts match as substrings."""
@@ -173,9 +237,16 @@ def canonicalize(text, syn):
     s = text.lower()
     if not syn:
         return s
-    words = set(syn) | set(syn.values())
-    big = re.compile("|".join(_piece(w) for w in sorted(words, key=len, reverse=True)), re.I)
+    big = _fold_pattern(frozenset(syn.items()))
     return big.sub(lambda m: syn.get(m.group(0).lower(), m.group(0)), s)
+
+
+@functools.lru_cache(maxsize=64)
+def _fold_pattern(items):
+    """The one regex canonicalize scans with, for one exact synonyms table (keyed by its
+    content, so an edited table gets a new regex)."""
+    words = {a for a, _ in items} | {c for _, c in items}
+    return re.compile("|".join(_piece(w) for w in sorted(words, key=len, reverse=True)), re.I)
 
 
 def match_node(sentence_canon, meta, syn):
@@ -190,6 +261,8 @@ def inherited_covers(d, skills):
     """Cover words of every skill below d, as (word, owner). A sub-skill is a step of its
     parent, so a sentence that names the step names the parent's job too: the tree already
     says React is under web, and web answers to it without listing it."""
+    if isinstance(skills, SkillMap):
+        return list(skills.index()[1].get(d, ()))
     out = []
     for k in sorted(skills):
         if k != d and d in k.parents:

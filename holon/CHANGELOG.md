@@ -5,6 +5,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### Splitting a skill: `holon.py split`
+- `split DIR --show` prints a `SKILL.md` with line numbers and its sha256. The agent decides the cut (organizer rules 2 and 3) and writes a JSON plan of line ranges, each going to a `references/<name>.md` file or a new sub-skill with its description and example sentences, plus one pointer line that replaces the moved text. `split --plan FILE` copies the named lines byte for byte, writes the pointers and re-syncs the tree. It decides nothing about content.
+- The whole plan is refused, and nothing is written, if the file changed since `--show`, if ranges overlap, cut a code fence, or touch the header or the sub-skills block, if a reference path is not `references/<name>.md` one level deep or its pointer does not name it, if a sub-skill's name, description or example list is malformed, or if any target exists. On a caught failure while writing it removes what it created and restores every `SKILL.md` of the tree. Same single-writer limits as `move`.
+- Not done: the tool does not judge whether a cut is good, does not edit the moved text (a moved section keeps its heading level), and does not check that a new sub-skill's example sentences route correctly; run `lint` and `replay` after it.
+
+### Replay and route speed
+- `replay` and `route` no longer rescan the whole library for every sentence and every candidate skill. Each load builds one index (children of each skill, cover words below each skill) and reuses it; parsed descriptions and the synonym-folding regex are reused for identical input. On synthetic libraries (Linux, Python 3.13), `replay` went from 22.5 s to 0.6 s at 100 leaf skills (351 example sentences) and from 246 s to 1.8 s at 200 leaf skills (686 sentences). Output is unchanged: stdout and exit codes of `replay`, `lint` and seven `route` sentences were compared byte for byte at 20, 50, 100 and 200 leaves. A changed entry drops the index, and each command loads the tree afresh, so an edit is never routed with old data. This measures the tool's run time, not anything about an agent.
+
 ### Parsing and install diagnostics
 - Reject ambiguous YAML scalars and malformed indentation; decode quoted strings and quote generated names when necessary. Test fixtures use valid YAML, with an optional skills-ref comparison.
 - Share covers/excludes clause parsing across both tools; ignore prose occurrences and flag duplicate clauses.

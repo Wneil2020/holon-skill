@@ -209,6 +209,52 @@ class TestRouting(TempTree):
         self.assertEqual(path[-1], self.root / "web")
         self.assertFalse(oc.still_reachable(self.root / "web/dark-mode", path))
 
+    def test_load_index_gives_the_same_answers_as_a_plain_dict(self):
+        """find_skills returns a SkillMap whose per-load index replay and route reuse; a plain
+        dict takes the original per-call scan. Both must give the same children, inherited
+        cover words, routes and replay messages."""
+        indexed = self.skills()
+        plain = dict(indexed)
+        self.assertIsInstance(indexed, oc.SkillMap)
+        syn = oc.load_synonyms(self.root)
+        for d in sorted(indexed):
+            self.assertEqual(oc.children_of(d, indexed), oc.children_of(d, plain), d)
+            self.assertEqual(oc.inherited_covers(d, indexed), oc.inherited_covers(d, plain), d)
+        sentences = ["switch the site to night mode", "add dark mode to the chart page", "write a landing page",
+                     "absorb this new skill into the library", "nothing here", "light palette for the dashboard"]
+        for s in sentences:
+            self.assertEqual(oc.route(s, self.root, indexed, syn), oc.route(s, self.root, plain, syn), s)
+        for d in sorted(indexed):
+            if d != self.root:
+                self.assertEqual(oc.replay_skill(d, indexed[d], self.root, indexed, syn),
+                                 oc.replay_skill(d, plain[d], self.root, plain, syn), d)
+
+    def test_load_index_follows_changes_and_never_crosses_loads(self):
+        """The index belongs to one load: changing an entry drops it, a new load after an edit on
+        disk sees the edit, and a second tree in the same process gets its own answers."""
+        skills = self.skills()
+        syn = oc.load_synonyms(self.root)
+        self.assertEqual(oc.route("plot a sparkline", self.root, skills, syn)[-1], self.root)
+        chart = self.root / "web/chart"
+        meta = dict(skills[chart].meta, description="Use when building charts: covers chart, sparkline")
+        skills[chart] = oc.Skill(meta, skills[chart].body, None)
+        self.assertEqual(oc.route("plot a sparkline", self.root, skills, syn)[-1], chart)
+        del skills[chart]
+        self.assertEqual(oc.route("plot a sparkline", self.root, skills, syn)[-1], self.root)
+        self.write_dark(desc="Use when doing dark mode: covers dark mode, sparkline")
+        self.assertEqual(oc.route("plot a sparkline", self.root, self.skills(), syn)[-1], self.root / "web/dark-mode")
+        other = self.tmp / "other"
+        write(other / "SKILL.md", "---\nname: other\ndescription: \"Use when routing: covers routing\"\n---\n" + ROOT_BODY)
+        write(other / "solo" / "SKILL.md", skill("solo", "Use when plotting: covers sparkline", ["a sparkline"]))
+        other_skills = oc.find_skills(other)[0]
+        self.assertEqual(oc.route("plot a sparkline", other, other_skills, {})[-1], other / "solo")
+        self.assertEqual(oc.route("plot a sparkline", self.root, self.skills(), syn)[-1], self.root / "web/dark-mode")
+        with (self.root / "synonyms.md").open("a", encoding="utf-8") as f:
+            f.write("sparkline,mini chart\n")
+        rc, out = run(CLI, "route", self.root, "draw a mini chart")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("lands on: web/dark-mode", out)
+
     def test_retired_dir_is_not_a_skill(self):
         """Both CLIs share one definition of "what is a skill": .retired/ is not."""
         write(self.root / ".retired" / "old" / "SKILL.md", "---\nname: old\ndescription: covers chart\n---\n")

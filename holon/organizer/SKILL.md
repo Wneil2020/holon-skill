@@ -52,7 +52,7 @@ The first entries in `synonyms.md` come from the owner, not from the skills. Bef
 
 Absorbing means teaching the library a new skill.
 
-**Step 1. Separate skill from knowledge** (rules 1 and 2). Run each section of the newcomer through the removal test. A section that mixes both is split: steps stay in `SKILL.md`, background moves to `references/`, and the step that needs it names the file. A step that names a file which is not there cannot be followed; `lint` warns. A newcomer whose whole text says "call skill X" is not a skill. It is another name for X. Add the name to `synonyms.md` and create no directory.
+**Step 1. Separate skill from knowledge** (rules 1 and 2). Run each section of the newcomer through the removal test. A section that mixes both is split: steps stay in `SKILL.md`, background moves to `references/`, and the step that needs it names the file. A step that names a file which is not there cannot be followed; `lint` warns. To carry out the split, do not retype the text: run `python3 scripts/holon.py split <dir> --show`, decide each cut by line number, and apply it with `split --plan`; the plan format is in `editing/SKILL.md`. You decide what is cut and where it goes; the tool only copies the lines you named. A newcomer whose whole text says "call skill X" is not a skill. It is another name for X. Add the name to `synonyms.md` and create no directory.
 
 **Step 2. Does the library already have the skill?** (rule 4). Before acting, read the `ruled:` lines of the root `ABSORB.md`. Those are decisions the library owner has already made, and they are not decided again. Run `ask`; it prints the checklist below and every `ruled:` line together.
 

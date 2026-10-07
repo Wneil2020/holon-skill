@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 26,821 in the library (14%)
+read: 3 file(s), 3,828 bytes of 28,036 in the library (13%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 26,821 in the library (12%)
+read: 2 file(s), 3,372 bytes of 28,036 in the library (12%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 26,821 in the library (8%)
+read: 1 file(s), 2,374 bytes of 28,036 in the library (8%)
 ```
 
 ## Checking the tree
@@ -238,6 +238,7 @@ Nothing is deleted. A skill that was merged or replaced moves whole into `.retir
 | `holon.py init NAME --parent DIR [--desc D]` | create a skill and update its parent's list |
 | `holon.py init NAME --root DIR [--bare]` | create a new root with the reading rules, the ledgers and (unless `--bare`) the tools |
 | `holon.py move SRC... --parent DIR`, `move --plan FILE` | preflight, stage and move or copy skill folders (a plan line is `SRC -> DEST`); re-sync both trees, restore on caught failure |
+| `holon.py split DIR --show`, `split --plan FILE` | number a `SKILL.md` for the agent; then move the line ranges the agent chose into `references/` files or new sub-skills, verbatim, leave one pointer line, and re-sync |
 | `holon.py sync [DIR]` | regenerate every parent's list of sub-skills from the folders |
 | `holon.py tree [DIR]` | print the tree with descriptions |
 | `holon.py validate [DIR]` | check headers, placeholders, stale lists, loops and the Agent Skills spec; exit 1 on error |

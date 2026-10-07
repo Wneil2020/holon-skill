@@ -1775,6 +1775,158 @@ class TestMove(unittest.TestCase):
                          [("office", "docx"), ("office", "pptx"), ("lib", "poster")])
 
 
+SPLIT_BODY = """
+# report
+
+1. Collect the figures.
+2. Write the summary first.
+
+## House style background
+
+Our house style uses sentence case headings.
+Numbers below ten are spelled out.
+
+```text
+Example heading
+```
+
+## Charts
+
+1. Pick a chart type.
+2. Export as PNG.
+"""
+
+
+class TestSplit(unittest.TestCase):
+    """The agent decides the cut; split only checks the plan against the exact file and copies
+    the named lines verbatim. Lines 15-23 are the house style section (with its fence) and
+    lines 25-28 the charts section of SPLIT_BODY under a nine-line header."""
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(ns.remove_tree, str(self.tmp))
+        self.root = self.tmp / "lib"
+        make_skill(self.root, "lib", "Use for every task: covers library routing", markers=True)
+        self.skill = self.root / "report"
+        self.skill.mkdir()
+        self.doc = self.skill / "SKILL.md"
+        # Explicit newline="\n": in text mode Windows would write "\r\n", the plan's line numbers
+        # and the CRLF test below would then mean something different there than on Linux.
+        with open(self.doc, "w", encoding="utf-8", newline="\n") as f:
+            f.write('---\nname: report\ndescription: "Use when writing reports: covers report, summary"\n'
+                    'metadata:\n  holon-triggers: |\n    write the quarterly report\n'
+                    '    summarise this report\n    draw a poster should go to /\n---\n'
+                    + SPLIT_BODY + "\n" + ns.MARK_OPEN + "\n" + ns.MARK_CLOSE + "\n")
+        self.cli("sync", self.root)
+        self.original = self.doc.read_bytes()
+
+    def cli(self, *args):
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(out):
+            rc = ns.main(list(map(str, args)))
+        return rc, out.getvalue()
+
+    def sha(self):
+        import hashlib
+        return hashlib.sha256(self.doc.read_bytes()).hexdigest()
+
+    def plan(self, chunks, sha=None):
+        p = self.tmp / "plan.json"
+        p.write_text(json.dumps({"source": "lib/report", "sha256": sha or self.sha(), "chunks": chunks}),
+                     encoding="utf-8")
+        return p
+
+    REF = {"lines": "15-23", "to": "reference", "path": "references/house-style.md",
+           "pointer": "3. Follow the house style in `references/house-style.md`."}
+    SUB = {"lines": "25-28", "to": "skill", "name": "charts",
+           "description": "Use when a report needs a chart: covers chart, plot",
+           "triggers": ["add a chart to the report", "plot the figures", "write the summary should go to report"],
+           "pointer": "4. For charts, use the charts sub-skill."}
+
+    def test_show_numbers_lines_and_prints_the_hash(self):
+        rc, out = self.cli("split", self.skill, "--show")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("sha256: " + self.sha(), out)
+        self.assertIn("   16  ## House style background", out)
+        self.assertEqual(self.doc.read_bytes(), self.original)
+
+    def test_plan_moves_lines_verbatim_and_resyncs(self):
+        lines = self.original.decode("utf-8").splitlines(keepends=True)
+        rc, out = self.cli("split", "--plan", self.plan([self.REF, self.SUB]))
+        self.assertEqual(rc, 0, out)
+        self.assertEqual((self.skill / "references" / "house-style.md").read_text(encoding="utf-8"),
+                         "".join(lines[14:23]))
+        child = (self.skill / "charts" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("".join(lines[24:28]), child)
+        text = self.doc.read_text(encoding="utf-8")
+        self.assertIn("3. Follow the house style in `references/house-style.md`.\n", text)
+        self.assertNotIn("Numbers below ten", text)
+        self.assertIn("**charts**", text)
+        rc, out = self.cli("validate", self.root)
+        self.assertEqual(rc, 0, out)
+
+    def test_every_rejected_plan_writes_nothing(self):
+        bad = [
+            ([dict(self.REF, lines="15-22")], "code fence"),
+            ([dict(self.REF, lines="2-4")], "frontmatter"),
+            ([self.REF, dict(self.SUB, lines="20-26")], "already in chunk"),
+            ([dict(self.REF, path="../outside.md")], "references/<name>.md"),
+            ([dict(self.REF, pointer="see the style file")], "in backticks"),
+            ([dict(self.SUB, name="Charts")], "not a valid skill name"),
+            ([dict(self.SUB, triggers=[])], "triggers"),
+            ([dict(self.REF, lines="15-99")], "within 1-"),
+            ([dict(self.REF, to="delete")], "\"to\" must be"),
+        ]
+        for chunks, why in bad:
+            with self.subTest(why=why):
+                rc, out = self.cli("split", "--plan", self.plan(chunks))
+                self.assertEqual(rc, 1, out)
+                self.assertIn(why, out)
+                self.assertIn("nothing was written", out)
+                self.assertEqual(self.doc.read_bytes(), self.original)
+                self.assertFalse((self.skill / "references").exists())
+                self.assertFalse((self.skill / "charts").exists())
+
+    def test_stale_plan_and_existing_target_are_refused(self):
+        rc, out = self.cli("split", "--plan", self.plan([self.REF], sha="0" * 64))
+        self.assertEqual(rc, 1, out)
+        self.assertIn("changed since the plan was written", out)
+        (self.skill / "references").mkdir()
+        (self.skill / "references" / "house-style.md").write_text("mine\n", encoding="utf-8")
+        rc, out = self.cli("split", "--plan", self.plan([self.REF]))
+        self.assertEqual(rc, 1, out)
+        self.assertIn("never overwrites", out)
+        self.assertEqual((self.skill / "references" / "house-style.md").read_text(encoding="utf-8"), "mine\n")
+        self.assertEqual(self.doc.read_bytes(), self.original)
+
+    def test_dry_run_and_failed_sync_leave_the_tree_as_it_was(self):
+        from unittest import mock
+        before = {p: p.read_bytes() for p in self.root.rglob("*") if p.is_file()}
+        rc, out = self.cli("split", "--plan", self.plan([self.REF, self.SUB]), "--dry-run")
+        self.assertEqual(rc, 0, out)
+        self.assertEqual({p: p.read_bytes() for p in self.root.rglob("*") if p.is_file()}, before)
+        with mock.patch.object(ns, "cmd_sync", return_value=1):
+            rc, out = self.cli("split", "--plan", self.plan([self.REF, self.SUB]))
+        self.assertEqual(rc, 1, out)
+        self.assertIn("restored", out)
+        self.assertEqual({p: p.read_bytes() for p in self.root.rglob("*") if p.is_file()}, before)
+        self.assertFalse((self.skill / "charts").exists())
+        self.assertFalse((self.skill / "references").exists())
+
+    def test_crlf_document_keeps_crlf(self):
+        self.doc.write_bytes(self.original.replace(b"\n", b"\r\n"))
+        rc, out = self.cli("split", "--plan", self.plan([self.REF]))
+        self.assertEqual(rc, 0, out)
+        data = self.doc.read_bytes()
+        self.assertIn(b"`references/house-style.md`.\r\n", data)
+        self.assertNotIn(b"\n", data.replace(b"\r\n", b""))
+
+    def test_show_and_plan_are_exclusive(self):
+        for args in (("split",), ("split", self.skill), ("split", self.skill, "--show", "--plan", "x.json")):
+            rc, out = self.cli(*args)
+            self.assertEqual(rc, 1, out)
+
+
 def argparse_ns(**kw):
     import argparse
     return argparse.Namespace(**kw)

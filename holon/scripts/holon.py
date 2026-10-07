@@ -13,6 +13,8 @@ Commands:
     move SRC... --parent DIR [--copy] [--as NAME]
                                   Move (or copy) skill folders under a parent and re-sync both trees
     move --plan FILE [--copy]     Apply a placement plan: one `SRC -> DEST` per line (`DEST/` = into DEST)
+    split DIR --show              Print SKILL.md with line numbers and sha256, for an agent to plan a split
+    split --plan FILE             Move the planned line ranges into references/ or new sub-skills, verbatim
     sync [PATH]                   Inject sub-skill name+description into parent SKILL.md
     tree [PATH]                   Print the skill hierarchy as a tree
     validate [PATH]               Validate frontmatter / TODO placeholders / cycles / sync freshness
@@ -1235,6 +1237,269 @@ def cmd_move(args):
     return 0
 
 
+# ---------------------------------------------------------------- split
+#
+# The agent decides how a SKILL.md body is cut (organizer rules 1-3); this command only
+# carries the decision out. `split DIR --show` prints the file with line numbers and its
+# sha256. The agent writes a JSON plan naming line ranges of that exact file; `split --plan`
+# checks the whole plan, moves each range verbatim into a references/ file or a new
+# sub-skill, leaves one pointer line in its place, and re-syncs the tree.
+
+def _sha256(data):
+    import hashlib
+    return hashlib.sha256(data).hexdigest()
+
+
+def cmd_split_show(skill_dir):
+    fp = os.path.join(skill_dir, SKILL_FILE)
+    with open(fp, "rb") as f:
+        data = f.read()
+    text = data.decode("utf-8")
+    _, _, err = split_frontmatter(text)
+    if err:
+        print("error: %s: %s" % (fp, err))
+        return 1
+    body_start, _, _ = _split_regions(text)
+    print("file: %s" % fp.replace(os.sep, "/"))
+    print("sha256: %s" % _sha256(data))
+    print("body: lines %d-%d (frontmatter and the sub-skills block cannot be split)" % (body_start, len(text.splitlines())))
+    for n, line in enumerate(text.splitlines(), 1):
+        print("%5d  %s" % (n, line))
+    return 0
+
+
+def _split_regions(text):
+    """(first body line, set of protected line numbers, list of fence (start, end) line spans).
+    Protected: frontmatter and the routing table between the markers, which sync owns."""
+    lines = text.splitlines()
+    end = next(i for i in range(1, len(lines)) if lines[i].rstrip() == "---")
+    protected = set(range(1, end + 2))
+    i, j = _find_marker_pair(text)
+    if i is not None:
+        first = text.count("\n", 0, i) + 1
+        last = text.count("\n", 0, j if j is not None else i) + 1
+        protected |= set(range(first, last + 1))
+    fences, open_at = [], None
+    for n, line in enumerate(lines, 1):
+        if n <= end + 1:
+            continue
+        if re.match(r"^(?:```|~~~)", line):
+            if open_at is None:
+                open_at = n
+            else:
+                fences.append((open_at, n))
+                open_at = None
+    if open_at is not None:
+        fences.append((open_at, len(lines)))
+    return end + 2, protected, fences
+
+
+def _parse_range(value):
+    m = re.fullmatch(r"\s*(\d+)\s*(?:-\s*(\d+))?\s*", str(value))
+    if not m:
+        return None
+    a = int(m.group(1))
+    b = int(m.group(2) or a)
+    return (a, b) if 1 <= a <= b else None
+
+
+def read_split_plan(path):
+    """Check a split plan against the file it names. Returns (plan, errors). Nothing is written."""
+    import json
+    errors = []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            plan = json.loads(f.read().lstrip("\ufeff"))
+    except (OSError, ValueError) as exc:
+        return None, ["cannot read plan %s: %s" % (path, exc)]
+    if not isinstance(plan, dict) or not isinstance(plan.get("chunks"), list) or not plan["chunks"]:
+        return None, ["plan must be a JSON object with \"source\", \"sha256\" and a non-empty \"chunks\" list"]
+    base = os.path.dirname(os.path.abspath(path))
+    src = os.path.normpath(os.path.join(base, str(plan.get("source", ""))))
+    fp = os.path.join(src, SKILL_FILE)
+    if not is_skill_dir(src):
+        return None, ["source %s is not a skill folder (no %s)" % (src, SKILL_FILE)]
+    with open(fp, "rb") as f:
+        data = f.read()
+    if plan.get("sha256") != _sha256(data):
+        return None, ["%s changed since the plan was written (sha256 differs); run `split %s --show` again "
+                      "and renumber the plan" % (fp, src)]
+    text = data.decode("utf-8")
+    meta, _, err = split_frontmatter(text)
+    if err:
+        return None, ["%s: %s" % (fp, err)]
+    _, protected, fences = _split_regions(text)
+    n_lines = len(text.splitlines())
+    taken, targets, out = {}, set(), []
+    for k, chunk in enumerate(plan["chunks"], 1):
+        where = "chunk %d" % k
+        if not isinstance(chunk, dict):
+            errors.append("%s is not an object" % where)
+            continue
+        rng = _parse_range(chunk.get("lines", ""))
+        if rng is None or rng[1] > n_lines:
+            errors.append("%s: \"lines\" must be \"A-B\" within 1-%d" % (where, n_lines))
+            continue
+        a, b = rng
+        if any(n in protected for n in range(a, b + 1)):
+            errors.append("%s: lines %d-%d touch the frontmatter or the sub-skills block, which only sync writes" % (where, a, b))
+        for n in range(a, b + 1):
+            if n in taken:
+                errors.append("%s: line %d is already in chunk %d" % (where, n, taken[n]))
+                break
+            taken[n] = k
+        for fa, fb in fences:
+            if (a <= fa <= b) != (a <= fb <= b) or (fa < a and b < fb):
+                errors.append("%s: lines %d-%d cut the code fence at lines %d-%d; take the whole fence or none of it" % (where, a, b, fa, fb))
+        pointer = chunk.get("pointer")
+        if not isinstance(pointer, str) or not pointer.strip() or "\n" in pointer:
+            errors.append("%s: \"pointer\" must be one non-empty line; it replaces the moved text and tells the "
+                          "agent when to go there" % where)
+        kind = chunk.get("to")
+        item = {"lines": (a, b), "pointer": pointer, "to": kind}
+        if kind == "reference":
+            rel = str(chunk.get("path", ""))
+            if not re.fullmatch(r"references/[a-z0-9][a-z0-9._-]*\.md", rel):
+                errors.append("%s: \"path\" must be references/<name>.md (one level deep, lowercase)" % where)
+            elif isinstance(pointer, str) and "`%s`" % rel not in pointer:
+                errors.append("%s: the pointer must name `%s` in backticks, so lint can check the file exists" % (where, rel))
+            target = os.path.join(src, *rel.split("/"))
+            item["path"] = target
+        elif kind == "skill":
+            name = chunk.get("name", "")
+            desc = chunk.get("description", "")
+            trig = chunk.get("triggers", [])
+            if not isinstance(name, str) or spec_field_problems({"name": name, "description": "x"}):
+                errors.append("%s: %r is not a valid skill name (lowercase letters, digits, single hyphens)" % (where, name))
+            if not isinstance(desc, str) or not desc.strip() or "\n" in desc or spec_field_problems({"description": desc}):
+                errors.append("%s: \"description\" must be one line in the three-part form" % where)
+            if (not isinstance(trig, list) or not trig
+                    or any(not isinstance(t, str) or not t.strip() or "\n" in t for t in trig)):
+                errors.append("%s: \"triggers\" must be a list of one-line example sentences" % where)
+            target = os.path.join(src, str(name))
+            item.update(path=target, name=name, description=desc, triggers=trig)
+        else:
+            errors.append("%s: \"to\" must be \"reference\" or \"skill\"" % where)
+            continue
+        key = os.path.normcase(os.path.abspath(target))
+        if key in targets:
+            errors.append("%s: two chunks write %s; merge them into one range or name two files" % (where, target))
+        targets.add(key)
+        if os.path.lexists(target):
+            errors.append("%s: %s already exists; split never overwrites" % (where, target))
+        out.append(item)
+    if errors:
+        return None, errors
+    return {"source": src, "file": fp, "data": data, "text": text, "chunks": out, "name": meta.get("name")}, []
+
+
+def _apply_split(plan):
+    """Text of the new source document and the files to create, all in memory."""
+    import json
+    lines = plan["text"].splitlines(keepends=True)
+    eol = "\r\n" if plan["text"].count("\r\n") * 2 > plan["text"].count("\n") else "\n"
+    creates = []
+    by_start = {c["lines"][0]: c for c in plan["chunks"]}
+    new_lines, n = [], 1
+    while n <= len(lines):
+        c = by_start.get(n)
+        if c is None:
+            new_lines.append(lines[n - 1])
+            n += 1
+            continue
+        a, b = c["lines"]
+        moved = "".join(lines[a - 1:b])
+        if not moved.endswith("\n"):
+            moved += "\n"
+        new_lines.append(c["pointer"].strip() + eol)
+        if c["to"] == "reference":
+            creates.append((c["path"], moved))
+        else:
+            trig = "".join("    %s\n" % t.strip() for t in c["triggers"])
+            doc = ("---\nname: %s\ndescription: %s\nmetadata:\n  holon-triggers: |\n%s---\n\n# %s\n\n%s\n%s\n%s\n"
+                   % (_yaml_string(c["name"]), json.dumps(c["description"], ensure_ascii=False), trig,
+                      c["name"], moved, MARK_OPEN, MARK_CLOSE))
+            creates.append((os.path.join(c["path"], SKILL_FILE), doc))
+        n = b + 1
+    return "".join(new_lines), creates
+
+
+def cmd_split(args):
+    if bool(args.show_flag) == bool(args.plan) or bool(args.show_flag) != bool(args.show):
+        print("error: give `split DIR --show` to number a SKILL.md, or `split --plan FILE` to apply a plan")
+        return 1
+    if args.show_flag:
+        return cmd_split_show(args.show)
+    plan, errors = read_split_plan(args.plan)
+    if not errors:
+        root = tree_root_of(plan["source"])
+        try:
+            documents = _move_documents(root)
+            for c in plan["chunks"]:
+                parent = os.path.dirname(c["path"])
+                if os.path.lexists(parent) and (os.path.islink(parent) or not path_within(parent, plan["source"])):
+                    raise OSError("split does not write through links: %s" % parent)
+        except (OSError, UnicodeError) as exc:
+            errors = [str(exc)]
+    if errors:
+        for e in errors:
+            print("error: %s" % e)
+        print("nothing was written")
+        return 1
+    new_text, creates = _apply_split(plan)
+    for c in plan["chunks"]:
+        print("%s lines %d-%d -> %s" % ("[dry-run] would move" if args.dry_run else "move",
+                                       c["lines"][0], c["lines"][1], c["path"].replace(os.sep, "/")))
+    if args.dry_run:
+        print("[dry-run] %s keeps one pointer line per chunk; the moved text is copied byte for byte" % plan["file"])
+        return 0
+    made = []
+    try:
+        for path, content in creates:
+            parent = os.path.dirname(path)
+            if not os.path.isdir(parent):
+                os.makedirs(parent)
+                made.append(parent)
+            with open(path, "x", encoding="utf-8", newline="\n") as f:
+                f.write(content)
+            made.append(path)
+        with open(plan["file"], "wb") as f:
+            f.write(new_text.encode("utf-8"))
+        import contextlib
+        import io
+        with contextlib.redirect_stdout(io.StringIO()):
+            rc = cmd_sync(argparse.Namespace(path=root, dry_run=False, auto_append=True))
+        if rc:
+            raise OSError("sync failed after split")
+    except BaseException as exc:
+        problems = []
+        for path in reversed(made):
+            try:
+                os.rmdir(path) if os.path.isdir(path) else os.unlink(path)
+            except OSError as err:
+                problems.append("%s: %s" % (path, err))
+        for path, data in documents.items():
+            try:
+                with open(path, "rb") as f:
+                    if f.read() == data:
+                        continue
+                with open(path, "wb") as f:
+                    f.write(data)
+            except OSError as err:
+                problems.append("%s: %s" % (path, err))
+        if problems:
+            print("error: split rollback incomplete: %s" % "; ".join(problems))
+        else:
+            print("split failed; the source document and routing tables were restored")
+        if isinstance(exc, (OSError, UnicodeError)):
+            print("error: %s" % exc)
+            return 1
+        raise
+    print("split %s into %d chunk(s); routing tables re-synced" % (plan["file"].replace(os.sep, "/"), len(creates)))
+    print("next: run validate, organizer_cli.py lint and replay; give each new sub-skill three example sentences")
+    return 0
+
+
 def cmd_tree(args):
     root = args.path or "."
     roots = find_root_skills(root)
@@ -2038,6 +2303,14 @@ def main(argv=None):
     p.add_argument("--copy", action="store_true", help="copy instead of moving (leave the source library as it is)")
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(func=cmd_move)
+
+    p = sub.add_parser("split", help="show a SKILL.md with line numbers, or apply an agent-written plan that moves "
+                                     "line ranges into references/ files or new sub-skills")
+    p.add_argument("show", nargs="?", metavar="DIR", help="with --show: the skill folder to number")
+    p.add_argument("--show", dest="show_flag", action="store_true", help="print DIR/SKILL.md with line numbers and its sha256")
+    p.add_argument("--plan", help="a JSON split plan written against the --show output")
+    p.add_argument("--dry-run", action="store_true")
+    p.set_defaults(func=cmd_split)
 
     p = sub.add_parser("sync", help="inject sub-skill descriptions into parent SKILL.md files")
     p.add_argument("path", nargs="?")
