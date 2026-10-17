@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 28,036 in the library (13%)
+read: 3 file(s), 3,828 bytes of 28,695 in the library (13%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 28,036 in the library (12%)
+read: 2 file(s), 3,372 bytes of 28,695 in the library (11%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 28,036 in the library (8%)
+read: 1 file(s), 2,374 bytes of 28,695 in the library (8%)
 ```
 
 ## Checking the tree
@@ -282,7 +282,7 @@ One person maintains this in spare time. A pull request that changes one thing a
 
 ## Why it is built this way
 
-A self-contained `pdf/` skill can be copied into another agent's skills folder unchanged. A skill that refers to a parent, root tool or another skill must bring those dependencies too; tree-relative examples may also need updating. It is also one step of `office-docs/`, and nothing in the folder differs between the two roles. Arthur Koestler coined the word *holon* in 1967 for exactly this: a unit that is whole on its own and at the same time part of something larger. Moving preserves the folder's contents and `sync` regenerates the parents' lists, but it does not resolve external dependencies or rewrite cross-tree references.
+A self-contained `pdf/` skill can be copied into another agent's skills folder unchanged. A skill that refers to a parent, root tool or another skill must bring those dependencies too; tree-relative examples may also need updating. It is also one step of `office-docs/`, and nothing in the folder differs between the two roles. Arthur Koestler coined the word *holon* in 1967 for exactly this: a unit that is whole on its own and at the same time part of something larger. Moving preserves the folder's contents and `sync` regenerates the parents' lists, but it does not resolve external dependencies or rewrite cross-tree references. It lists them instead: after a move (or with `--dry-run`, before it), each body that still names the old path in backticks is printed as `check: <file>:<line> still names `<old>`, which is now `<new>``.
 
 The tools never make a judgement. `holon.py` keeps every parent's list of sub-skills equal to the folders on disk. `organizer_cli.py` checks what can be checked mechanically: the shape of each description, that example sentences land where they should, that sibling skills do not claim the same words, that nothing was deleted. Where a skill belongs is decided by the agent reading `organizer/SKILL.md`; the tools check that the decision, once written down, keeps holding. The tree still routes with `organizer/` removed.
 

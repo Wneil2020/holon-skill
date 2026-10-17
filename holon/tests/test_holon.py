@@ -901,6 +901,13 @@ class TestInstall(unittest.TestCase):
                 pass
         srv = socketserver.TCPServer(("127.0.0.1", 0), H)
         threading.Thread(target=srv.serve_forever, daemon=True).start()
+        # A proxy set in the environment (CI runners, sandboxes) would receive the loopback
+        # request and answer 404; the test server is local, so it is reached directly.
+        saved = {k: os.environ.get(k) for k in ("no_proxy", "NO_PROXY")}
+        for k in saved:
+            os.environ[k] = "127.0.0.1,localhost"
+        self.addCleanup(lambda: [os.environ.pop(k, None) if v is None else os.environ.__setitem__(k, v)
+                                 for k, v in saved.items()])
         try:
             url = "http://127.0.0.1:%d/repo.zip" % srv.server_address[1]
             dest = os.path.join(self.tmp, "out")
@@ -1749,6 +1756,25 @@ class TestMove(unittest.TestCase):
                           "--parent", self.root / "office" / "pptx")
         self.assertEqual(rc, 1)
         self.assertIn("into itself", out)
+
+    def test_move_lists_bodies_that_still_name_the_old_path(self):
+        # move rewrites routing tables, never prose; a pointer from another skill is listed.
+        rc, out = self.move()
+        self.assertEqual(rc, 0, out)
+        office = self.root / "office" / "SKILL.md"
+        text = office.read_text(encoding="utf-8").replace(
+            "1. TODO", "1. For the poster step, read `poster/SKILL.md`.\n2. TODO", 1)
+        office.write_text(text, encoding="utf-8")
+        tool = self.root / "scripts" / "holon.py"
+        rc, out = self.sh(tool, "init", "print", "--parent", self.root, "--desc", "Use for print: covers print")
+        rc, out = self.sh(tool, "move", self.root / "poster", "--parent", self.root / "print", "--dry-run")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("office%sSKILL.md:" % os.sep, out)
+        self.assertIn("names `poster`, which would become `print/poster`", out)
+        rc, out = self.sh(tool, "move", self.root / "poster", "--parent", self.root / "print")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("still names `poster`, which is now `print/poster`", out)
+        self.assertEqual(out.count("check: "), 1, out)   # the regenerated routing tables are not listed
 
     def test_move_within_tree_resyncs_old_and_new_parent(self):
         rc, out = self.move("--copy")

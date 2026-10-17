@@ -1060,6 +1060,54 @@ def _check_move_files(src):
     visit(src)
 
 
+def stale_pointers(moves):
+    """After a move, the bodies that still name a moved folder by its old tree-relative path.
+    `move` copies folders and re-syncs routing tables; it does not rewrite prose, because a
+    path in prose may mean something else. It lists what to look at instead, file and line,
+    so the pointer from one skill to another is fixed in the same change."""
+    found = []
+    for src, parent, name in moves:
+        old_root = tree_root_of(src)   # reads only the folders above src, which still exist
+        if os.path.normcase(old_root) == os.path.normcase(src):
+            continue
+        old_rel = os.path.relpath(src, old_root).replace(os.sep, "/")
+        new_root = tree_root_of(os.path.join(parent, name))
+        new_rel = os.path.relpath(os.path.join(parent, name), new_root).replace(os.sep, "/")
+        if old_rel == new_rel:
+            continue
+        moved_to = os.path.join(parent, name)
+        for base in {old_root, new_root}:
+            for dirpath, dirnames, files in os.walk(base):
+                dirnames[:] = sorted(d for d in dirnames if d not in SKIP_DIRS)
+                if SKILL_FILE not in files or path_within(dirpath, moved_to) or path_within(dirpath, src):
+                    continue
+                fn = os.path.join(dirpath, SKILL_FILE)
+                try:
+                    with open(fn, encoding="utf-8") as f:
+                        lines = f.read().splitlines()
+                except (OSError, UnicodeError):
+                    continue
+                in_table = False
+                for n, line in enumerate(lines, 1):
+                    if line.strip() == MARK_OPEN:
+                        in_table = True
+                    elif line.strip() == MARK_CLOSE:
+                        in_table = False
+                    if in_table:
+                        continue   # the routing table is rewritten by sync
+                    for span in re.findall(r"`([^`\n]+)`", line):
+                        for tok in span.split():
+                            while tok.startswith(("./", "../")):
+                                tok = tok.split("/", 1)[1]
+                            if tok == old_rel + "/" or tok.startswith(old_rel + "/"):
+                                found.append((fn, n, old_rel, new_rel))
+                                break
+                        else:
+                            continue
+                        break
+    return found
+
+
 def _execute_move(moves, roots, documents, copy=False):
     """Stage all copies, retain originals until sync succeeds, restore on caught failures.
 
@@ -1228,10 +1276,16 @@ def cmd_move(args):
     if args.dry_run:
         for src, parent, name in moves:
             print("[dry-run] would %s %s -> %s" % ("copy" if args.copy else "move", src, os.path.join(parent, name)))
+        if not args.copy:
+            for fn, n, old_rel, new_rel in stale_pointers(moves):
+                print("[dry-run] check: %s:%d names `%s`, which would become `%s`" % (fn, n, old_rel, new_rel))
         return 0
     rc = _execute_move(moves, roots, documents, copy=args.copy)
     if rc:
         return rc
+    if not args.copy:
+        for fn, n, old_rel, new_rel in stale_pointers(moves):
+            print("check: %s:%d still names `%s`, which is now `%s`" % (fn, n, old_rel, new_rel))
     print("next: check each moved description has `covers` words and three example sentences "
           "(organizer_cli.py lint), then validate and replay")
     return 0

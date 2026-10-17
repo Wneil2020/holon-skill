@@ -489,13 +489,32 @@ def check_triggers(r, sk, skills, root):
 PATH_IN_TICKS = re.compile(r"(?<![\w.\-/<])((?:\.\.?/)?(?:[\w.\-]+/)+[\w.\-]+\.(?:md|py|txt|json|sh|js|ts|yaml|yml|csv))(?![\w.\-/>])")
 
 
+# Folders a skill keeps its own files in. A path into one of them names an input, never an output.
+SKILL_FILE_DIRS = frozenset({"references", "reference", "scripts", "assets", "templates", "shared"})
+
+
 def check_file_refs(r, d, root, sk):
     """A body that names a file path in backticks, alone or inside a command, is telling the
     agent to open or run it. If the file is not where the path says, relative to this skill
     or to the tree root, the step cannot be followed. A bare filename with no directory is
-    not checked: it may be an output the step writes. Globs and placeholders are skipped."""
+    not checked: it may be an output the step writes. Globs and placeholders are skipped.
+
+    Three outcomes for a path that is not there:
+    - the file exists under an ancestor skill: the text was cut from that ancestor and the
+      path was not rewritten (the evals/ case in design-notes section 19) -- a warning that
+      names where the file is;
+    - the path starts in a folder a skill keeps its own files in (references/, scripts/,
+      assets/, templates/, shared/), or in a folder that exists, or climbs with ../: the
+      file is missing -- a warning;
+    - any other first folder that exists nowhere: most likely an output the step creates
+      (`evals/evals.json`) -- a hint, so a real output does not leave a standing warning."""
     issues = []
     seen = set()
+    ancestors = []
+    cur = d
+    while cur != root and root in cur.parents:
+        cur = cur.parent
+        ancestors.append(cur)
     for span in re.finditer(r"`[^`\n]+`", sk.body):
         for m in PATH_IN_TICKS.finditer(span.group(0)):
             ref = m.group(1)
@@ -504,8 +523,19 @@ def check_file_refs(r, d, root, sk):
             seen.add(ref)
             if (d / ref).exists() or (root / ref).exists():
                 continue   # relative to the skill, or written as "at the tree root"
-            issues.append(f"[W] {r}: body points at `{ref}` and there is no such file under {r}/ or at the tree root -- "
-                          "the step that names it cannot be followed; add the file or fix the path")
+            owner = next((a for a in ancestors if a != root and (a / ref).exists()), None)
+            if owner is not None:
+                issues.append(f"[W] {r}: body points at `{ref}`, which exists under {owner.relative_to(root).as_posix()}/ "
+                              f"and not under {r}/ -- the text was probably moved from there; write the path "
+                              "relative to this skill, or move the file with it")
+                continue
+            first = ref.split("/", 1)[0]
+            if first in (".", "..") or first in SKILL_FILE_DIRS or (d / first).exists() or (root / first).exists():
+                issues.append(f"[W] {r}: body points at `{ref}` and there is no such file under {r}/ or at the tree root -- "
+                              "the step that names it cannot be followed; add the file or fix the path")
+            else:
+                issues.append(f"[·] {r}: body names `{ref}`, and no `{first}/` exists under {r}/ or at the tree root -- "
+                              "fine if the step creates it; otherwise add the file or fix the path")
     return issues
 
 

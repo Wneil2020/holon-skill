@@ -42,9 +42,9 @@ python3 organizer/scripts/organizer_cli.py replay .  # example sentences still l
 
 **`[E]`, error, exit code 1.** Something the tree cannot work without: a missing description, a description with no cover words or too many, fewer than three example sentences, a negative example pointing at a skill that does not exist, a malformed `groups.md`.
 
-**`[W]`, warning.** Probably a mistake, but the tree still works: fields left over from an earlier format, a cover word so short it matches almost anything, a cover word that `synonyms.md` rewrites before matching, a group with one member, a missing `_feedback.md`, an `ABSORB.md` section numbered ahead of the counter or numbered twice, a file in `.retired/` without its header line, a file named in a body that does not exist.
+**`[W]`, warning.** Probably a mistake, but the tree still works: fields left over from an earlier format, a cover word so short it matches almost anything, a cover word that `synonyms.md` rewrites before matching, a group with one member, a missing `_feedback.md`, an `ABSORB.md` section numbered ahead of the counter or numbered twice, a file in `.retired/` without its header line, a file named in a body that does not exist (the message names the ancestor skill when the file is there instead).
 
-**`[·]`, hint.** Not counted and not an error; these are the "Hints, not rules" of `SKILL.md`. A body longer than MAX_BODY or shorter than three non-blank lines, a parent with more than FANOUT children and no `groups.md`, a parent with one child and an empty body, an `excludes` word that no sibling covers.
+**`[·]`, hint.** Not counted and not an error; these are the "Hints, not rules" of `SKILL.md`. A body longer than MAX_BODY or shorter than three non-blank lines, a parent with more than FANOUT children and no `groups.md`, a parent with one child and an empty body, an `excludes` word that no sibling covers, a path in a body whose first folder exists nowhere and may be an output the step writes.
 
 The last line counts them, for example `lint: 0 errors, 0 warnings, 5 skills`, and the line after it summarizes body lengths across the tree.
 

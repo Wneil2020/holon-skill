@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 28,036 in the library (13%)
+read: 3 file(s), 3,828 bytes of 28,695 in the library (13%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 28,036 in the library (12%)
+read: 2 file(s), 3,372 bytes of 28,695 in the library (11%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 28,036 in the library (8%)
+read: 1 file(s), 2,374 bytes of 28,695 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -282,7 +282,7 @@ skill 的正文，也就是文件头以下那部分该怎么写，是另一个�
 
 ## 为什么这样设计
 
-自包含的 `pdf/` skill 可以原样拷到别的 agent 的 skills 文件夹里。引用了父级、根工具或其他 skill 的目录还要带上依赖；树相对路径的例句也可能需要调整。它同时又是 `office-docs/` 的一步，两种身份下文件夹里的内容完全一样。Arthur Koestler 在 1967 年造了 *holon* 这个词，指的正是这种东西：自己是一个整体，同时又是更大整体的一部分。移动会保留文件夹内容，`sync` 会重新生成父级的列表，但不会自动补齐外部依赖或改写跨树引用。
+自包含的 `pdf/` skill 可以原样拷到别的 agent 的 skills 文件夹里。引用了父级、根工具或其他 skill 的目录还要带上依赖；树相对路径的例句也可能需要调整。它同时又是 `office-docs/` 的一步，两种身份下文件夹里的内容完全一样。Arthur Koestler 在 1967 年造了 *holon* 这个词，指的正是这种东西：自己是一个整体，同时又是更大整体的一部分。移动会保留文件夹内容，`sync` 会重新生成父级的列表，但不会自动补齐外部依赖或改写跨树引用。它会把这些列出来：移动之后（或用 `--dry-run` 在移动之前），每个仍在反引号里写着旧路径的正文都会打印成 `check: <文件>:<行> still names `<旧>`, which is now `<新>``。
 
 工具从不做判断。`holon.py` 保证每个父级的子 skill 列表和磁盘上的文件夹一致。`organizer_cli.py` 检查能机械检查的部分：描述的格式、例句是否落在该落的地方、同级 skill 有没有抢同一个词、有没有东西被删掉。一个 skill 该放在哪，是 agent 读了 `organizer/SKILL.md` 之后做的决定；工具检查的是这个决定写下来之后是否一直成立。把 `organizer/` 整个删掉，树照样能路由。
 

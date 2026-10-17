@@ -5,6 +5,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### Found by absorbing the current anthropics/skills (2026-10-17)
+- `move` lists the pointers it leaves behind. A body in the tree that names a moved folder by its old path in backticks (`theme/SKILL.md` after `theme` moved under `office/`) is printed as `check: <file>:<line> still names ...`; `--dry-run` prints the same list before anything moves. The generated routing tables and the moved folder itself are not listed. Prose is still never rewritten.
+- `lint`'s file-pointer check separates three cases. A file that exists under an ancestor skill gets a warning naming that ancestor (text moved down without its paths, as in design notes §19). A path into `references/`, `scripts/`, `assets/`, `templates/` or `shared/`, or into a folder that exists, stays a warning. A path whose first folder exists nowhere is a hint, because it is usually an output the step writes: `skill-creator`'s `evals/evals.json` had been a standing warning on an unchanged upstream card.
+- Organizer step 1: the text an absorbed card's old description carried beyond routing words (when not to act, what to check first; `claude-api`'s 1,068-character description is mostly this) moves into the body's first step instead of being dropped with the header.
+- The install-from-URL test reaches its loopback server directly when a proxy is set in the environment; under a proxy it had failed with 404.
+
 ### Splitting a skill: `holon.py split`
 - `split DIR --show` prints a `SKILL.md` with line numbers and its sha256. The agent decides the cut (organizer rules 2 and 3) and writes a JSON plan of line ranges, each going to a `references/<name>.md` file or a new sub-skill with its description and example sentences, plus one pointer line that replaces the moved text. `split --plan FILE` copies the named lines byte for byte, writes the pointers and re-syncs the tree. It decides nothing about content.
 - The whole plan is refused, and nothing is written, if the file changed since `--show`, if ranges overlap, cut a code fence, or touch the header or the sub-skills block, if a reference path is not `references/<name>.md` one level deep or its pointer does not name it, if a sub-skill's name, description or example list is malformed, or if any target exists. On a caught failure while writing it removes what it created and restores every `SKILL.md` of the tree. Same single-writer limits as `move`.

@@ -399,6 +399,22 @@ class TestLintFileRefs(TempTree):
         self.assertNotIn("points at", out)
 
 
+    def test_file_under_an_ancestor_names_the_ancestor(self):
+        # Text cut from a parent into a child keeps the parent's paths (design-notes section 19).
+        (self.root / "web" / "references").mkdir(parents=True)
+        write(self.root / "web" / "references" / "palette.md", "# palette\n")
+        self.write_dark(body="1. Read `references/palette.md` first.\n2. Apply it.\n3. Check contrast.\n4. Done.\n5. Report.")
+        rc, out = self.lint()
+        self.assertIn("[W] web/dark-mode: body points at `references/palette.md`, which exists under web/ and not under web/dark-mode/", out)
+
+    def test_path_into_a_folder_that_exists_nowhere_is_a_hint(self):
+        # `evals/evals.json` in skill-creator is a file the step writes, not one it reads.
+        self.write_dark(body="1. Save the cases to `evals/evals.json`.\n2. Run them.\n3. Check.\n4. Done.\n5. Report.")
+        rc, out = self.lint()
+        self.assertNotIn("[W] web/dark-mode: body points at", out)
+        self.assertIn("[·] web/dark-mode: body names `evals/evals.json`, and no `evals/` exists", out)
+
+
 class TestLintBodySummary(TempTree):
     def test_last_line_is_body_distribution(self):
         rc, out = self.lint()
