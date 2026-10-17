@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 28,695 in the library (13%)
+read: 3 file(s), 3,828 bytes of 28,910 in the library (13%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 28,695 in the library (11%)
+read: 2 file(s), 3,372 bytes of 28,910 in the library (11%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 28,695 in the library (8%)
+read: 1 file(s), 2,374 bytes of 28,910 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -154,7 +154,7 @@ $ python3 organizer/scripts/organizer_cli.py lint .
 [E] office-docs/pdf: triggers are still the TODO placeholders from init; write 2 sentences it should take + 1 it should not
 
 lint: 3 errors, 0 warnings, 6 skills
-bodies: 5 skills, 4 to 85 non-blank lines, median 9, 0 over 150
+bodies: 5 skills, 4 to 86 non-blank lines, median 9, 0 over 150
 ```
 
 `lint` 的最后一行显示活分得匀不匀：最短和最长的正文、中位数、有几个超过 150 行。它只是参考信息，不算错误。

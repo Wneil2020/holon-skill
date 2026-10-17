@@ -127,6 +127,7 @@ A batch of many cards still gets one section and one count. The heading names th
 - A parent with exactly one child whose body says nothing but "see the child". This is a hollow parent. Promote the child and retire the parent.
 - Two siblings' cover words overlap above OVERLAP. Suspected duplicate. Go to step 4.
 - An `excludes` word that no skill covers. It is a refusal, not a redirect. Correct if the library has no skill for that word; otherwise name the sibling's cover word.
+- A `synonyms.md` group that reaches no skill. Its first word is in no cover or excludes word, so its aliases fold to a word nothing matches. List the word in the skill the group was written for, or drop the group.
 - A body that names a file in backticks, with a directory in the path, and no such file exists under the skill or at the tree root. The step cannot be followed. Add the file or fix the path. If the file is under an ancestor skill, the text was moved down without its paths, and the warning names the ancestor. A bare name with no directory is not checked, and a path whose first folder is not `references/`, `scripts/`, `assets/`, `templates/` or `shared/` and exists nowhere is only a hint: both may be outputs the step writes, such as a file of test cases it saves.
 
 ## Parameters

@@ -585,6 +585,7 @@ def check_root_files(root, skills):
     issues += check_alias_overlap(root, skills, load_synonyms(root))
     issues += check_alias_covers(root, skills, load_synonyms(root))
     issues += check_excludes_reach(root, skills, load_synonyms(root))
+    issues += check_dead_synonyms(root, skills, load_synonyms(root))
     return issues
 
 
@@ -655,6 +656,24 @@ def check_excludes_reach(root, skills, syn):
             if not owners:
                 issues.append(f"[·] {rel(root, d)}: excludes '{e}' is a refusal (no skill covers that word), "
                               "not a redirect -- fine if the library has no skill for it; if one was meant, name its cover word")
+    return issues
+
+
+def check_dead_synonyms(root, skills, syn):
+    """A synonym group folds sentences to its first word. If no skill's cover or excludes
+    word contains that word after folding, the group can never change a route: the
+    aliases were added for a skill that does not list the word, or the word was renamed."""
+    words = set()
+    for sk in skills.values():
+        covers, excl = parse_desc(sk.meta.get("description", ""))
+        words |= {canonicalize(w, syn) for w in covers | excl}
+    issues = []
+    for canon in sorted(set(syn.values())):
+        if not any(contains(w, canon) for w in words):
+            aliases = sorted(a for a, c in syn.items() if c == canon and a != canon)
+            issues.append(f"[·] synonyms.md: group '{canon}' ({', '.join(aliases)}) reaches no skill -- no cover or "
+                          f"excludes word contains '{canon}', so folding to it changes no route; list '{canon}' "
+                          "in the skill the aliases were meant for, or drop the group")
     return issues
 
 

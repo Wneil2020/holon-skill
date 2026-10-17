@@ -360,6 +360,13 @@ class TestLintRootFiles(TempTree):
         rc, out = self.lint()
         self.assertNotIn("overlaps", out)
 
+    def test_lint_hints_synonym_group_no_skill_reaches(self):
+        """'acme api' is in no cover or excludes word, so folding 'vendor sdk' to it changes nothing."""
+        write(self.root / "synonyms.md", "dark mode,night mode\nacme api,vendor sdk\n")
+        rc, out = self.lint()
+        self.assertIn("[·] synonyms.md: group 'acme api' (vendor sdk) reaches no skill", out)
+        self.assertNotIn("group 'dark mode'", out)
+
     def test_absorb_entries_format(self):
         write(self.root / "ABSORB.md", "# ABSORB.md\n\n## @12 the web family\nlearned: web\n\n## heading without count\nlearned: x\n\n## @13 fine\nsome free text\n")
         rc, out = self.lint()

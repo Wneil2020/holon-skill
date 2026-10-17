@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 28,695 in the library (13%)
+read: 3 file(s), 3,828 bytes of 28,910 in the library (13%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 28,695 in the library (11%)
+read: 2 file(s), 3,372 bytes of 28,910 in the library (11%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 28,695 in the library (8%)
+read: 1 file(s), 2,374 bytes of 28,910 in the library (8%)
 ```
 
 ## Checking the tree
@@ -154,7 +154,7 @@ $ python3 organizer/scripts/organizer_cli.py lint .
 [E] office-docs/pdf: triggers are still the TODO placeholders from init; write 2 sentences it should take + 1 it should not
 
 lint: 3 errors, 0 warnings, 6 skills
-bodies: 5 skills, 4 to 85 non-blank lines, median 9, 0 over 150
+bodies: 5 skills, 4 to 86 non-blank lines, median 9, 0 over 150
 ```
 
 The last line of `lint` shows how evenly the work is divided: the shortest and longest body, the median, and how many are over 150 lines. It is information, not an error.
