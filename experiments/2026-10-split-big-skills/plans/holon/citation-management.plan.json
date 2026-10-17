@@ -1,0 +1,114 @@
+{
+ "source": "citation-management",
+ "sha256": "2dff78725d4952afe1cc83240649b9240a4ef3d5fb817d076ddd930d574f831d",
+ "chunks": [
+  {
+   "lines": "32-62",
+   "to": "reference",
+   "path": "references/scientific_schematics.md",
+   "pointer": "For adding scientific diagrams and schematics to citation documents, see `references/scientific_schematics.md`."
+  },
+  {
+   "lines": "74-141",
+   "to": "skill",
+   "name": "search-papers",
+   "description": "Use when you need to find papers on a topic: covers scholar, pubmed, search; excludes metadata extraction and BibTeX formatting.",
+   "triggers": [
+    "Search Google Scholar for recent CRISPR papers",
+    "Find clinical trials on Alzheimer's in PubMed",
+    "Format my BibTeX file should go to citation-management/format-bibtex"
+   ],
+   "pointer": "For finding papers on a topic via Google Scholar or PubMed, use the `search-papers` sub-skill."
+  },
+  {
+   "lines": "143-214",
+   "to": "skill",
+   "name": "extract-metadata",
+   "description": "Use when you have a DOI, PMID, arXiv ID or URL and need complete citation metadata: covers doi, pmid, arxiv; excludes searching for papers and formatting BibTeX files.",
+   "triggers": [
+    "Convert this DOI to BibTeX",
+    "Extract metadata for PMID 34265844",
+    "Search PubMed for new papers should go to citation-management/search-papers"
+   ],
+   "pointer": "For converting DOIs, PMIDs, arXiv IDs or URLs into complete metadata, use the `extract-metadata` sub-skill."
+  },
+  {
+   "lines": "216-300",
+   "to": "skill",
+   "name": "format-bibtex",
+   "description": "Use when you need to clean, sort or standardize a BibTeX file: covers bibtex, format, deduplicate; excludes validating citations and extracting metadata.",
+   "triggers": [
+    "Format and sort my references.bib by year",
+    "Remove duplicate entries from this BibTeX file",
+    "Verify my DOIs resolve should go to citation-management/validate-citations"
+   ],
+   "pointer": "For formatting, sorting, deduplicating and cleaning BibTeX files, use the `format-bibtex` sub-skill."
+  },
+  {
+   "lines": "302-380",
+   "to": "skill",
+   "name": "validate-citations",
+   "description": "Use when you need to verify citations are accurate and complete: covers validate, verify, doi; excludes formatting BibTeX and extracting metadata.",
+   "triggers": [
+    "Validate my references.bib before submission",
+    "Check that all my DOIs resolve correctly",
+    "Sort my BibTeX entries should go to citation-management/format-bibtex"
+   ],
+   "pointer": "For verifying citation accuracy, DOI resolution and completeness, use the `validate-citations` sub-skill."
+  },
+  {
+   "lines": "382-447",
+   "to": "reference",
+   "path": "references/writing_workflow.md",
+   "pointer": "For the end-to-end workflow of building a bibliography for a manuscript and integrating with the literature-review skill, see `references/writing_workflow.md`."
+  },
+  {
+   "lines": "449-553",
+   "to": "reference",
+   "path": "references/search_strategies.md",
+   "pointer": "For detailed search strategies, citation-count thresholds, venue tiers and MeSH query construction, see `references/search_strategies.md`."
+  },
+  {
+   "lines": "555-752",
+   "to": "reference",
+   "path": "references/scripts_reference.md",
+   "pointer": "For the full CLI reference of every bundled script (search, extract, validate, format, doi_to_bibtex), see `references/scripts_reference.md`."
+  },
+  {
+   "lines": "754-872",
+   "to": "reference",
+   "path": "references/best_practices.md",
+   "pointer": "For best practices on search strategy, metadata extraction, BibTeX quality, validation and common pitfalls, see `references/best_practices.md`."
+  },
+  {
+   "lines": "874-997",
+   "to": "reference",
+   "path": "references/example_workflows.md",
+   "pointer": "For worked end-to-end examples (building a bibliography, converting DOI lists, cleaning messy files, finding seminal papers), see `references/example_workflows.md`."
+  },
+  {
+   "lines": "999-1028",
+   "to": "reference",
+   "path": "references/skill_integration.md",
+   "pointer": "For how this skill integrates with literature-review, scientific-writing and venue-templates, see `references/skill_integration.md`."
+  },
+  {
+   "lines": "1030-1097",
+   "to": "reference",
+   "path": "references/resources_and_dependencies.md",
+   "pointer": "For bundled resources, external APIs, citation-style links and required Python packages, see `references/resources_and_dependencies.md`."
+  },
+  {
+   "lines": "1099-1111",
+   "to": "reference",
+   "path": "references/summary.md",
+   "pointer": "For a one-page summary of what this skill provides, see `references/summary.md`."
+  },
+  {
+   "lines": "1114-1115",
+   "to": "reference",
+   "path": "references/k_dense_web.md",
+   "pointer": "For when to suggest K-Dense Web for complex multi-step workflows, see `references/k_dense_web.md`."
+  }
+ ]
+}

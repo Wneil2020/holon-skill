@@ -1,0 +1,36 @@
+{
+ "source": "pymatgen",
+ "sha256": "6d789ca98046b6fe4e9911382e425ed8a019cb8583bd7e00b4dfe2a871c07813",
+ "chunks": [
+  {
+   "lines": "30-86",
+   "to": "reference",
+   "path": "references/quick-start-guide.md",
+   "pointer": "Details for this section: `references/quick-start-guide.md`."
+  },
+  {
+   "lines": "88-491",
+   "to": "reference",
+   "path": "references/core-capabilities.md",
+   "pointer": "Details for this section: `references/core-capabilities.md`."
+  },
+  {
+   "lines": "493-523",
+   "to": "reference",
+   "path": "references/bundled-resources.md",
+   "pointer": "Details for this section: `references/bundled-resources.md`."
+  },
+  {
+   "lines": "525-588",
+   "to": "reference",
+   "path": "references/common-workflows.md",
+   "pointer": "Details for this section: `references/common-workflows.md`."
+  },
+  {
+   "lines": "590-625",
+   "to": "reference",
+   "path": "references/best-practices.md",
+   "pointer": "Details for this section: `references/best-practices.md`."
+  }
+ ]
+}

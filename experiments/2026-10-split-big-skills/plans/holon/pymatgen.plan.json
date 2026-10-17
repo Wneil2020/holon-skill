@@ -1,0 +1,144 @@
+{
+ "source": "pymatgen",
+ "sha256": "6d789ca98046b6fe4e9911382e425ed8a019cb8583bd7e00b4dfe2a871c07813",
+ "chunks": [
+  {
+   "lines": "89-141",
+   "to": "skill",
+   "name": "structure-creation",
+   "description": "Use when creating or transforming crystal structures and molecules: covers structure, lattice, supercell, substitution; excludes file format conversion (should go to pymatgen/format-conversion).",
+   "triggers": [
+    "build a supercell from this POSCAR",
+    "substitute Fe with Mn in this structure",
+    "convert a CIF to a different lattice should go to pymatgen/format-conversion"
+   ],
+   "pointer": "For creating structures from files, from scratch, or applying transformations, see `structure-creation/SKILL.md`."
+  },
+  {
+   "lines": "143-167",
+   "to": "skill",
+   "name": "format-conversion",
+   "description": "Use when converting structure files between formats: covers cif, poscar, xyz, converter; excludes symmetry analysis (should go to pymatgen/structure-analysis).",
+   "triggers": [
+    "convert this POSCAR to CIF",
+    "batch convert all my cif files to poscar",
+    "analyze the space group of this structure should go to pymatgen/structure-analysis"
+   ],
+   "pointer": "For reading and writing structures across 100+ file formats, see `format-conversion/SKILL.md`."
+  },
+  {
+   "lines": "169-211",
+   "to": "skill",
+   "name": "structure-analysis",
+   "description": "Use when analyzing symmetry, coordination, or local environment: covers symmetry, coordination, spacegroup, neighbors; excludes phase diagram construction (should go to pymatgen/phase-diagrams).",
+   "triggers": [
+    "find the space group of this crystal",
+    "compute coordination number for site 0",
+    "build a Li-Fe-O phase diagram should go to pymatgen/phase-diagrams"
+   ],
+   "pointer": "For symmetry, coordination, and local environment analysis, see `structure-analysis/SKILL.md`."
+  },
+  {
+   "lines": "213-258",
+   "to": "skill",
+   "name": "phase-diagrams",
+   "description": "Use when building phase diagrams or assessing thermodynamic stability: covers phase, hull, decomposition, thermodynamics; excludes electronic structure (should go to pymatgen/electronic-structure).",
+   "triggers": [
+    "build the Li-Fe-O phase diagram",
+    "is LiFeO2 stable, what is its energy above hull",
+    "plot the band structure of this material should go to pymatgen/electronic-structure"
+   ],
+   "pointer": "For phase diagram construction and thermodynamic stability analysis, see `phase-diagrams/SKILL.md`."
+  },
+  {
+   "lines": "260-301",
+   "to": "skill",
+   "name": "electronic-structure",
+   "description": "Use when analyzing band structures, DOS, or electronic properties: covers band, dos, gap, vasprun; excludes surface slab generation (should go to pymatgen/surfaces).",
+   "triggers": [
+    "compute the band gap from this vasprun.xml",
+    "plot the density of states for this material",
+    "generate a (1,1,1) slab should go to pymatgen/surfaces"
+   ],
+   "pointer": "For band structure, DOS, and electronic property analysis, see `electronic-structure/SKILL.md`."
+  },
+  {
+   "lines": "303-363",
+   "to": "skill",
+   "name": "surfaces",
+   "description": "Use when generating slabs, Wulff shapes, or adsorption sites: covers slab, surface, wulff, adsorption; excludes phase diagram construction (should go to pymatgen/phase-diagrams).",
+   "triggers": [
+    "generate a (1,1,1) slab with 10 Å vacuum",
+    "find adsorption sites on this surface",
+    "compute energy above hull for this composition should go to pymatgen/phase-diagrams"
+   ],
+   "pointer": "For slab generation, Wulff shapes, and adsorption site finding, see `surfaces/SKILL.md`."
+  },
+  {
+   "lines": "365-401",
+   "to": "skill",
+   "name": "materials-project",
+   "description": "Use when accessing the Materials Project database: covers materials, mprester, mp-api, database; excludes VASP input generation (should go to pymatgen/vasp-inputs).",
+   "triggers": [
+    "search Materials Project for stable Li-Fe-O compounds",
+    "get the structure for mp-149",
+    "write MPRelaxSet inputs for this structure should go to pymatgen/vasp-inputs"
+   ],
+   "pointer": "For Materials Project API access and database queries, see `materials-project/SKILL.md`."
+  },
+  {
+   "lines": "403-448",
+   "to": "skill",
+   "name": "vasp-inputs",
+   "description": "Use when setting up VASP, Gaussian, or Quantum ESPRESSO inputs: covers vasp, incar, gaussian, pwscf; excludes Materials Project queries (should go to pymatgen/materials-project).",
+   "triggers": [
+    "write MPRelaxSet inputs for this structure",
+    "generate a Gaussian input file for this molecule",
+    "search Materials Project for Fe2O3 should go to pymatgen/materials-project"
+   ],
+   "pointer": "For VASP, Gaussian, and Quantum ESPRESSO input generation, see `vasp-inputs/SKILL.md`."
+  },
+  {
+   "lines": "450-490",
+   "to": "skill",
+   "name": "advanced-analysis",
+   "description": "Use when computing diffraction, elastic, or magnetic properties: covers xrd, elastic, magnetic, diffraction; excludes symmetry analysis (should go to pymatgen/structure-analysis).",
+   "triggers": [
+    "compute the XRD pattern for this structure",
+    "calculate the bulk modulus from this elastic tensor",
+    "find the space group of this crystal should go to pymatgen/structure-analysis"
+   ],
+   "pointer": "For diffraction, elastic, and magnetic property analysis, see `advanced-analysis/SKILL.md`."
+  },
+  {
+   "lines": "524-587",
+   "to": "reference",
+   "path": "references/workflows.md",
+   "pointer": "For end-to-end workflow examples (high-throughput doping, band structure, surface energy), see `references/workflows.md`."
+  },
+  {
+   "lines": "589-624",
+   "to": "reference",
+   "path": "references/best_practices.md",
+   "pointer": "For best practices on structure handling, file I/O, API use, workflows, and performance, see `references/best_practices.md`."
+  },
+  {
+   "lines": "626-647",
+   "to": "reference",
+   "path": "references/conventions.md",
+   "pointer": "For units, conventions, and integration with ASE, Phonopy, BoltzTraP, and other tools, see `references/conventions.md`."
+  },
+  {
+   "lines": "648-671",
+   "to": "reference",
+   "path": "references/troubleshooting.md",
+   "pointer": "For troubleshooting import errors, API key issues, structure read failures, and symmetry precision, see `references/troubleshooting.md`."
+  },
+  {
+   "lines": "673-688",
+   "to": "reference",
+   "path": "references/resources.md",
+   "pointer": "For external documentation links and version requirements, see `references/resources.md`."
+  }
+ ]
+}

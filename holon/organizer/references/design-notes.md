@@ -255,3 +255,15 @@ What the numbers said, and what each changed:
 - **Rule 1 was rewritten twice and kept.** "Go down every line that matches" gained requests that need two skills and lost more that need one; a more careful wording broke even. The present wording stays. A library whose owner minds a missing skill more than an extra one may prefer the careful wording; the experiment's README has both.
 
 What remains wrong is mostly one skill: `discernment-nudge`, about how to give advice, which applies alongside almost any task. In 25 of its 29 misses the tree had loaded every other skill the label wanted. A skill that cuts across the tree does not sit well in one branch, and no rule here handles it yet.
+
+## 22. Four long skills, split
+
+§21 measured choosing among skills that were already clean. The other half of the claim, that one long mixed `SKILL.md` can be re-planned so an agent reads only the part it needs, was measured on the four longest relevant files of the Graph of Skills `skills_1000` library (`citation-management`, `rdkit`, `pymatgen`, `senior-data-engineer`), with 96 lookup questions written from the unsplit files. Everything is in `experiments/2026-10-split-big-skills/`.
+
+- `split` lost nothing: every non-blank source line is in the split tree, for every file.
+- On the 54 questions the model could not answer without the file, a split planned from these rules answered 52 (whole file: 54) and read 27% fewer characters. A mechanical split by `##` heading, through the same tool, answered 52 and read 44% *more* than the whole file. The only difference was what the pointer lines said. So editing step 4 now asks for pointers that say what the moved text is for and when to open it.
+- A file that repeats itself was not helped: on `senior-data-engineer` the agent read more after the split than before, because the same commands ended up in several moved pieces. Organizer step 1 now says to merge the copies before splitting. `split` still does not detect repeats itself.
+- One of the four headers (nested maps, `related-agents: []`) was outside the YAML subset and `split` refused the file. One-line flow lists are now read; nested maps are still refused, on purpose, since the routing tools only need strings and simple lists.
+
+The questions were lookups, and one model family wrote questions, plans, answers and judgments; a task that needs several parts of a split skill at once is untested.
+

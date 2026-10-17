@@ -1,0 +1,24 @@
+{
+ "source": "rdkit",
+ "sha256": "765c294784d94663df4974b22b11e20a5f663baf33e43bb8e22482608e88f64d",
+ "chunks": [
+  {
+   "lines": "16-595",
+   "to": "reference",
+   "path": "references/core-capabilities.md",
+   "pointer": "Details for this section: `references/core-capabilities.md`."
+  },
+  {
+   "lines": "597-669",
+   "to": "reference",
+   "path": "references/common-workflows.md",
+   "pointer": "Details for this section: `references/common-workflows.md`."
+  },
+  {
+   "lines": "671-736",
+   "to": "reference",
+   "path": "references/best-practices.md",
+   "pointer": "Details for this section: `references/best-practices.md`."
+  }
+ ]
+}

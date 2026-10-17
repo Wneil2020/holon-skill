@@ -5,6 +5,12 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### Splitting four long skills (2026-10-17)
+- Measured `split` on the four longest relevant files of the Graph of Skills `skills_1000` library with 96 lookup questions written before the split. No text lost. On the 54 questions the model could not answer without the file, the split planned from holon's rules answered 52 (whole file 54) and read 27% fewer characters; a mechanical split by `##` heading answered 52 and read 44% more than the whole file. A grab-bag that repeats itself read more after splitting. Scripts, questions, saved plans and results: `experiments/2026-10-split-big-skills/`; design notes §22.
+- editing step 4: a split's pointer line says what the moved text is for and when to open it.
+- organizer step 1: merge repeated passages before splitting; `split` moves text verbatim and would carry both copies.
+- The frontmatter parser reads one-line flow lists (`related: []`, `tags: [a, "b, c"]`). Nested flow collections and nested maps are still refused.
+
 ### Found by absorbing the current anthropics/skills (2026-10-17)
 - Measured how often a model reading the tree loads the right skills, on 486 held-out requests written and labeled by other agents: 70.6% for the first tree, 80.0% after tuning, 81.9% for the same descriptions read as one flat list, 46% for `route`'s word matching. Scripts, data, every round's cards and the logs are in `experiments/2026-10-anthropic-skills/`; `holon/README.md` (Status and limits), `organizer/README.md` and design notes §21 report what it showed. Rewording rule 1 to "go down every line that matches" was tried and not adopted.
 - `move` lists the pointers it leaves behind. A body in the tree that names a moved folder by its old path in backticks (`theme/SKILL.md` after `theme` moved under `office/`) is printed as `check: <file>:<line> still names ...`; `--dry-run` prints the same list before anything moves. The generated routing tables and the moved folder itself are not listed. Prose is still never rewritten.

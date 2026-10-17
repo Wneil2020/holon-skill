@@ -1,0 +1,770 @@
+[
+ {
+  "q": "I have a list of DOIs in a text file and need a single BibTeX file; which command and flag should I run?",
+  "answer": "python scripts/doi_to_bibtex.py --input dois.txt --output references.bib",
+  "lines": "155-156",
+  "skill": "citation-management",
+  "window": 0,
+  "id": "citation-management#0"
+ },
+ {
+  "q": "I only have a PMID (34265844) and need its metadata extracted; what command do I use?",
+  "answer": "python scripts/extract_metadata.py --pmid 34265844",
+  "lines": "170-171",
+  "skill": "citation-management",
+  "window": 0,
+  "id": "citation-management#1"
+ },
+ {
+  "q": "I want to convert a single DOI to JSON instead of BibTeX; which flag do I add?",
+  "answer": "--format json",
+  "lines": "158-159",
+  "skill": "citation-management",
+  "window": 0,
+  "id": "citation-management#2"
+ },
+ {
+  "q": "I need to search Google Scholar for papers from 2020 through 2024; which flags set the year range?",
+  "answer": "--year-start 2020 --year-end 2024",
+  "lines": "86-90",
+  "skill": "citation-management",
+  "window": 0,
+  "id": "citation-management#3"
+ },
+ {
+  "q": "I want to sort my BibTeX file by citation key; which command and flag do I use?",
+  "answer": "python scripts/format_bibtex.py references.bib --sort key --output sorted_references.bib",
+  "lines": "271-274",
+  "skill": "citation-management",
+  "window": 0,
+  "id": "citation-management#4"
+ },
+ {
+  "q": "I'm searching PubMed and only want Clinical Trial and Review publication types; which flag and value do I use?",
+  "answer": "--publication-types \"Clinical Trial,Review\"",
+  "lines": "124-125",
+  "skill": "citation-management",
+  "window": 0,
+  "id": "citation-management#5"
+ },
+ {
+  "q": "I have a BibTeX file and want to remove duplicate entries into a new file; which command and flag do I use?",
+  "answer": "python scripts/format_bibtex.py references.bib --deduplicate --output clean_references.bib",
+  "lines": "282-285",
+  "skill": "citation-management",
+  "window": 1,
+  "id": "citation-management#6"
+ },
+ {
+  "q": "I need to validate my references.bib and automatically fix common issues, writing the result to validated_references.bib. What command?",
+  "answer": "python scripts/validate_citations.py references.bib --auto-fix --output validated_references.bib",
+  "lines": "312-315",
+  "skill": "citation-management",
+  "window": 1,
+  "id": "citation-management#7"
+ },
+ {
+  "q": "I want a detailed JSON validation report with verbose output for my BibTeX file. Which command?",
+  "answer": "python scripts/validate_citations.py references.bib --report validation_report.json --verbose",
+  "lines": "317-320",
+  "skill": "citation-management",
+  "window": 1,
+  "id": "citation-management#8"
+ },
+ {
+  "q": "I have a DOI and want to append its BibTeX entry to my existing .bib file. What command?",
+  "answer": "python scripts/doi_to_bibtex.py 10.1038/nature12345 >> crispr_refs.bib",
+  "lines": "401-403",
+  "skill": "citation-management",
+  "window": 1,
+  "id": "citation-management#9"
+ },
+ {
+  "q": "I need to format my BibTeX file in Nature style and output formatted_refs.bib. Which command and flag?",
+  "answer": "python scripts/format_bibtex.py my_review_references.bib --style nature --output formatted_refs.bib",
+  "lines": "443-446",
+  "skill": "citation-management",
+  "window": 1,
+  "id": "citation-management#10"
+ },
+ {
+  "q": "What citation count makes a 7+ year old paper a 'Seminal Work'?",
+  "answer": "500+",
+  "lines": "464-464",
+  "skill": "citation-management",
+  "window": 1,
+  "id": "citation-management#11"
+ },
+ {
+  "q": "I have a list of DOIs in a text file and need a single BibTeX file out of them; which script and flags do I run?",
+  "answer": "python scripts/doi_to_bibtex.py --input dois.txt --output references.bib",
+  "lines": "747-748",
+  "skill": "citation-management",
+  "window": 2,
+  "id": "citation-management#12"
+ },
+ {
+  "q": "I want Google Scholar results sorted by citation count and saved to JSON; what command do I use?",
+  "answer": "python scripts/search_google_scholar.py \"quantum computing\" --sort-by citations --output quantum_papers.json",
+  "lines": "574-579",
+  "skill": "citation-management",
+  "window": 2,
+  "id": "citation-management#13"
+ },
+ {
+  "q": "I need to pull metadata for a batch of mixed identifiers listed one per line and write BibTeX; which command?",
+  "answer": "python scripts/extract_metadata.py --input paper_ids.txt --output references.bib",
+  "lines": "646-649",
+  "skill": "citation-management",
+  "window": 2,
+  "id": "citation-management#14"
+ },
+ {
+  "q": "I want to validate a .bib file and only check the DOIs, no other checks; what flag do I pass?",
+  "answer": "--check-dois-only",
+  "lines": "684-686",
+  "skill": "citation-management",
+  "window": 2,
+  "id": "citation-management#15"
+ },
+ {
+  "q": "I need to sort a BibTeX file by year with the newest entries first; which flags?",
+  "answer": "--sort year --descending",
+  "lines": "706-710",
+  "skill": "citation-management",
+  "window": 2,
+  "id": "citation-management#16"
+ },
+ {
+  "q": "What's the recommended citation key format for BibTeX entries?",
+  "answer": "FirstAuthor2024keyword",
+  "lines": "805-806",
+  "skill": "citation-management",
+  "window": 2,
+  "id": "citation-management#17"
+ },
+ {
+  "q": "I have a DOI list in a text file and need BibTeX in one file; which command and flag?",
+  "answer": "python scripts/doi_to_bibtex.py --input dois.txt --output references.bib",
+  "lines": "936-936",
+  "skill": "citation-management",
+  "window": 3,
+  "id": "citation-management#18"
+ },
+ {
+  "q": "I want to combine several .bib files into one; what shell command should I use?",
+  "answer": "cat transformers.bib medical.bib specific.bib > combined.bib",
+  "lines": "904-904",
+  "skill": "citation-management",
+  "window": 3,
+  "id": "citation-management#19"
+ },
+ {
+  "q": "My bibliography has duplicate entries with different keys; which flag removes them during formatting?",
+  "answer": "--deduplicate",
+  "lines": "907-908",
+  "skill": "citation-management",
+  "window": 3,
+  "id": "citation-management#20"
+ },
+ {
+  "q": "I need my BibTeX sorted by year with newest first; which flags do I pass to format_bibtex.py?",
+  "answer": "--sort year --descending",
+  "lines": "909-910",
+  "skill": "citation-management",
+  "window": 3,
+  "id": "citation-management#21"
+ },
+ {
+  "q": "I want validation to fix issues automatically and write a JSON report; which flags?",
+  "answer": "--auto-fix --report validation.json",
+  "lines": "914-916",
+  "skill": "citation-management",
+  "window": 3,
+  "id": "citation-management#22"
+ },
+ {
+  "q": "Which Python package should I install for parsing and formatting BibTeX?",
+  "answer": "bibtexparser",
+  "lines": "1082-1082",
+  "skill": "citation-management",
+  "window": 3,
+  "id": "citation-management#23"
+ },
+ {
+  "q": "I have a SMILES string and want to load it into RDKit, but I need to skip the automatic sanitization step. What call should I use?",
+  "answer": "Chem.MolFromSmiles('C1=CC=CC=C1', sanitize=False)",
+  "lines": "98-99",
+  "skill": "rdkit",
+  "window": 0,
+  "id": "rdkit#0"
+ },
+ {
+  "q": "I parsed a molecule with sanitization disabled and now want to run the standard sanitization manually. What function do I call?",
+  "answer": "Chem.SanitizeMol(mol)",
+  "lines": "101-102",
+  "skill": "rdkit",
+  "window": 0,
+  "id": "rdkit#1"
+ },
+ {
+  "q": "Before sanitizing a molecule I want to list what chemistry problems RDKit detects. What function returns those problems?",
+  "answer": "Chem.DetectChemistryProblems(mol)",
+  "lines": "104-105",
+  "skill": "rdkit",
+  "window": 0,
+  "id": "rdkit#2"
+ },
+ {
+  "q": "I need to sanitize a molecule but skip the properties step. What sanitizeOps expression should I pass?",
+  "answer": "Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES",
+  "lines": "110-111",
+  "skill": "rdkit",
+  "window": 0,
+  "id": "rdkit#3"
+ },
+ {
+  "q": "I have a molecule and want the list of (atom index, chirality) tuples for its chiral centers, including unassigned ones. What function and argument do I use?",
+  "answer": "FindMolChiralCenters(mol, includeUnassigned=True)",
+  "lines": "150-151",
+  "skill": "rdkit",
+  "window": 0,
+  "id": "rdkit#4"
+ },
+ {
+  "q": "I have a molecule with multiple disconnected pieces and want each fragment as a separate Mol object. What call gives me that?",
+  "answer": "Chem.GetMolFrags(mol, asMols=True)",
+  "lines": "166-167",
+  "skill": "rdkit",
+  "window": 0,
+  "id": "rdkit#5"
+ },
+ {
+  "q": "I need to compute every RDKit descriptor for a molecule in one call and get a dict back — what function do I use?",
+  "answer": "Descriptors.CalcMolDescriptors(mol)",
+  "lines": "209-211",
+  "skill": "rdkit",
+  "window": 1,
+  "id": "rdkit#6"
+ },
+ {
+  "q": "How do I get the list of all available descriptor names from RDKit's Descriptors module?",
+  "answer": "[desc[0] for desc in Descriptors._descList]",
+  "lines": "213-214",
+  "skill": "rdkit",
+  "window": 1,
+  "id": "rdkit#7"
+ },
+ {
+  "q": "What's the maximum number of hydrogen bond acceptors allowed under Lipinski's Rule of Five?",
+  "answer": "10",
+  "lines": "224-224",
+  "skill": "rdkit",
+  "window": 1,
+  "id": "rdkit#8"
+ },
+ {
+  "q": "I want a 2048-bit Morgan fingerprint with radius 2 for similarity work — which function and arguments?",
+  "answer": "AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048)",
+  "lines": "243-243",
+  "skill": "rdkit",
+  "window": 1,
+  "id": "rdkit#9"
+ },
+ {
+  "q": "I have one query fingerprint and a list of others; how do I compute Tanimoto similarities against all of them at once?",
+  "answer": "DataStructs.BulkTanimotoSimilarity(fp1, [fp2, fp3, fp4])",
+  "lines": "269-270",
+  "skill": "rdkit",
+  "window": 1,
+  "id": "rdkit#10"
+ },
+ {
+  "q": "For Butina clustering, what distance threshold value is used in the example call to ClusterData?",
+  "answer": "distThresh=0.3",
+  "lines": "291-291",
+  "skill": "rdkit",
+  "window": 1,
+  "id": "rdkit#11"
+ },
+ {
+  "q": "I need to generate 10 3D conformers for a molecule with a reproducible random seed. Which function and parameters should I use?",
+  "answer": "AllChem.EmbedMultipleConfs(mol, numConfs=10, randomSeed=42)",
+  "lines": "396-397",
+  "skill": "rdkit",
+  "window": 2,
+  "id": "rdkit#12"
+ },
+ {
+  "q": "After generating multiple conformers, how do I optimize each one with the MMFF94 force field?",
+  "answer": "AllChem.MMFFOptimizeMolecule(mol, confId=conf_id)",
+  "lines": "403-405",
+  "skill": "rdkit",
+  "window": 2,
+  "id": "rdkit#13"
+ },
+ {
+  "q": "I want to draw four molecules in a 2x2 grid image. Which function and parameters do that?",
+  "answer": "Draw.MolsToGridImage(mols, molsPerRow=2, subImgSize=(200, 200))",
+  "lines": "436-438",
+  "skill": "rdkit",
+  "window": 2,
+  "id": "rdkit#14"
+ },
+ {
+  "q": "How do I make RDKit display molecules as SVG in a Jupyter notebook?",
+  "answer": "IPythonConsole.ipython_useSVG = True",
+  "lines": "482-486",
+  "skill": "rdkit",
+  "window": 2,
+  "id": "rdkit#15"
+ },
+ {
+  "q": "I have a molecule with formal charges and want to neutralize it. What class and method should I use?",
+  "answer": "rdMolStandardize.Uncharger().uncharge(mol)",
+  "lines": "543-547",
+  "skill": "rdkit",
+  "window": 2,
+  "id": "rdkit#16"
+ },
+ {
+  "q": "I need a Murcko scaffold hash for a molecule. Which function and hash function enum do I call?",
+  "answer": "rdMolHash.MolHash(mol, rdMolHash.HashFunction.MurckoScaffold)",
+  "lines": "555-558",
+  "skill": "rdkit",
+  "window": 2,
+  "id": "rdkit#17"
+ },
+ {
+  "q": "I have a SMILES string and want to know if it passes Lipinski's Rule of Five; what thresholds does the check use for MW, LogP, HBD, and HBA?",
+  "answer": "MW <= 500, LogP <= 5, HBD <= 5, HBA <= 10",
+  "lines": "620-625",
+  "skill": "rdkit",
+  "window": 3,
+  "id": "rdkit#18"
+ },
+ {
+  "q": "I want to screen a database of SMILES against a query by Tanimoto similarity; what default threshold does the similarity_screen function use?",
+  "answer": "0.7",
+  "lines": "637-637",
+  "skill": "rdkit",
+  "window": 3,
+  "id": "rdkit#19"
+ },
+ {
+  "q": "I need to compute Morgan fingerprints for similarity; what radius value is used in the example calls?",
+  "answer": "2",
+  "lines": "639-645",
+  "skill": "rdkit",
+  "window": 3,
+  "id": "rdkit#20"
+ },
+ {
+  "q": "I have a large SDF file and want to process it one molecule at a time without loading everything into memory; which supplier class should I use?",
+  "answer": "Chem.ForwardSDMolSupplier",
+  "lines": "726-731",
+  "skill": "rdkit",
+  "window": 3,
+  "id": "rdkit#21"
+ },
+ {
+  "q": "I want to speed up similarity calculations against many fingerprints at once; which bulk function should I call?",
+  "answer": "DataStructs.BulkTanimotoSimilarity",
+  "lines": "705-706",
+  "skill": "rdkit",
+  "window": 3,
+  "id": "rdkit#22"
+ },
+ {
+  "q": "I'm running RDKit in a multithreaded pipeline; which RDKit object is explicitly not thread-safe when accessed concurrently?",
+  "answer": "MolSuppliers",
+  "lines": "719-719",
+  "skill": "rdkit",
+  "window": 3,
+  "id": "rdkit#23"
+ },
+ {
+  "q": "I want to install pymatgen with Materials Project API support; what's the pip command?",
+  "answer": "uv pip install pymatgen mp-api",
+  "lines": "37-38",
+  "skill": "pymatgen",
+  "window": 0,
+  "id": "pymatgen#0"
+ },
+ {
+  "q": "I have a POSCAR file and want to load it into a Structure object without specifying the format; what call do I use?",
+  "answer": "Structure.from_file(\"POSCAR\")",
+  "lines": "50-51",
+  "skill": "pymatgen",
+  "window": 0,
+  "id": "pymatgen#1"
+ },
+ {
+  "q": "I need to write a Structure object to a CIF file; what method call does that?",
+  "answer": "struct.to(filename=\"structure.cif\")",
+  "lines": "57-58",
+  "skill": "pymatgen",
+  "window": 0,
+  "id": "pymatgen#2"
+ },
+ {
+  "q": "I want to search the Materials Project for Fe2O3 entries with energy above hull between 0 and 0.05 eV/atom; what search call and parameter do I use?",
+  "answer": "mpr.materials.summary.search(formula=\"Fe2O3\", energy_above_hull=(0, 0.05))",
+  "lines": "81-84",
+  "skill": "pymatgen",
+  "window": 0,
+  "id": "pymatgen#3"
+ },
+ {
+  "q": "I have a structure and want to make a 2x2x2 supercell; which transformation class and matrix should I use?",
+  "answer": "SupercellTransformation([[2,0,0],[0,2,0],[0,0,2]])",
+  "lines": "128-130",
+  "skill": "pymatgen",
+  "window": 0,
+  "id": "pymatgen#4"
+ },
+ {
+  "q": "I have many CIF files and want to batch-convert them to POSCAR in a separate directory; what command do I run?",
+  "answer": "python scripts/structure_converter.py *.cif --output-dir ./poscar_files --format poscar",
+  "lines": "163-164",
+  "skill": "pymatgen",
+  "window": 0,
+  "id": "pymatgen#5"
+ },
+ {
+  "q": "I have a pymatgen Structure and want its space group symbol and number printed; which analyzer class and methods do I call?",
+  "answer": "SpacegroupAnalyzer with get_space_group_symbol() and get_space_group_number()",
+  "lines": "175-181",
+  "skill": "pymatgen",
+  "window": 1,
+  "id": "pymatgen#6"
+ },
+ {
+  "q": "I need the conventional and primitive standard cells from a structure; which two methods on the analyzer give me those?",
+  "answer": "get_conventional_standard_structure() and get_primitive_standard_structure()",
+  "lines": "184-186",
+  "skill": "pymatgen",
+  "window": 1,
+  "id": "pymatgen#7"
+ },
+ {
+  "q": "I want the coordination number and neighbor distances around site 0 of my structure; which class and method should I use?",
+  "answer": "CrystalNN().get_nn_info(struct, n=0)",
+  "lines": "191-196",
+  "skill": "pymatgen",
+  "window": 1,
+  "id": "pymatgen#8"
+ },
+ {
+  "q": "I have a Li-Fe-O chemical system and want to know if LiFeO2 is stable; what method gives energy above hull and what threshold indicates decomposition?",
+  "answer": "pd.get_e_above_hull(entry); above 0.001 eV/atom means it decomposes",
+  "lines": "236-241",
+  "skill": "pymatgen",
+  "window": 1,
+  "id": "pymatgen#9"
+ },
+ {
+  "q": "I have a vasprun.xml and need the band gap energy, whether it's direct, and whether the material is a metal; which calls return those?",
+  "answer": "bs.get_band_gap() for energy/direct, bs.is_metal() for metallicity",
+  "lines": "274-277",
+  "skill": "pymatgen",
+  "window": 1,
+  "id": "pymatgen#10"
+ },
+ {
+  "q": "I need to generate a (1,1,1) slab with at least 10 Å slab thickness and 10 Å vacuum; which class and parameters do I use?",
+  "answer": "SlabGenerator(struct, miller_index=(1,1,1), min_slab_size=10.0, min_vacuum_size=10.0, center_slab=True)",
+  "lines": "309-318",
+  "skill": "pymatgen",
+  "window": 1,
+  "id": "pymatgen#11"
+ },
+ {
+  "q": "I have a slab and want to enumerate where an adsorbate can bind; which class should I instantiate and which method returns the on-top, bridge, and hollow sites?",
+  "answer": "AdsorbateSiteFinder(slab) and asf.find_adsorption_sites()",
+  "lines": "347-353",
+  "skill": "pymatgen",
+  "window": 2,
+  "id": "pymatgen#12"
+ },
+ {
+  "q": "I have an O atom as a Molecule and a chosen on-top site; how do I place it on the slab to get the adsorbed structure?",
+  "answer": "asf.add_adsorbate(adsorbate, ads_sites[\"ontop\"][0])",
+  "lines": "358-360",
+  "skill": "pymatgen",
+  "window": 2,
+  "id": "pymatgen#13"
+ },
+ {
+  "q": "I want to pull all Li-Fe-O entries from the Materials Project to build a phase diagram; which MPRester method do I call?",
+  "answer": "mpr.get_entries_in_chemsys(\"Li-Fe-O\")",
+  "lines": "397-398",
+  "skill": "pymatgen",
+  "window": 2,
+  "id": "pymatgen#14"
+ },
+ {
+  "q": "I need a VASP band structure calculation set up in non-self-consistent line mode; which class and mode argument do I use?",
+  "answer": "MPNonSCFSet(struct, mode=\"line\")",
+  "lines": "419-421",
+  "skill": "pymatgen",
+  "window": 2,
+  "id": "pymatgen#15"
+ },
+ {
+  "q": "I want to compute XRD peaks for a structure and print the 2θ and hkl for each reflection; which calculator and attribute give me that?",
+  "answer": "XRDCalculator() with pattern.hkls",
+  "lines": "454-461",
+  "skill": "pymatgen",
+  "window": 2,
+  "id": "pymatgen#16"
+ },
+ {
+  "q": "I have a structure and want to enumerate possible magnetic orderings with Fe moments of 5.0 μB; which transformation class and argument do I use?",
+  "answer": "MagOrderingTransformation({\"Fe\": 5.0})",
+  "lines": "480-484",
+  "skill": "pymatgen",
+  "window": 2,
+  "id": "pymatgen#17"
+ },
+ {
+  "q": "I have a POSCAR and want to swap Fe for several different metals to make doped structures, then write VASP inputs for each. What transformation class and input set should I use?",
+  "answer": "SubstitutionTransformation and MPRelaxSet",
+  "lines": "529-542",
+  "skill": "pymatgen",
+  "window": 3,
+  "id": "pymatgen#18"
+ },
+ {
+  "q": "I need to run a band structure calculation. After relaxing, what input set do I use for the static step and what mode for the non-self-consistent step?",
+  "answer": "MPStaticSet for static; MPNonSCFSet with mode=\"line\"",
+  "lines": "553-559",
+  "skill": "pymatgen",
+  "window": 3,
+  "id": "pymatgen#19"
+ },
+ {
+  "q": "I have a vasprun.xml from a band structure run and want the band gap. What method do I call?",
+  "answer": "get_band_structure() then get_band_gap()",
+  "lines": "562-565",
+  "skill": "pymatgen",
+  "window": 3,
+  "id": "pymatgen#20"
+ },
+ {
+  "q": "I'm computing surface energy from a slab calculation. What conversion factor turns eV/Ų into J/m²?",
+  "answer": "16.021766",
+  "lines": "583-584",
+  "skill": "pymatgen",
+  "window": 3,
+  "id": "pymatgen#21"
+ },
+ {
+  "q": "My symmetry analysis is failing on a structure, probably due to numerical precision. How do I loosen the tolerance?",
+  "answer": "SpacegroupAnalyzer(struct, symprec=0.1)",
+  "lines": "668-670",
+  "skill": "pymatgen",
+  "window": 3,
+  "id": "pymatgen#22"
+ },
+ {
+  "q": "I'm getting import errors when using pymatgen's analysis and visualization features. What command installs the needed extras?",
+  "answer": "uv pip install pymatgen[analysis,vis]",
+  "lines": "650-653",
+  "skill": "pymatgen",
+  "window": 3,
+  "id": "pymatgen#23"
+ },
+ {
+  "q": "I have a pipeline YAML and want to generate an Airflow DAG into my dags folder — what command do I run?",
+  "answer": "python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --output dags/",
+  "lines": "146-148",
+  "skill": "senior-data-engineer",
+  "window": 0,
+  "id": "senior-data-engineer#0"
+ },
+ {
+  "q": "How can I just check that my pipeline_config.yaml is valid without generating anything?",
+  "answer": "python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --validate",
+  "lines": "150-151",
+  "skill": "senior-data-engineer",
+  "window": 0,
+  "id": "senior-data-engineer#1"
+ },
+ {
+  "q": "I need to scaffold a Flink or Spark streaming job from my streaming config — which script handles that?",
+  "answer": "stream_processor.py",
+  "lines": "116-116",
+  "skill": "senior-data-engineer",
+  "window": 0,
+  "id": "senior-data-engineer#2"
+ },
+ {
+  "q": "What script generates my Kafka topic and producer/consumer configurations?",
+  "answer": "kafka_config_generator.py",
+  "lines": "115-115",
+  "skill": "senior-data-engineer",
+  "window": 0,
+  "id": "senior-data-engineer#3"
+ },
+ {
+  "q": "Which tool do I use to monitor streaming quality like consumer lag and schema drift in production?",
+  "answer": "streaming_quality_validator.py",
+  "lines": "117-117",
+  "skill": "senior-data-engineer",
+  "window": 0,
+  "id": "senior-data-engineer#4"
+ },
+ {
+  "q": "What's the minimum Python version this skill supports?",
+  "answer": "3.8+",
+  "lines": "35-35",
+  "skill": "senior-data-engineer",
+  "window": 0,
+  "id": "senior-data-engineer#5"
+ },
+ {
+  "q": "I want to scaffold a new Airflow DAG from the incremental load template into the dags folder — what command do I run?",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/",
+  "lines": "153-154",
+  "skill": "senior-data-engineer",
+  "window": 1,
+  "id": "senior-data-engineer#6"
+ },
+ {
+  "q": "I have a CSV at data/sales.csv and want an HTML quality report — which script and flags?",
+  "answer": "python scripts/data_quality_validator.py --input data/sales.csv --output report.html",
+  "lines": "160-161",
+  "skill": "senior-data-engineer",
+  "window": 1,
+  "id": "senior-data-engineer#7"
+ },
+ {
+  "q": "I need to validate a Postgres table against my YAML rules and require at least 95% pass rate — what's the command?",
+  "answer": "python scripts/data_quality_validator.py --connection ... --table sales_transactions --rules rules/sales_validation.yaml --threshold 0.95",
+  "lines": "164-168",
+  "skill": "senior-data-engineer",
+  "window": 1,
+  "id": "senior-data-engineer#8"
+ },
+ {
+  "q": "I want performance recommendations for my Airflow DAG sales_etl_pipeline over the last 30 days — what command?",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db ... --dag-id sales_etl_pipeline --days 30 --optimize",
+  "lines": "175-179",
+  "skill": "senior-data-engineer",
+  "window": 1,
+  "id": "senior-data-engineer#9"
+ },
+ {
+  "q": "I need a Kafka topic config for user-events with 12 partitions and replication factor 3 — what command?",
+  "answer": "python scripts/kafka_config_generator.py --topic user-events --partitions 12 --replication 3 --output kafka/topics/",
+  "lines": "194-198",
+  "skill": "senior-data-engineer",
+  "window": 1,
+  "id": "senior-data-engineer#10"
+ },
+ {
+  "q": "I want to generate an exactly-once Kafka producer properties file — which command and profile?",
+  "answer": "python scripts/kafka_config_generator.py --producer --profile exactly-once --output kafka/producer.properties",
+  "lines": "201-204",
+  "skill": "senior-data-engineer",
+  "window": 1,
+  "id": "senior-data-engineer#11"
+ },
+ {
+  "q": "I want to run the pipeline orchestrator with validation enabled; what command do I use?",
+  "answer": "python scripts/pipeline_orchestrator.py --config config.yaml --validate",
+  "lines": "306-307",
+  "skill": "senior-data-engineer",
+  "window": 2,
+  "id": "senior-data-engineer#12"
+ },
+ {
+  "q": "I need to scaffold an incremental DAG into the dags/ directory; which command and flag?",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/",
+  "lines": "309-310",
+  "skill": "senior-data-engineer",
+  "window": 2,
+  "id": "senior-data-engineer#13"
+ },
+ {
+  "q": "I have a CSV and a YAML rules file and want an HTML quality report; what command do I run?",
+  "answer": "python scripts/data_quality_validator.py --input data/sales.csv --rules rules/sales_validation.yaml --output report.html",
+  "lines": "329-333",
+  "skill": "senior-data-engineer",
+  "window": 2,
+  "id": "senior-data-engineer#14"
+ },
+ {
+  "q": "I want to validate a Postgres table with a 0.95 pass threshold; which flag sets that threshold?",
+  "answer": "--threshold 0.95",
+  "lines": "336-339",
+  "skill": "senior-data-engineer",
+  "window": 2,
+  "id": "senior-data-engineer#15"
+ },
+ {
+  "q": "I need to profile an Airflow DAG over the last 30 days and get optimization suggestions; what command?",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db postgresql://host/airflow --dag-id sales_etl_pipeline --days 30 --optimize",
+  "lines": "358-363",
+  "skill": "senior-data-engineer",
+  "window": 2,
+  "id": "senior-data-engineer#16"
+ },
+ {
+  "q": "I want to generate Flink job scaffolding from a streaming config into flink-jobs/; which command?",
+  "answer": "python scripts/stream_processor.py --config streaming_config.yaml --mode flink --generate --output flink-jobs/",
+  "lines": "393-394",
+  "skill": "senior-data-engineer",
+  "window": 2,
+  "id": "senior-data-engineer#17"
+ },
+ {
+  "q": "I need to generate a Kafka Streams config with exactly-once semantics for an app called events-processor; what command and flags do I run?",
+  "answer": "python scripts/kafka_config_generator.py --streams --application-id events-processor --exactly-once",
+  "lines": "457-458",
+  "skill": "senior-data-engineer",
+  "window": 3,
+  "id": "senior-data-engineer#18"
+ },
+ {
+  "q": "Where can I find the full list of profiles, security options, and Connect configurations for the Kafka config generator?",
+  "answer": "tools.md",
+  "lines": "461-461",
+  "skill": "senior-data-engineer",
+  "window": 3,
+  "id": "senior-data-engineer#19"
+ },
+ {
+  "q": "I want production-ready Kafka Streams and PyFlink code examples — which reference file has them?",
+  "answer": "templates.md",
+  "lines": "485-485",
+  "skill": "senior-data-engineer",
+  "window": 3,
+  "id": "senior-data-engineer#20"
+ },
+ {
+  "q": "Which tool should I use to monitor consumer lag, data freshness, schema drift, and throughput in my streaming pipeline?",
+  "answer": "streaming_quality_validator.py",
+  "lines": "498-498",
+  "skill": "senior-data-engineer",
+  "window": 3,
+  "id": "senior-data-engineer#21"
+ },
+ {
+  "q": "What's the target P99 end-to-end latency for streaming pipelines?",
+  "answer": "< 1 second",
+  "lines": "575-575",
+  "skill": "senior-data-engineer",
+  "window": 3,
+  "id": "senior-data-engineer#22"
+ },
+ {
+  "q": "What's the maximum acceptable consumer lag in records for streaming pipelines?",
+  "answer": "< 10K records behind",
+  "lines": "576-576",
+  "skill": "senior-data-engineer",
+  "window": 3,
+  "id": "senior-data-engineer#23"
+ }
+]

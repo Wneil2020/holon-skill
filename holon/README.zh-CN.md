@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 28,910 in the library (13%)
+read: 3 file(s), 3,828 bytes of 29,442 in the library (13%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 28,910 in the library (11%)
+read: 2 file(s), 3,372 bytes of 29,442 in the library (11%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 28,910 in the library (8%)
+read: 1 file(s), 2,374 bytes of 29,442 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -275,6 +275,8 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 根的描述写的是"Use for every task"，这样只列顶层文件夹的工具会选中这棵树。如果同一个 skills 文件夹里还有别的顶层 skill，这一句会和它们抢；这时给根写一个说明这棵树管什么的描述（`init 名字 --desc ...`）。
 
 `organizer/references/design-notes.md`（§17）里的上下文测量，数的是路径上 `SKILL.md` 的字节，不是 token，也不包括路由之后做任务时读的内容。那里的数字也显示，大部分节省来自把背景材料移进 `references/`，而这一点平铺的库同样能做。
+
+拆分单个长 skill 也测过一次。在 [experiments/2026-10-split-big-skills](../experiments/2026-10-split-big-skills/README.zh-CN.md) 里，我们从 Graph of Skills 库中取了四个长文件，由 agent 按这些规则拆分：没有丢任何一行；在不看文件就答不上的题目上，答对 54 题中的 52 题（读整个文件是 54 题），读的内容少了 27%。按标题机械拆分，读的反而比整个文件多 44%，原因是它的指引行没说明后面放的是什么。至于本身自我重复的文件，无论怎么拆，拆完读得都更多。
 
 skill 的正文，也就是文件头以下那部分该怎么写，是另一个问题，还没有定论。目前的规则只有两条：正文写成编号的步骤，背景材料放进 `references/`。
 

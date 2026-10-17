@@ -1,0 +1,162 @@
+{
+ "source": "rdkit",
+ "sha256": "765c294784d94663df4974b22b11e20a5f663baf33e43bb8e22482608e88f64d",
+ "chunks": [
+  {
+   "lines": "17-89",
+   "to": "skill",
+   "name": "molecular-io",
+   "description": "Use when reading or writing molecular structures in SMILES, MOL, SDF, or InChI formats, including batch and compressed files: covers smiles, sdf, molfile, inchi; excludes descriptor calculation and fingerprinting",
+   "triggers": [
+    "parse this SMILES string into a molecule",
+    "read all molecules from this SDF file",
+    "compute the LogP of this molecule should go to rdkit/descriptors"
+   ],
+   "pointer": "Reading and writing molecules (SMILES, MOL, SDF, InChI) and batch suppliers: see `molecular-io/SKILL.md`."
+  },
+  {
+   "lines": "91-117",
+   "to": "skill",
+   "name": "sanitization",
+   "description": "Use when molecules fail to parse or need valence, aromaticity, or chirality validation and repair: covers sanitize, valence, aromaticity; excludes descriptor calculation and substructure search",
+   "triggers": [
+    "this molecule fails to sanitize, find the problem",
+    "disable sanitization when parsing this SMILES",
+    "find the benzene ring in this molecule should go to rdkit/substructure-search"
+   ],
+   "pointer": "Sanitization control, chemistry problem detection, and common sanitization failures: see `sanitization/SKILL.md`."
+  },
+  {
+   "lines": "119-176",
+   "to": "skill",
+   "name": "molecular-analysis",
+   "description": "Use when inspecting atoms, bonds, rings, stereochemistry, or fragments of a parsed molecule: covers atoms, bonds, rings, stereo, fragments; excludes descriptor calculation and fingerprinting",
+   "triggers": [
+    "list the chiral centers in this molecule",
+    "find the ring systems in this structure",
+    "compute the molecular weight should go to rdkit/descriptors"
+   ],
+   "pointer": "Atom, bond, ring, stereochemistry, and fragment inspection: see `molecular-analysis/SKILL.md`."
+  },
+  {
+   "lines": "178-227",
+   "to": "skill",
+   "name": "descriptors",
+   "description": "Use when calculating molecular properties such as MW, LogP, TPSA, HBD, HBA, or checking Lipinski drug-likeness: covers logp, tpsa, lipinski, descriptors; excludes fingerprinting and substructure search",
+   "triggers": [
+    "calculate LogP and TPSA for this molecule",
+    "check whether this compound passes Lipinski's rule of five",
+    "find the carboxylic acid group should go to rdkit/substructure-search"
+   ],
+   "pointer": "Basic and batch descriptor calculation, including Lipinski's Rule of Five: see `descriptors/SKILL.md`."
+  },
+  {
+   "lines": "229-292",
+   "to": "skill",
+   "name": "fingerprints",
+   "description": "Use when computing molecular fingerprints or comparing molecules by similarity and clustering: covers morgan, tanimoto, similarity, clustering; excludes descriptor calculation and substructure search",
+   "triggers": [
+    "compute Morgan fingerprints for these molecules",
+    "cluster this library by Tanimoto similarity",
+    "calculate the molecular weight should go to rdkit/descriptors"
+   ],
+   "pointer": "Fingerprint generation, similarity metrics, and Butina clustering: see `fingerprints/SKILL.md`."
+  },
+  {
+   "lines": "294-335",
+   "to": "skill",
+   "name": "substructure-search",
+   "description": "Use when matching SMARTS patterns or finding substructures inside molecules: covers smarts, substructure, match; excludes fingerprinting and chemical reactions",
+   "triggers": [
+    "find all benzene rings in this molecule",
+    "filter this library for carboxylic acids using SMARTS",
+    "compute the Tanimoto similarity should go to rdkit/fingerprints"
+   ],
+   "pointer": "SMARTS-based substructure matching and common functional-group patterns: see `substructure-search/SKILL.md`."
+  },
+  {
+   "lines": "337-372",
+   "to": "skill",
+   "name": "reactions",
+   "description": "Use when defining or running chemical reactions with reaction SMARTS and comparing reaction fingerprints: covers reaction, reactant, product; excludes substructure search and conformer generation",
+   "triggers": [
+    "apply this reaction SMARTS to my reactants",
+    "compare these two reactions by fingerprint",
+    "generate 3D coordinates should go to rdkit/conformers"
+   ],
+   "pointer": "Reaction SMARTS, RunReactants, and reaction fingerprints: see `reactions/SKILL.md`."
+  },
+  {
+   "lines": "374-420",
+   "to": "skill",
+   "name": "conformers",
+   "description": "Use when generating 2D depictions or 3D conformers and optimizing geometry: covers conformer, embed, coordinates, rmsd; excludes visualization and pharmacophore features",
+   "triggers": [
+    "generate 10 3D conformers for this molecule",
+    "align this molecule to a template in 2D",
+    "draw this molecule as a PNG should go to rdkit/visualization"
+   ],
+   "pointer": "2D coordinate generation, ETKDG embedding, force-field optimization, and RMSD: see `conformers/SKILL.md`."
+  },
+  {
+   "lines": "422-505",
+   "to": "skill",
+   "name": "visualization",
+   "description": "Use when drawing molecules to images, highlighting substructures, or displaying structures in Jupyter: covers draw, highlight, depiction; excludes conformer generation and fingerprinting",
+   "triggers": [
+    "draw this molecule as a PNG with the ring highlighted",
+    "show a grid of these four molecules",
+    "generate 3D coordinates should go to rdkit/conformers"
+   ],
+   "pointer": "Molecule drawing, substructure highlighting, custom draw options, and Jupyter display: see `visualization/SKILL.md`."
+  },
+  {
+   "lines": "507-548",
+   "to": "skill",
+   "name": "modification",
+   "description": "Use when adding or removing hydrogens, kekulizing, replacing substructures, or neutralizing charges: covers hydrogens, kekulize, replace, uncharge; excludes sanitization and molecular hashing",
+   "triggers": [
+    "add explicit hydrogens to this molecule",
+    "replace the benzene ring with cyclohexane",
+    "detect chemistry problems should go to rdkit/sanitization"
+   ],
+   "pointer": "Hydrogen handling, kekulization, substructure replacement, and charge neutralization: see `modification/SKILL.md`."
+  },
+  {
+   "lines": "550-574",
+   "to": "skill",
+   "name": "hashing",
+   "description": "Use when generating molecular hashes or randomized SMILES for standardization and data augmentation: covers hash, murcko, randomized; excludes modification and descriptors",
+   "triggers": [
+    "compute the Murcko scaffold hash for this molecule",
+    "generate 10 randomized SMILES for augmentation",
+    "neutralize the charges should go to rdkit/modification"
+   ],
+   "pointer": "Molecular hashing (Murcko, canonical, regioisomer) and randomized SMILES: see `hashing/SKILL.md`."
+  },
+  {
+   "lines": "576-594",
+   "to": "skill",
+   "name": "pharmacophore",
+   "description": "Use when extracting pharmacophore features from molecules using a feature factory: covers pharmacophore, features, factory; excludes conformer generation and descriptors",
+   "triggers": [
+    "extract pharmacophore features from this molecule",
+    "list the hydrogen bond donors as pharmacophore features",
+    "generate 3D conformers should go to rdkit/conformers"
+   ],
+   "pointer": "Pharmacophore feature extraction with ChemicalFeatures and BaseFeatures.fdef: see `pharmacophore/SKILL.md`."
+  },
+  {
+   "lines": "596-668",
+   "to": "reference",
+   "path": "references/workflows.md",
+   "pointer": "End-to-end workflow examples (drug-likeness, similarity screening, substructure filtering): see `references/workflows.md`."
+  },
+  {
+   "lines": "670-744",
+   "to": "reference",
+   "path": "references/best_practices.md",
+   "pointer": "Error handling, performance, thread safety, memory management, and common pitfalls: see `references/best_practices.md`."
+  }
+ ]
+}

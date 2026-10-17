@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 28,910 in the library (13%)
+read: 3 file(s), 3,828 bytes of 29,442 in the library (13%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 28,910 in the library (11%)
+read: 2 file(s), 3,372 bytes of 29,442 in the library (11%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 28,910 in the library (8%)
+read: 1 file(s), 2,374 bytes of 29,442 in the library (8%)
 ```
 
 ## Checking the tree
@@ -275,6 +275,8 @@ What `replay` and `route` check is the word model, not the agent. The agent that
 The root's description says "Use for every task", so that a tool which lists only top-level folders picks the tree. In a skills folder that also holds other top-level skills, that line competes with them; give the root a description naming what the tree covers instead (`init NAME --desc ...`).
 
 The context measurements in `organizer/references/design-notes.md` (§17) count bytes of `SKILL.md` files on the path, not tokens, and not what the task reads after routing. They also show that most of the saving came from moving background into `references/`, which a flat library can do as well.
+
+Splitting one long skill was measured once too. In [experiments/2026-10-split-big-skills](../experiments/2026-10-split-big-skills/README.md), four long files from the Graph of Skills library were split by an agent following these rules: no line was lost, and on questions the model could not answer without the file it answered 52 of 54 (whole file: 54) while reading 27% less. A mechanical split by heading read 44% *more* than the whole file, because its pointer lines did not say what was behind them; a file that repeats itself read more after splitting either way.
 
 How to write the body of a skill, below its header, is a separate question with no settled answer yet. For now the rule is only that a body is numbered steps and that background goes into `references/`.
 

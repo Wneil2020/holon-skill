@@ -1,0 +1,48 @@
+{
+ "source": "senior-data-engineer",
+ "sha256": "981651453d17aabd74eafeb8e9eef1631ac4f3688de31947440af60802c0b0dc",
+ "chunks": [
+  {
+   "lines": "18-47",
+   "to": "reference",
+   "path": "references/key-workflows.md",
+   "pointer": "Details for this section: `references/key-workflows.md`."
+  },
+  {
+   "lines": "67-143",
+   "to": "reference",
+   "path": "references/quick-start.md",
+   "pointer": "Details for this section: `references/quick-start.md`."
+  },
+  {
+   "lines": "145-211",
+   "to": "reference",
+   "path": "references/core-workflows.md",
+   "pointer": "Details for this section: `references/core-workflows.md`."
+  },
+  {
+   "lines": "213-386",
+   "to": "reference",
+   "path": "references/python-tools.md",
+   "pointer": "Details for this section: `references/python-tools.md`."
+  },
+  {
+   "lines": "388-426",
+   "to": "reference",
+   "path": "references/reference-documentation.md",
+   "pointer": "Details for this section: `references/reference-documentation.md`."
+  },
+  {
+   "lines": "460-488",
+   "to": "reference",
+   "path": "references/best-practices.md",
+   "pointer": "Details for this section: `references/best-practices.md`."
+  },
+  {
+   "lines": "490-519",
+   "to": "reference",
+   "path": "references/performance-targets.md",
+   "pointer": "Details for this section: `references/performance-targets.md`."
+  }
+ ]
+}

@@ -253,6 +253,32 @@ def _yaml_string(value):
         return json.dumps(value, ensure_ascii=False)
 
 
+def _split_flow(inner):
+    """Split the inside of a one-line flow list on commas outside quotes."""
+    parts, cur, quote = [], "", None
+    for ch in inner:
+        if quote:
+            cur += ch
+            if ch == quote:
+                quote = None
+        elif ch in "\"'":
+            quote = ch
+            cur += ch
+        elif ch == ",":
+            parts.append(cur)
+            cur = ""
+        elif ch in "[]{}":
+            raise ValueError("nested flow collections are not supported")
+        else:
+            cur += ch
+    if quote:
+        raise ValueError("unterminated quote in flow list")
+    parts.append(cur)
+    if any(not p.strip() for p in parts):
+        raise ValueError("empty item in flow list")
+    return parts
+
+
 def split_frontmatter(text):
     """Split SKILL.md text into (meta_dict, body_text, error_or_None).
 
@@ -268,6 +294,7 @@ def split_frontmatter(text):
                             one line per source line
       key: >                followed by indented lines -> folded: the lines
                             are joined with single spaces (description:)
+      key: [a, "b"]         one-line flow list of scalars; [] is an empty list
 
     A leading BOM (U+FEFF, left by some Windows editors) is ignored.
     Anything else is an error, and it is an error for BOTH tools.
@@ -354,6 +381,13 @@ def split_frontmatter(text):
             cur_block = (target, key)
             block_parent_indent = indent
             block_sep = " " if value[0] == ">" else "\n"
+            continue
+        if value.startswith("[") and value.endswith("]"):  # flow list: [], [a, "b"]
+            inner = value[1:-1].strip()
+            try:
+                target[key] = [_yaml_scalar(x.strip()) for x in _split_flow(inner)] if inner else []
+            except ValueError as exc:
+                return {}, body, "%s: %s" % (key, exc)
             continue
         try:
             target[key] = _yaml_scalar(value, legacy_number=(target is meta and key == "archive_count"))

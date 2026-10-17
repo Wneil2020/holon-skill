@@ -1,0 +1,72 @@
+{
+ "source": "senior-data-engineer",
+ "sha256": "981651453d17aabd74eafeb8e9eef1631ac4f3688de31947440af60802c0b0dc",
+ "chunks": [
+  {
+   "lines": "8-14",
+   "to": "reference",
+   "path": "references/capabilities.md",
+   "pointer": "See `references/capabilities.md` for the full list of core capabilities (batch orchestration, streaming, data quality, streaming quality monitoring, performance optimization)."
+  },
+  {
+   "lines": "17-43",
+   "to": "reference",
+   "path": "references/workflows-overview.md",
+   "pointer": "See `references/workflows-overview.md` for the two headline workflows (build ETL pipeline, build real-time streaming pipeline) with their steps, timings and expected outputs."
+  },
+  {
+   "lines": "46-64",
+   "to": "reference",
+   "path": "references/overview.md",
+   "pointer": "See `references/overview.md` for what this skill provides and who it is best for."
+  },
+  {
+   "lines": "66-142",
+   "to": "reference",
+   "path": "references/quick-start.md",
+   "pointer": "See `references/quick-start.md` for copy-paste command lines for orchestration, data quality, performance optimization and streaming."
+  },
+  {
+   "lines": "144-210",
+   "to": "reference",
+   "path": "references/core-workflows.md",
+   "pointer": "See `references/core-workflows.md` for the five core workflows (pipelines, data quality, data modeling, performance, streaming) with their steps and pointers into frameworks.md and templates.md."
+  },
+  {
+   "lines": "212-385",
+   "to": "reference",
+   "path": "references/python-tools.md",
+   "pointer": "See `references/python-tools.md` for per-script documentation of the six Python tools (pipeline_orchestrator, data_quality_validator, etl_performance_optimizer, stream_processor, streaming_quality_validator, kafka_config_generator)."
+  },
+  {
+   "lines": "387-425",
+   "to": "reference",
+   "path": "references/reference-docs.md",
+   "pointer": "See `references/reference-docs.md` for the index of what lives in frameworks.md, templates.md and tools.md."
+  },
+  {
+   "lines": "427-457",
+   "to": "reference",
+   "path": "references/tech-stack.md",
+   "pointer": "See `references/tech-stack.md` for the tech stack and integration points (orchestration, transformation, quality, monitoring, BI, ML, VCS)."
+  },
+  {
+   "lines": "459-487",
+   "to": "reference",
+   "path": "references/best-practices.md",
+   "pointer": "See `references/best-practices.md` for pipeline design, data quality, performance and operations best practices."
+  },
+  {
+   "lines": "489-518",
+   "to": "reference",
+   "path": "references/performance-targets.md",
+   "pointer": "See `references/performance-targets.md` for the numeric targets for batch, streaming, data quality, streaming quality and cost efficiency."
+  },
+  {
+   "lines": "520-531",
+   "to": "reference",
+   "path": "references/resources.md",
+   "pointer": "See `references/resources.md` for the resource index and version metadata."
+  }
+ ]
+}

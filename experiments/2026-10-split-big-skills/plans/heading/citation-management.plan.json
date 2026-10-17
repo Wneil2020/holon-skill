@@ -1,0 +1,60 @@
+{
+ "source": "citation-management",
+ "sha256": "2dff78725d4952afe1cc83240649b9240a4ef3d5fb817d076ddd930d574f831d",
+ "chunks": [
+  {
+   "lines": "33-65",
+   "to": "reference",
+   "path": "references/visual-enhancement-with-scientific-schem.md",
+   "pointer": "Details for this section: `references/visual-enhancement-with-scientific-schem.md`."
+  },
+  {
+   "lines": "67-448",
+   "to": "reference",
+   "path": "references/core-workflow.md",
+   "pointer": "Details for this section: `references/core-workflow.md`."
+  },
+  {
+   "lines": "450-554",
+   "to": "reference",
+   "path": "references/search-strategies.md",
+   "pointer": "Details for this section: `references/search-strategies.md`."
+  },
+  {
+   "lines": "556-753",
+   "to": "reference",
+   "path": "references/tools-and-scripts.md",
+   "pointer": "Details for this section: `references/tools-and-scripts.md`."
+  },
+  {
+   "lines": "755-841",
+   "to": "reference",
+   "path": "references/best-practices.md",
+   "pointer": "Details for this section: `references/best-practices.md`."
+  },
+  {
+   "lines": "843-873",
+   "to": "reference",
+   "path": "references/common-pitfalls-to-avoid.md",
+   "pointer": "Details for this section: `references/common-pitfalls-to-avoid.md`."
+  },
+  {
+   "lines": "875-998",
+   "to": "reference",
+   "path": "references/example-workflows.md",
+   "pointer": "Details for this section: `references/example-workflows.md`."
+  },
+  {
+   "lines": "1000-1029",
+   "to": "reference",
+   "path": "references/integration-with-other-skills.md",
+   "pointer": "Details for this section: `references/integration-with-other-skills.md`."
+  },
+  {
+   "lines": "1031-1074",
+   "to": "reference",
+   "path": "references/resources.md",
+   "pointer": "Details for this section: `references/resources.md`."
+  }
+ ]
+}

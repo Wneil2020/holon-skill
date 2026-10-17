@@ -1,0 +1,3826 @@
+[
+ {
+  "id": "citation-management#0",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Run: python scripts/doi_to_bibtex.py --input dois.txt --output references.bib (the --input flag reads the DOI list, and --output writes the combined BibTeX file).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#1",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/extract_metadata.py --pmid 34265844",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#2",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Add the --format json flag (e.g., `python scripts/doi_to_bibtex.py 10.1038/nature12345 --format json`).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#3",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Use the --year-start and --year-end flags (e.g., --year-start 2020 --year-end 2024).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#4",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/format_bibtex.py references.bib --sort key --output sorted_references.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#5",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Use the --publication-types flag with the value \"Clinical Trial,Review\" (e.g., --publication-types \"Clinical Trial,Review\").",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#6",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Use format_bibtex.py with the --deduplicate flag and --output: python scripts/format_bibtex.py references.bib --deduplicate --output clean_references.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#7",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/validate_citations.py references.bib --auto-fix --output validated_references.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#8",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/validate_citations.py references.bib --report validation_report.json --verbose",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#9",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/doi_to_bibtex.py <DOI> >> references.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#10",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/format_bibtex.py references.bib --style nature --output formatted_refs.bib (use the format_bibtex.py script with the --style nature flag)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#11",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "500+ citations",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#12",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/doi_to_bibtex.py --input dois.txt --output references.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#13",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/search_google_scholar.py \"your search query\" --sort-by citations --output results.json",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#14",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "python scripts/extract_metadata.py --input identifiers.txt --output citations.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#15",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "--check-dois-only (e.g., python scripts/validate_citations.py references.bib --check-dois-only)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#16",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Use `--sort year --descending`, e.g. `python scripts/format_bibtex.py references.bib --sort year --descending --output sorted_references.bib`.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#17",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Use meaningful citation keys in the format FirstAuthorYearKeyword (e.g., Smith2024deeplearning).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#18",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Use the doi_to_bibtex.py script with --input and --output: `python scripts/doi_to_bibtex.py --input dois.txt --output references.bib`",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#19",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "cat file1.bib file2.bib file3.bib > combined.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#20",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "--deduplicate",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#21",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Pass `--sort year --descending` to format_bibtex.py, e.g.: python scripts/format_bibtex.py references.bib --sort year --descending --output sorted_references.bib",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#22",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "Use `python scripts/validate_citations.py references.bib --auto-fix --report validation_report.json` (optionally add `--output validated_references.bib`). The `--auto-fix` flag fixes issues automatically, and `--report <file>.json` writes the JSON report.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#23",
+  "skill": "citation-management",
+  "cond": "full",
+  "answer": "bibtexparser (install with: pip install bibtexparser) — it's the package used by this skill for BibTeX parsing and formatting.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 33411,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#0",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use Chem.MolFromSmiles(smiles, sanitize=False) to skip automatic sanitization, then optionally call Chem.SanitizeMol(mol) later or use Chem.SanitizeMol(mol, sanitizeOps=...) for partial sanitization.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#1",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Chem.SanitizeMol(mol)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#2",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Chem.DetectChemistryProblems(mol) — returns a list of problem objects with GetType() and Message() before sanitization.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#3",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#4",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "rdkit.Chem.FindMolChiralCenters(mol, includeUnassigned=True)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#5",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Chem.GetMolFrags(mol, asMols=True)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#6",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Descriptors.CalcMolDescriptors(mol) — returns a dict of all descriptor names to values (from rdkit.Chem import Descriptors).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#7",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use `[desc[0] for desc in Descriptors._descList]` — e.g. `from rdkit.Chem import Descriptors; names = [d[0] for d in Descriptors._descList]`. Alternatively, `Descriptors.CalcMolDescriptors(mol).keys()` gives names of all computed descriptors.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#8",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "10",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#9",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048) — returns a 2048-bit Morgan (ECFP-like) fingerprint for similarity comparisons (e.g., DataStructs.TanimotoSimilarity).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#10",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use rdkit.DataStructs.BulkTanimotoSimilarity(query_fp, [fp1, fp2, ...]) — it returns a list of Tanimoto similarities of the query fingerprint against every fingerprint in the list in one call (e.g., DataStructs.BulkTanimotoSimilarity(query_fp, fps)).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#11",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "0.3",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#12",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use rdkit.Chem.AllChem.EmbedMultipleConfs(mol, numConfs=10, randomSeed=42) after Chem.AddHs(mol) if needed.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#13",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Loop over the conformer IDs returned by EmbedMultipleConfs and call AllChem.MMFFOptimizeMolecule(mol, confId=conf_id) for each, e.g.: conf_ids = AllChem.EmbedMultipleConfs(mol, numConfs=10, randomSeed=42); for conf_id in conf_ids: AllChem.MMFFOptimizeMolecule(mol, confId=conf_id). This optimizes every conformer in place with MMFF94 (returns 0 if converged, 1 if not); ensure the molecule has explicit Hs (Chem.AddHs) before embedding for good geometries.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#14",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use rdkit.Chem.Draw.MolsToGridImage(mols, molsPerRow=2, subImgSize=(200,200)) — pass your 4 Mol objects as `mols`; molsPerRow=2 yields the 2x2 grid.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#15",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use `from rdkit.Chem.Draw import IPythonConsole; IPythonConsole.ipython_useSVG = True` before displaying a molecule in Jupyter.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#16",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Use rdkit.Chem.MolStandardize.rdMolStandardize.Uncharger (class); call its .uncharge(mol) method to neutralize formal charges.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#17",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Call rdMolHash.MolHash(mol, rdMolHash.HashFunction.MurckoScaffold) — function is rdMolHash.MolHash and the enum is rdMolHash.HashFunction.MurckoScaffold (from rdkit.Chem import rdMolHash).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#18",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "The check passes a molecule when MW ≤ 500, LogP ≤ 5, HBD ≤ 5, and HBA ≤ 10 (all four criteria must be met for drug-likeness).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#19",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "0.7",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#20",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "radius=2",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#21",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "Chem.ForwardSDMolSupplier",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#22",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "DataStructs.BulkTanimotoSimilarity",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#23",
+  "skill": "rdkit",
+  "cond": "full",
+  "answer": "MolSuppliers (e.g., Chem.SDMolSupplier/ForwardSDMolSupplier) are not thread-safe when accessed concurrently",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20789,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#0",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "pip install pymatgen mp-api",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#1",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "struct = Structure.from_file(\"POSCAR\")",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#2",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "struct.to(filename=\"structure.cif\")",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#3",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use `mpr.materials.summary.search(formula=\"Fe2O3\", energy_above_hull=(0, 0.05))` with MPRester.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#4",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use pymatgen.transformations.standard_transformations.SupercellTransformation with the scaling matrix [[2,0,0],[0,2,0],[0,0,2]] (i.e., SupercellTransformation([[2,0,0],[0,2,0],[0,0,2]]).apply_transformation(struct)).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#5",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "python scripts/structure_converter.py *.cif --output-dir ./poscar_files --format poscar",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#6",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use pymatgen.symmetry.analyzer.SpacegroupAnalyzer: sga = SpacegroupAnalyzer(struct); sga.get_space_group_symbol() for the symbol and sga.get_space_group_number() for the number.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#7",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "SpacegroupAnalyzer.get_conventional_standard_structure() and SpacegroupAnalyzer.get_primitive_standard_structure()",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#8",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use CrystalNN from pymatgen.analysis.local_env and its get_nn_info method: neighbors = CrystalNN().get_nn_info(struct, n=0); coordination number = len(neighbors), and neighbor distances via struct.get_distance(0, nb['site_index'], jimage=nb['image']).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#9",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use pymatgen: get Li-Fe-O entries via MPRester.get_entries_in_chemsys('Li-Fe-O'), build PhaseDiagram(entries), then call pd.get_e_above_hull(entry) for LiFeO2. Stable if e_above_hull is ~0 (≤0.001 eV/atom); >0.001 eV/atom indicates decomposition.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#10",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use vasprun = Vasprun(\"vasprun.xml\"); bs = vasprun.get_band_structure(). Then bs.get_band_gap() returns the band gap energy and direct/indirect flag, and bs.is_metal() returns whether the material is a metal.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#11",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use pymatgen.core.surface.SlabGenerator(struct, miller_index=(1,1,1), min_slab_size=10.0, min_vacuum_size=10.0, center_slab=True), then call slabgen.get_slabs() to obtain the slab(s).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#12",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Instantiate pymatgen.analysis.adsorption.AdsorbateSiteFinder with your slab, then call its find_adsorption_sites() method, which returns a dict with keys 'ontop', 'bridge', and 'hollow' (each a list of site coordinates).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#13",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use AdsorbateSiteFinder(slab).add_adsorbate(adsorbate, site), where adsorbate = Molecule('O', [[0,0,0]]) and site is your chosen on-top site (e.g., from asf.find_adsorption_sites()['ontop'][i]). It returns a new Slab with the O placed at that site, which you can then write to a file.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#14",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "MPRester.get_entries_in_chemsys(\"Li-Fe-O\") — use it inside `with MPRester() as mpr:` to get the entries, then pass them to `PhaseDiagram(entries)`.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#15",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use MPNonSCFSet with mode=\"line\", e.g. MPNonSCFSet(struct, mode=\"line\") from pymatgen.io.vasp.sets.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#16",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use pymatgen.analysis.diffraction.xrd.XRDCalculator; call get_pattern(struct) and read pattern.hkls for the hkls (each entry includes the corresponding '2theta') and pattern.x for the 2θ values.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#17",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use MagOrderingTransformation from pymatgen.transformations.advanced_transformations with argument {\"Fe\": 5.0}, then apply_transformation(struct, return_ranked_list=True).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#18",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use the SubstitutionTransformation class (from pymatgen.transformations.standard_transformations) to swap Fe for each dopant metal, then generate VASP inputs with MPRelaxSet (from pymatgen.io.vasp.sets). Example: for dopant in ['Mn','Co','Ni','Cu']: doped = SubstitutionTransformation({'Fe': dopant}).apply_transformation(struct); MPRelaxSet(doped).write_input(f'./calcs/Fe_{dopant}'). For partial (non-total) Fe replacement, use a dict mapping like {'Fe': {'Mn': 0.25}} to specify fractional substitution. Input set: MPRelaxSet for relaxation (MPStaticSet/MPNonSCFSet for follow-up static or band structure steps).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#19",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use MPStaticSet for the static step, and MPNonSCFSet with mode=\"line\" for the non-self-consistent band structure step.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#20",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Use pymatgen.io.vasp.Vasprun(\"vasprun.xml\").get_band_structure() then call bs.get_band_gap() — e.g. `band_gap = Vasprun(\"vasprun.xml\").get_band_structure().get_band_gap()`.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#21",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "16.021766 (eV/Å² to J/m²)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#22",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "Pass a larger symprec to SpacegroupAnalyzer, e.g. SpacegroupAnalyzer(struct, symprec=0.1) (default is 0.01). Increase it (0.05–0.1) until the space group is found; you can also set angle_tolerance for angle-based matching.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#23",
+  "skill": "pymatgen",
+  "cond": "full",
+  "answer": "uv pip install pymatgen[analysis,vis]",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 20841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#0",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --output dags/",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#1",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "Run `python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --validate` — the --validate flag checks the config for errors without generating any DAG/output files.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#2",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "stream_processor.py — run `python scripts/stream_processor.py --config streaming_config.yaml --mode flink --generate --output flink-jobs/` (use --mode spark for Spark scaffolding).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#3",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "kafka_config_generator.py — generates Kafka topic, producer, consumer, Kafka Streams, and Connect configurations (e.g., `python scripts/kafka_config_generator.py --topic user-events --partitions 12 --replication 3`).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#4",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "Use the `streaming_quality_validator.py` script from the senior-data-engineer skill — run it with flags like `--lag --consumer-group <group> --threshold 10000` and `--freshness --topic <topic> --max-latency-ms 5000` (it also supports `--throughput`, `--dlq`, and schema drift detection, with HTML/Prometheus output) to monitor consumer lag, data freshness, schema drift, throughput, and DLQ rates in production.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#5",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "3.8+",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#6",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#7",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "Use scripts/data_quality_validator.py: `python scripts/data_quality_validator.py --input data/sales.csv --output report.html` (add `--rules rules/sales_validation.yaml` and/or `--threshold 0.95` for custom rules).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#8",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/data_quality_validator.py --connection postgresql://user:pass@host/db --table <table_name> --rules <rules.yaml> --threshold 0.95",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#9",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db postgresql://host/airflow --dag-id sales_etl_pipeline --days 30 --optimize",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#10",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "kafka-topics.sh --create --topic user-events --partitions 12 --replication-factor 3 --bootstrap-server localhost:9092 (or use the skill's generator: python scripts/kafka_config_generator.py --topic user-events --partitions 12 --replication 3 --output kafka/topics/)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#11",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "Run: python scripts/kafka_config_generator.py --producer --profile exactly-once --output kafka/producer.properties (use the kafka_config_generator.py script with the --producer flag and --profile exactly-once; optionally add --transactional-id producer-001).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#12",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/pipeline_orchestrator.py --config config.yaml --validate",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#13",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/ — use the --template flag with value `incremental` (paired with --output dags/)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#14",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/data_quality_validator.py --input <your.csv> --rules <your_rules.yaml> --output report.html",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#15",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "--threshold",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#16",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db <airflow_db_connection> --dag-id <dag_id> --days 30 --optimize",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#17",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "python scripts/stream_processor.py --config streaming_config.yaml --mode flink --generate --output flink-jobs/",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#18",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "Run: python scripts/kafka_config_generator.py --streams --application-id events-processor --exactly-once",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#19",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "references/tools.md — the kafka_config_generator.py section documents all profiles, security options, and Connect configurations.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#20",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "templates.md",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#21",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "streaming_quality_validator.py — it monitors consumer lag, data freshness, schema drift, throughput, and DLQ rates (e.g., python scripts/streaming_quality_validator.py --lag --freshness --throughput --dlq --output streaming-health-report.html).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#22",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "P99 < 1 second end-to-end latency for streaming pipelines (with 10K+ events/sec sustained throughput and exactly-once delivery).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#23",
+  "skill": "senior-data-engineer",
+  "cond": "full",
+  "answer": "< 10,000 records behind (target <10K consumer lag for streaming pipelines)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 23678,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#0",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "python scripts/doi_to_bibtex.py --input dois.txt --output references.bib (use the --input flag for the text file of DOIs and --output for the single BibTeX file)",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/example-workflows.md"
+  ],
+  "chars": 12100,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#1",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "python scripts/extract_metadata.py --pmid 34265844",
+  "opened": [
+   "SKILL.md",
+   "references/metadata_extraction.md",
+   "references/tools-and-scripts.md"
+  ],
+  "chars": 28113,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#2",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Add the --format flag set to json, e.g. `python scripts/doi_to_bibtex.py 10.1038/nature12345 --format json`.",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/metadata_extraction.md",
+   "references/core-workflow.md"
+  ],
+  "chars": 38641,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#3",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "--year-start and --year-end (e.g., --year-start 2020 --year-end 2024)",
+  "opened": [
+   "SKILL.md",
+   "references/google_scholar_search.md"
+  ],
+  "chars": 21564,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#4",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use format_bibtex.py with the --sort flag set to key: `python scripts/format_bibtex.py references.bib --sort key --output sorted_refs.bib` (the script's --sort option accepts key, year, or author).",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/bibtex_formatting.md"
+  ],
+  "chars": 28169,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#5",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use the [Publication Type] field tag: \"Clinical Trial\"[Publication Type] OR \"Review\"[Publication Type]. (In the search_pubmed.py script, use the flag --publication-types \"Clinical Trial,Review\".)",
+  "opened": [
+   "SKILL.md",
+   "references/pubmed_search.md"
+  ],
+  "chars": 22233,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#6",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use format_bibtex.py with the --deduplicate flag and --output: `python scripts/format_bibtex.py references.bib --deduplicate --output clean_refs.bib`",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/bibtex_formatting.md",
+   "references/common-pitfalls-to-avoid.md"
+  ],
+  "chars": 29565,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#7",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "python scripts/validate_citations.py references.bib --auto-fix --output validated_references.bib",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/citation_validation.md"
+  ],
+  "chars": 24963,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#8",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "python scripts/validate_citations.py references.bib --report validation_report.json --verbose",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/citation_validation.md"
+  ],
+  "chars": 24963,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#9",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use the doi_to_bibtex.py script with append redirection: `python scripts/doi_to_bibtex.py 10.1038/nature12345 >> references.bib` (use `>>` to append to your existing .bib file).",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/core-workflow.md"
+  ],
+  "chars": 19417,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#10",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "python scripts/format_bibtex.py my_review_references.bib --style nature --output formatted_refs.bib (use the --style nature flag)",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/bibtex_formatting.md",
+   "references/example-workflows.md",
+   "references/core-workflow.md"
+  ],
+  "chars": 41908,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#11",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "500+ citations (a 7+ year old paper with 500+ citations is classified as a 'Seminal Work'; 1000+ would be 'Foundational').",
+  "opened": [
+   "SKILL.md",
+   "references/search-strategies.md",
+   "references/best-practices.md",
+   "references/citation_validation.md"
+  ],
+  "chars": 26790,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#12",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Run `python scripts/doi_to_bibtex.py --input dois.txt --output references.bib` (from the citation-management skill), which reads one DOI per line and writes a single BibTeX file. Alternatively, use `python scripts/extract_metadata.py --input dois.txt --output references.bib`.",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md"
+  ],
+  "chars": 8889,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#13",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "python scripts/search_google_scholar.py \"YOUR QUERY\" --sort-by citations --format json --output results.json",
+  "opened": [
+   "SKILL.md",
+   "references/google_scholar_search.md",
+   "references/tools-and-scripts.md"
+  ],
+  "chars": 25941,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#14",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "python scripts/extract_metadata.py --input identifiers.txt --output references.bib",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/metadata_extraction.md",
+   "references/core-workflow.md"
+  ],
+  "chars": 38641,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#15",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "--check-dois-only",
+  "opened": [
+   "SKILL.md",
+   "references/citation_validation.md",
+   "references/tools-and-scripts.md",
+   "references/core-workflow.md"
+  ],
+  "chars": 35491,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#16",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use format_bibtex.py with `--sort year --descending`, e.g. `python scripts/format_bibtex.py references.bib --sort year --descending --output sorted_refs.bib`.",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/bibtex_formatting.md"
+  ],
+  "chars": 28169,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#17",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "FirstAuthorYEARkeyword (e.g., Smith2024protein, Doe2023machine). Use alphanumeric characters plus -, _, ., :; no spaces; case-sensitive; unique within the file; avoid special characters like @, #, &, %, $ and avoid starting with a number.",
+  "opened": [
+   "SKILL.md",
+   "references/bibtex_formatting.md",
+   "references/best-practices.md",
+   "references/citation_validation.md"
+  ],
+  "chars": 42463,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#18",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use `python scripts/doi_to_bibtex.py --input dois.txt --output references.bib` (the --input flag takes the DOI text file, --output writes the single BibTeX file).",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/core-workflow.md",
+   "references/example-workflows.md"
+  ],
+  "chars": 22628,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#19",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use `cat file1.bib file2.bib file3.bib > combined.bib` (then optionally run `python scripts/format_bibtex.py combined.bib --deduplicate --sort year --descending --output formatted.bib` to clean and deduplicate).",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/bibtex_formatting.md",
+   "references/core-workflow.md",
+   "references/common-pitfalls-to-avoid.md",
+   "references/example-workflows.md"
+  ],
+  "chars": 43304,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#20",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "--deduplicate (e.g., python scripts/format_bibtex.py references.bib --deduplicate --output clean_refs.bib)",
+  "opened": [
+   "SKILL.md",
+   "references/bibtex_formatting.md",
+   "references/tools-and-scripts.md"
+  ],
+  "chars": 28169,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#21",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use `--sort year --descending` (e.g., `python scripts/format_bibtex.py references.bib --sort year --descending --output sorted_refs.bib`).",
+  "opened": [
+   "SKILL.md",
+   "references/tools-and-scripts.md",
+   "references/bibtex_formatting.md"
+  ],
+  "chars": 28169,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#22",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Use validate_citations.py with `--auto-fix` (with `--output fixed_references.bib`) and `--report validation_report.json` for the JSON report. Example: `python scripts/validate_citations.py references.bib --auto-fix --output fixed_references.bib --report validation_report.json`",
+  "opened": [
+   "SKILL.md",
+   "references/citation_validation.md",
+   "references/tools-and-scripts.md"
+  ],
+  "chars": 24963,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#23",
+  "skill": "citation-management",
+  "cond": "heading",
+  "answer": "Install `bibtexparser` (pip install bibtexparser) — it's the skill's recommended package for BibTeX parsing and formatting.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 4512,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#0",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Use Chem.MolFromSmiles(smiles, sanitize=False) to skip automatic sanitization.",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/common-workflows.md"
+  ],
+  "chars": 22064,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#1",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Chem.SanitizeMol(mol, sanitizeOps=SANITIZE_ALL, catchErrors=False)",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md"
+  ],
+  "chars": 20211,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#2",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "DetectChemistryProblems()",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 3385,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#3",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES (i.e. all sanitization ops except SANITIZE_PROPERTIES)",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/common-workflows.md"
+  ],
+  "chars": 22064,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#4",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Chem.FindMolChiralCenters(mol, includeUnassigned=True) — returns a list of (atom_idx, chirality) tuples, including unassigned centers when includeUnassigned=True.",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 34607,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#5",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Chem.GetMolFrags(mol, asMols=True) — returns each disconnected fragment as a separate Mol object (use sanitizeFrags=True to sanitize them).",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 34607,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#6",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Descriptors.CalcMolDescriptors(mol)",
+  "opened": [
+   "SKILL.md",
+   "references/descriptors_reference.md"
+  ],
+  "chars": 15209,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#7",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Use `Descriptors._descList`, which is a list of (name, function) tuples. Get just the names with: `descriptor_names = [desc[0] for desc in Descriptors._descList]`",
+  "opened": [
+   "SKILL.md",
+   "references/descriptors_reference.md",
+   "references/api_reference.md"
+  ],
+  "chars": 32035,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#8",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "10",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 3385,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#9",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Use AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048) (legacy API), or the modern generator API: rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=2048).GetFingerprint(mol). Then compare with DataStructs.TanimotoSimilarity(fp1, fp2).",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/core-capabilities.md",
+   "references/common-workflows.md"
+  ],
+  "chars": 36460,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#10",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Use `DataStructs.BulkTanimotoSimilarity(query_fp, fps)` — it computes Tanimoto similarity between one query fingerprint and a list of fingerprints in a single call, returning a list of scores. Example: `fps = [AllChem.GetMorganFingerprintAsBitVect(m, 2) for m in mols]; sims = DataStructs.BulkTanimotoSimilarity(query_fp, fps)`. (Single-pair equivalent is `DataStructs.TanimotoSimilarity(fp1, fp2)`.)",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/api_reference.md"
+  ],
+  "chars": 22064,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#11",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "0.3",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/api_reference.md",
+   "references/core-capabilities.md",
+   "references/best-practices.md"
+  ],
+  "chars": 37930,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#12",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Use AllChem.EmbedMultipleConfs(mol, numConfs=10, randomSeed=<fixed_seed>) — e.g. randomSeed=42. Add hydrogens first with Chem.AddHs(mol) (embedding is best on an H-added molecule), and note randomSeed=-1 (default) is non-reproducible. Optionally follow with AllChem.MMFFOptimizeMolecule(mol, confId=i) or UFFOptimizeMolecule for each conformer.",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/api_reference.md"
+  ],
+  "chars": 22064,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#13",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Loop over the conformer IDs returned by EmbedMultipleConfs and call AllChem.MMFFOptimizeMolecule(mol, confId=conf_id) for each one (e.g. `conf_ids = AllChem.EmbedMultipleConfs(mol, numConfs=10, randomSeed=42)` then `for conf_id in conf_ids: AllChem.MMFFOptimizeMolecule(mol, confId=conf_id)`). MMFF94 is the default variant; you can also pass maxIters and mmffVariant='MMFF94'.",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/api_reference.md",
+   "references/core-capabilities.md",
+   "references/best-practices.md"
+  ],
+  "chars": 37930,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#14",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Draw.MolsToGridImage(mols, molsPerRow=2, subImgSize=(200,200), legends=None) — pass your 4 molecules as mols and set molsPerRow=2 for a 2x2 grid.",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 34607,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#15",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Set `from rdkit.Chem.Draw import IPythonConsole` then `IPythonConsole.ipython_useSVG = True` (optionally `IPythonConsole.molSize = (300, 300)`), and evaluate a molecule (`mol`) in a cell to render it as SVG.",
+  "opened": [
+   "SKILL.md",
+   "references/core-capabilities.md",
+   "references/api_reference.md",
+   "references/common-workflows.md"
+  ],
+  "chars": 36460,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#16",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Use the `Uncharger` class from `rdkit.Chem.MolStandardize.rdMolStandardize`: create an uncharger with `uncharger = rdMolStandardize.Uncharger()` and call `uncharger.uncharge(mol)` to remove formal charges and return the neutralized molecule.",
+  "opened": [
+   "SKILL.md",
+   "references/core-capabilities.md",
+   "references/common-workflows.md",
+   "references/api_reference.md"
+  ],
+  "chars": 36460,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#17",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Call rdMolHash.MolHash(mol, rdMolHash.HashFunction.MurckoScaffold)",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/descriptors_reference.md"
+  ],
+  "chars": 32035,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#18",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Lipinski's Rule of Five thresholds used by the check: MW ≤ 500, LogP ≤ 5, HBD (H-bond donors) ≤ 5, HBA (H-bond acceptors) ≤ 10. The molecule passes if all four conditions are met.",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/descriptors_reference.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 31458,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#19",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "0.7",
+  "opened": [
+   "SKILL.md",
+   "references/api_reference.md",
+   "references/common-workflows.md"
+  ],
+  "chars": 22064,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#20",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "2",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/api_reference.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 36460,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#21",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "Chem.ForwardSDMolSupplier",
+  "opened": [
+   "SKILL.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 17781,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#22",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "DataStructs.BulkTanimotoSimilarity(fp, fps) — use it (or BulkDiceSimilarity/BulkCosineSimilarity for other metrics) to compare one fingerprint against a list of fingerprints at once.",
+  "opened": [
+   "SKILL.md",
+   "references/core-capabilities.md",
+   "references/api_reference.md"
+  ],
+  "chars": 34607,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#23",
+  "skill": "rdkit",
+  "cond": "heading",
+  "answer": "MolSupplier objects (e.g., SDMolSupplier/ForwardSDMolSupplier) — don't share them across threads",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 3385,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#0",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "pip install pymatgen mp-api",
+  "opened": [
+   "SKILL.md",
+   "references/materials_project_api.md"
+  ],
+  "chars": 17310,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#1",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "struct = Structure.from_file(\"POSCAR\") — pymatgen auto-detects the format from the filename/extension.",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start-guide.md",
+   "references/io_formats.md"
+  ],
+  "chars": 16375,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#2",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "struct.to(filename=\"output.cif\") (or use CifWriter(struct).write_file(\"output.cif\"))",
+  "opened": [
+   "SKILL.md",
+   "references/io_formats.md",
+   "references/core_classes.md"
+  ],
+  "chars": 24524,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#3",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use mpr.materials.summary.search(formula=\"Fe2O3\", energy_above_hull=(0, 0.05)). The energy_above_hull parameter takes a (min, max) tuple in eV/atom; formula=\"Fe2O3\" selects the composition. Example: with MPRester() as mpr: materials = mpr.materials.summary.search(formula=\"Fe2O3\", energy_above_hull=(0, 0.05)).",
+  "opened": [
+   "SKILL.md",
+   "references/materials_project_api.md"
+  ],
+  "chars": 17310,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#4",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use SupercellTransformation (from pymatgen.transformations.standard_transformations) with the matrix [[2,0,0],[0,2,0],[0,0,2]]: trans = SupercellTransformation([[2,0,0],[0,2,0],[0,0,2]]); new_struct = trans.apply_transformation(struct)",
+  "opened": [
+   "SKILL.md",
+   "references/transformations_workflows.md"
+  ],
+  "chars": 21343,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#5",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "python scripts/structure_converter.py *.cif --output-dir ./poscar_files --format poscar",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/io_formats.md",
+   "references/bundled-resources.md",
+   "references/quick-start-guide.md",
+   "references/core-capabilities.md",
+   "references/transformations_workflows.md",
+   "references/best-practices.md"
+  ],
+  "chars": 48759,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#6",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use `SpacegroupAnalyzer` from `pymatgen.symmetry.analyzer`: `sga = SpacegroupAnalyzer(struct)`, then `sga.get_space_group_symbol()` (e.g., \"Fm-3m\") and `sga.get_space_group_number()` (e.g., 225).",
+  "opened": [
+   "SKILL.md",
+   "references/analysis_modules.md"
+  ],
+  "chars": 17474,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#7",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "SpacegroupAnalyzer.get_conventional_standard_structure() and SpacegroupAnalyzer.get_primitive_standard_structure()",
+  "opened": [
+   "SKILL.md",
+   "references/core_classes.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 24709,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#8",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use `pymatgen.analysis.local_env.CrystalNN` (recommended; or `VoronoiNN`/`MinimumDistanceNN`). Call `nn.get_nn_info(struct, n=0)` to get neighbors of site 0 — the coordination number is `len(neighbors)` and each neighbor entry includes its `distance` (and site) for neighbor distances.",
+  "opened": [
+   "SKILL.md",
+   "references/analysis_modules.md",
+   "references/core_classes.md"
+  ],
+  "chars": 26950,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#9",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use pymatgen's PhaseDiagram: fetch entries for the Li-Fe-O chemsys from Materials Project (mpr.get_entries_in_chemsys(\"Li-Fe-O\")), build pd = PhaseDiagram(entries), then call pd.get_e_above_hull(entry) for the LiFeO2 entry. This gives the energy above hull in eV/atom. If e_above_hull > 0.001 eV/atom, the phase is unstable and will decompose (get decomposition via pd.get_decomposition(comp)); ~0 means it's on the hull and stable.",
+  "opened": [
+   "SKILL.md",
+   "references/core-capabilities.md",
+   "references/common-workflows.md",
+   "references/quick-start-guide.md"
+  ],
+  "chars": 18370,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#10",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Load the band structure with `vasprun = Vasprun(\"vasprun.xml\")` then `bs = vasprun.get_band_structure()`. Use `bs.get_band_gap()` for the gap energy and directness (returns dict with 'energy', 'direct', 'transition'), and `bs.is_metal()` to test for metallicity.",
+  "opened": [
+   "SKILL.md",
+   "references/analysis_modules.md",
+   "references/common-workflows.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 30021,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#11",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "error": "'list' object has no attribute 'get'"
+ },
+ {
+  "id": "pymatgen#12",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Instantiate pymatgen.analysis.adsorption.AdsorbateSiteFinder(slab) and call its find_adsorption_sites() method, which returns a dict with keys 'ontop', 'bridge', and 'hollow'.",
+  "opened": [
+   "SKILL.md",
+   "references/core_classes.md",
+   "references/common-workflows.md",
+   "references/analysis_modules.md",
+   "references/core-capabilities.md",
+   "references/transformations_workflows.md"
+  ],
+  "chars": 56344,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#13",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use AdsorbateSiteFinder.add_adsorbate(adsorbate, site). Create the adsorbate as Molecule(\"O\", [[0,0,0]]), build the finder with asf = AdsorbateSiteFinder(slab), and pass your chosen on-top site (e.g., asf.find_adsorption_sites()[\"ontop\"][0]) to ads_struct = asf.add_adsorbate(adsorbate, site). That returns the slab+adsorbate Structure, which you can then relax (e.g., MPRelaxSet(ads_struct).write_input(...)).",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/transformations_workflows.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 33890,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#14",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Call `mpr.get_entries_in_chemsys(\"Li-Fe-O\")` on the MPRester client (e.g., `with MPRester() as mpr: entries = mpr.get_entries_in_chemsys(\"Li-Fe-O\")`), then pass the returned entries to `PhaseDiagram(entries)`.",
+  "opened": [
+   "SKILL.md",
+   "references/materials_project_api.md",
+   "references/common-workflows.md"
+  ],
+  "chars": 19120,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#15",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use the `MPNonSCFSet` class with `mode=\"line\"`, e.g. `MPNonSCFSet(relaxed, mode=\"line\").write_input(\"./3_bandstructure\")`.",
+  "opened": [
+   "SKILL.md",
+   "references/core_classes.md",
+   "references/common-workflows.md"
+  ],
+  "chars": 15782,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#16",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use XRDCalculator from pymatgen.analysis.diffraction.xrd; call xrd.get_pattern(struct, two_theta_range=(0, 90)), then read the pattern.hkls attribute — each entry contains the '2theta', 'hkl', and 'intensity' for a reflection (e.g. for peak in pattern.hkls: print(peak['2theta'], peak['hkl'])).",
+  "opened": [
+   "SKILL.md",
+   "references/analysis_modules.md"
+  ],
+  "chars": 17474,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#17",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use MagOrderingTransformation (pymatgen.transformations.advanced_transformations), passing a dict of magnetic moments as the argument: MagOrderingTransformation({\"Fe\": 5.0}); call apply_transformation(struct, return_ranked_list=True) to enumerate the orderings.",
+  "opened": [
+   "SKILL.md",
+   "references/transformations_workflows.md",
+   "references/core_classes.md"
+  ],
+  "chars": 30819,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#18",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use SubstitutionTransformation (from pymatgen.transformations.standard_transformations) to replace Fe with each dopant metal, then MPRelaxSet (from pymatgen.io.vasp.sets) to write the VASP inputs for each doped structure. Loop over dopants (e.g., Mn, Co, Ni, Cu), apply trans = SubstitutionTransformation({'Fe': dopant}) to the POSCAR-derived Structure, and call MPRelaxSet(new_struct).write_input(f'./calcs/Fe_{dopant}').",
+  "opened": [
+   "SKILL.md",
+   "references/transformations_workflows.md",
+   "references/io_formats.md",
+   "references/core_classes.md"
+  ],
+  "chars": 41371,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#19",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use MPStaticSet for the static step, and MPNonSCFSet with mode=\"line\" for the non-self-consistent band structure step.",
+  "opened": [
+   "SKILL.md",
+   "references/common-workflows.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 17043,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#20",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Parse with `Vasprun(\"vasprun.xml\")`, call `vasprun.get_band_structure()` to get the band structure, then call `bs.get_band_gap()` (returns {'energy', 'direct', 'transition'}).",
+  "opened": [
+   "SKILL.md",
+   "references/io_formats.md",
+   "references/core_classes.md",
+   "references/analysis_modules.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 48239,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#21",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "16.021766 (i.e., eV/Ų × 16.021766 = J/m²)",
+  "opened": [
+   "SKILL.md",
+   "references/analysis_modules.md",
+   "references/common-workflows.md",
+   "references/core-capabilities.md"
+  ],
+  "chars": 30021,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#22",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "Use `SpacegroupAnalyzer(struct, symprec=0.1)` — increase the `symprec` tolerance (default is 0.01).",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 4496,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#23",
+  "skill": "pymatgen",
+  "cond": "heading",
+  "answer": "uv pip install pymatgen[analysis,vis]",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 4496,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#0",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "Run: python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --output dags/ (optionally add --validate to validate the config first).",
+  "opened": [
+   "SKILL.md",
+   "references/core-workflows.md",
+   "references/python-tools.md",
+   "references/quick-start.md"
+  ],
+  "chars": 16910,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#1",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "Run `python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --validate` — the `--validate` flag validates the configuration only, without generating a DAG.",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md",
+   "references/tools.md"
+  ],
+  "chars": 51966,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#2",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "stream_processor.py — it generates Flink/Spark job scaffolding (e.g., `python scripts/stream_processor.py --config streaming_config.yaml --mode flink --generate --output flink-jobs/`).",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md"
+  ],
+  "chars": 10610,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#3",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "kafka_config_generator.py (in scripts/)",
+  "opened": [
+   "SKILL.md",
+   "references/tools.md",
+   "references/templates.md",
+   "references/python-tools.md"
+  ],
+  "chars": 116942,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#4",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "streaming_quality_validator.py — it monitors consumer lag, data freshness, schema drift, throughput, and DLQ rates, and can export Prometheus metrics in continuous/daemon mode for production.",
+  "opened": [
+   "SKILL.md",
+   "references/tools.md"
+  ],
+  "chars": 44021,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#5",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "Python 3.8+",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 4858,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#6",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/",
+  "opened": [
+   "SKILL.md",
+   "references/templates.md",
+   "references/quick-start.md",
+   "references/python-tools.md"
+  ],
+  "chars": 79972,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#7",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "Use scripts/data_quality_validator.py: `python scripts/data_quality_validator.py --input data/sales.csv --output report.html` (add `--rules rules/sales_validation.yaml` for custom rules and `--threshold 0.95` if needed).",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/quick-start.md",
+   "references/tools.md"
+  ],
+  "chars": 51966,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#8",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/data_quality_validator.py --connection postgresql://user:pass@host/db --table <table_name> --rules <rules.yaml> --threshold 0.95",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/core-workflows.md",
+   "references/tools.md"
+  ],
+  "chars": 53880,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#9",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db postgresql://host/airflow --dag-id sales_etl_pipeline --days 30 --optimize",
+  "opened": [
+   "SKILL.md",
+   "references/performance-targets.md",
+   "references/tools.md",
+   "references/python-tools.md"
+  ],
+  "chars": 50668,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#10",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/kafka_config_generator.py --topic user-events --partitions 12 --replication 3 --output kafka/topics/",
+  "opened": [
+   "SKILL.md",
+   "references/core-workflows.md",
+   "references/quick-start.md",
+   "references/templates.md"
+  ],
+  "chars": 78327,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#11",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "Use kafka_config_generator.py with the exactly-once profile: `python scripts/kafka_config_generator.py --producer --profile exactly-once --transactional-id producer-001 --output producer-exactly-once.properties`",
+  "opened": [
+   "SKILL.md",
+   "references/key-workflows.md",
+   "references/tools.md",
+   "references/templates.md"
+  ],
+  "chars": 112408,
+  "reached": false,
+  "correct": false
+ },
+ {
+  "id": "senior-data-engineer#12",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --validate",
+  "opened": [
+   "SKILL.md",
+   "references/key-workflows.md",
+   "references/core-workflows.md",
+   "references/quick-start.md"
+  ],
+  "chars": 12376,
+  "reached": false,
+  "correct": false
+ },
+ {
+  "id": "senior-data-engineer#13",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/ (use the --template incremental flag with --output dags/)",
+  "opened": [
+   "SKILL.md",
+   "references/templates.md",
+   "references/python-tools.md",
+   "references/core-workflows.md"
+  ],
+  "chars": 81886,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#14",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/data_quality_validator.py --input data/sales.csv --rules rules/sales_validation.yaml --output report.html",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/quick-start.md",
+   "references/tools.md"
+  ],
+  "chars": 51966,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#15",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "--threshold 0.95",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/key-workflows.md",
+   "references/tools.md"
+  ],
+  "chars": 50991,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#16",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db postgresql://host/airflow --dag-id <dag_id> --days 30 --optimize",
+  "opened": [
+   "SKILL.md",
+   "references/performance-targets.md",
+   "references/python-tools.md",
+   "references/tools.md"
+  ],
+  "chars": 50668,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#17",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/stream_processor.py --config streaming_config.yaml --mode flink --generate --output flink-jobs/",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/tools.md",
+   "references/templates.md"
+  ],
+  "chars": 116942,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#18",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "python scripts/kafka_config_generator.py --streams --application-id events-processor --exactly-once --state-dir /data/kafka-streams --output streams-config.properties",
+  "opened": [
+   "SKILL.md",
+   "references/core-workflows.md",
+   "references/key-workflows.md",
+   "references/tools.md"
+  ],
+  "chars": 49346,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#19",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "In references/tools.md, under the kafka_config_generator.py section — it contains the full list of producer/consumer profiles, security options (SASL-PLAIN, SASL-SCRAM, mTLS), and Kafka Connect source/sink configurations. The python-tools.md also references it.",
+  "opened": [
+   "SKILL.md",
+   "references/reference-documentation.md",
+   "references/python-tools.md",
+   "references/tools.md"
+  ],
+  "chars": 52636,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#20",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "references/templates.md",
+  "opened": [
+   "SKILL.md",
+   "references/frameworks.md",
+   "references/templates.md",
+   "references/key-workflows.md"
+  ],
+  "chars": 115498,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#21",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "Use streaming_quality_validator.py (the Streaming Quality Validator) to monitor consumer lag, data freshness, schema drift, throughput, and DLQ rates in streaming pipelines.",
+  "opened": [
+   "SKILL.md",
+   "references/tools.md"
+  ],
+  "chars": 44021,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#22",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "P99 end-to-end latency < 1 second for streaming pipelines.",
+  "opened": [
+   "SKILL.md",
+   "references/performance-targets.md"
+  ],
+  "chars": 5753,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#23",
+  "skill": "senior-data-engineer",
+  "cond": "heading",
+  "answer": "< 10K records behind (streaming pipelines)",
+  "opened": [
+   "SKILL.md",
+   "references/performance-targets.md"
+  ],
+  "chars": 5753,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#0",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/doi_to_bibtex.py --input dois.txt --output references.bib",
+  "opened": [
+   "SKILL.md",
+   "extract-metadata/SKILL.md"
+  ],
+  "chars": 7444,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#1",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/extract_metadata.py --pmid 34265844",
+  "opened": [
+   "SKILL.md",
+   "extract-metadata/SKILL.md"
+  ],
+  "chars": 7444,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#2",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "--format json (e.g., `python scripts/doi_to_bibtex.py 10.1038/nature12345 --format json`)",
+  "opened": [
+   "SKILL.md",
+   "extract-metadata/SKILL.md"
+  ],
+  "chars": 7444,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#3",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "--year-start and --year-end (e.g., python scripts/search_google_scholar.py \"query\" --year-start 2020 --year-end 2024)",
+  "opened": [
+   "SKILL.md",
+   "search-papers/SKILL.md",
+   "references/google_scholar_search.md"
+  ],
+  "chars": 24431,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#4",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use the format-bibtex formatter with the --sort key flag: `python scripts/format_bibtex.py references.bib --sort key --output sorted_references.bib` (add --descending for reverse order).",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md"
+  ],
+  "chars": 7237,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#5",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use the `--publication-types` flag with the value \"Clinical Trial,Review\" (comma-separated), e.g. `python scripts/search_pubmed.py \"Alzheimer's disease treatment\" --publication-types \"Clinical Trial,Review\"`.",
+  "opened": [
+   "SKILL.md",
+   "search-papers/SKILL.md",
+   "references/pubmed_search.md"
+  ],
+  "chars": 25100,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#6",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use the format-bibtex formatter with the --deduplicate flag: `python scripts/format_bibtex.py references.bib --deduplicate --output clean_references.bib`",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md"
+  ],
+  "chars": 7237,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#7",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/validate_citations.py references.bib --auto-fix --output validated_references.bib",
+  "opened": [
+   "SKILL.md",
+   "validate-citations/SKILL.md"
+  ],
+  "chars": 7118,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#8",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/validate_citations.py references.bib --report validation_report.json --verbose",
+  "opened": [
+   "SKILL.md",
+   "validate-citations/SKILL.md"
+  ],
+  "chars": 7118,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#9",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/doi_to_bibtex.py 10.1038/s41586-021-03819-2 >> references.bib",
+  "opened": [
+   "SKILL.md",
+   "extract-metadata/SKILL.md",
+   "format-bibtex/SKILL.md",
+   "references/scripts_reference.md"
+  ],
+  "chars": 14350,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#10",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "There is no Nature-style flag in this skill — format_bibtex.py supports only --output, --sort, --descending, --deduplicate, --validate, --report, --auto-fix. To just produce the file: `python scripts/format_bibtex.py references.bib --output formatted_refs.bib`. Nature citation style itself is applied at compile time via a .bst/biblatex style (e.g. naturemag), not by this formatter.",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md",
+   "references/bibtex_formatting.md",
+   "references/scripts_reference.md",
+   "references/resources_and_dependencies.md",
+   "references/example_workflows.md",
+   "references/best_practices.md"
+  ],
+  "chars": 40394,
+  "reached": false,
+  "correct": false
+ },
+ {
+  "id": "citation-management#11",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "500+ citations",
+  "opened": [
+   "SKILL.md",
+   "references/search_strategies.md",
+   "references/example_workflows.md"
+  ],
+  "chars": 11586,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#12",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use the extract-metadata sub-skill: `python scripts/doi_to_bibtex.py --input dois.txt --output references.bib`",
+  "opened": [
+   "SKILL.md",
+   "extract-metadata/SKILL.md"
+  ],
+  "chars": 7444,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#13",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/search_google_scholar.py \"your search terms\" --sort-by citations --limit 50 --output results.json",
+  "opened": [
+   "SKILL.md",
+   "search-papers/SKILL.md",
+   "references/google_scholar_search.md",
+   "references/scripts_reference.md"
+  ],
+  "chars": 28828,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#14",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/extract_metadata.py --input identifiers.txt --output citations.bib",
+  "opened": [
+   "SKILL.md",
+   "extract-metadata/SKILL.md"
+  ],
+  "chars": 7444,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#15",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "--check-dois-only",
+  "opened": [
+   "SKILL.md",
+   "validate-citations/SKILL.md",
+   "references/scripts_reference.md",
+   "references/citation_validation.md"
+  ],
+  "chars": 27589,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#16",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use `python scripts/format_bibtex.py references.bib --sort year --descending --output sorted_references.bib` — i.e. the flags `--sort year` and `--descending` (newest first).",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md"
+  ],
+  "chars": 7237,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#17",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "The recommended convention is `FirstAuthorYEARkeyword` (e.g., `Smith2024protein`): alphanumeric plus `-`, `_`, `.`, `:`; no spaces; unique; descriptive; avoid special characters (@, #, &, %, $) and starting with a number.",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md",
+   "references/bibtex_formatting.md"
+  ],
+  "chars": 26517,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#18",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "python scripts/doi_to_bibtex.py --input dois.txt --output references.bib",
+  "opened": [
+   "SKILL.md",
+   "extract-metadata/SKILL.md",
+   "references/scripts_reference.md"
+  ],
+  "chars": 11841,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#19",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use `cat` to concatenate them, e.g. `cat file1.bib file2.bib file3.bib > combined.bib`. You can then clean/deduplicate the result with `python scripts/format_bibtex.py combined.bib --deduplicate --sort year --output formatted.bib`.",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md",
+   "references/scripts_reference.md",
+   "references/bibtex_formatting.md",
+   "references/example_workflows.md"
+  ],
+  "chars": 34145,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#20",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "--deduplicate",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md",
+   "references/scripts_reference.md"
+  ],
+  "chars": 11634,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#21",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use `python scripts/format_bibtex.py references.bib --sort year --descending --output sorted_references.bib` — i.e. the flags `--sort year` and `--descending` (plus `--output` for the result file).",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md"
+  ],
+  "chars": 7237,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "citation-management#22",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "Use --auto-fix (fix common issues automatically) and --report validation_report.json (write the JSON validation report), e.g.: python scripts/validate_citations.py references.bib --auto-fix --report validation_report.json",
+  "opened": [
+   "SKILL.md",
+   "validate-citations/SKILL.md"
+  ],
+  "chars": 7118,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "citation-management#23",
+  "skill": "citation-management",
+  "cond": "holon",
+  "answer": "bibtexparser (pip install bibtexparser)",
+  "opened": [
+   "SKILL.md",
+   "format-bibtex/SKILL.md",
+   "references/resources_and_dependencies.md"
+  ],
+  "chars": 9496,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#0",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Chem.MolFromSmiles('C1=CC=CC=C1', sanitize=False)",
+  "opened": [
+   "SKILL.md",
+   "molecular-io/SKILL.md",
+   "sanitization/SKILL.md"
+  ],
+  "chars": 10935,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#1",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Chem.SanitizeMol(mol)",
+  "opened": [
+   "SKILL.md",
+   "sanitization/SKILL.md"
+  ],
+  "chars": 8712,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#2",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Chem.DetectChemistryProblems(mol) — it returns the detected chemistry problems (e.g., via problem.GetType() and problem.Message()) before sanitization.",
+  "opened": [
+   "SKILL.md",
+   "sanitization/SKILL.md"
+  ],
+  "chars": 8712,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#3",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Chem.SANITIZE_ALL ^ Chem.SANITIZE_PROPERTIES",
+  "opened": [
+   "SKILL.md",
+   "sanitization/SKILL.md"
+  ],
+  "chars": 8712,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#4",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Use rdkit.Chem.FindMolChiralCenters(mol, includeUnassigned=True) — it returns a list of (atom_idx, chirality) tuples for the molecule's chiral centers, including unassigned ones.",
+  "opened": [
+   "SKILL.md",
+   "molecular-analysis/SKILL.md"
+  ],
+  "chars": 9243,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#5",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Chem.GetMolFrags(mol, asMols=True)",
+  "opened": [
+   "SKILL.md",
+   "molecular-analysis/SKILL.md"
+  ],
+  "chars": 9243,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#6",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Descriptors.CalcMolDescriptors(mol) — it returns a dict of all descriptors.",
+  "opened": [
+   "SKILL.md",
+   "descriptors/SKILL.md"
+  ],
+  "chars": 8935,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#7",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Use `Descriptors._descList` and extract the names: `from rdkit.Chem import Descriptors; descriptor_names = [desc[0] for desc in Descriptors._descList]`. Alternatively, `Descriptors.CalcMolDescriptors(mol).keys()` gives the names for descriptors computed on a molecule.",
+  "opened": [
+   "SKILL.md",
+   "descriptors/SKILL.md",
+   "references/descriptors_reference.md"
+  ],
+  "chars": 20759,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#8",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "10",
+  "opened": [
+   "SKILL.md",
+   "descriptors/SKILL.md"
+  ],
+  "chars": 8935,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#9",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Use `AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048)` (from `rdkit.Chem.AllChem`), which returns a 2048-bit Morgan/ECFP-style fingerprint suitable for similarity work.",
+  "opened": [
+   "SKILL.md",
+   "fingerprints/SKILL.md"
+  ],
+  "chars": 9562,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#10",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Use DataStructs.BulkTanimotoSimilarity(query_fp, list_of_fps). It takes a query fingerprint and a sequence of fingerprints and returns a list of Tanimoto similarities in one call. Example: from rdkit import DataStructs; sims = DataStructs.BulkTanimotoSimilarity(fp1, [fp2, fp3, fp4]). Fingerprints should all be the same type/size (e.g., AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048)).",
+  "opened": [
+   "SKILL.md",
+   "fingerprints/SKILL.md"
+  ],
+  "chars": 9562,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#11",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "0.3",
+  "opened": [
+   "SKILL.md",
+   "fingerprints/SKILL.md"
+  ],
+  "chars": 9562,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#12",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Use rdkit.Chem.AllChem.EmbedMultipleConfs(mol, numConfs=10, randomSeed=42) to generate 10 reproducible 3D conformers (ETKDG by default). Optionally optimize each with MMFFOptimizeMolecule(mol, confId=conf_id) or UFFOptimizeMolecule.",
+  "opened": [
+   "SKILL.md",
+   "conformers/SKILL.md"
+  ],
+  "chars": 8899,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#13",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Loop over the conformer IDs from EmbedMultipleConfs and call AllChem.MMFFOptimizeMolecule(mol, confId=conf_id) for each:\n\nfrom rdkit.Chem import AllChem\nconf_ids = AllChem.EmbedMultipleConfs(mol, numConfs=10, randomSeed=42)\nfor conf_id in conf_ids:\n    AllChem.MMFFOptimizeMolecule(mol, confId=conf_id)",
+  "opened": [
+   "SKILL.md",
+   "conformers/SKILL.md"
+  ],
+  "chars": 8899,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#14",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Use rdkit.Chem.Draw.MolsToGridImage(mols, molsPerRow=2, subImgSize=(200, 200)) — pass the four molecules as a list `mols`, set `molsPerRow=2` for a 2x2 grid (and optionally `subImgSize=(200, 200)` for cell size).",
+  "opened": [
+   "SKILL.md",
+   "visualization/SKILL.md"
+  ],
+  "chars": 9679,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#15",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Enable SVG display via RDKit's IPythonConsole: `from rdkit.Chem.Draw import IPythonConsole` then set `IPythonConsole.ipython_useSVG = True` (optionally set `IPythonConsole.molSize = (300, 300)`). After that, molecules display automatically as SVG when you evaluate a mol object in a cell. You can also draw SVG explicitly with `rdMolDraw2D.MolDraw2DSVG(width, height)`, call `DrawMolecule(mol)` + `FinishDrawing()`, and use `drawer.GetDrawingText()` to get the SVG string.",
+  "opened": [
+   "SKILL.md",
+   "visualization/SKILL.md"
+  ],
+  "chars": 9679,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#16",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Use the `Uncharger` class from `rdkit.Chem.MolStandardize.rdMolStandardize` and call its `uncharge()` method (e.g., `uncharger = rdMolStandardize.Uncharger(); mol_neutral = uncharger.uncharge(mol)`). This removes formal charges by adding/removing hydrogens as needed.",
+  "opened": [
+   "SKILL.md",
+   "modification/SKILL.md"
+  ],
+  "chars": 8592,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#17",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Call rdMolHash.MolHash(mol, rdMolHash.HashFunction.MurckoScaffold) — function: rdMolHash.MolHash; enum: rdMolHash.HashFunction.MurckoScaffold.",
+  "opened": [
+   "SKILL.md",
+   "hashing/SKILL.md"
+  ],
+  "chars": 8395,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#18",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "MW ≤ 500, LogP ≤ 5, HBD ≤ 5, HBA ≤ 10 (all four must be satisfied to pass).",
+  "opened": [
+   "SKILL.md",
+   "descriptors/SKILL.md"
+  ],
+  "chars": 8935,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#19",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "0.7",
+  "opened": [
+   "SKILL.md",
+   "fingerprints/SKILL.md",
+   "references/workflows.md",
+   "references/api_reference.md",
+   "references/best_practices.md"
+  ],
+  "chars": 30253,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "rdkit#20",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "2",
+  "opened": [
+   "SKILL.md",
+   "fingerprints/SKILL.md"
+  ],
+  "chars": 9562,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#21",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "Chem.ForwardSDMolSupplier — it reads molecules lazily (one at a time, also works with gzip streams), so you don't load the whole SDF into memory.",
+  "opened": [
+   "SKILL.md",
+   "molecular-io/SKILL.md"
+  ],
+  "chars": 9448,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#22",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "DataStructs.BulkTanimotoSimilarity(fp1, [fp2, fp3, ...])",
+  "opened": [
+   "SKILL.md",
+   "fingerprints/SKILL.md"
+  ],
+  "chars": 9562,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "rdkit#23",
+  "skill": "rdkit",
+  "cond": "holon",
+  "answer": "MolSuppliers",
+  "opened": [
+   "SKILL.md",
+   "references/best_practices.md"
+  ],
+  "chars": 9225,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#0",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "uv pip install pymatgen mp-api (or equivalently: pip install pymatgen mp-api)",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 8884,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#1",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "struct = Structure.from_file(\"POSCAR\")",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 8884,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#2",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "struct.to(filename=\"structure.cif\")",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 8884,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#3",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use MPRester with the summary search: `mpr.materials.summary.search(formula=\"Fe2O3\", energy_above_hull=(0, 0.05))` — the `energy_above_hull` parameter takes a (min, max) tuple in eV/atom.",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 8884,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#4",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use SupercellTransformation with the scaling matrix [[2,0,0],[0,2,0],[0,0,2]] (from pymatgen.transformations.standard_transformations), then apply it to your structure: trans = SupercellTransformation([[2,0,0],[0,2,0],[0,0,2]]); supercell = trans.apply_transformation(struct).",
+  "opened": [
+   "SKILL.md",
+   "structure-creation/SKILL.md",
+   "references/transformations_workflows.md"
+  ],
+  "chars": 27693,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#5",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "python scripts/structure_converter.py *.cif --output-dir ./poscar_files --format poscar",
+  "opened": [
+   "SKILL.md",
+   "format-conversion/SKILL.md"
+  ],
+  "chars": 10067,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#6",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use pymatgen.symmetry.analyzer.SpacegroupAnalyzer(struct), then call sga.get_space_group_symbol() for the symbol and sga.get_space_group_number() for the number.",
+  "opened": [
+   "SKILL.md",
+   "structure-analysis/SKILL.md"
+  ],
+  "chars": 10688,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#7",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use SpacegroupAnalyzer: get_conventional_standard_structure() and get_primitive_standard_structure().",
+  "opened": [
+   "SKILL.md",
+   "structure-analysis/SKILL.md"
+  ],
+  "chars": 10688,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#8",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use the CrystalNN class from pymatgen.analysis.local_env and call cnn.get_nn_info(struct, n=0) to get neighbors of site 0 (coordination number = len(neighbors), with distances/weights per neighbor).",
+  "opened": [
+   "SKILL.md",
+   "structure-analysis/SKILL.md"
+  ],
+  "chars": 10688,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#9",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use pymatgen's PhaseDiagram: build it from MP entries (mpr.get_entries_in_chemsys(\"Li-Fe-O\")), then call pd.get_e_above_hull(entry) for the LiFeO2 entry. An energy above hull > 0.001 eV/atom indicates the phase is unstable and will decompose (get products via pd.get_decomposition(comp)).",
+  "opened": [
+   "SKILL.md",
+   "phase-diagrams/SKILL.md"
+  ],
+  "chars": 10780,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#10",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use Vasprun(\"vasprun.xml\").get_band_structure() to get bs; then bs.get_band_gap() returns {'energy': gap in eV, 'direct': bool}, and bs.is_metal() returns whether it's a metal.",
+  "opened": [
+   "SKILL.md",
+   "electronic-structure/SKILL.md"
+  ],
+  "chars": 10480,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#11",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use `pymatgen.core.surface.SlabGenerator` with `miller_index=(1, 1, 1)`, `min_slab_size=10.0` (Å, slab thickness), `min_vacuum_size=10.0` (Å, vacuum), and `center_slab=True`; then call `slabgen.get_slabs()` to obtain the slabs.",
+  "opened": [
+   "SKILL.md",
+   "surfaces/SKILL.md"
+  ],
+  "chars": 10892,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#12",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Instantiate pymatgen.analysis.adsorption.AdsorbateSiteFinder(slab) and call its find_adsorption_sites() method; it returns a dict with keys 'ontop', 'bridge', and 'hollow' (plus 'all').",
+  "opened": [
+   "SKILL.md",
+   "surfaces/SKILL.md"
+  ],
+  "chars": 10892,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#13",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use AdsorbateSiteFinder on the slab, get the on-top site from find_adsorption_sites()['ontop'], then place the O adsorbate with add_adsorbate. Example:\n\nfrom pymatgen.analysis.adsorption import AdsorbateSiteFinder\nfrom pymatgen.core import Molecule\n\nasf = AdsorbateSiteFinder(slab)\nads_sites = asf.find_adsorption_sites()\nadsorbate = Molecule(\"O\", [[0, 0, 0]])\nads_struct = asf.add_adsorbate(adsorbate, ads_sites[\"ontop\"][0])\n\nThis returns the adsorbed slab structure (optionally pass a specific site index/position instead of [0]).",
+  "opened": [
+   "SKILL.md",
+   "surfaces/SKILL.md"
+  ],
+  "chars": 10892,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#14",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "mpr.get_entries_in_chemsys(\"Li-Fe-O\") — call it within a `with MPRester() as mpr:` context, then pass the returned entries to `PhaseDiagram(entries)`.",
+  "opened": [
+   "SKILL.md",
+   "materials-project/SKILL.md",
+   "phase-diagrams/SKILL.md",
+   "references/materials_project_api.md"
+  ],
+  "chars": 25202,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#15",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use `MPNonSCFSet` from `pymatgen.io.vasp.sets` with `mode=\"line\"`, e.g. `MPNonSCFSet(struct, mode=\"line\")`.",
+  "opened": [
+   "SKILL.md",
+   "vasp-inputs/SKILL.md"
+  ],
+  "chars": 10546,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#16",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use pymatgen.analysis.diffraction.xrd.XRDCalculator; call get_pattern(struct) and iterate pattern.hkls, where each entry gives the peak's 2θ and hkl (plus intensity).",
+  "opened": [
+   "SKILL.md",
+   "advanced-analysis/SKILL.md",
+   "references/analysis_modules.md"
+  ],
+  "chars": 23524,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#17",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use MagOrderingTransformation from pymatgen.transformations.advanced_transformations, passing the argument {\"Fe\": 5.0} (i.e., a dict mapping species to magnetic moment) to apply_transformation(struct, return_ranked_list=True).",
+  "opened": [
+   "SKILL.md",
+   "advanced-analysis/SKILL.md",
+   "structure-creation/SKILL.md",
+   "references/transformations_workflows.md"
+  ],
+  "chars": 29355,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#18",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Use SubstitutionTransformation({\"Fe\": \"Mn\"}) (from pymatgen.transformations.standard_transformations) for each dopant metal, then write VASP inputs with MPRelaxSet(struct).write_input(dir) for each doped structure. Optionally use SupercellTransformation first to define the doping level.",
+  "opened": [
+   "SKILL.md",
+   "structure-creation/SKILL.md",
+   "vasp-inputs/SKILL.md"
+  ],
+  "chars": 12508,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#19",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Static step uses MPStaticSet; non-self-consistent (band structure) step uses MPNonSCFSet with mode=\"line\".",
+  "opened": [
+   "SKILL.md",
+   "vasp-inputs/SKILL.md",
+   "electronic-structure/SKILL.md",
+   "references/workflows.md"
+  ],
+  "chars": 13964,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#20",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Read the vasprun with Vasprun(\"vasprun.xml\"), then call get_band_structure() to get the BS object, and call bs.get_band_gap() on it (returns a dict with 'energy', 'direct', etc.).",
+  "opened": [
+   "SKILL.md",
+   "electronic-structure/SKILL.md"
+  ],
+  "chars": 10480,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#21",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "1 eV/Å² = 16.0218 J/m² (multiply eV/Å² by 16.02176634 to get J/m²). Derivation: 1 eV = 1.602176634×10⁻¹⁹ J and 1 Å² = 1×10⁻²⁰ m², so 1 eV/Å² = 1.602176634×10⁻¹⁹ / 1×10⁻²⁰ = 16.02176634 J/m². For a slab surface energy γ = (E_slab − N·E_bulk)/(2A), report the result in eV/Å² and multiply by ~16.022 to convert to J/m².",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 8884,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#22",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "Increase the symprec tolerance in SpacegroupAnalyzer, e.g. `sga = SpacegroupAnalyzer(struct, symprec=0.1)` (default is 0.01).",
+  "opened": [
+   "SKILL.md",
+   "structure-analysis/SKILL.md",
+   "references/troubleshooting.md"
+  ],
+  "chars": 11327,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "pymatgen#23",
+  "skill": "pymatgen",
+  "cond": "holon",
+  "answer": "uv pip install pymatgen[analysis,vis]",
+  "opened": [
+   "SKILL.md",
+   "references/troubleshooting.md"
+  ],
+  "chars": 9523,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#0",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --output dags/",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md",
+   "references/core-workflows.md"
+  ],
+  "chars": 14325,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#1",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "Run: python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --validate",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/quick-start.md"
+  ],
+  "chars": 10201,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#2",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "stream_processor.py (run: python scripts/stream_processor.py --config streaming_config.yaml --mode flink --generate --output flink-jobs/)",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/core-workflows.md",
+   "references/frameworks.md"
+  ],
+  "chars": 54371,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#3",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "kafka_config_generator",
+  "opened": [
+   "SKILL.md"
+  ],
+  "chars": 2227,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#4",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "streaming_quality_validator.py — it monitors consumer lag, data freshness, schema drift, throughput, and DLQ rates for production streaming pipelines.",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/tools.md",
+   "references/tech-stack.md"
+  ],
+  "chars": 48673,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#5",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "Python 3.8+",
+  "opened": [
+   "SKILL.md",
+   "references/resources.md",
+   "references/tech-stack.md",
+   "references/python-tools.md"
+  ],
+  "chars": 9962,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#6",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/templates.md"
+  ],
+  "chars": 71603,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#7",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "Use `scripts/data_quality_validator.py` with `--input data/sales.csv --output report.html`. For custom rules add `--rules rules/sales_validation.yaml`, and optionally `--threshold 0.95`.",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md"
+  ],
+  "chars": 10201,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#8",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/data_quality_validator.py --connection postgresql://user:pass@host/db --table sales_transactions --rules rules/sales_validation.yaml --threshold 0.95",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md",
+   "references/core-workflows.md"
+  ],
+  "chars": 14325,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#9",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db postgresql://host/airflow --dag-id sales_etl_pipeline --days 30 --optimize",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/core-workflows.md",
+   "references/python-tools.md"
+  ],
+  "chars": 14325,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#10",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/kafka_config_generator.py --topic user-events --partitions 12 --replication 3 --output kafka/topics/",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/quick-start.md",
+   "references/core-workflows.md"
+  ],
+  "chars": 14325,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#11",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "Use kafka_config_generator.py with the `exactly-once` producer profile, e.g.: `python scripts/kafka_config_generator.py --producer --profile exactly-once --output kafka/producer.properties` (optionally add `--transactional-id producer-001`).",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/quick-start.md"
+  ],
+  "chars": 10201,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#12",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/pipeline_orchestrator.py --config pipeline_config.yaml --validate",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md",
+   "references/core-workflows.md"
+  ],
+  "chars": 14325,
+  "reached": true,
+  "correct": false
+ },
+ {
+  "id": "senior-data-engineer#13",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/pipeline_orchestrator.py --template incremental --output dags/ (the flag is --template incremental)",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md"
+  ],
+  "chars": 10201,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#14",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/data_quality_validator.py --input data/sales.csv --rules rules/sales_validation.yaml --output report.html",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md"
+  ],
+  "chars": 10201,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#15",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "The `--threshold` flag (e.g. `--threshold 0.95`) on `data_quality_validator.py`.",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/quick-start.md",
+   "references/core-workflows.md"
+  ],
+  "chars": 14325,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#16",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/etl_performance_optimizer.py --airflow-db postgresql://host/airflow --dag-id <your_dag_id> --days 30 --optimize",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/python-tools.md",
+   "references/core-workflows.md"
+  ],
+  "chars": 14325,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#17",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/stream_processor.py --config streaming_config.yaml --mode flink --generate --output flink-jobs/",
+  "opened": [
+   "SKILL.md",
+   "references/quick-start.md",
+   "references/tools.md",
+   "references/python-tools.md"
+  ],
+  "chars": 49364,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#18",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "python scripts/kafka_config_generator.py --streams --application-id events-processor --exactly-once",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/quick-start.md"
+  ],
+  "chars": 10201,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#19",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "references/tools.md (the kafka_config_generator.py section) — it contains all profiles, security options, and Connect configurations.",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/reference-docs.md",
+   "references/tools.md"
+  ],
+  "chars": 50037,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#20",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "references/templates.md",
+  "opened": [
+   "SKILL.md",
+   "references/frameworks.md",
+   "references/templates.md",
+   "references/tools.md"
+  ],
+  "chars": 150812,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#21",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "Use streaming_quality_validator.py — it monitors consumer lag (with thresholds), data freshness (P50/P95/P99 latency), schema drift, throughput (events/sec, bytes/sec), and DLQ rates, producing a health score, recommendations, and Prometheus metrics.",
+  "opened": [
+   "SKILL.md",
+   "references/python-tools.md",
+   "references/tools.md"
+  ],
+  "chars": 47157,
+  "reached": false,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#22",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "P99 end-to-end latency < 1 second for streaming pipelines",
+  "opened": [
+   "SKILL.md",
+   "references/performance-targets.md"
+  ],
+  "chars": 3144,
+  "reached": true,
+  "correct": true
+ },
+ {
+  "id": "senior-data-engineer#23",
+  "skill": "senior-data-engineer",
+  "cond": "holon",
+  "answer": "< 10K records behind",
+  "opened": [
+   "SKILL.md",
+   "references/performance-targets.md"
+  ],
+  "chars": 3144,
+  "reached": true,
+  "correct": true
+ }
+]

@@ -88,6 +88,18 @@ description: "path \\\\ and quote \\\""
         self.assertIsNone(err)
         self.assertEqual(meta["name"], "foo")
 
+    def test_one_line_flow_lists(self):
+        # Real SKILL.md headers write empty or short lists inline: `related-skills: []`
+        meta, err = ns.parse_frontmatter(
+            '---\nname: foo\ndescription: bar\nrelated: []\ntags: [a, "b, c", \'d\']\n---\n')
+        self.assertIsNone(err)
+        self.assertEqual(meta["related"], [])
+        self.assertEqual(meta["tags"], ["a", "b, c", "d"])
+        for bad in ('tags: [a, [b]]', 'tags: [a, ]', 'tags: ["a]'):
+            with self.subTest(bad=bad):
+                _, err = ns.parse_frontmatter('---\nname: foo\ndescription: bar\n' + bad + '\n---\n')
+                self.assertIsNotNone(err)
+
     def test_folded_scalar_joins_with_spaces(self):
         # `description: >` is the YAML folded style: continuation lines join into one line
         meta, err = ns.parse_frontmatter(

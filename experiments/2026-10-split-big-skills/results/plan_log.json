@@ -1,0 +1,30 @@
+{
+ "citation-management": [
+  {
+   "attempt": 0,
+   "error": "error: chunk 14: \"lines\" must be \"A-B\" within 1-1115\nnothing was written\n"
+  },
+  {
+   "attempt": 1,
+   "error": null
+  }
+ ],
+ "rdkit": [
+  {
+   "attempt": 0,
+   "error": null
+  }
+ ],
+ "pymatgen": [
+  {
+   "attempt": 0,
+   "error": null
+  }
+ ],
+ "senior-data-engineer": [
+  {
+   "attempt": 0,
+   "error": null
+  }
+ ]
+}

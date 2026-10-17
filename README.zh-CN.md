@@ -46,7 +46,7 @@ python3 holon/scripts/holon.py install
 | [`holon/`](holon/README.zh-CN.md) | 主体包：skill 树、把 skill 放进树的规则（`organizer/`），以及检查这两者的工具 |
 | `install.py` | 用户运行的一条命令安装程序（见“快速开始”） |
 | `scripts/` | `check.py`（任何系统）和 `check.sh`（bash）在本地跑一遍 CI 的检查 |
-| [`experiments/`](experiments/2026-10-anthropic-skills/README.zh-CN.md) | 完整保存的测量，含脚本、数据和日志；不会被安装 |
+| [`experiments/`](experiments/) | 完整保存的测量，含脚本、数据和日志；不会被安装：[路由](experiments/2026-10-anthropic-skills/README.zh-CN.md)、[拆分长 skill](experiments/2026-10-split-big-skills/README.zh-CN.md) |
 
 ## 检查一次改动
 
