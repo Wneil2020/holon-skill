@@ -1,0 +1,21 @@
+office-docs fn=0 fp=0 lfn=0 lfp=12 | Dropped the format names (Word/PDF/Excel/slides) and generic words (document/file) that made the coa
+docx fn=1 fp=5 lfn=8 lfp=3 | Dropped 'memo' (pulled internal-comms memos in), 'letter' (substring of 'newsletter') and bare 'word
+pdf fn=4 fp=2 lfn=12 lfp=2 | All routing misses are cases where an existing PDF is the input or a print-ready/prepress PDF is the
+pptx fn=11 fp=0 lfn=17 lfp=0 | Adds presentation/slide cover words and folds Chinese/PPT terms to deck so pptx matches deck/present
+xlsx fn=1 fp=23 lfn=12 lfp=8 | Anchor on 'deliverable is a spreadsheet file', exclude google-sheets/python-script asks that caused
+web fn=0 fp=0 lfn=0 lfp=11 | The cover words web/html/react/ui were so generic they substring-matched every request in the false-
+frontend-design fn=12 fp=4 lfn=35 lfp=5 | Bare cover word 'design' caused every false load (cold email, insta graphic, mcp-builder, skill-crea
+web-artifacts-builder fn=0 fp=8 lfn=8 lfp=0 | Drops generic cover words 'artifact'/'component' that pulled in pure design-direction requests, keep
+webapp-testing fn=0 fp=0 lfn=11 lfp=1 | Dropped bare 'screenshot' (it lexically stole the PNG-OCR request), added 'console'/'local web' and
+theme-factory fn=1 fp=5 lfn=14 lfp=1 | Dropped generic cover words 'colors/fonts' (they were matching brand/UI requests) in favor of theme/
+brand-guidelines fn=0 fp=3 lfn=31 lfp=4 | Replaced the bare, over-matching cover word 'brand' (which pulled in 'brand rollout', 'brand notes',
+algorithmic-art fn=0 fp=1 lfn=8 lfp=1 | Removed 'p5' as a cover word (it substring-matched a p5.js debugging request) and added Chinese alia
+canvas-design fn=0 fp=0 lfn=24 lfp=0 | Chinese 海报/视觉图 requests and header-image/art-print/insta-graphic phrasings had no matching cover wor
+slack-gif-creator fn=0 fp=0 lfn=3 lfp=0 | Added 'slack' as a cover word and Chinese aliases for gif/emoji so Slack GIF requests match lexicall
+doc-coauthoring fn=2 fp=1 lfn=21 lfp=0 | Hyphenated co-author + CJK collaboration/spec aliases recover the Chinese co-writing lexical misses,
+internal-comms fn=2 fp=5 lfn=24 lfp=0 | Drops the over-broad 'faq' cover word (which pulled in help-center FAQ work), adds memo/internal not
+mcp-builder fn=1 fp=0 lfn=10 lfp=0 | Requests that wrap an API as callable tools rarely say 'mcp'; adding connector/expose cover words pl
+skill-creator fn=0 fp=1 lfn=14 lfp=1 | Replaced the too-literal covers ('new skill', 'make a skill', 'benchmark') with the words the misses
+claude-api fn=9 fp=2 lfn=27 lfp=0 | MCP/connector and 'expose X to an AI assistant' asks never lexically reach claude-api, so add the to
+academy-guide fn=3 fp=0 lfn=18 lfp=6 | Dropped the generic 'how do I' cover word that pulled in unrelated how-to questions (git, Stripe, Go
+discernment-nudge fn=40 fp=5 lfn=47 lfp=0 | The old cover words (advice/recommendation/double-check/verify) skewed to review-and-verify requests

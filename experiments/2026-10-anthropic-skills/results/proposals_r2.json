@@ -1,0 +1,324 @@
+{
+ "academy-guide": {
+  "prop": {
+   "description": "Use when someone asks how to learn, get started with, or roll out Claude to a team or class: covers get started, course, new hires, learning hub, pre-work",
+   "triggers": [
+    "How do I get started with Claude for my organization?",
+    "Is there a course or tutorial I can assign to new hires?",
+    "Merging two Word docs into one office document while keeping the comments should go to office-docs/docx"
+   ],
+   "synonyms": [
+    "course, 课程, 培训, 培训计划, 培训内容",
+    "get started, 上手"
+   ],
+   "why": "Dropped the generic cover words (onboarding, training, learning) that caused false landings on xlsx/no-skill requests, replaced them with specific request phrases, and rewrote the negative sentence so it carries office-docs/docx wording (office, word doc) instead of stopping at root."
+  },
+  "fn": 2,
+  "fp": 0,
+  "lfn": 14,
+  "lfp": 3
+ },
+ "algorithmic-art": {
+  "prop": {
+   "description": "Use when creating generative art with code and seeded randomness: covers generative art, algorithmic, flow field, particle; excludes debugging existing code",
+   "triggers": [
+    "make generative art with p5.js",
+    "create a flow field particle animation",
+    "draw a poster for the launch should go to canvas-design"
+   ],
+   "synonyms": [
+    "generative art, 生成艺术, 生成式艺术, generative artwork, generative, 程序生成, 程序化生成",
+    "flow field, 流场风格, 流场动画, 流动线条, 流动线条动画"
+   ],
+   "why": "Only the Slack-GIF request failed lexically: '程序生成的流动线条动画' / bare 'generative' folded to nothing, so adding those aliases (folded onto my cover words 'generative art' and 'flow field') makes it land on this skill; description/triggers already reach both positives and send the poster negative to canvas-design."
+  },
+  "fn": 0,
+  "fp": 0,
+  "lfn": 4,
+  "lfp": 0
+ },
+ "brand-guidelines": {
+  "prop": {
+   "error": ""
+  },
+  "fn": 0,
+  "fp": 7,
+  "lfn": 28,
+  "lfp": 1
+ },
+ "canvas-design": {
+  "prop": {
+   "error": ""
+  },
+  "fn": 0,
+  "fp": 1,
+  "lfn": 16,
+  "lfp": 0
+ },
+ "claude-api": {
+  "prop": {
+   "description": "Use when code calls Claude or the Anthropic SDK, or exposes an internal service to Claude as tools: covers claude, anthropic sdk, prompt caching, model migration; excludes other providers",
+   "triggers": [
+    "stream a response from the Claude API in Python and enable prompt caching",
+    "connect our internal asset library to Claude with a small Python MCP server",
+    "draft a short status update for leadership on the rollout timeline should go to internal-comms"
+   ],
+   "synonyms": [
+    "model migration, 老型号, 模型迁移, 迁移到最新",
+    "prompt caching, 缓存, 提示词缓存, 系统提示词"
+   ],
+   "why": "Added bare 'claude' as a cover word so the Claude-naming MCP/streaming triggers lexically reach the skill (they only hit mcp-builder before), dropped 'tool use' which was grabbing OpenAI tool-use requests, and replaced the dangling 'openai' negative target with an existing top-level skill (internal-comms) reached via the 'status update' alias."
+  },
+  "fn": 11,
+  "fp": 3,
+  "lfn": 27,
+  "lfp": 2
+ },
+ "discernment-nudge": {
+  "prop": {
+   "error": ""
+  },
+  "fn": 24,
+  "fp": 2,
+  "lfn": 34,
+  "lfp": 3
+ },
+ "doc-coauthoring": {
+  "prop": {
+   "description": "Use when co-writing a structured doc with the user through drafts: covers co-author, technical spec, decision doc; excludes editor pitches",
+   "triggers": [
+    "帮我一起写一份技术方案，先对一下大纲、读者和边界，再逐节填充。",
+    "Help me co-author a technical spec for our engineering team, starting with the outline and then filling it in section by section.",
+    "Draft a 200-word recommendation memo for my editor about the water utility series should go to discernment-nudge"
+   ],
+   "synonyms": [
+    "technical spec, 技术方案, 技术方案文档, 技术方案书",
+    "decision doc, 决策记录, 架构决策记录, 决策文档"
+   ],
+   "why": "The Chinese positive only failed because 技术方案/决策记录 were missing aliases of the existing cover words, so adding those two alias groups lets the sentence lexically land on this skill; the negative now carries discernment-nudge's own cover words (recommendation, memo) so it reaches its target instead of root."
+  },
+  "fn": 4,
+  "fp": 0,
+  "lfn": 16,
+  "lfp": 0
+ },
+ "docx": {
+  "prop": {
+   "description": "Use when creating, reading or editing Word documents: covers word doc, docx, tracked changes, comments; excludes pdf, slides, spreadsheets",
+   "triggers": [
+    "write our q3 people ops update and hand it to me as a word doc",
+    "edit the tracked changes in this docx",
+    "merge these two PDF files should go to office-docs/pdf"
+   ],
+   "synonyms": [
+    "word doc, word 文档, word文档, word 报告",
+    "comments, 批注"
+   ],
+   "why": "Add 'comments' cover word so the academy-guide negative 'keeping the comments' lexically reaches office-docs/docx."
+  },
+  "fn": 0,
+  "fp": 2,
+  "lfn": 18,
+  "lfp": 2
+ },
+ "frontend-design": {
+  "prop": {
+   "description": "Use when building or reshaping a UI and choosing its visual direction: covers landing page, dashboard, visual style, distinct, templated; excludes poster",
+   "triggers": [
+    "our landing page looks like every other saas template, help me make it actually feel distinct",
+    "build me a kanban board with drag and drop and filter by tag, I will use it for my assignments",
+    "design a square insta graphic for the new podcast ep should go to canvas-design"
+   ],
+   "synonyms": [
+    "visual style, look and feel",
+    "dashboard, kanban board"
+   ],
+   "why": "Adds kanban board as an alias for dashboard so the kanban request lexically reaches frontend-design."
+  },
+  "fn": 10,
+  "fp": 2,
+  "lfn": 31,
+  "lfp": 1
+ },
+ "internal-comms": {
+  "prop": {
+   "description": "Use when writing internal company communications like memos, updates and announcements: covers status report, newsletter, incident report, FAQ, announcement; excludes public help-center content",
+   "triggers": [
+    "write the weekly status report for leadership",
+    "Write the company newsletter for this quarter.",
+    "Let's co-author a technical spec for the new API should go to doc-coauthoring"
+   ],
+   "synonyms": [
+    "status report, 周报, 项目周报, weekly report, status update",
+    "incident report, 事故复盘, 事故报告, 故障报告"
+   ],
+   "why": "Removed memo cover to resolve ambiguity with discernment-nudge; added announcement/FAQ covers and Chinese synonyms for status/incident reports."
+  },
+  "fn": 3,
+  "fp": 2,
+  "lfn": 24,
+  "lfp": 0
+ },
+ "mcp-builder": {
+  "prop": {
+   "error": ""
+  },
+  "fn": 0,
+  "fp": 0,
+  "lfn": 8,
+  "lfp": 1
+ },
+ "office-docs": {
+  "prop": {
+   "error": ""
+  },
+  "fn": 0,
+  "fp": 0,
+  "lfn": 0,
+  "lfp": 9
+ },
+ "pdf": {
+  "prop": {
+   "error": ""
+  },
+  "fn": 3,
+  "fp": 0,
+  "lfn": 13,
+  "lfp": 1
+ },
+ "pptx": {
+  "prop": {
+   "description": "Use when any deck, slides, or .pptx/.potx file is involved, including restyling, branding, or extracting text: covers pptx, deck, slides, presentation, speaker notes; excludes pdf, spreadsheet",
+   "triggers": [
+    "Build a pitch deck for investors with a title slide and speaker notes.",
+    "Add speaker notes to these slides and restyle the deck with our brand colors.",
+    "Fix the formulas in this spreadsheet and update the budget model should go to office-docs/xlsx"
+   ],
+   "synonyms": [
+    "deck, 幻灯片, 演示文稿, ppt, slide deck, pitch deck, pptx 文件"
+   ],
+   "why": "Cover words now include long, high-signal phrases (speaker notes, presentation) and the situation explicitly names restyling/branding a deck, so deck-plus-theme/brand requests stop being lost to theme-factory or brand-guidelines."
+  },
+  "fn": 8,
+  "fp": 0,
+  "lfn": 15,
+  "lfp": 0
+ },
+ "skill-creator": {
+  "prop": {
+   "description": "Use when creating, tuning or benchmarking an agent skill and its description: covers create a new skill, reusable skill, existing skill, trigger reliably; excludes mcp server",
+   "triggers": [
+    "turn my template and my past examples into a reusable skill so the agent writes updates in our style",
+    "our existing skill does not trigger reliably, review it, improve the description and set up evals before and after",
+    "build an MCP server for our ticket system should go to mcp-builder"
+   ],
+   "synonyms": [
+    "create a new skill, build a new skill, write a new skill, 新建技能"
+   ],
+   "why": "Dropped generic 'reusable' (deck false load) and bare 'skill' (organizer/editing/web ambiguity FAILs), replacing them with request-level phrases 'create a new skill', 'reusable skill', 'existing skill' that still lexically reach both positives and the create-from-zero miss while never matching the deck, sub-skill, absorb-this-new-skill or duplicate-skill requests."
+  },
+  "fn": 0,
+  "fp": 1,
+  "lfn": 1,
+  "lfp": 0
+ },
+ "slack-gif-creator": {
+  "prop": {
+   "description": "Use when making an animated GIF for Slack: covers gif, emoji; excludes static poster",
+   "triggers": [
+    "make me a gif of a cat dancing for Slack",
+    "帮我生成一个动图，表现学生点头理解的表情，用在 Slack 上回复消息。",
+    "draw a poster for the launch should go to canvas-design"
+   ],
+   "synonyms": [
+    "gif, 动图"
+   ],
+   "why": "Dropped 'slack' from the covers list (it was the only word matching non-GIF Slack requests, causing both false landings) and added a 动图→gif alias so the Chinese trigger still lexically reaches the skill via 'gif'."
+  },
+  "fn": 0,
+  "fp": 0,
+  "lfn": 1,
+  "lfp": 2
+ },
+ "theme-factory": {
+  "prop": {
+   "description": "Use when styling an artifact with a reusable color/font theme: covers theme, palette, typeface, visual treatment; excludes brand color",
+   "triggers": [
+    "apply the ocean theme to these slides",
+    "give this report a new color palette and matching fonts",
+    "use Anthropic brand colors should go to brand-guidelines"
+   ],
+   "synonyms": [
+    "theme, 视觉主题, 换一套主题, 一套主题"
+   ],
+   "why": "Broad 'excludes brand' was blocking theme-factory on any request containing 'brand' (e.g. 'a custom theme for our brand'); narrowing it to 'brand color' keeps brand-color requests out while letting theme requests through."
+  },
+  "fn": 2,
+  "fp": 6,
+  "lfn": 9,
+  "lfp": 5
+ },
+ "web": {
+  "prop": {
+   "error": ""
+  },
+  "fn": 0,
+  "fp": 0,
+  "lfn": 0,
+  "lfp": 5
+ },
+ "web-artifacts-builder": {
+  "prop": {
+   "description": "Use when building an elaborate interactive web artifact with React, shadcn, Tailwind, state or routing: covers artifact, shadcn, tailwind, routing, kanban; excludes simple single-file page",
+   "triggers": [
+    "build an artifact with tailwind and shadcn components",
+    "make a multi-page artifact with routing and state management",
+    "pick a distinctive visual style and typography for a landing page should go to web/frontend-design"
+   ],
+   "synonyms": [
+    "artifact, 交互式页面, 交互式数据故事, 交互式数据故事网页"
+   ],
+   "why": "Replaced the vague 'excludes aesthetic' with 'simple single-file page' (author intent, kills the brand-color web-app false load), swapped the unmatched 'state management' cover word for 'artifact' and added 'kanban' so interactive/multi-view artifact and Chinese requests lexically land here, and aliased the Chinese '交互式页面/交互式数据故事' wordings seen in the misses."
+  },
+  "fn": 1,
+  "fp": 1,
+  "lfn": 13,
+  "lfp": 0
+ },
+ "webapp-testing": {
+  "prop": {
+   "description": "Use when testing or debugging a local web app in a browser: covers playwright, browser, console, localhost, local web",
+   "triggers": [
+    "test the login flow with playwright",
+    "take a screenshot of localhost:3000 and check the console",
+    "choose typography and a color palette for a new landing page should go to web/frontend-design"
+   ],
+   "synonyms": [
+    "browser, 浏览器截图"
+   ],
+   "why": "Dropped 'excludes typography' — 'typography' was the only token in my card substring-matching the negative example (making me an ambiguity candidate for a frontend-design task); also aliased the Chinese browser-screenshot wording seen in a lexical miss, with no other changes."
+  },
+  "fn": 0,
+  "fp": 0,
+  "lfn": 6,
+  "lfp": 0
+ },
+ "xlsx": {
+  "prop": {
+   "description": "Use when a spreadsheet file is the deliverable: covers xlsx, csv, spreadsheet, excel; excludes google sheet, python script",
+   "triggers": [
+    "帮我核对模型计费口径，把 API 成本测算表按最新信息更新一下",
+    "fix the headers in this csv and give me back a proper spreadsheet file",
+    "用这份成绩数据做一个前端网页图表展示 should go to web/frontend-design"
+   ],
+   "synonyms": [
+    "spreadsheet, 电子表格, 测算表"
+   ],
+   "why": "Fold 测算表→spreadsheet so the billing-sheet sentence reaches xlsx, drop 'clean/downloads folder' from the CSV sentence to stop the organizer collision, and strip 'Excel' from the negative so it stops landing on xlsx; excludes widened to singular 'google sheet, python script'."
+  },
+  "fn": 1,
+  "fp": 4,
+  "lfn": 11,
+  "lfp": 6
+ }
+}

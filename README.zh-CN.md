@@ -2,7 +2,7 @@
 
 一套帮 AI agent 管理大量 skill 的规则和工具：每个 skill 放在哪个文件夹，agent 怎么找到对的那个，以及怎么检查它确实找得到。
 
-> **项目处于早期阶段。** 1.0.0 是第一个公开版本。它在 Linux、macOS、Windows 上都有测试，但目前只在两个小型 skill 库上用过，规则和命令参数以后仍可能调整。每次改动都记在 [holon/CHANGELOG.md](holon/CHANGELOG.md)。
+> **项目处于早期阶段。** 1.0.0 是第一个公开版本。它在 Linux、macOS、Windows 上都有测试，但目前只在三个不超过 24 个 skill 的库上用过，规则和命令参数以后仍可能调整。每次改动都记在 [holon/CHANGELOG.md](holon/CHANGELOG.md)。
 
 [English](README.md)
 
@@ -46,6 +46,7 @@ python3 holon/scripts/holon.py install
 | [`holon/`](holon/README.zh-CN.md) | 主体包：skill 树、把 skill 放进树的规则（`organizer/`），以及检查这两者的工具 |
 | `install.py` | 用户运行的一条命令安装程序（见“快速开始”） |
 | `scripts/` | `check.py`（任何系统）和 `check.sh`（bash）在本地跑一遍 CI 的检查 |
+| [`experiments/`](experiments/2026-10-anthropic-skills/README.zh-CN.md) | 完整保存的测量，含脚本、数据和日志；不会被安装 |
 
 ## 检查一次改动
 

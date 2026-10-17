@@ -1,0 +1,21 @@
+academy-guide fn=2 fp=0 lfn=14 lfp=3 | Dropped the generic cover words (onboarding, training, learning) that caused false landings on xlsx/
+algorithmic-art fn=0 fp=0 lfn=4 lfp=0 | Only the Slack-GIF request failed lexically: '程序生成的流动线条动画' / bare 'generative' folded to nothing, so
+brand-guidelines fn=0 fp=7 lfn=28 lfp=1 |
+canvas-design fn=0 fp=1 lfn=16 lfp=0 |
+claude-api fn=11 fp=3 lfn=27 lfp=2 | Added bare 'claude' as a cover word so the Claude-naming MCP/streaming triggers lexically reach the
+discernment-nudge fn=24 fp=2 lfn=34 lfp=3 |
+doc-coauthoring fn=4 fp=0 lfn=16 lfp=0 | The Chinese positive only failed because 技术方案/决策记录 were missing aliases of the existing cover words,
+docx fn=0 fp=2 lfn=18 lfp=2 | Add 'comments' cover word so the academy-guide negative 'keeping the comments' lexically reaches off
+frontend-design fn=10 fp=2 lfn=31 lfp=1 | Adds kanban board as an alias for dashboard so the kanban request lexically reaches frontend-design.
+internal-comms fn=3 fp=2 lfn=24 lfp=0 | Removed memo cover to resolve ambiguity with discernment-nudge; added announcement/FAQ covers and Ch
+mcp-builder fn=0 fp=0 lfn=8 lfp=1 |
+office-docs fn=0 fp=0 lfn=0 lfp=9 |
+pdf fn=3 fp=0 lfn=13 lfp=1 |
+pptx fn=8 fp=0 lfn=15 lfp=0 | Cover words now include long, high-signal phrases (speaker notes, presentation) and the situation ex
+skill-creator fn=0 fp=1 lfn=1 lfp=0 | Dropped generic 'reusable' (deck false load) and bare 'skill' (organizer/editing/web ambiguity FAILs
+slack-gif-creator fn=0 fp=0 lfn=1 lfp=2 | Dropped 'slack' from the covers list (it was the only word matching non-GIF Slack requests, causing
+theme-factory fn=2 fp=6 lfn=9 lfp=5 | Broad 'excludes brand' was blocking theme-factory on any request containing 'brand' (e.g. 'a custom
+web fn=0 fp=0 lfn=0 lfp=5 |
+web-artifacts-builder fn=1 fp=1 lfn=13 lfp=0 | Replaced the vague 'excludes aesthetic' with 'simple single-file page' (author intent, kills the bra
+webapp-testing fn=0 fp=0 lfn=6 lfp=0 | Dropped 'excludes typography' — 'typography' was the only token in my card substring-matching the ne
+xlsx fn=1 fp=4 lfn=11 lfp=6 | Fold 测算表→spreadsheet so the billing-sheet sentence reaches xlsx, drop 'clean/downloads folder' from

@@ -1,0 +1,633 @@
+[
+ {
+  "request": "I just got access to Claude and honestly have no idea where to start — what should I look at first?",
+  "label": [
+   "academy-guide"
+  ],
+  "kind": "single",
+  "id": 0
+ },
+ {
+  "request": "We're rolling this out to about 200 people at my company next month. Any onboarding material or training stuff you'd point me to?",
+  "label": [
+   "academy-guide"
+  ],
+  "kind": "single",
+  "id": 1
+ },
+ {
+  "request": "How do connectors work in Claude? I want to actually understand the feature before I go set one up.",
+  "label": [
+   "academy-guide"
+  ],
+  "kind": "single",
+  "id": 2
+ },
+ {
+  "request": "Can you write me a p5.js sketch that generates a slowly drifting flow field? I want a couple of sliders so each run looks different.",
+  "label": [
+   "algorithmic-art"
+  ],
+  "kind": "single",
+  "id": 3
+ },
+ {
+  "request": "I'd love some generative art — particles swirling around, seeded so I can reproduce a specific version later.",
+  "label": [
+   "algorithmic-art"
+  ],
+  "kind": "single",
+  "id": 4
+ },
+ {
+  "request": "Make something visual with code, like a field of lines that shift over time and respond to the mouse.",
+  "label": [
+   "algorithmic-art"
+  ],
+  "kind": "single",
+  "id": 5
+ },
+ {
+  "request": "Can you restyle this HTML report with Anthropic's official colors and fonts so it looks like it belongs?",
+  "label": [
+   "brand-guidelines"
+  ],
+  "kind": "single",
+  "id": 6
+ },
+ {
+  "request": "Our internal wiki page needs to match Anthropic's brand — colors, typography, all of it.",
+  "label": [
+   "brand-guidelines"
+  ],
+  "kind": "single",
+  "id": 7
+ },
+ {
+  "request": "Design a poster for our office hackathon — A3, printable, just something striking.",
+  "label": [
+   "canvas-design"
+  ],
+  "kind": "single",
+  "id": 8
+ },
+ {
+  "request": "I need a static visual piece, like an art print I can export as both PNG and PDF.",
+  "label": [
+   "canvas-design"
+  ],
+  "kind": "single",
+  "id": 9
+ },
+ {
+  "request": "What's the current pricing for Sonnet, and how does prompt caching change the math?",
+  "label": [
+   "claude-api"
+  ],
+  "kind": "single",
+  "id": 10
+ },
+ {
+  "request": "I'm streaming responses with the Anthropic Python SDK and want to add tool use — how should I structure that?",
+  "label": [
+   "claude-api"
+  ],
+  "kind": "single",
+  "id": 11
+ },
+ {
+  "request": "Which model should I pick for a high-volume classification job? I need to weigh cost against quality.",
+  "label": [
+   "claude-api"
+  ],
+  "kind": "single",
+  "id": 12
+ },
+ {
+  "request": "Should we move our team from a monorepo to separate repos? Give me your honest take with the tradeoffs.",
+  "label": [
+   "discernment-nudge"
+  ],
+  "kind": "single",
+  "id": 13
+ },
+ {
+  "request": "Draft a proposal for migrating our data warehouse and tell me whether the timeline I have in mind is realistic.",
+  "label": [
+   "discernment-nudge"
+  ],
+  "kind": "single",
+  "id": 14
+ },
+ {
+  "request": "Look at these Q3 numbers and tell me what you think is actually driving the churn.",
+  "label": [
+   "discernment-nudge"
+  ],
+  "kind": "single",
+  "id": 15
+ },
+ {
+  "request": "I need to write a technical spec for our new auth service — can you walk me through it step by step?",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "kind": "single",
+  "id": 16
+ },
+ {
+  "request": "Help me draft a proposal for the new vendor contract. I want to iterate on it with you a few rounds.",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "kind": "single",
+  "id": 17
+ },
+ {
+  "request": "Let's write a decision doc for whether we adopt GraphQL.",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "kind": "single",
+  "id": 18
+ },
+ {
+  "request": "Take this outline and turn it into a Word document with a proper table of contents and page numbers.",
+  "label": [
+   "docx"
+  ],
+  "kind": "single",
+  "id": 19
+ },
+ {
+  "request": "I've got a .docx contract with tracked changes — can you accept the ones from legal and leave the rest?",
+  "label": [
+   "docx"
+  ],
+  "kind": "single",
+  "id": 20
+ },
+ {
+  "request": "I'm building a settings page and it looks so generic. Help me give it some actual personality.",
+  "label": [
+   "frontend-design"
+  ],
+  "kind": "single",
+  "id": 21
+ },
+ {
+  "request": "We need a visual direction for our new dashboard UI — typography, spacing, color, the whole thing.",
+  "label": [
+   "frontend-design"
+  ],
+  "kind": "single",
+  "id": 22
+ },
+ {
+  "request": "Redesign the hero section of this page so it doesn't look like every other Tailwind template out there.",
+  "label": [
+   "frontend-design"
+  ],
+  "kind": "single",
+  "id": 23
+ },
+ {
+  "request": "Write our monthly all-hands update — the usual format we use.",
+  "label": [
+   "internal-comms"
+  ],
+  "kind": "single",
+  "id": 24
+ },
+ {
+  "request": "Draft a note to the whole company about what happened during last night's outage.",
+  "label": [
+   "internal-comms"
+  ],
+  "kind": "single",
+  "id": 25
+ },
+ {
+  "request": "Turn this doc into a 12-slide deck for the board meeting.",
+  "label": [
+   "pptx"
+  ],
+  "kind": "single",
+  "id": 26
+ },
+ {
+  "request": "I need to pull all the speaker notes out of this .pptx file.",
+  "label": [
+   "pptx"
+  ],
+  "kind": "single",
+  "id": 27
+ },
+ {
+  "request": "Combine these two presentation files into one, and drop the duplicate title slides.",
+  "label": [
+   "pptx"
+  ],
+  "kind": "single",
+  "id": 28
+ },
+ {
+  "request": "I want to build a new skill for handling our support tickets — where do I start?",
+  "label": [
+   "skill-creator"
+  ],
+  "kind": "single",
+  "id": 29
+ },
+ {
+  "request": "My existing skill fires way too often. Can you help me tighten the description and test it?",
+  "label": [
+   "skill-creator"
+  ],
+  "kind": "single",
+  "id": 30
+ },
+ {
+  "request": "Can you set up an eval suite for my skill and check how consistent it is across runs?",
+  "label": [
+   "skill-creator"
+  ],
+  "kind": "single",
+  "id": 31
+ },
+ {
+  "request": "Make me a GIF for Slack of a cat typing furiously.",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "kind": "single",
+  "id": 32
+ },
+ {
+  "request": "I need an animated GIF for our launches channel — something celebratory but under the size limit.",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "kind": "single",
+  "id": 33
+ },
+ {
+  "request": "Can you animate a little spinning thing that works as a Slack emoji GIF?",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "kind": "single",
+  "id": 34
+ },
+ {
+  "request": "This HTML report looks bland — can you apply a warmer theme to it, different colors and fonts?",
+  "label": [
+   "theme-factory"
+  ],
+  "kind": "single",
+  "id": 35
+ },
+ {
+  "request": "I've got a page and a slide deck and I want them both using the same color and type scheme.",
+  "label": [
+   "theme-factory"
+  ],
+  "kind": "single",
+  "id": 36
+ },
+ {
+  "request": "Build me a React artifact with a multi-step form, tabs, and real state — a proper app, not a toy.",
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "kind": "single",
+  "id": 37
+ },
+ {
+  "request": "I want an interactive HTML artifact with client-side routing and a data table using shadcn components.",
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "kind": "single",
+  "id": 38
+ },
+ {
+  "request": "Make a dashboard artifact with filters, a couple of chart views, and a detail panel.",
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "kind": "single",
+  "id": 39
+ },
+ {
+  "request": "My local app's login flow is broken in the browser — can you open it with Playwright and tell me what's happening?",
+  "label": [
+   "webapp-testing"
+  ],
+  "kind": "single",
+  "id": 40
+ },
+ {
+  "request": "Take screenshots of my dev server's checkout page and check the console for errors.",
+  "label": [
+   "webapp-testing"
+  ],
+  "kind": "single",
+  "id": 41
+ },
+ {
+  "request": "Clean up this CSV — the headers are on row 4 and there's junk at the bottom.",
+  "label": [
+   "xlsx"
+  ],
+  "kind": "single",
+  "id": 42
+ },
+ {
+  "request": "Add a pivot table and a chart to this spreadsheet.",
+  "label": [
+   "xlsx"
+  ],
+  "kind": "single",
+  "id": 43
+ },
+ {
+  "request": "Merge these three monthly .xlsm files into one workbook with a summary tab.",
+  "label": [
+   "xlsx"
+  ],
+  "kind": "single",
+  "id": 44
+ },
+ {
+  "request": "I want to build a server that exposes our internal ticketing API to an LLM as a set of tools — Python preferred.",
+  "label": [
+   "mcp-builder"
+  ],
+  "kind": "single",
+  "id": 45
+ },
+ {
+  "request": "Write me an MCP server in TypeScript that wraps our Jira instance.",
+  "label": [
+   "mcp-builder"
+  ],
+  "kind": "single",
+  "id": 46
+ },
+ {
+  "request": "What's the right way to design the tool schemas for my MCP server so the model actually calls them correctly?",
+  "label": [
+   "mcp-builder"
+  ],
+  "kind": "single",
+  "id": 47
+ },
+ {
+  "request": "Merge these five PDFs into one and add page numbers.",
+  "label": [
+   "pdf"
+  ],
+  "kind": "single",
+  "id": 48
+ },
+ {
+  "request": "This scanned PDF isn't searchable — can you OCR it so I can select the text?",
+  "label": [
+   "pdf"
+  ],
+  "kind": "single",
+  "id": 49
+ },
+ {
+  "request": "Build me an interactive HTML dashboard artifact with a couple of charts, and give it a nice theme.",
+  "label": [
+   "web-artifacts-builder",
+   "theme-factory"
+  ],
+  "kind": "multi",
+  "id": 50
+ },
+ {
+  "request": "Take the content of this Word doc and turn it into a polished slide deck for the client.",
+  "label": [
+   "docx",
+   "pptx"
+  ],
+  "kind": "multi",
+  "id": 51
+ },
+ {
+  "request": "Create a poster for our event and style it with Anthropic's official colors and fonts.",
+  "label": [
+   "canvas-design",
+   "brand-guidelines"
+  ],
+  "kind": "multi",
+  "id": 52
+ },
+ {
+  "request": "Wrap our inventory API in an MCP server, and while you're at it help me write the technical spec for it.",
+  "label": [
+   "mcp-builder",
+   "doc-coauthoring"
+  ],
+  "kind": "multi",
+  "id": 53
+ },
+ {
+  "request": "Write an internal announcement about the new design system, and make it look like our brand.",
+  "label": [
+   "internal-comms",
+   "brand-guidelines"
+  ],
+  "kind": "multi",
+  "id": 54
+ },
+ {
+  "request": "Take this spreadsheet of Q3 results and build a deck for the leadership review.",
+  "label": [
+   "xlsx",
+   "pptx"
+  ],
+  "kind": "multi",
+  "id": 55
+ },
+ {
+  "request": "Design a landing page with a strong visual direction, then screenshot it in the browser and check it renders right.",
+  "label": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "kind": "multi",
+  "id": 56
+ },
+ {
+  "request": "Turn this PDF report into a Word memo with headings and a summary up top.",
+  "label": [
+   "pdf",
+   "docx"
+  ],
+  "kind": "multi",
+  "id": 57
+ },
+ {
+  "request": "Make a Slack GIF and a matching poster for the campaign launch.",
+  "label": [
+   "slack-gif-creator",
+   "canvas-design"
+  ],
+  "kind": "multi",
+  "id": 58
+ },
+ {
+  "request": "Read the speaker notes out of this deck and turn them into an internal status update.",
+  "label": [
+   "pptx",
+   "internal-comms"
+  ],
+  "kind": "multi",
+  "id": 59
+ },
+ {
+  "request": "帮我把这份季度数据的表格整理一下，再加个图表。",
+  "label": [
+   "xlsx"
+  ],
+  "kind": "zh",
+  "id": 60
+ },
+ {
+  "request": "把这份 PDF 合同里的条款提取出来，整理成一份 Word 文档。",
+  "label": [
+   "pdf",
+   "docx"
+  ],
+  "kind": "zh",
+  "id": 61
+ },
+ {
+  "request": "我想做个网页应用，带多步骤表单和标签页，用 React 写。",
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "kind": "zh",
+  "id": 62
+ },
+ {
+  "request": "帮我做一个给 Slack 用的动图，内容是一只猫在敲键盘。",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "kind": "zh",
+  "id": 63
+ },
+ {
+  "request": "我们公司要把 Claude 推广到整个团队，有没有相关的培训资料？",
+  "label": [
+   "academy-guide"
+  ],
+  "kind": "zh",
+  "id": 64
+ },
+ {
+  "request": "这份 HTML 报告看着太普通了，帮我换个主题配色和字体。",
+  "label": [
+   "theme-factory"
+  ],
+  "kind": "zh",
+  "id": 65
+ },
+ {
+  "request": "帮我写一份给全公司的内部通知，关于下周的系统维护。",
+  "label": [
+   "internal-comms"
+  ],
+  "kind": "zh",
+  "id": 66
+ },
+ {
+  "request": "用代码生成一幅动态的粒子艺术图。",
+  "label": [
+   "algorithmic-art"
+  ],
+  "kind": "zh",
+  "id": 67
+ },
+ {
+  "request": "帮我查一下 Claude API 现在 Sonnet 的价格，还有缓存怎么计费。",
+  "label": [
+   "claude-api"
+  ],
+  "kind": "zh",
+  "id": 68
+ },
+ {
+  "request": "我本地的网页登录一直报错，能帮我用浏览器打开看看是哪里出问题吗？",
+  "label": [
+   "webapp-testing"
+  ],
+  "kind": "zh",
+  "id": 69
+ },
+ {
+  "request": "Write a Python function that reverses a linked list.",
+  "label": [],
+  "kind": "none",
+  "id": 70
+ },
+ {
+  "request": "How do I set the temperature parameter in the OpenAI Chat Completions API?",
+  "label": [],
+  "kind": "none",
+  "id": 71
+ },
+ {
+  "request": "I'm getting a KeyError in my pandas script, can you debug it?",
+  "label": [],
+  "kind": "none",
+  "id": 72
+ },
+ {
+  "request": "Add a comment to this Google Doc for me.",
+  "label": [],
+  "kind": "none",
+  "id": 73
+ },
+ {
+  "request": "Can you edit this Google Sheet and add a new tab?",
+  "label": [],
+  "kind": "none",
+  "id": 74
+ },
+ {
+  "request": "Set up a Postgres database and write a migration script for the users table.",
+  "label": [],
+  "kind": "none",
+  "id": 75
+ },
+ {
+  "request": "How do I use Google's Gemini API to generate embeddings?",
+  "label": [],
+  "kind": "none",
+  "id": 76
+ },
+ {
+  "request": "Write pytest unit tests for this utility function.",
+  "label": [],
+  "kind": "none",
+  "id": 77
+ },
+ {
+  "request": "Convert this Markdown file to HTML for me.",
+  "label": [],
+  "kind": "none",
+  "id": 78
+ },
+ {
+  "request": "Summarize this YouTube video.",
+  "label": [],
+  "kind": "none",
+  "id": 79
+ }
+]

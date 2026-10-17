@@ -1,0 +1,9807 @@
+[
+ {
+  "request": "I already have my slide deck built — can you apply one of the pre-set themes to it so it looks polished?",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Rework this report so it uses Anthropic's official colors and typography throughout.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take this content and build me a responsive HTML landing page with React components.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Help me co-author a technical spec — let's work through it section by section until it's ready for review.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Draft a project status update for leadership using the format our company normally uses for these.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Create a poster design as a PNG of a minimalist mountain landscape at dusk.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Make a generative art piece with p5.js using a flow field and adjustable seed parameters.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Read through this .docx and summarize the key points for me.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My boss wants the report as a PDF by end of day — it's currently sitting in Word, can you handle the switch?",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I need to get the sales figures off my spreadsheet and onto the slides for Thursday's meeting.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you take this doc and turn it into something I can email out that nobody can edit?",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "There's a table in my presentation I want to move over to Excel so I can actually do math on it.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I built a graph in my numbers file and now I need it in the deck without it looking like a blurry screenshot.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "The client only accepts PDFs, but I've been writing everything in Word — can you convert it and keep the layout intact?",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I've got a scanned file full of tables and I need them as an editable spreadsheet.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to merge the slides from three different people's decks into one file, plus a handout version as a PDF.",
+  "lang": "en",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pdf",
+    "pptx"
+   ],
+   [
+    "pdf",
+    "pptx"
+   ],
+   [
+    "pdf",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份 Word 版的产品说明书转成 PDF，顺便按我们公司的品牌规范把标题字体和主色调统一一下，客户那边要的是带品牌感的成品。",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "brand-guidelines",
+    "docx",
+    "pdf"
+   ],
+   [
+    "brand-guidelines",
+    "docx",
+    "pdf"
+   ],
+   [
+    "brand-guidelines",
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我这份季度汇报 PPT 里的图表是从 Excel 复制过来的，现在想重新做一版，让每页的配色和版式看起来是一整套主题，最后再导出一份 PDF 存档。",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pdf",
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pdf",
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pdf",
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把这份会议纪要的 Markdown 草稿整理成正式的 Word 文档，同时生成一份 PDF 版，两份内容要保持一致，格式上也要专业一点。",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Excel 里有三张销售数据表，我想把图表插到汇报幻灯片里，但整套幻灯片的视觉风格需要统一，你能帮我处理吗？",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "theme-factory",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "这份内部培训材料现在还是 HTML 页面，我想转成 Word 方便同事批注，再导出一份 PDF 发给外部讲师。",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "给这份白皮书换一套更符合公司视觉规范的配色和字体，排好版之后导出 PDF，下周要发给客户。",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pdf"
+   ],
+   [
+    "brand-guidelines",
+    "pdf"
+   ],
+   [
+    "brand-guidelines",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把 PPT 里的数据表格提取到 Excel，做几个可视化图表，再整合成一份 PDF 分析报告。",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pdf",
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "pptx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "pptx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份报告我已经写好内容了，现在需要套上我们部门常用的模板样式，然后转成 PDF 提交给领导，字体和颜色别太花。",
+  "lang": "zh",
+  "persona": "adv:office-docs",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you merge these three PDFs into one file and add page numbers at the bottom?",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "This scanned contract PDF is just images — make it searchable so I can copy the text out.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need to fill in the blank fields on this PDF application form and save a completed copy.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Put together a 12-slide pitch deck for our Series A raise, with a clean modern look.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "discernment-nudge",
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "The .pptx in my downloads needs speaker notes added to slides 4 through 9, and slide 2 moved to the end.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "This CSV export of customer orders is a mess — fix the broken rows and headers, then add a pivot table summarizing revenue by region.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take the .docx I attached and turn it into a PDF with bookmarks for each heading.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Help me restructure my Google Doc so the headings nest properly and it generates an automatic table of contents.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Can you turn this pile of notes into a polished write-up with a cover page, headings, and page numbers? I need to send it around for edits.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "doc-coauthoring",
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I need a formal memo on company letterhead about the new remote-work policy, with a signature block and a footer.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "internal-comms"
+   ],
+   [
+    "docx",
+    "internal-comms"
+   ],
+   [
+    "docx",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "docx",
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Could you make a reusable proposal template for us, with placeholders, a contents page, and consistent heading styles?",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "doc-coauthoring",
+    "docx"
+   ],
+   [
+    "doc-coauthoring",
+    "docx"
+   ],
+   [
+    "doc-coauthoring",
+    "docx"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring",
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Please clean up the file I got back from legal—accept the tracked edits, remove the comments, and save the final version.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take the attached paragraphs and arrange them into a proper employee handbook section with numbered headings and a table of contents.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Swap the old chart image in my annual summary for the new one and keep the caption and alignment intact.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Find every mention of 'Northwind' in my document and replace it with 'Northwind Global' without changing the formatting.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "I need a one-page letter I can print on our stationery for a client, with the logo at the top and the date and address lined up.",
+  "lang": "en",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份 Word 合同转成 PDF，客户那边只收 PDF。",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份 PDF 扫描件能不能识别成可编辑的 Word 文档？我要在里面改几处条款。",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "周报是用 Word 写的，里面的数据表格能不能单独导成 Excel 发我？",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把这个 .docx 里的内容做成一套汇报 PPT，每章一页就行。",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份 Word 里的表格太乱了，帮我整理成规范的 Excel 台账。",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把这份 Excel 里的名单套进 Word 通知模板里，生成一批带页眉的正式文件。",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把 PPT 的讲稿整理成一份 Word 文档，格式不用太讲究。",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份 Word 里有一堆批注和修订记录，帮我清干净再另存成 PDF 给法务。",
+  "lang": "zh",
+  "persona": "adv:docx",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Put together a quarterly report as a Word document with a table of contents, page numbers, and a letterhead.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx",
+    "internal-comms"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I've got a .docx contract I need you to read through and summarize the key clauses from.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "discernment-nudge",
+    "docx"
+   ],
+   [
+    "discernment-nudge",
+    "docx"
+   ],
+   [
+    "discernment-nudge",
+    "docx"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build me a spreadsheet tracking monthly expenses with a pie chart and running totals.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Merge these two CSV exports into one clean spreadsheet and fix the mangled rows and misplaced headers.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Create a 10-slide pitch deck for our seed round, including speaker notes for each slide.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Read the speaker notes in my presentation file and turn them into a structured outline.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Fill in this .dotx letter template with the client's name, address, and today's date.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Write a standalone Python script that counts words in plain text files and prints a summary.",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "hey can you take these three scans and staple them into one file for me",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "i need to pull the text out of this thing so i can copy-paste it into my notes",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [],
+   [],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "my resume keeps getting rejected — can you put a diagonal 'CONFIDENTIAL' stamp across every page?",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "this 40-page contract is too much, just give me pages 12 through 18",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "the file i got from the bank won't let me type in the blanks — can you make it fillable?",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "can you flip page 3 the right way up? it came out sideways",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "there are a couple of pictures buried in this report and i want them as separate image files",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "this old scan is just a picture of text so i can't search it — can you make the words actually selectable?",
+  "lang": "en",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份扫描的合同 PDF 处理一下，歪得厉害，转正之后把里面的甲方乙方、金额和签署日期提取成一张表，我好录进系统。",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我这份报价单是 Excel 做的，想导出成 PDF 发给客户，但页码和公司抬头要按我们的模板加上去，能弄吗？",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把这份 PPT 导出的 PDF 按页拆开，每页单独一个文件，文件名用页面上的标题命名，然后打包给我。",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "手头有个 Word 写的会议纪要，还有个附件是 PDF，领导要求合并成一份文件发出去，最好统一页码和页眉。",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份 PDF 表单里有几个空要填，填完还得手写签名，我该怎么做才不会被当成修改过的？",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们收到一批发票，都是拍照或者扫描的 PDF，字都搜不到，想做成可以全文检索的版本，顺便把发票号、金额、开票日期整理成表格。",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份 PDF 里的表格复制出来全乱了，能帮我提成规整的 Excel 吗？另外图表那几页想单独导成图片放到汇报材料里。",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份 PDF 是加密的，只能看不能复制，我要把其中两章的内容整理成一份 Word 文档给同事参考，怎么操作？",
+  "lang": "zh",
+  "persona": "adv:pdf",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Convert my Keynote file (talk.key) into a PDF handout I can print for attendees.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build me a reveal.js HTML slide show from this markdown outline, with keyboard navigation.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [],
+   [],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "Create a Google Slides presentation in my work account and share it with the team as an editable link.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "I need a LaTeX Beamer deck for my conference talk — here's the abstract and I'd like the default Madrid theme.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Pull all the text out of this PDF of conference slides so I can paste a summary into an email.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Write my 10-minute conference talk script as a Word document, with the speaker notes for each section laid out as headings.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "doc-coauthoring",
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Design an animated presentation in Canva using my brand colors and export it as an MP4.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Turn this spreadsheet of quarterly revenue into a few charts I can drop into my talk.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you grab the speaker notes from the file I used for the client demo and send them to me?",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need to turn this outline into something I can click through on the big screen for tomorrow's meeting.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take the old sales pitch and update the pricing on the third screen, then save it as a new file.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Combine the three files from the conference into one long thing I can flip through.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "The client sent over a template with their logo; can you fill it in with our Q3 numbers?",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "I have a bunch of comments from the review meeting on the file I clicked through; can you list them out for me?",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [],
+   [],
+   [
+    "docx",
+    "pptx"
+   ]
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "Make a quick thing for the all-hands that has our milestones on separate screens.",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "internal-comms",
+    "pptx"
+   ],
+   [
+    "internal-comms",
+    "pptx"
+   ],
+   [
+    "internal-comms",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "internal-comms",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "The file I used for the training has a chart that's outdated; can you update it and add a new screen at the end?",
+  "lang": "en",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份 PPT 里的文字全部提取出来，整理成一封邮件发给项目组，重点是里程碑和负责人那几页。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "discernment-nudge",
+    "internal-comms",
+    "pptx"
+   ],
+   [
+    "internal-comms",
+    "pptx"
+   ],
+   [
+    "internal-comms",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "internal-comms",
+   "pptx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "客户发来的 PDF 方案我想照着做成下周一汇报用的幻灯片，版式和内容都参考它，帮我把文字和图都理出来。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pdf",
+    "pptx"
+   ],
+   [
+    "pdf",
+    "pptx"
+   ],
+   [
+    "pdf",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份演示稿要转成 PDF 发给对方，麻烦把每页的备注也一起带上，别丢内容。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pdf",
+    "pptx"
+   ],
+   [
+    "pdf",
+    "pptx"
+   ],
+   [
+    "pdf",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Excel 里是这季度的销售数据，帮我做成一份给老板汇报的演示文稿，图表和结论都要有。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms",
+    "pptx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "会议纪要还在 Word 里，帮我提炼成十页左右的演示稿，下周三的评审要用。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我手上这份 .potx 模板的版式和配色挺合适，帮我看看结构，然后按同样的风格做一份新的季度总结。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把这份 PPT 每页导出成图片，我要贴到公众号文章里，顺便把标题文字也给我一份。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "演讲稿都写在 PPT 的备注里了，帮我把备注导出来整理成一份 Word 逐字稿，方便我打印。",
+  "lang": "zh",
+  "persona": "adv:pptx",
+  "votes": [
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ],
+   [
+    "docx",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I've got a messy CSV of our Q3 sales rows in ~/Downloads/q3_raw.csv — can you clean it up and write a short Word memo summarizing the data quality issues you found?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Read the attached Excel file and turn it into a polished PDF report with a cover page and charts, nothing else.",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Here's a spreadsheet of our inventory. Please write a standalone Python script that parses it with pandas and prints the top 10 slowest-moving SKUs — I just need the .py file.",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Take the numbers in budget.xlsx and build me an HTML dashboard page I can open in a browser, with the tables and a couple of charts rendered inline.",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I have a Google Sheet with our team's OKRs. Write me the Apps Script / API code to pull it and push rows into our Postgres warehouse on a schedule.",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Can you read the sales figures from the attached .xlsx and draft a one-page client-facing letter in Word that references the totals?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I need a PDF invoice generated from the line items in this spreadsheet — same layout as last month's, sent as a .pdf.",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Summarize what's in this CSV in plain prose and paste it into the body of an email draft for me to send.",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   []
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Can you open that file in my downloads—the one with all the rows and columns, I think it's called budget_2024—and add a running total column at the end? Then save it back so I can send it to my boss.",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I've got a messy export from our CRM that's basically a giant list with headers stuck on row 3 and some junk at the bottom. Can you clean it up and give me a proper workbook I can actually sort and filter?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My colleague sent me a macro-enabled workbook, and I just need to change the values in the Summary tab without breaking the macro. Can you edit it and save a copy?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need a simple grid file for tracking monthly expenses—something I can open in Excel with formulas that total each category and a chart at the top. Can you build that from scratch?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "This old file from 2010 has numbers stored as text with dollar signs and commas. Can you convert them to real numbers and re-save it so I can do math on them?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I have two tab-separated dumps from different systems that should match. Can you merge them into one workbook with a tab for each and a comparison sheet that flags differences?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "There's a file on my desktop called 'inventory final FINAL v3.xlsx'—can you open it and tell me which items are below reorder point, then save that list as a new sheet in the same file?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "discernment-nudge",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I want to take this CSV export from our sales tool and turn it into a nicely formatted Excel file with a chart of sales by region and a summary tab. Can you do that?",
+  "lang": "en",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我这边有一份上个月的销售明细 xlsx，帮我把里面的数据整理一下，做成一份给老板看的月度总结 Word 文档，最好带点图表。",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "客户发来的对账单是 PDF 扫描件，里面有好几张表格，能帮我提取出来存成 Excel 吗？",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们团队所有数据都放在 Google Sheets 上，能不能帮我写个 Apps Script，每天自动把新数据汇总到一个总表里？",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "我手上有一批格式很乱的 CSV 日志文件，帮我写个 Python 脚本清洗一下直接入库到 PostgreSQL，不用生成表格文件。",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "附件里的表格你帮我看看，把关键的几个数字和趋势用文字总结一下发我就行，不用改动文件。",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "discernment-nudge",
+    "xlsx"
+   ],
+   [
+    "discernment-nudge",
+    "xlsx"
+   ],
+   [
+    "discernment-nudge",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份报价单做成 Word 文档，里面要嵌一个价格对比表格，数据我贴在下面了。",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这个 Excel 里的数据能不能做成一个网页上的可视化看板？老板想直接在浏览器里打开看。",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder",
+    "xlsx"
+   ],
+   [],
+   [
+    "frontend-design",
+    "web-artifacts-builder",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我写一段 VBA 宏，自动清理我每天收到的那些 Excel 报表，把空行和重复项删掉。",
+  "lang": "zh",
+  "persona": "adv:xlsx",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Apply our company's brand colors and typography to this HTML landing page so it matches our style guide.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Restyle my landing page using one of your preset themes — I want a completely different look.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Create a poster for our launch event and export it as a PDF I can send to print.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design",
+    "pdf"
+   ],
+   [
+    "canvas-design",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "canvas-design",
+   "pdf"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Make a generative flow-field animation in p5.js with sliders so I can tweak the parameters and re-roll the seed.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Turn this Word document into a PDF, keeping the headings and page breaks intact.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Make a looping animated GIF of our mascot waving, sized so it looks good in Slack.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build an MCP server in Python that wraps our ticketing REST API so Claude can search and update tickets.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Draft a technical design doc for the new authentication flow and help me iterate on it until it's ready for review.",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "hey can you throw together a little one-page site for my friend's dog walking business? nothing fancy, just something that looks decent on a phone",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "the signup box on my page is all squished on the left and the submit button does nothing when I click it — can you figure out what's wrong",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I've got a chunk of html and css in this file and it renders totally differently in Safari than in Chrome. any idea what's going on",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "discernment-nudge",
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   []
+  ],
+  "label": [
+   "discernment-nudge",
+   "webapp-testing"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "can you build me a dashboard thing with a few cards showing numbers, a sidebar, and a chart? just mock data is fine, I want to see how it looks",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I need a contact form with name, email, and a message box that actually validates before it lets you hit send",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "this component I wrote keeps re-rendering and flickering every time I type in the input. can you take a look and clean it up",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "make me a landing page for a productivity app — hero section, three feature blurbs, and a pricing table at the bottom",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "my navbar overlaps the content when I scroll and the hamburger menu doesn't open on mobile. can you fix it and make the whole thing feel more polished",
+  "lang": "en",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "frontend-design",
+    "webapp-testing"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我做个产品发布页的 HTML，客户说看起来得跟我们其他物料一致，品牌色和字体别搞错。",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines",
+    "frontend-design"
+   ],
+   [
+    "brand-guidelines",
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "这个季度汇报我想直接做成网页版，在浏览器里演示方便，但领导那边还要能导出成 PPT，能兼顾吗？",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "pptx",
+    "web-artifacts-builder"
+   ],
+   [
+    "pptx"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "用 React 写个销售数据看板，风格跟着我们现有的主题走就行，别自己另起一套配色。",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "想给团队做张活动海报，能不能先用 HTML 排一版给我看效果，满意了再出成图片？",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这段产品说明做成一个点开就能看的网页，同事不用装任何东西就能读。",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "做个生成艺术的小页面，鼠标移上去粒子会跟着动，最好每次刷新图案都不一样。",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们有段产品动画，想放到 Slack 里当表情包，从网页动画转成 GIF 方便吗？",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "公司要发全员邮件，内容排成 HTML 邮件，字体和颜色按品牌规范来，别太花。",
+  "lang": "zh",
+  "persona": "adv:web",
+  "votes": [
+   [
+    "brand-guidelines",
+    "internal-comms"
+   ],
+   [
+    "brand-guidelines",
+    "internal-comms"
+   ],
+   [
+    "brand-guidelines",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Set up Playwright tests for my signup flow and figure out why the submit button never fires its handler.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My React app is throwing hydration errors on load — open it in a browser and show me the console logs.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build a multi-page React artifact with client-side routing, shadcn/ui components, and a global store for a task tracker.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "web-artifacts-builder"
+   ],
+   [
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Take a screenshot of my local dashboard running on localhost:3000 so I can see what's actually rendering.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "The dropdown closes before I can click an item inside it — reproduce the bug and tell me what's going on.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "discernment-nudge",
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Wire up form validation state in this component and connect it to a mock API endpoint.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Write a Playwright script that fills out the checkout form, submits it, and asserts the confirmation page appears.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My page's Lighthouse performance score dropped after the last deploy — profile the load and find the bottleneck.",
+  "lang": "en",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我做一个内部数据看板页面，功能已经有了，但同事说看起来跟模板似的，太像 Bootstrap 默认样式了。想请你从视觉上重新定个调子，字体、配色、间距都重新想一下，让它有点自己的气质。",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们官网首页要改版，老板说要“高级感”，但别又是那种紫色渐变加毛玻璃的 AI 风。你能不能先给我几个不同的设计方向，说明各自的字体搭配和排版逻辑，我再挑一个往下做？",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "discernment-nudge",
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "这个 React 后台系统里有十几个页面，风格特别乱，有的像 Material，有的像 Ant Design 混着来。我想统一一套设计语言，先把标题层级、按钮、表单这些基础规则定下来，再逐页改。",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "客户嫌我们的落地页“没有设计感”，但功能都测过了没问题。我想在不动交互逻辑的前提下只调整视觉：字体换成有性格的衬线体，留白加大，颜色收敛一点。可以吗？",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我看看这个页面为什么看起来这么廉价。我用的是 Tailwind 默认配置，什么都没改，卡片阴影、圆角、字体都是原样。想知道具体哪些地方拉低了质感，以及怎么改。",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们要做一个营销活动页，需要有点编辑排版的感觉，像杂志那种。但技术上要求用 shadcn/ui 组件搭，还要有表单提交和多步骤状态。视觉上怎么才能不被组件库的默认样子限制住？",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "现有产品界面能用，就是太“安全”了，每个元素都中规中矩。想在保持可用性的前提下做一次视觉升级，你能帮我判断哪些地方值得冒险、哪些地方必须保守吗？",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我写好了一个静态 HTML 页面，想请你帮我跑起来看看实际渲染效果，顺便截图对比一下不同字体方案（比如 Inter、思源宋体、Noto Sans）在中文标题上的观感差异，然后给个推荐。",
+  "lang": "zh",
+  "persona": "adv:frontend-design",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "discernment-nudge",
+    "frontend-design",
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Can you throw together a tiny single-file HTML page with a button that toggles dark mode? Nothing fancy, just one file I can paste into a gist.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "I've got a React app running on localhost:5173 — can you open it in a browser, click through the signup flow, and tell me why the submit button does nothing?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Help me pick a typeface pairing and color palette for a fintech dashboard I'm designing. I want it to feel editorial, not like a Bootstrap template.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "What's the actual difference between CSS grid and flexbox, and when should I reach for each one?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Take screenshots of my deployed portfolio site at desktop and mobile widths so I can check the layout doesn't break at the tablet breakpoint.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Write me a bash script that watches a folder and rsyncs any changed files over to my server.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Here's the CSS for my navbar — can you tell me whether the hover states feel janky and how I'd smooth them out?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "My Next.js app is throwing a hydration mismatch in the console. Can you open it in a browser and pull the logs so we can figure out what's going on?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "hey can you put together one of those little web page thingies that has a sidebar, a few tabs, and remembers what I clicked when I come back? doesn't need to look fancy, just feel like a real app",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I want something I can open right here in the chat that works like a mini budgeting app — add expenses, flip between months, filter by category, little popups for editing stuff",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "make me an interactive page where I can drag cards between columns like a to-do board, and it keeps my cards around even if I refresh",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "need a pretend admin panel for a fake pet store — a login screen, a table of pets I can sort and search, and a popup form to add new ones",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "could you build a small quiz game page in one artifact? start screen, a bunch of question screens, score tracking, and a results page at the end",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I'd like a page that looks like a real dashboard with some charts, a date range picker, and switches that change what's shown, all self-contained in the chat",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "something with multiple screens I can click through — like a mini recipe site with a list page, detail pages, favorites, and a search bar up top",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "build me a fake support ticket tracker inside the chat — new ticket dialog, status dropdowns, comment box, and it should hold onto its state while I'm using it",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我做个简单的抽奖转盘页面，一个 HTML 文件就行，双击能打开，不用太花哨。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们部门想弄个活动报名页，带表单校验和提交成功的提示，一个页面就够，但看起来要像正经产品。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "能不能做一个多页面的项目管理小工具？左边导航右边内容，能切换页面、新增和删除任务，数据先存浏览器本地就行。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "领导临时要个数据看板，三四个图表加筛选条件，明天早上汇报用，给我个能直接在浏览器里跑的就行。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把公司介绍、产品列表和联系方式做成一个网页，顶部导航能点击跳转，风格参考苹果官网那种。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "做个后台管理界面吧，要有登录页、侧边栏、数据表格和弹窗，组件样式要精致点，别像浏览器默认的。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我写个待办清单，能添加、删除、打勾，用 Tailwind 写就行，我直接贴到对话里预览。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们要做个问卷填写页，几道题加进度条，提交后跳到结果页，题目以后可能还要调整。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Write pytest tests for our Flask API that check each endpoint's status code and JSON payload.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Help me scrape job listings from a company careers page into a CSV file.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ],
+   [
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take this PDF invoice and save each page as a PNG screenshot.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Parse our nginx access logs to find which IPs are triggering the 500 errors.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Design a bold, non-templated landing page for a coffee subscription brand with distinctive typography.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build a multi-page React artifact using shadcn/ui with client-side routing and a dark mode toggle.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Explain how CSS container queries work and give me a few practical examples.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Our Electron desktop app flickers when the window is resized — how do I debug that?",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [],
+   [
+    "webapp-testing"
+   ],
+   []
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "Hey, my little app is running on my machine and I’m not sure the sign-up button does anything—can you open it in a browser and poke around until you find what’s wrong?",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need someone to pretend to be a user on my local site, click through the whole flow, and tell me where it falls over.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you take a picture of what my page actually looks like right now? It’s only happening on my computer, and I want to see the mess.",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "There’s a weird error when I submit the form on my dev server; can you watch the browser’s behind-the-scenes messages while you try it?",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Before I show this to my team, can you run through the checkout on my local copy and make sure nothing explodes?",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My dropdown works fine sometimes but breaks other times. Can you drive the browser the same way I do and catch what happens?",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I think the login is busted, but I can’t tell if it’s the page or me. Can you try it on my local app and grab a screenshot of where it lands?",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Something on my web app looks wrong after I click around for a bit. Can you reproduce it in a real browser and check the logs so I know what’s going on?",
+  "lang": "en",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把本地 3000 端口起的这个后台跑一遍，每个菜单都点进去看看，有报错的页面截图发我，顺便把浏览器控制台的日志也导出来。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们前端页面在 Chrome 里显示正常，但用无头浏览器截图出来是白屏，你帮我查一下是渲染时机的问题还是接口没等到。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这个登录页刚改完样式，帮我自动走一遍登录流程，看看按钮点击、表单校验和跳转有没有问题，顺便截几张图给我看看视觉效果。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我本地起了个 React 项目，想确认在手机尺寸下导航栏会不会挡住内容，帮我模拟一下移动端视口点点看。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我写段自动化脚本，把注册表单填一遍提交，验证下前后端联调通不通，如果失败了把网络请求和 console 报错都抓出来。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "客户下午要看 demo，麻烦帮我把这个单页应用的主要交互流程跑一遍并录个屏，顺便确认没有卡顿或者样式错位。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "页面有个弹窗点关闭没反应，我在代码里找不到原因，你能不能在浏览器里实际操作一下，把元素状态和事件日志打出来？",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "刚用组件库搭了个仪表盘，帮我起个浏览器打开看看布局和数据渲染对不对，有问题的话截图标注一下位置。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing",
+  "votes": [
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ],
+   [
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Apply Anthropic's official brand colors and typography to our quarterly deck so it matches the company design standards.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Convert this Word report into a PDF and drop the Excel chart from finance into the executive slide deck.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "docx",
+    "pdf",
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "pdf",
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "pdf",
+    "pptx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf",
+   "pptx",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build a responsive React landing page with a dark mode toggle and test it in the browser before we ship.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "frontend-design",
+    "webapp-testing"
+   ],
+   [
+    "frontend-design",
+    "webapp-testing"
+   ],
+   [
+    "frontend-design",
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Create a generative art piece in p5.js with seeded randomness and interactive flow fields I can explore.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Design a minimalist concert poster and export it as a print-ready PNG and PDF for the venue.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Make an animated GIF of our mascot waving, optimized for Slack reactions and under the size limit.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to create a brand-new skill that generates themed slide decks — help me write the SKILL.md and test its triggering accuracy.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Write our monthly company newsletter and a leadership update about last week's incident for the all-hands.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I've got this slide deck for Thursday's review and it looks so plain — can you give it a proper look with matching colors and fonts?",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My quarterly report is done but it's ugly. Make it look like something a design team touched, pick whatever palette fits.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you dress up this HTML page I built? I want it to feel cohesive instead of the default browser look.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "frontend-design",
+    "theme-factory"
+   ],
+   [
+    "frontend-design",
+    "theme-factory"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "theme-factory"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I need a nice color scheme and type pairing for a client one-pager I'm putting together today.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "This thing needs to stop looking like a default template. Give it some personality — I'm not picky about which direction.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Everything I make ends up in the same boring blue. Can you come up with a fresh look and apply it across my deck and the doc?",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "docx",
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "docx",
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "docx",
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Make my presentation match my company's vibe — warm, modern, not too corporate. You pick the exact shades.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I sketched out a landing page and it works but it's flat. Style it up so it actually looks designed.",
+  "lang": "en",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "theme-factory"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我把这份季度汇报的PPT统一一下配色和字体，现在每页风格都不一样，看着太乱了，最好显得专业一点。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们公司的VI规范我刚发你了，你把这份产品介绍文档按这个规范重新排一下版，字体和颜色都要对得上。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这个落地页的HTML我写好了，内容没问题，就是视觉上太朴素，你帮我调得好看点，符合我们品牌的调性。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "brand-guidelines",
+    "frontend-design"
+   ],
+   [
+    "brand-guidelines",
+    "frontend-design"
+   ],
+   [
+    "brand-guidelines",
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把这份Word版的项目总结转成PDF，排版和样式尽量保持原样，别转完就乱了。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我要做一张招聘海报，A3尺寸，风格想要活泼年轻一点，你直接帮我设计出来。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这份年度报告想要一种沉稳大气的感觉，你看着帮我定一套配色和字体方案，后面几页都照这个来。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把Excel里的这组销售数据做成图表放到PPT里，颜色要和整套幻灯片统一，别显得突兀。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "theme-factory",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "theme-factory",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "给这套幻灯片做几个有科技感的背景图，用代码生成那种流动的粒子效果，能调参数最好。",
+  "lang": "zh",
+  "persona": "adv:theme-factory",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art",
+    "canvas-design"
+   ],
+   [
+    "algorithmic-art",
+    "canvas-design",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "Apply our own company's brand colors (#1B4F72 and #F39C12) and the Montserrat typeface to this quarterly slide deck.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Convert this Word document to PDF and keep all the existing fonts, colors, and spacing exactly as they are.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Generate a fresh pastel color theme with matching font pairings that I can reuse across my reports and dashboards.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ],
+   [
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Style this HTML landing page with a dark-mode toggle and responsive typography that scales down on mobile.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Create a generative p5.js sketch with a flowing particle system and an original cool-toned color palette.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Make an animated GIF for Slack that cycles through my team's colors and loops cleanly under the size limit.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Write a section for our design docs explaining how to describe typography and color choices in a style guide.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Pick a nice color scheme and font pairing for my personal blog — no corporate guidelines involved.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "theme-factory"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Can you make this pitch deck look like it came straight out of Anthropic? Same colors and fonts they use on their site.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My one-pager looks so generic. Give it that warm cream-and-clay look Claude's pages have, and match the type.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I'm building a slide template for our team and want it to feel like an Anthropic thing, not a random default theme.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Restyle this HTML report so it matches Anthropic's website — same palette, same fonts, nothing that feels off.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "What fonts and colors does Anthropic use? Now redo my resume with them.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Our partner deck is going to sit next to Anthropic's materials, so it can't clash. Can you make it look consistent with theirs?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take this PDF and give it the Claude aesthetic — muted background, that accent color, the right typeface.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pdf"
+   ],
+   [
+    "brand-guidelines",
+    "pdf"
+   ],
+   [
+    "brand-guidelines",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want my newsletter to look like Anthropic's design team made it. Can you apply their visual style to it?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份季度汇报的PPT配色改成公司VI里那套主色和辅助色，字体也用品牌指定的那两款，明天上午就要用。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "这份Word文档要发给客户，麻烦按我们公司的视觉规范调一下标题字体和页脚颜色，整体看起来统一一点。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines",
+    "docx"
+   ],
+   [
+    "brand-guidelines",
+    "docx"
+   ],
+   [
+    "brand-guidelines",
+    "docx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我在做内部活动的主视觉海报，想用公司品牌色，但不确定深色底上字该怎么配，能帮我出一版吗？",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines",
+    "canvas-design"
+   ],
+   [
+    "brand-guidelines",
+    "canvas-design"
+   ],
+   [
+    "brand-guidelines",
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这个HTML周报页面能套用一下我们品牌的配色和字体吗？现在看着太像默认样式了。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "客户要求所有交付材料必须符合他们的品牌指南，我手上只有主色色号，标题和正文的字体搭配该怎么定？",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [],
+   [
+    "brand-guidelines"
+   ],
+   []
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "帮我把这版PPT换一套更清爽的主题配色，现在的颜色有点土，但整体调性别变太多。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们想统一部门所有对外文档的视觉风格，你能不能先给一套配色和字体的规范建议？",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "看到那种米色配深色的官网风格挺好看，能不能把我们的产品介绍页也做成类似的感觉，颜色和字体都按这个调性来？",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Can you design a minimalist art poster for our gallery opening next month? Something I can print at 18x24 and hang in the window.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need an animated GIF of a bouncing particle logo to post in our team Slack channel — under 2 MB please.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "algorithmic-art",
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Build me an interactive HTML dashboard with a canvas background and sliders so people can tweak the colors live in the browser.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take this deck and restyle it with a warm sunset palette and matching fonts — file attached.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Apply our official brand colors and typography to this one-pager before we send it to the client.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ],
+   [
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Help me draft a technical spec for our rendering pipeline, then we'll iterate on it section by section.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "What's the current pricing and rate limits for the Claude API, and which model should I use for image captioning?",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to create a reusable skill that generates random flow-field wallpapers so my team can invoke it on demand.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art",
+    "skill-creator"
+   ],
+   [
+    "algorithmic-art",
+    "skill-creator"
+   ],
+   [
+    "algorithmic-art",
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "algorithmic-art",
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "can you make me one of those things where a bunch of little dots wander around the screen and leave trails behind them, and I can drag some sliders to mess with how it looks?",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want a wallpaper for my laptop that's made by code — something flowy and abstract, and if I don't like it I can just hit a button and get a completely different one",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "my kid needs something moving on a screen for her science fair booth, like a swarm of specks that react when people move the mouse around",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I keep seeing those posts where someone writes a few lines of code and gets these beautiful curvy wind-like line drawings — could you write me something like that?",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "make me a little web page where the same starting number always produces the exact same picture, so I can text a friend a number and they'll see the identical thing",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need a looping abstract visual for behind my slides at a talk — nothing recognizable, just shapes and motion, and I'd like to be able to nudge the colors",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "bored tonight, write me some code that paints something I've never seen before, with a handful of dials I can turn to change the result",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I'm putting together a print series and want the computer to spit out 10 variations of the same wavy-line composition, each one subtly different from the last",
+  "lang": "en",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮个忙，我想给部门年会背景墙做一套视觉，要求用代码生成、每次跑出来都不一样，最后导出高清图片，颜色和密度能调。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们官网首页想加个动态背景，粒子跟着鼠标走，性能别太吃紧，能直接嵌进现有页面就行。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art",
+    "frontend-design"
+   ],
+   [
+    "algorithmic-art",
+    "frontend-design"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art",
+   "frontend-design"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "能不能用代码画一张海报主视觉？抽象的几何风格，用来做产品发布会 KV，最好能换几套配色方案。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art",
+    "canvas-design"
+   ],
+   [
+    "algorithmic-art",
+    "canvas-design"
+   ],
+   [
+    "algorithmic-art",
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "algorithmic-art",
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "想做个 GIF 发到群里，内容是一堆小点慢慢聚成一个圆，循环播放，文件别太大。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这组销售数据做成一张生成式的图，线条流动那种感觉，一眼能看出趋势，最后要放进 PPT 里。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art",
+    "pptx"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "想要一个小网页，上面几个滑块能实时调参数，画面是随机生成的图案，同事可以自己上手玩。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art",
+    "frontend-design"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "报告封面想用一张抽象纹理当底图，帮我生成几版挑一挑，风格统一一点、别太花。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们想用程序批量生成一批图案，套上公司的主色和字体，做成一套能反复用的视觉素材。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art",
+  "votes": [
+   [
+    "algorithmic-art",
+    "brand-guidelines"
+   ],
+   [
+    "algorithmic-art",
+    "brand-guidelines"
+   ],
+   [
+    "algorithmic-art",
+    "brand-guidelines"
+   ]
+  ],
+  "label": [
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Make me an animated GIF of our logo bouncing, sized for a Slack channel.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Create a generative flow-field art piece in p5.js with seeded randomness and sliders I can tweak.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build a responsive landing page with a hero section and a sticky nav bar.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Convert this Word document into a PDF and keep the page breaks intact.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Apply a warm autumn color and font theme to my existing slide deck.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Restyle our pitch deck using Anthropic's official brand colors and typography.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Draft a technical spec for the new payments API we're about to build.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Write a company-wide newsletter covering this quarter's wins and upcoming events.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you make me something to print and hang above my desk that just says \"Stay Curious\"? Like a nice picture file I can send to the printer.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Our cat's been missing since Tuesday and I want to put a page up on the neighborhood board — can you put together something with her photo and our number that actually looks decent?",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My band is playing a show Friday and I need a flier I can print and tape up around town. Nothing fancy, just something that catches the eye.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I'm getting married in the fall and want to print my own invitations at home — can you make something pretty for me instead of the boring template stuff?",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want a big thing for my wall with a mountain and some words underneath. Something calming. Can you make that as a file I can take to a print shop?",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Could you put together a cover page for my thesis? I need to save it as a PDF and upload it with the rest of the document.",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design",
+    "pdf"
+   ],
+   [
+    "canvas-design",
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "canvas-design",
+   "pdf"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "It's my mom's 60th next week and I'm making her a card — can you do the front of it as an image I can print and fold?",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I've got a quote I love and I want to frame it and put it on the wall. Can you turn it into something that looks like real art?",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "We're doing a bake sale for the school and I need a sign to prop up on the table — can you make it as a picture I can print big?",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to give my friend a framed print of something I made up — a little scene with a lighthouse and a storm. Can you draw that for me as a file?",
+  "lang": "en",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份季度总结报告的封面设计一下，要能直接插到Word文档第一页，logo和主色调得跟公司对上。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "brand-guidelines",
+    "docx"
+   ],
+   [
+    "brand-guidelines",
+    "docx"
+   ],
+   [
+    "brand-guidelines",
+    "canvas-design",
+    "docx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "docx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们下周有个内部产品发布会，想先做一个能在浏览器里预览的宣传页，回头再导出成PDF打印。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "frontend-design",
+    "pdf"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "pdf"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "用p5.js写一段生成艺术当海报背景吧，随机种子要固定住，方便我之后复现同一个画面。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "做一套幻灯片的主视觉模板，风格要像美术馆展览海报那种，配色和字体帮我一起配好。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "给我们的Slack频道做个春节祝福的循环动图，尺寸别超过Slack的限制就行。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "设计一张招聘海报，颜色和字体必须严格按我们品牌规范里的色值和字体来。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "brand-guidelines",
+    "canvas-design"
+   ],
+   [
+    "brand-guidelines",
+    "canvas-design"
+   ],
+   [
+    "brand-guidelines",
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "把这份产品白皮书整理成PDF，加个好看的封面和章节分隔页，整体视觉统一一点。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "canvas-design",
+    "pdf"
+   ],
+   [
+    "canvas-design",
+    "pdf"
+   ],
+   [
+    "canvas-design",
+    "pdf",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "canvas-design",
+   "pdf"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我想在网页上做一个可以互动的数据可视化作品，鼠标悬停要有反馈，最后也要能截图导出。",
+  "lang": "zh",
+  "persona": "adv:canvas-design",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Make me a static PNG poster for our team offsite with a bold geometric design.",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you create a generative art piece in p5.js with seeded randomness and particle flow fields?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need an animated GIF for the hero section of our landing page — it should loop smoothly at 60fps.",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Write a Slack announcement post for our new feature launch, with emoji and threaded follow-ups.",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Convert this Word doc into a PDF and keep the table formatting intact.",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ],
+   [
+    "docx",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Put together a slide deck for our Q3 review using a clean, modern theme with custom fonts.",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ],
+   [
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you turn this screen recording into an MP4 clip I can drop into a Google Slides deck?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Draft our company newsletter covering the incident postmortem and upcoming roadmap items.",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "can you make me one of those little looping animations to drop in our team chat when someone ships a release?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "i need a moving picture thing for slack — like a tiny celebration that plays when we hit our numbers",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "our standup channel is getting dry, can you whip up an animated clip of a coffee cup filling up that i can post in there?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "make a short looping doodad of a rocket taking off, small enough that i can paste it straight into a message",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "i want a bouncing \"deploying...\" animation for our releases channel — nothing huge, just a few frames",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "can you build a cute animated reaction, like a cat typing, that i can use as a custom emoji-style thing in chat?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "need something moving for the channel header: a waving hand that loops smoothly and doesn't end up as a giant file",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "put together a quick animated visual of confetti falling for our launch announcement post",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我做个能在钉钉群里发的动态表情包，就是那种小人疯狂点头的，别太大就行。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   []
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我把操作录屏存成 mp4 了，能转成 GIF 放到企业微信群的公告里吗？控制在 5M 以内。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Slack 里想发个庆祝上线的小动图，但必须是 128×128 的 emoji 尺寸，能做吗？",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "周报里想插一张近三个月用户增长的动态图，做成会动的会比静态图有冲击力，你能搞定吗？",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "客户要一段 Lottie 格式的加载动画，用在 App 启动页上，GIF 那种不行。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "我想把公司 logo 做成会闪的贴纸，发朋友圈那种，尺寸随便，好看就行。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这段 30 秒的产品演示视频压成 GIF，邮件里发出去别太大。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Slack 上的头像能换成会动的吗？想用我们团队的吉祥物做个循环播放的。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I already have a finished Word spec — I just need it converted to PDF and its tables pulled into an Excel sheet.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "docx",
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Our documentation site needs a landing page built in React, with styling and a test suite.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "frontend-design",
+    "webapp-testing"
+   ],
+   [
+    "frontend-design",
+    "webapp-testing"
+   ],
+   [
+    "frontend-design",
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Take this existing proposal deck and apply our company's brand colors and typography to it.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Write this week's leadership update email summarizing where the project stands.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Make a p5.js sketch that generates a seeded flow-field image for the report cover.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ],
+   [
+    "algorithmic-art"
+   ]
+  ],
+  "label": [
+   "algorithmic-art"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Design a printable launch poster and deliver it as a PNG.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ],
+   [
+    "canvas-design"
+   ]
+  ],
+  "label": [
+   "canvas-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Create an animated GIF for Slack that walks through our doc review process.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ],
+   [
+    "slack-gif-creator"
+   ]
+  ],
+  "label": [
+   "slack-gif-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Wrap our internal documentation API in an MCP server so Claude can search it.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I keep meaning to write down how our deploy process actually works, but it's all in my head — can you help me get it into a doc before I go on vacation?",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My manager wants a one-pager on why we should ditch the old auth service. I have strong opinions but no clue how to lay it out.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "We had a big meeting and settled on Kafka over RabbitMQ. Now I need to write up the reasoning so people stop asking me why.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you help me turn these messy meeting notes into something I can actually send around to the team?",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I'm handing off my project next month and I need to write everything down so the new person doesn't have to keep pinging me.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I've got a rough idea for an internal tool and I want to pitch it — help me make it sound convincing on paper.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Every new hire asks me the same five questions about how our system fits together. I should probably just write the answers somewhere.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need to spell out this feature for the engineers but I keep going in circles. Can you help me pin it down into something concrete?",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我把这周的项目进展整理一下，写份周报发给部门领导，下周一开会要用。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们下周要评审新的支付流程，我需要一份技术方案文档，能帮我把思路理清楚再写出来吗？",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "需求说明我已经在文档里写完了，帮我排一下版导出成 Word 发给客户。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx"
+   ]
+  ],
+  "label": [
+   "docx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "线上刚出了个 P1 故障，明天要给管理层交一份复盘报告，帮我一起写吧。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring",
+    "internal-comms"
+   ],
+   [
+    "doc-coauthoring",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring",
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "新同事老问同样的问题，我想整理一份常见问题手册放到团队知识库里。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring",
+    "internal-comms"
+   ],
+   [
+    "doc-coauthoring",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring",
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我想把这段产品介绍做成一个能直接分享出去的网页，能帮我做出来吗？",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ],
+   [
+    "frontend-design"
+   ]
+  ],
+  "label": [
+   "frontend-design"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们打算在三个数据库方案里选一个，我要写一份决策文档给架构组评审。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我准备一份给投资人看的项目提案，重点讲清楚我们要解决的问题和方案，最好能直接拿去讲。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "帮我把这个季度的项目进展写成给管理层的汇报，顺便做成 PPT，用我们公司的品牌配色和字体。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "brand-guidelines",
+    "internal-comms",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "internal-comms",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "internal-comms",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "internal-comms",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "下周全员大会的讲稿要准备，配套的 PDF 手册也一起弄，内容就是新产品的发布说明。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "internal-comms",
+    "pdf"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring",
+    "internal-comms",
+    "pdf"
+   ],
+   [
+    "doc-coauthoring",
+    "internal-comms",
+    "pdf"
+   ]
+  ],
+  "label": [
+   "internal-comms",
+   "pdf"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "写一份事故复盘报告，先在群里发个简要版本，然后再整理成正式文档存档。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "doc-coauthoring",
+    "internal-comms"
+   ],
+   [
+    "doc-coauthoring",
+    "internal-comms"
+   ],
+   [
+    "docx",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring",
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "公司内部通讯稿写好后，能不能直接转成网页发到内网上？排版要好看一点。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "frontend-design",
+    "theme-factory"
+   ],
+   [
+    "frontend-design",
+    "internal-comms",
+    "theme-factory"
+   ],
+   [
+    "frontend-design",
+    "theme-factory"
+   ]
+  ],
+  "label": [
+   "frontend-design",
+   "theme-factory"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我需要一份常见问题解答，主要是给内部员工看的，但有一部分内容也要发给外部客户。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份英文的全球团队周报翻译成中文，再按我们平时用的模板排一下版。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ],
+   []
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "团队月报里想放一张数据图表，从 Excel 导出后直接嵌到文档里面。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "写一封内部邮件通知组织架构调整，另外再做一个贴在公告栏的海报。",
+  "lang": "zh",
+  "persona": "adv:internal-comms",
+  "votes": [
+   [
+    "canvas-design",
+    "internal-comms"
+   ],
+   [
+    "canvas-design",
+    "internal-comms"
+   ],
+   [
+    "canvas-design",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "canvas-design",
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My Claude Desktop won't connect to an MCP server I downloaded — here's the log, help me fix the config file.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to expose a few Python functions to GPT-4 using OpenAI function calling. Show me the JSON schema format.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Build a CLI tool that queries our internal ticketing API and prints the results as a table.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Write a FastAPI service with endpoints to create, list, and cancel invoices.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Can you explain how MCP works under the hood and how it differs from OpenAI's tool calling?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Help me containerize an MCP server we already have and roll it out to the team's shared config.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [],
+   [],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "Create a LangChain agent with two custom tools that hit our CRM's REST endpoints.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I need to write user-facing docs and a quickstart guide for the MCP server my team finished last month.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to hook Claude up to our internal ticketing system so it can look up and close tickets for me instead of me copying and pasting — where do I even start?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "academy-guide",
+    "claude-api",
+    "discernment-nudge",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "academy-guide",
+   "claude-api",
+   "discernment-nudge",
+   "mcp-builder"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "How do I give the assistant the ability to actually query our inventory database on its own? Right now I'm just pasting CSVs into the chat and it's getting old.",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "academy-guide",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "My team keeps asking whether Claude can work with our CRM. Can I write something that exposes a handful of our CRM endpoints so the model can call them directly?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "academy-guide",
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I've got a Python script that talks to Stripe and does exactly what I need. Is there a way to package it so Claude Desktop can just call it as a tool?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I need to build a little server that lets the model hit our Jira REST API — should I do it in TypeScript or Python, and which one is less painful to set up?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I want the AI to be able to post to a Slack channel and pull recent history when I ask it to. What's the cleanest way to wire that up?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "There's this internal API at work with basically no documentation, and I want Claude to be able to use it. How do I describe the endpoints well enough that it knows what to call and when?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "The model keeps calling my custom tool with the wrong arguments and sometimes invents parameters that don't exist. How do I fix the way I've defined it?",
+  "lang": "en",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api",
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们想把内部工单系统接到 Claude 上，让助手能直接查单、改状态、发通知，顺便把接口调用方式和用量成本一起理一理，这块从哪开始比较稳？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "claude-api",
+    "discernment-nudge",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "帮我把公司知识库做成一个 AI 助手能调用的服务，最好再配个简单页面方便同事自己试，前端部分不用太复杂。",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "frontend-design",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们要给新同事写一份「怎么把内部系统接到 AI 助手」的接入文档和开发规范，包括目录结构、命名和权限说明，你看怎么组织比较好？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "想让助手自动读取和生成我们的 Word 报表、Excel 数据，还能按模板导出，需要做哪些准备？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "academy-guide",
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ],
+   [
+    "docx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们团队想把这套内部操作流程固化下来，让 Claude 每次都按同样步骤走，还能随时加新动作，这个能力该怎么搭？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "academy-guide",
+    "skill-creator"
+   ],
+   [
+    "academy-guide",
+    "skill-creator"
+   ],
+   [
+    "academy-guide",
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "academy-guide",
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "想让助手能直接往 Slack 频道发消息、拉历史记录，并按我们平时的语气自动回复，权限和配置要注意什么？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们要把设计素材库开放给 AI 助手调用，让它能按我们的品牌配色和模板直接出物料，这条路怎么走？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们组想系统学一下怎么把内部系统接到 Claude 上，有没有现成的培训材料、入门课程或者上手案例可以推荐？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you rewrite this system prompt so my assistant reliably uses the right tool when someone asks about invoices?",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Benchmark GPT-4o vs Claude on our 200 support tickets and tell me which one we should ship.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Write a reusable style guide my team can hand to new engineers so our code reviews stop being inconsistent.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Build a small MCP server in Python that exposes our Jira ticket lookup as a tool.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Help me draft the technical spec for the new billing service — I want to iterate on it with you until it's solid.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Apply our company's brand colors and typography to this slide deck.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ],
+   [
+    "brand-guidelines",
+    "pptx"
+   ]
+  ],
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Add a slash command to my Claude Code setup that summarizes the current git diff.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Write the incident report for yesterday's outage, in the format our leadership team expects.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I keep re-explaining the same five-step process to my team over and over — can you help me package it up so the assistant just knows to do it that way next time?",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My assistant keeps ignoring this instructions file I wrote. Can you figure out why it's not getting picked up and reword it so it actually kicks in?",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I've got a folder of instruction notes I wrote months ago and it's gotten messy — can you tidy it up, merge the duplicates, and tell me what's actually worth keeping?",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   []
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "How do I know if my little instruction packet actually makes the assistant better, instead of just making it sound better? I want numbers, not vibes.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can you set up a way to run my prompt pack against a pile of real questions and tell me how often it fires when it should?",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to teach the assistant a brand-new trick it can't do yet — walk me through writing that up so it works reliably every time.",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Something's off: this writeup I made triggers when it shouldn't and stays quiet when it should fire. Can you diagnose it and tune the wording?",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I want to run my instructions ten times on the same prompt and see how much the results wobble — is there a way to measure that spread?",
+  "lang": "en",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们组想把平时做竞品分析的那套方法沉淀下来，写成一份可以反复用的操作说明，包括什么时候该用、输入输出是什么样，以后换人也能直接上手，你帮我起草一下。",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我给我们内部助手写了一段指令，但同事反馈有时候该用的时候不触发、不该用的时候又乱触发，你能帮我改改措辞，让它识别得更准一点吗？",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "手头有两个版本的提示词，我想知道哪个更稳、出错更少，能不能帮我设计个简单的对比测试方案，跑完给我一个结论？",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我把客服团队常用的应答流程整理成一套可复用的工作包：步骤、注意事项、参考话术，再加几个正反例子，新人照着就能做。",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我们现在的文档规范有点旧了，想加几条新的检查项，改完之后最好能验证一下是不是真的比原来好用，你看着安排一下。",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "skill-creator"
+   ],
+   [
+    "skill-creator"
+   ],
+   [
+    "discernment-nudge",
+    "skill-creator"
+   ]
+  ],
+  "label": [
+   "skill-creator"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "能不能帮我给这个自动化流程写份说明书？要说清楚适用场景和不适用场景，配两三个具体例子，方便以后别人判断该不该走这条流程。",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "领导让我把部门里几个老同事的经验固化成标准做法，我想做成一份结构清晰的文件，包含触发条件、执行步骤和边界说明，你帮我搭个框架并填上内容。",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring",
+    "skill-creator"
+   ],
+   [
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "我想给新来的实习生做一份上手引导，里面要有操作步骤、参考资料，还要说明什么情况下需要找人确认、什么情况下可以自己做决定。",
+  "lang": "zh",
+  "persona": "adv:skill-creator",
+  "votes": [
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ],
+   [
+    "doc-coauthoring"
+   ],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "What's the difference between Claude Monet and Édouard Manet's brushwork?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "My grandfather's name was Claude — help me write a short, warm eulogy for him.",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Set up a streaming chat completion with the OpenAI Python SDK and gpt-4o-mini.",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Our team standardized on Gemini through google.generativeai — show me how to wire up function calling.",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "I'm running Llama 3 locally with Ollama; how do I expose it as an OpenAI-compatible endpoint?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "We use Cohere's embed API for our search index — help me choose dimensions and batch size.",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Turn this quarterly spreadsheet into a PDF report that includes an Excel chart.",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ],
+   [
+    "pdf",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Build a small React dashboard page with Tailwind and test the login flow with Playwright.",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "web-artifacts-builder",
+    "webapp-testing"
+   ],
+   [
+    "frontend-design",
+    "web-artifacts-builder",
+    "webapp-testing"
+   ],
+   [
+    "frontend-design",
+    "webapp-testing"
+   ]
+  ],
+  "label": [
+   "web-artifacts-builder",
+   "webapp-testing"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "How much does it cost per million words to have the model read through my documents?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My chatbot keeps forgetting the setup instructions after a while — how do I make it hold onto them?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api",
+    "discernment-nudge"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Which model should I pick if I want to summarize long reports on a tight budget?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api",
+    "discernment-nudge"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "I want the model to call my own weather function whenever it needs live data — how do I wire that up?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "academy-guide",
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "The answers show up all at once at the end; I'd rather they appear word by word as they're written.",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Is there a way to count how much text I'm about to send before I actually send it?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "The model name I hardcoded last year stopped working — what should I switch it to?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Can I connect the model to my company's internal database through some standard plug-in setup?",
+  "lang": "en",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "academy-guide",
+    "claude-api"
+   ],
+   [
+    "academy-guide",
+    "claude-api"
+   ],
+   [
+    "academy-guide",
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "academy-guide",
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这段客服话术改写得更专业一点，中英双语都要，语气别太生硬。",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "我们现在线上跑的是 claude-3-5-sonnet，想迁到最新的 claude-sonnet-4-5，需要改哪些地方？成本会不会变？",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把 Anthropic 和 OpenAI 两家的 API 报价拉出来做个对比表，下午要给老板汇报。",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "claude-api",
+    "discernment-nudge"
+   ]
+  ],
+  "label": [],
+  "agree": 1
+ },
+ {
+  "request": "这段中文提示词大概会消耗多少 token？我们是按量计费的，得先算一下预算再上线。",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "本地用 Ollama 部署的模型响应太慢，怎么开流式输出？",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "我们的文档问答每次都要带一长段系统提示词，能不能做缓存省钱？大概能省多少？",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api",
+    "discernment-nudge"
+   ],
+   [
+    "claude-api",
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "discernment-nudge"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Claude 专业版一个月多少钱？团队版怎么买、发票怎么开？",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api"
+   ],
+   [
+    "claude-api"
+   ],
+   [
+    "academy-guide",
+    "claude-api"
+   ]
+  ],
+  "label": [
+   "claude-api"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我把现有的这几个工具定义整理成一个 MCP server，让我们内部接口能被模型调用。",
+  "lang": "zh",
+  "persona": "adv:claude-api",
+  "votes": [
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "claude-api",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "How do I make this Excel formula sum only the rows where column B says \"paid\"?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Can you rewrite this paragraph so it sounds less stiff? Here's the text: \"We are writing to inform you...\"",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "I'm getting a KeyError: 'user_id' on line 42 of this script — can you help me figure out why?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "How can I write a stronger cover letter for a product manager role?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Teach me the intro riff to \"Wish You Were Here\" on guitar — I can't get the bends right.",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Can Claude read PDFs? If so, please summarize the attached contract and list the renewal dates.",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "pdf"
+   ]
+  ],
+  "label": [
+   "pdf"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Help me roll out our new expense policy to the team — draft the announcement email from these bullet points.",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "What's the best way to onboard new hires into our warehouse safety process? I need a checklist they can sign.",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [],
+   [
+    "discernment-nudge",
+    "doc-coauthoring"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 1
+ },
+ {
+  "request": "So my company just dropped Claude on all of us with zero explanation and I'm somehow the one expected to get everyone up to speed — where do I even begin?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I keep nodding along when coworkers say \"just make an artifact\" and I have no idea what that actually means. Can you walk me through it like I'm five?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "New hire starts Monday and I want to hand them something so they can pick up Claude on their own instead of asking me every ten minutes.",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Is there an official version of all those YouTube tutorials out there? I've been fumbling around on my own and would rather learn it properly.",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Got voluntold to run the AI portion of our team offsite next month. I need to actually know what I'm talking about by then.",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Someone at a conference told me you can wire Claude into Slack and our shared drive. Is that a real thing, and how would a regular non-technical person go about it?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "It's just sitting there in my browser and I don't know what to do with it. What's the first thing worth poking at?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [],
+   [
+    "academy-guide"
+   ],
+   []
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "I need to put together an onboarding packet for my team about using Claude — is there stuff already made I can point them to instead of writing the whole thing myself?",
+  "lang": "en",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我们部门下个月要全面用上 Claude，老板让我出一份新人上手指南，你能帮我列个学习路径吗？",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这个季报的图表我已经有数据了，你直接帮我把 Excel 里的数字整理成 PPT 就行，不用教我怎么做。",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "pptx"
+   ],
+   [
+    "pptx",
+    "xlsx"
+   ],
+   [
+    "pptx",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "pptx",
+   "xlsx"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "Claude 的 Projects 功能到底怎么用啊？我看了半天帮助文档还是没搞明白，有没有什么现成的教程可以跟着学？",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我想给团队搭一套 MCP 连接器，把内部的工单系统接进来，你觉得从哪里开始比较靠谱？",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "claude-api",
+    "mcp-builder"
+   ],
+   [
+    "academy-guide",
+    "mcp-builder"
+   ]
+  ],
+  "label": [
+   "academy-guide",
+   "mcp-builder"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "帮我把这段会议纪要润色一下，改成更正式的语气，下午就要发给客户。",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 2
+ },
+ {
+  "request": "我们学校想开一门 AI 通识课，需要一些能直接用的教学材料和课堂练习，Claude 这边有现成的吗？",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "刚转岗做产品，想系统了解一下 Claude 能帮产品经理做哪些事，有没有推荐的入门内容？",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ],
+   [
+    "academy-guide"
+   ]
+  ],
+  "label": [
+   "academy-guide"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "帮我把这份中文合同翻译成英文，术语尽量准确，其他的不用管。",
+  "lang": "zh",
+  "persona": "adv:academy-guide",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "How do I convert a Word document to PDF in Google Docs? Just need the quick steps.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Explain how a TCP three-way handshake works — I'm studying for a networking exam and just want to understand the concept.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Here's a list of 40 customer names I pasted below. Put them in alphabetical order and format them as a bulleted list.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Write a Python script that walks a folder and renames every file to include its creation date. I'll run it myself.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Write me a short story about a lighthouse keeper who collects letters that wash up on shore.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Hey, how's it going? Random question — what's your favorite kind of weather?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Below is my draft investor proposal. Please review it and flag any factual errors, unsupported claims, or places where I should add citations.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "What's the tallest building in the world right now?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "Take this CSV I'm pasting and turn it into a markdown table — no analysis, just the table.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "My landlord's had my $1,800 deposit for two months and keeps dodging my texts — can you put together something I can send him?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I just got handed a team of six for the first time and honestly I have no idea what I'm doing. What should my first month look like?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Here's my bakery's last two quarters of numbers. Does anything jump out at you?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "My brother wants me to put $20k into his food truck. Should I?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "We're not getting the headcount we asked for and I have to tell my team Thursday — help me figure out what to say.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I'm 29, have about $9k sitting in a savings account and nothing in retirement. Where should that money go?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "Ballpark for gutting and redoing a 1920s kitchen in Portland — what am I looking at?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "I'm thinking about switching to a high-deductible health plan but I barely go to the doctor. Is that a dumb move?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "我把这周做的事都列在下面了，你帮我套成周报的格式发给组里就行，内容别动。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ],
+   [
+    "internal-comms"
+   ]
+  ],
+  "label": [
+   "internal-comms"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "会议我只记了三条要点，你帮我写成一封发给客户的进度说明邮件。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge",
+    "internal-comms"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 2
+ },
+ {
+  "request": "咱们出差住宿的报销标准是多少来着？我记着文件里写过。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "我们想把客服这块外包出去，你估一下一年大概能省多少，顺便说说值不值得做。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ],
+   [
+    "discernment-nudge"
+   ]
+  ],
+  "label": [
+   "discernment-nudge"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "这段脚本我自己会跑，你帮我把里面那个循环改简洁点就行。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "这是最近三个月的销售表，你帮我看看华东区为什么掉得这么厉害。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [
+    "discernment-nudge",
+    "xlsx"
+   ],
+   [
+    "discernment-nudge",
+    "xlsx"
+   ],
+   [
+    "discernment-nudge",
+    "xlsx"
+   ]
+  ],
+  "label": [
+   "discernment-nudge",
+   "xlsx"
+  ],
+  "agree": 3
+ },
+ {
+  "request": "OKR 到底是个啥？跟我们现在的 KPI 有啥不一样？",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ },
+ {
+  "request": "这份给客户的报价方案你帮我再核对一遍数字和条款，我明早要用。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge",
+  "votes": [
+   [],
+   [],
+   []
+  ],
+  "label": [],
+  "agree": 3
+ }
+]

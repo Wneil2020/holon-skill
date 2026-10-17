@@ -1,0 +1,2322 @@
+[
+ {
+  "request": "I'm halfway through building an MCP server for our internal ticketing API — the tool schema validates fine but the client keeps timing out on long-running calls. Can you look at my handler code and tell me what's wrong?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "We're deciding between models for a batch classification job — what's the current price per million input and output tokens, and is there a cheaper tier for bulk work?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Write me a Python script that walks a folder of PDFs and summarizes each one with the API, then dumps the results to a CSV.",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "My team is rolling out GitHub Copilot next quarter — what onboarding materials and internal training should we prepare for engineers?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "My artifact renders a blank page whenever I embed the chart — here's the HTML. Can you find the bug and fix it?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "I already wrote the new-hire onboarding guide. Condense it into a shorter welcome email and keep the tone friendly.",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Teach me the difference between TCP and UDP, and when I'd pick one over the other.",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "We're getting started with our new HR portal — how do I submit a time-off request and where do I find the holiday calendar?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "My boss just dropped Claude on our whole department and I'm the one who has to show everyone the ropes next week — where do I even start?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "I keep hearing people talk about \"projects\" and \"connectors\" in Claude and I nod along like I get it. I don't. Can you help me not be lost?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Just got a subscription and I'm staring at the chat box like an idiot. What's actually worth trying first?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Our team is piloting this thing for the next quarter and I need something to put in front of 40 people on Monday that isn't just me talking at them.",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "I'm a teacher and I want to hand my students something they can work through on their own instead of me lecturing about AI tools for an hour.",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Everyone on my floor seems to know what MCP is except me. Where would a person go to actually understand this?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "I've been using it for months but I'm pretty sure I'm only scratching the surface — is there somewhere that shows what else it can do?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Need to onboard three new hires onto Claude by Friday and I'm building the whole thing from scratch. Any shortcuts?",
+  "lang": "en",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "我们部门刚开通了 Claude 企业版，下周要给新同事做一次上手培训，有没有现成的入门课程或者教学材料可以直接用？",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "怎么系统地学一下 Claude 的 Projects 和 Artifacts 功能？自己摸索太慢了，有推荐的教程或者学习路径吗？",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "帮我把这份会议纪要整理成周报，语气正式一点，周五之前要发出去。",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "公司打算在全公司范围推广 Claude，我需要准备一套分阶段的培训方案和学习资源，应该从哪儿入手比较好？",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "MCP 连接器到底怎么配置？我想先把原理搞明白再动手，有没有讲得比较清楚的课程可以跟着学？",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Claude 的 API 怎么调用？给我一段能直接跑起来的示例代码，我这边接口要联调。",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "我是高校老师，想教学生用 Claude 辅助论文写作和资料整理，有没有适合课堂用的教学资源或者现成课程？",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "我们正在做 AI 工具选型，Claude 和另外几个产品在对比，有没有什么材料能帮我快速了解 Claude 到底能做什么、适合哪些场景？",
+  "lang": "zh",
+  "persona": "adv:academy-guide"
+ },
+ {
+  "request": "Make me a print-ready poster for our gallery opening next Friday — PNG and PDF please.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "Create a looping animated GIF of drifting particles I can drop into Slack as a reaction emoji.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "I'm brand new to this — how do I get started with Claude Artifacts? Point me to a tutorial.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "What exact hex colors and fonts should I use so my deck matches our company's official design standards?",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "Turn our Q3 sales-by-region spreadsheet into a bar chart dashboard.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "Write a short story about a painter who gradually loses her sight.",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "Can you recreate Mondrian's grid compositions as a CSS background for my site?",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "Here's my p5.js sketch — it throws an error on the third frame. What's wrong with my code?",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "make me a little webpage where a bunch of dots wander around leaving trails, and I can drag sliders to mess with how they move",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "I want something that generates a random pattern but gives me the exact same picture every time if I punch in the same number",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "can you code a thing that draws swirly lines like wind currents — different every time I load it, but I can freeze one I like",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "bored, make me a browser toy where hundreds of tiny particles chase each other and I can fiddle with the settings while it runs",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "I need an abstract background for a poster, something mathy and generated by code rather than a stock photo",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "write me a canvas sketch that fills the screen with a grid of shapes whose colors come out of a formula I can tweak live",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "want to play with a generative thing where I type in a seed number and it spits out the same artwork each time",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "make an animated canvas of little agents drawing lines as they crawl around, with knobs to change the speed and how chaotic it gets",
+  "lang": "en",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "帮年会做一张主视觉底图，想要那种用代码生成的粒子流动效果，最后导出成 PNG 给设计同学排版用，你看怎么弄比较合适？",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "我们官网首屏想加个动态背景，用 canvas 画一些缓慢流动的线条，不要那种很炫的，能看出点科技感就行，前端能直接嵌进去最好。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "想给团队做几张抽象壁纸，颜色是渐变的那种，每次生成的纹理都不太一样，能批量出图吗？",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "做个 GIF 发到部门群里，内容是随机跳动的彩色小方块，循环播放，别太大，Slack 能直接预览就行。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "我一直想学用代码画画那种，好像叫 p5.js？有没有适合零基础、能跟着一步步做的课程或者教程推荐？",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "帮我把现在这个 sketch 改一下，让随机种子能从 URL 参数读进来，这样我们复现同一版画面就方便了。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "给品牌做一套生成式的视觉规范：颜色和字体按我们的品牌来，但图形部分希望是算法生成的，这样每次物料都不重样。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "周报封面想放一张图，把我们的销售数据用流场那种感觉画出来，别太像图表，有点艺术感但又能看出趋势。",
+  "lang": "zh",
+  "persona": "adv:algorithmic-art"
+ },
+ {
+  "request": "Can you put together a deck for our Q3 business review? Use our company's navy-and-teal palette and Montserrat headings — I'll paste in our internal style guide so you can match it exactly.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Design an 18x24 poster for our neighborhood farmers market. I want something bold with hand-lettered type and a warm, vintage feel.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Make me a generative art piece with p5.js using Perlin noise flow fields and a seed slider so I can explore different parameter combinations.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "I need to take this source content and produce a Word document, then a slide deck, then a PDF handout — one consistent workflow across all three formats.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Our startup is rebranding next month. Write me a short style guide covering logo clear space, primary and secondary hex values, and font fallbacks for web.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Can you make an animated GIF for Slack to celebrate our product launch? It needs to stay under 2MB and loop cleanly.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Build a quick landing page with Tailwind for our new product — hero section, three pricing cards, testimonials, and a footer.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Draft the monthly company newsletter with updates from each department, a note from the CEO, and a section for new hires.",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Hey, I threw together a quick flyer for our team offsite but it looks like a generic Google Doc — can you give it the same colors and fonts we use on everything else?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "My slides for tomorrow's review look so plain. Is there a way to make them feel more like they came from Anthropic and less like a random template?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "I'm building an HTML page for an internal demo and want it to visually match our website — same warm cream background, same typeface. Can you restyle it?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Our designer is out this week and this PDF can't look off-brand. What are we supposed to use for colors and fonts again, and can you just apply it?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "The report came out corporate blue? We never use blue. Can you make it look like us instead?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Can you take this markdown doc and turn it into something that looks like it belongs on anthropic.com?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "I copied a template off the internet and it totally clashes with our logo. Help me make the whole thing feel cohesive with our house style?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "For the onboarding packet, can you match the look of our other materials — the clay accent color, the serif headings, that warm off-white?",
+  "lang": "en",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "帮我把下周给管理层的季度汇报PPT统一一下视觉：标题和正文都用官方那套字体，主色走品牌色，别再出现乱七八糟的颜色了。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "这份对外发布的白皮书要套用我们公司的品牌规范，配色和字体手册里都写死了，你严格按标准排一版。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "我们要做个新产品宣传页，想贴近Anthropic官网那种暖米色背景配衬线标题的调性，颜色和字体尽量按他们的官方规范来。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "帮我把这份HTML周报美化一下，现在太丑了，你看着配个色、挑个字体就行，没什么硬性要求。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "公司在做品牌焕新，帮我拟一套新的主色、辅助色和字体组合方案，最好附上选择理由。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "客户要求所有交付文档必须严格符合他们公司的VI手册，色值和字体在附件里，麻烦完全按这个来。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "这份培训手册排版太挤了，帮我调下字号、行距和页边距，让它读起来舒服点，颜色保持原样就行。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "内部知识库的落地页想统一成公司的视觉标准，颜色、字体、按钮样式都要跟品牌规范对齐，你按规范套一遍。",
+  "lang": "zh",
+  "persona": "adv:brand-guidelines"
+ },
+ {
+  "request": "Make me an animated GIF of a neon sign flickering for our team's Slack channel.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Write a p5.js sketch that generates a flowing particle field with a seed I can tweak and explore.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "I need a 12-slide pitch deck styled with Anthropic's official colors and typography.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Build a landing page for our design conference with Tailwind and a hero section.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Can you help me write a design spec doc for our new icon set?",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "I want to learn how to make posters with Claude — are there any tutorials or courses?",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Draft our company newsletter, including a short section on the new visual identity.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Create a skill that turns a text prompt into a minimalist album cover.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "My daughter's lemonade stand needs a sign that looks like someone actually cared — can you make me a file I can print out?",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "The wall above my desk is depressing and I'm framing something this weekend. Can you put together a printable page that stands on its own, PNG or PDF?",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "I need a one-page thing I can hand out at our bake sale — just want it to look sharp, not like a Word doc.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Can you compose a cover sheet for the little zine I'm stapling together? Letter size, print-ready, real visual punch.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "I want to give my friend something nicer than a card-store card for her goodbye — a single printable page that feels like a keepsake.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Make me something moody and minimal I can print and stick in a frame — just shapes and type, no photos.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "Help me make a wall-worthy print for my apartment. I don't care if it's a PNG or a PDF, I just want it to look intentional.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "My mom's 60th is coming up and I'd love a printable keepsake for the table — something that looks like a real designer made it, not a template.",
+  "lang": "en",
+  "persona": "adv:canvas-design"
+ },
+ {
+  "request": "How do I set the temperature and max tokens in the OpenAI Python SDK when streaming a chat completion?",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "Our repo already uses langchain_openai and ollama for a local RAG pipeline — help me debug why my token counts look wrong.",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "I'm brand new to Claude Projects and Artifacts — is there a course or tutorial that walks me through getting started?",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "Use Anthropic's official brand colors and typography on this pitch deck I'm building.",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "I want to build an MCP server in Python that exposes our ticketing system's tools to an assistant.",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "Draft a company-wide newsletter announcing our Claude rollout to all employees.",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "Help me write a new skill that triggers whenever someone asks me to process a PDF.",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "Write the API reference documentation for our internal payments service, with endpoints, auth, and error codes.",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "how much would it cost to have an AI read every support ticket we've ever gotten? we have about 80,000 of them and I have no idea what that runs",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "our chatbot forgets everything the second it restarts, and re-sending the whole conversation every time is getting expensive — is there a trick for that?",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "which one should I use to sort incoming emails, the cheap quick one or the big smart one? I don't want to overspend but I don't want garbage either",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "the answers in our app show up all at once after like ten seconds, but I want them to appear word by word the way everyone else's do",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "the model keeps handing back some weird function-looking blob instead of an actual answer whenever I ask it to check the weather",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "we hardcoded the model name months ago and now we keep getting warnings that it's going away — what are we supposed to swap it to?",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "is there a way to know how many words I'm about to send before I actually send it? I keep slamming into some ceiling and I don't know where it is",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "I want my assistant to be able to search our internal wiki and actually book meetings on my calendar, not just talk about doing it",
+  "lang": "en",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "我们要给客服系统接个大模型，领导让我先出一份选型和报价对比，帮我看看哪家便宜、上下文还长。",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "帮我把这份周会录音转写的文字整理成会议纪要，重点标出待办事项。",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "公司内部知识库想加个问答机器人，按每天两万次调用估算，一年大概要花多少 token 成本？",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "我们调模型的接口老是超时，改成流式返回能缓解吗？前端那边要怎么配合？",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "帮我想几句给模型用的提示词，让它按我们部门的模板输出月报，别自由发挥。",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "我们现在的系统是照着 OpenAI 那套写的，如果换成别的模型，改造量大不大？",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "领导让我调研 MCP，说能把我们内部的工单系统接进去，这玩意儿到底怎么落地？",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "有个同事英文名叫 Claude，帮我写封英文邮件跟他确认下周的排期。",
+  "lang": "zh",
+  "persona": "adv:claude-api"
+ },
+ {
+  "request": "Explain how compound interest works, step by step — I'm just curious, not planning any investments.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "Turn the meeting notes I pasted below into a formatted status report for our team wiki.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "What's the difference between a Roth IRA and a traditional IRA?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "Write a short story opening where a lighthouse keeper finds a message in a bottle.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "Here's my Python script — it keeps throwing a KeyError on line 22. Can you fix it?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "A friend already reviewed my pitch deck; can you take a second pass and tell me what's still weak?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "Reformat these bullet points into a table, nothing else.",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "Just curious — what's the tallest building in the world right now?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "my landlord says rent is going up 12% next month, is that even allowed here and what do i text him back",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "thinking about leaving my job in march to do freelance stuff — here's roughly what i make and spend each month, would i be ok?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "my sister wants me to be maid of honor and honestly i can't do it, help me word the message so she doesn't hate me",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "which one of these is the better deal, a 2016 corolla with 90k on it or a 2018 civic with 70k",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "sales tanked like 18% last quarter and my boss wants a one pager by friday explaining why",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "i wanna be in decent shape by june, give me something i'll actually stick to",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "a buddy says i should move my savings out of my credit union into one of those high yield things, is he right?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "i'm throwing my hat in for a small business grant for my bakery, does this blurb i wrote hold up?",
+  "lang": "en",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "帮我把这份季度总结改写成给董事会汇报的邮件，内容都在附件里，你只需要调整语气和结构。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "根据这些销售数据，帮我写一份下季度预测，并指出可能的风险点。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "这是客户访谈的原始记录，你帮我提炼成一份需求分析，再给几条产品改进建议。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "帮我起草一份给供应商的催货邮件，语气要强硬但别撕破脸，顺便看看有没有法律风险。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "我们准备调整定价策略，你帮我做个竞品对比表，然后给个定价建议。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "把这段产品说明翻译成英文，并评估一下适不适合直接发给海外客户。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "帮我准备一个跟老板谈加薪的谈话提纲，要能应对他可能提出的反驳。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "这份项目计划是我同事写的，你帮我检查一下逻辑和资源安排，然后重写一版更清晰的。",
+  "lang": "zh",
+  "persona": "adv:discernment-nudge"
+ },
+ {
+  "request": "Can you proofread this paragraph I already wrote and just fix the commas and awkward phrasing?",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Convert this markdown file into a PDF for me.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Summarize this 40-page requirements document into five bullet points.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Where in our existing docs does it explain how the billing API handles retries?",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Write a two-line Slack message letting the team know the deploy finished.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Explain the difference between a PRD and a technical spec — I keep mixing them up.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Here's a proposal my colleague drafted. Read it and tell me whether the pricing section is convincing.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Build me a 10-slide deck covering our Q3 roadmap for the all-hands.",
+  "lang": "en",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "我们下个季度要推一套新的会员体系，得先写份技术方案给架构组评审，你帮我把整体结构搭出来，我们再一块儿往里填内容。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "帮我把这周的周报整理一下，主要是给部门领导看的，重点讲清楚进度和风险。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "之前那版需求文档写得太乱了，我想重写一遍，你能不能陪我一段一段过，边聊边改？",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "我要写一份决策记录，说明为什么最后选了自研而不是采购，以后好追溯。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "有没有什么教程能教我怎么用 Claude 来写文档？我想系统学一下。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "这份合同附件要转成 Word 和 PDF 两个版本发给对方，内容不用改。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "给客户的方案书还差最后一版，想突出我们的交付能力，你看怎么组织比较好？",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "帮我把这次事故的复盘整理成给全员看的说明，语气别太生硬。",
+  "lang": "zh",
+  "persona": "adv:doc-coauthoring"
+ },
+ {
+  "request": "Can you pull all the tables out of this PDF and drop them into a CSV I can open in Excel?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "My budget workbook needs a new sheet that rolls up spending by category for each month.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Turn the deck I gave you into a one-page PDF handout for the meeting.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Fill in the fields on this tax form PDF and save a flattened copy I can email.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Write a script that walks a directory and lists every document file with its word count.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Combine these scanned PDFs into a single searchable file and run OCR on them.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Make me a slide deck summarizing last quarter's results for the leadership review.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Clean up this messy CSV export so the headers line up and the junk rows are gone.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Hey, I've got this file that opens in Word sitting in my downloads — can you go through it and swap every mention of our old company name for the new one, and leave the changes marked so my manager can look them over?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "I need something I can print and hand to the client tomorrow: proper letterhead at the top, page numbers at the bottom, and headings that actually look like headings. Can you build that for me as a file Word will open?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "My resume is that .docx I sent last week — the photo in the corner is outdated. Can you pull the old one out and stick the new headshot in its place?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Three people left notes all over this document and now I can't tell what's what. Can you gather up every one of their remarks into a single clean list for me?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "We've got a company letter template that everyone's supposed to use, but it still has placeholder junk in it. Can you fill it in for a memo going out to the whole team?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "After I shuffled sections around, the contents page at the front is completely wrong. Any chance you can rebuild it so the page numbers line up again?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "Somebody sent me a Word file with all their edits still showing in red and blue. I just want the final version — can you accept everything and tidy it up?",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "I need a polished quarterly write-up with a cover page, a contents list, numbered pages, and a few tables. Save it as something I can open and tweak in Word.",
+  "lang": "en",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "帮我把这份 Word 合同转成 PDF 发给客户，顺便在每页加上“机密”水印。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "这个扫描件 PDF 里是一份旧版说明书，帮我识别出来重新排成带页眉页脚的 Word 文档。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "把这份季度数据的 Excel 做成一份带目录、图表和页码的 Word 分析报告。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "客户发来的 .doc 老文件打不开了，帮我打开改几处措辞，再另存成 docx 和 PDF 两个版本。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "把这周的 PPT 汇报要点整理成一份正式的中文备忘录，要有标题层级和签字栏。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "我用 Google 文档写了个方案，帮我导出成 Word 再按公司模板调整一下格式。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "帮我把这份 Word 里的表格提取出来放进 Excel，按部门做个汇总透视表。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "这份 .dotx 模板里的 logo 要换成新版的，另外把里面的批注和修订都处理掉再发我。",
+  "lang": "zh",
+  "persona": "adv:docx"
+ },
+ {
+  "request": "The submit button on our signup form does nothing in Chrome — can you run the app locally, click through the flow, and tell me what the console says?",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Build me a multi-page React dashboard artifact with client-side routing, a shadcn/ui data table, and shared filter state across views.",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Grab a full-page screenshot of the staging homepage at 375px wide and pull the browser logs so I can see why the hero overflows.",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Make an animated GIF of our logo doing a subtle pulse for the loading spinner.",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Our brand guidelines changed — export the new palette and type scale from Figma into a theme config file.",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Our webpack bundle is 4MB and first paint takes 8 seconds on 3G. Can you profile it and cut the load time?",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Write the REST endpoint that returns the paginated product list as JSON, plus the database query behind it.",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Here's the Figma file — implement it as pixel-perfect React components matching the spec exactly, no reinterpretation.",
+  "lang": "en",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "这个后台管理页现在看起来太像模板了，帮我重新定一下视觉方向，字体、间距、配色都要有我们自己的调性，别一股 Bootstrap 味。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "我们要做个新官网首页，想要有点杂志感、编辑感，不要那种千篇一律的 SaaS 落地页，先给我出个方向看看。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "帮我把这个组件库的默认样式改掉，现在每个页面都长得差不多，想建立一套自己的视觉语言，改完顺便看下效果对不对。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "客户说我们的 App 界面太普通，能不能给一版更有辨识度的设计方案？中文排版这块也要处理好，标题和正文的层级现在很乱。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "我用 Tailwind 搭了个原型，但看起来还是很像 shadcn 的默认样子，想让它更有设计感一点，配色和圆角都得改，你帮我弄一下。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "下周要评审，帮我把这个页面的视觉改一改，然后截几张不同尺寸的图放到文档里，重点是要能看出设计思路。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "这个落地页我想走暗色系、高对比的路子，字体也想换成有点个性的，不要 Inter 加系统字体那种组合，先给我个方向再动手。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "我们的设计规范文档页面太丑了，想重新梳理一下排版层级和颜色规范，最好能直接在浏览器里看效果、边看边调。",
+  "lang": "zh",
+  "persona": "adv:frontend-design"
+ },
+ {
+  "request": "Write a press release announcing our Series B round so we can send it to TechCrunch and a couple of other outlets.",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "Draft an email to our customers apologizing for yesterday's outage and explaining how the service credits will be applied to their accounts.",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "Can you write a public FAQ for our help center that explains the new billing tiers to customers?",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "I need a blog post for our company website announcing the launch of the new mobile app.",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "Write a technical design doc for the new payments service, covering the API contract, data model, and failure modes.",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "Help me write a cover letter for a senior PM role I'm applying to at another company.",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "Draft a LinkedIn post about my team shipping the new dashboard last week.",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "Write a cold outreach email to a prospect at Acme Corp introducing our product and asking for a demo.",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "my boss wants a quick friday note on how the migration is going and what's stuck right now",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "we switched office wifi providers and everyone keeps complaining, need something friendly to send round the whole company",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "the payment service fell over for 40 minutes last night and now i have to explain to the execs what actually happened",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "it's that quarterly thing where each team says what they shipped, what's next, and what's in the way — help me do ours",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "five people have asked me the same questions about the new expense tool, i want one thing i can just paste into slack",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "put together the monthly all-company email, new hires, birthdays, the usual bits",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "my skip-level wants to know where the onboarding revamp stands, keep it short",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "everyone's confused about the new on-call rotation, write something that clears it up without sounding like a rulebook",
+  "lang": "en",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "帮我把这个季度的项目进展整理成给管理层的汇报，写完再顺手导成 PDF 和 PPT 两版，方便发群里。",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "下周有新同事入职，我想写一份部门内部的新人上手指南，顺便列几个可以让他自己去学的产品教程。",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "下周要上线新的报销系统，帮我写个全员通知，排版和语气要跟我们公司以往的内部公告保持一致。",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "上周线上出了个故障，我要写一份复盘同步给相关团队，里面几个时间点和影响范围我拿不太准，你先帮我核一下再发。",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "帮我起草一份内部 FAQ，把大家最近问得最多的考勤和调休问题都写进去，先放知识库里，以后还要接着补。",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "部门想做个每周五发的内部小报，第一期先做成能发在公司内网的网页，看着别太土。",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "我们组的周报格式老在变，能不能帮我做一套固定的内部通报模板，以后大家照着填就行？",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "帮我写一篇公司季度总结，准备发到公众号上给客户和合作伙伴看。",
+  "lang": "zh",
+  "persona": "adv:internal-comms"
+ },
+ {
+  "request": "How do I connect an existing MCP server to Claude Desktop? I keep getting a \"server disconnected\" error and I'm not sure if it's my config file or the server itself.",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "Can you explain what MCP actually is and how it differs from regular function calling or tool use in an LLM?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "I'm trying to find a ready-made MCP server for Postgres and one for GitHub — where do people usually browse or discover these?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "My company's MCP integration stopped working after an update and the logs just say \"transport closed.\" How do I debug what's going wrong?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "What are the security risks of letting an MCP server read my local filesystem and environment variables? Is there a safe way to sandbox it?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "I want to write a technical blog post explaining the Model Context Protocol to backend developers — can you help me outline and draft it?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "Our team is rolling out MCP-based connectors across the org next quarter. What governance, access, and training considerations should we plan for?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "I'm building a desktop app that needs to act as an MCP client and talk to several third-party servers — which client libraries or SDKs should I evaluate?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "I want my Claude desktop app to be able to look up orders in our internal Postgres — how do I wire that up?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "My team keeps pasting Jira tickets into chat. Can I give the assistant a way to pull them itself?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "We've got a REST API for our inventory and I'd rather the AI just call it directly instead of me copy-pasting JSON back and forth.",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "Is there a standard way to plug a local tool into Claude so it can query our weather service on its own?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "We're trying to build a little bridge so the model can hit our ticketing system — where do I even start with the protocol side of that?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "I need to expose a handful of functions from our Python service to an LLM client, with proper schemas and descriptions so it knows when to call them.",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "Someone told me I should build a connector so Claude can talk to our CRM. Can you walk me through it in TypeScript?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "How do I make a small integration server that hands the model a few tools for our file storage, including auth and decent error messages?",
+  "lang": "en",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "我们内部有个工单系统，想接到 Claude Desktop 里让模型直接查工单、改状态，这个大概要怎么搞？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "同事之前写的那个 MCP 服务本地跑不起来，日志里 tool 注册一直报错，你帮我看看是哪儿的问题。",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "帮我把这份接口文档整理成给模型用的工具定义，参数和描述要写清楚点，后面要接进我们的服务里。",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "Claude Code 里怎么配置别人提供的 MCP 服务器？我想把团队共用的那个挂上去。",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "我们在纠结是走 MCP 还是直接写 function calling，下周一要跟老板汇报，能给个选型思路吗？",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "帮忙写个 MCP 客户端，连我们自己的服务做集成测试，主要验证工具调用和错误返回。",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "把现有的几个 REST 接口封装成 Python 的服务，走 stdio 传输，能直接给本地模型用。",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "这个服务上线之后怎么做鉴权和限流？尤其是工具调用那块，怕被人乱刷。",
+  "lang": "zh",
+  "persona": "adv:mcp-builder"
+ },
+ {
+  "request": "My Word doc's headings and spacing are inconsistent — can you clean up the formatting?",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Give my pitch deck a modern dark theme with our company fonts and colors.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Write an email to all staff announcing the new remote work policy.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Design a printable poster PDF for our office holiday party.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Make a GIF of our mascot waving for the Slack #general channel.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Help me draft a technical spec for the new billing service.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Build a responsive HTML landing page for our conference, using Tailwind.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "How do I export a Google Doc as a PDF?",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "I've got a Word write-up and a spreadsheet with the numbers it references — can you make sure the figures in the doc actually match the sheet and fix anything that's drifted?",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Someone sent me a deck and a memo that say slightly different things about the same project. Can you pull them together into one clean packet?",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "I need to turn my spreadsheet into a slide or two plus a short write-up for the people who won't open Excel.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "We got a pile of .docx and .xlsx files from the vendor — can you read through them and give me one summary document with the key points?",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Take the tables in this report and move them into a workbook, then send me back both files with the numbers lining up.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "My colleague built the PowerPoint and I have the underlying Word doc — can you reconcile the two and produce a final version in both formats?",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "I've got a mix of PDFs, some Word files, and a couple of spreadsheets for this audit. I need one working file I can hand off.",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "Could you take the meeting notes in Word, the action list in Excel, and the slide summary, and stitch them into a single handover pack?",
+  "lang": "en",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "帮我把这份 Word 报告和附件里的 Excel 数据整合一下，再导出一版 PDF 发给客户，另外把要点做成 PPT 汇报用。",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "季度总结要交三个文件：Excel 数据表、Word 说明文档和 PPT 汇报稿，能不能一次性帮我理顺，保证三边的数字对得上？",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "手头有十几份扫描的 PDF 合同，需要提取关键条款汇总到 Excel，再生成一份 Word 汇总报告给领导。",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "把这个 PPT 里的图表和备注整理成一份 Word 会议纪要，再转成 PDF 归档，格式别乱。",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "客户给的资料 PPT 和 PDF 混在一起，我想合并成一份 Word 文档，顺便做个 Excel 清单方便核对。",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "帮我把 Excel 里的销售数据做成 PPT 图表页，再把讲解词写成 Word 讲稿，两边口径要一致。",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "这份 Word 方案要转成 PDF，同时把里面的表格单独抽出来存成 Excel，页码和标题也要对齐。",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "月度例会材料有 Excel 明细、Word 报告、PPT 汇报三样，数据和结论得统一，帮我从头到尾过一遍。",
+  "lang": "zh",
+  "persona": "adv:office-docs"
+ },
+ {
+  "request": "The vendor contract came through as a .docx — can you add page numbers and a footer to it?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "I have six .docx files of meeting notes; merge them into one Word document for me.",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "Write me a Python function that returns a probability density function for a normal distribution.",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "My receipts are scanned as .jpg images in a folder — pull the totals out into a spreadsheet.",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "I need a printable certificate for awards night — build it as a Word template with a fancy border.",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "Build an HTML page with a fillable registration form for our event.",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "There's a table in this screenshot (PNG) — can you put it into a CSV?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "Take my Google Doc and save it as a Word file I can edit locally.",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "My landlord emailed me a scanned copy of the lease but it's just pictures of the pages — can you make the words searchable so I can copy a clause out?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "I've got three separate files here that are really one report — can you staple them together into a single document so I can send it as one attachment?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "Every page in this thing is lying on its side and it's killing my neck — can you turn them all upright?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "There's a table on page 4 of that report I actually need to work with — can you pull it out into something spreadsheet-ish?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "Before I hand this over, can you slap a big 'CONFIDENTIAL' across every single page?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "A vendor sent me a file that demands a password before it'll even open — I've got the password, can you get it open for me?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "This is a 300-page binder and I only care about pages 45 to 62 — can you cut just that chunk out into its own file?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "I need to send a client a one-page bill with my logo at the top and a little table of what they owe — can you make that up for me?",
+  "lang": "en",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "帮我把这份扫描版合同的PDF转成能编辑的Word文档，里面的表格和签章位置尽量保持原样，我这边要改几个条款。",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "客户发来的产品报价是PDF，我想把里面那几张表整理成Excel，方便后面算总价和比价，能弄吗？",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "下周部门汇报要用，能不能把这份PDF白皮书的内容做成PPT，每页重点保留，配图也带上。",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "这两个PDF帮我合并成一个文件，然后在每页右下角加上“内部资料 请勿外传”的水印，字号别太大。",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "这份PDF加了密码我打不开，能帮我解密吗？解完再顺便看看有没有敏感信息要遮掉的。",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "这份八十多页的PDF太长了，帮我按目录里的章节拆成一个个单独文件，最后打个压缩包发我。",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "扫描件PDF里的字没法搜索也没法复制，帮我做一下OCR识别，识别完导出成Word给我校对。",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "公司有个PDF申请表要填，字段挺多的，能帮我填好内容再导出成一份新的PDF吗？",
+  "lang": "zh",
+  "persona": "adv:pdf"
+ },
+ {
+  "request": "Make me a reveal.js HTML presentation for a developer meetup — it needs to run in the browser, no PowerPoint involved.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "I'm giving a TEDx talk next month; help me outline the narrative arc and draft the opening 90 seconds as plain text I can rehearse from.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Set up a Google Slides deck for the team offsite and send everyone the share link.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Export my Keynote file to a video so I can post it on the internal portal.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Build an interactive, slide-based onboarding carousel in React with swipe navigation.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Design a full 52-card playing deck with custom suit illustrations for our card game.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Take this conference talk transcript and turn it into a one-page PDF handout for attendees.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "I need a pitch deck outline written up as a Word document with section headings and talking points.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Can you pull the talking points out of that .pptx I dropped in your inbox? I need them for an email.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "The thing I clicked through in the meeting yesterday needs three pages cut and my name slapped on the cover — same file format, please.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "There's a .potx in my templates folder that keeps resetting my fonts. Can you fix it?",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Take these bullets and turn them into something I can flip through on the projector tomorrow at 9.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "What's written on page 7 of the .pptx sitting on my desktop?",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Smash the two .pptx files in this folder together into one and don't lose the notes I typed under each page.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "Rebuild last month's file with the new numbers and hand it back as a .pptx.",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "My client sent a .potx and I want to reuse their look for our own thing — can you set that up?",
+  "lang": "en",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "帮我把这份PPT里的要点整理成一份Word版会议纪要，格式正式一点，下午发我。",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "客户发来的演示文稿里有几页数据表，帮我抠出来做成Excel，我还要接着算。",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "我手上只有幻灯片的截图（png），能帮我拼成一个PDF讲义吗？",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "把这份年报PDF浓缩成10页的汇报稿，我下午路演要用。",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "上次那个路演稿的结构不错，照那个结构给我写一份Word版产品说明。",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "帮我把演讲稿的文字润色一下就行，幻灯片文件不用动。",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "我们组要做季度总结，先帮我列个幻灯片的大纲，我看看结构，先不用出文件。",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "这个 Google Slides 的链接你能打开吗？把里面的内容整理成一份Word周报给我。",
+  "lang": "zh",
+  "persona": "adv:pptx"
+ },
+ {
+  "request": "I want to build a small MCP server in Python that exposes our internal ticketing API as tools — can you scaffold the project and write the tool schemas?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "Help me write the system prompt for a customer-support agent that only answers questions about our returns policy and escalates everything else.",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "Can you set up a GitHub Actions workflow that runs our pytest suite, lints, and blocks merges on failure?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "I need to benchmark three different prompt variants for our summarization endpoint and see which one has the lowest run-to-run variance.",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "Our internal assistant needs to call the calendar API — can you write the plugin manifest and the tool definitions for it?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "Draft onboarding documentation explaining to new engineers how our agent framework is wired together and where each piece lives.",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "Compare GPT-4o and Claude on our 200-ticket eval set and tell me which one is more consistent at routing to the right queue.",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "Write a reusable prompt template library for our support team so they stop copy-pasting from a shared doc.",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "Every time I open a new chat I end up retyping the same three paragraphs of instructions. Can you help me package that up so it just kicks in on its own?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "I wrote a little helper file that tells you how to format my invoices, but you never seem to pick it up unless I remind you. How do I get it to actually load?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "My team does the same weekly report the same way every time and I'd rather just hand that process over to you so anyone can trigger it by asking. Where do I start?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "I've got a folder of instructions I put together months ago and it's a mess — half the steps are stale. Can you tidy it up and tell me whether it's still worth anything?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "How do I know the instruction file I wrote actually works, and isn't just looking like it works? I want numbers, not vibes.",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "I'd like to run my setup against a bunch of tricky cases and see whether it behaves the same way each time, and how much it drifts between runs.",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "A teammate wrote something that explains our onboarding process, but it almost never fires when it should. Can we reword it so it reliably shows up?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "I want to teach you a new trick — something that knows our house style rules and jumps in whenever I ask for a slide deck. Can you build that out with me?",
+  "lang": "en",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "我们组每次做竞品分析都是各写各的，想把那套步骤固化下来，做成一个能重复调用、下次直接用的东西，你帮我搭个框架？",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "我手上有个内部小助手，最近老是不该触发的时候乱触发，该用的时候又没反应，能不能帮我看看它的说明文字该怎么改？",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "帮我把这份新人培训手册改写成模型能直接照着执行的版本，要有输入输出示例，也得写清楚哪些情况不该用。",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "上周做的那个自动化流程我想测一下稳不稳：同一个任务跑十遍，看结果波动大不大，再跟另一个版本对比一下哪个更靠谱。",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "这个提示词模板现在回答太啰嗦了，帮我精简一下，另外前面那段描述也改改，让它更容易被正确识别到。",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "我们几个同事各自写了一套让模型干活的规则，我想统一成一个标准版本，顺便定个验收标准，怎么做比较合适？",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "领导让我评估现有这套 AI 工作流到底值不值得在部门推广，要给出量化对比和失败案例分析，从哪儿下手比较好？",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "帮我把这套操作流程整理成一份 Word 文档，周一发给全组，格式跟上次那份保持一致就行。",
+  "lang": "zh",
+  "persona": "adv:skill-creator"
+ },
+ {
+  "request": "every time someone posts 'quick question' in our team chat i want a little looping cartoon of a bomb fuse burning down — can you build that file for me?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "need a tiny looping animation under the size cap our chat app enforces, it'd be a reaction for when a deploy fails",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "our standup bot should post a celebratory wiggle when everyone's checked in, but last time the upload got rejected for being too heavy — can you sort that out?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "can you make a short repeating doodle of a coffee cup refilling itself? i want to drop it in the channel when someone says they're on their third cup",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "i've got a 12-second screen recording but it's way too big to post in our workspace — can you squash it down into a smooth looping clip that actually fits?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "make me a looping pixel-art cat typing away at a keyboard that i can paste as a reaction in the office chat",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "i need a small animated image for our team's channel header — loops forever, no sound, and doesn't blow past the upload limit",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "someone keeps sending animations that get blocked by the messenger, so can you produce one that actually goes through, showing a ship slowly sinking?",
+  "lang": "en",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "帮我做一个 Slack 用的自定义表情，静态的就行，尺寸和大小有什么要求？",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "我们团队平时用钉钉，能帮我做个庆祝用的动图吗？",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "把这段动画导出成 mp4 吧，我要发到 Slack 频道里给同事看。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "我手上有个 8MB 的 GIF，发到 Slack 提示文件太大，怎么压缩到能发出去？",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "能不能给我做一个飞书里用的加载中动画？风格跟咱们内部工具保持一致。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "帮我把这几张 PNG 合成一个会动的表情包，就是微信群里发的那种。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "Slack 上想发一个会动的公司 logo 动画，用什么格式比较合适？",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "做个 GIF 放到我们官网首页当 banner 动画，最好能循环播放。",
+  "lang": "zh",
+  "persona": "adv:slack-gif-creator"
+ },
+ {
+  "request": "my slides look so plain and generic — can you give them a proper look with a nice color combo and matching fonts?",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "i threw together a one-page html site for our launch and it looks like 1998. can you give it some personality — colors, type, the whole vibe?",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "can you redo the look of this quarterly report so it feels like the same family as our pitch deck, but not identical?",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "make me a fresh color scheme from scratch — something warm and a little retro — and put it on all the pages",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "my team keeps saying my docs look rushed. can you give them one consistent visual style across the board?",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "i want this dashboard to feel dark and moody with nicer type. can you restyle it for me?",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "what preset looks could you give a presentation? i really don't want to pick colors myself",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "restyle this whole thing to match the feel of a fintech startup — clean, blue, trustworthy",
+  "lang": "en",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "帮我给这份Q3经营分析PPT换一套配色和字体，要显得专业稳重一点，明天就要给管理层汇报了。",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "公司刚更新了VI手册，能不能把这份产品手册和配套的PPT都统一成新的品牌蓝和思源黑体？",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "我要做一个新品发布的落地页，希望整体视觉风格统一，配色和字体你帮我定一套就行。",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "这份Word报告和汇报用的PPT得用同一套视觉风格，你帮我一起处理一下吧，别一个蓝一个绿的。",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "帮我设计一张线下活动海报，主视觉还没定，先给我出几套配色和字体的搭配方案看看。",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "我们新品牌想走清新自然的路线，能不能现做一套主题出来，主色用青绿渐变，标题用圆体？",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "这份文档排版太素了，帮我美化一下，加点颜色和层级感，但别太花哨。",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "部门周报模板太旧了，想重做一套统一风格的模板，以后所有周报都用这个，HTML的也行。",
+  "lang": "zh",
+  "persona": "adv:theme-factory"
+ },
+ {
+  "request": "Draft a technical spec for our new design-system component library that the frontend team can review.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Make a poster-style PDF announcing our frontend meetup next month.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Give my slide deck a dark-mode theme with matching fonts and accent colors.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Create a Slack GIF of our mascot spinning for the launch channel.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Apply Anthropic's brand colors and typography to this HTML page.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Write this week's status update for the web platform team.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Build an MCP server that exposes our design-tokens API to an assistant.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Generate a p5.js flow-field artwork with seeded randomness and a few tunable parameters.",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "can you throw together a little web page for my dog-walking side hustle — nice looking, and I want to see a picture of how it turns out before I share the link",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "I need a one-page thing for a school bake sale that actually looks decent on a phone, and please show me what it looks like",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "make me a landing page for my podcast, nothing fancy, but styled so it doesn't look like it's from 2003 — and grab a preview image",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "hey could you build a simple dashboard mockup in html that I can open in a browser, with the styling all done for me",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "my band needs a quick site for our show next Friday, dark and moody, and I'd love a screenshot to text to the guys",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "spin up a single-file page for a wedding RSVP form, pretty and responsive, then let me see it rendered",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "I want to redesign my portfolio page but I'm bad at CSS — can you just make the whole thing look good and show me the result",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "put together an html mockup of a pricing page for a client pitch, and send me an image of it so I can drop it in the deck",
+  "lang": "en",
+  "persona": "adv:web"
+ },
+ {
+  "request": "帮我把这个产品介绍页做出来，用 Tailwind 写个静态 HTML，颜色和字体按咱们公司的品牌规范来，最后截个图发我。",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "下午要给客户演示，麻烦快速搭一个数据看板的网页原型，风格参考上次那套深色主题，做完截个全屏图。",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "我们需要一个活动落地页，hero 区想放一段动图 banner，布局用 Tailwind 就行，你看怎么弄比较好？",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "把这个活动的宣传海报改成网页版，能在浏览器里直接打开，再截张图放到周报里。",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "用代码生成一个粒子效果的背景，嵌到我们官网首页上，截图给我看看效果搭不搭。",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "帮我把这个 HTML 页面的样式换成我们的品牌色，顺便把首屏截图更新一下文档里那张旧图。",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "做一个组件展示页，用 Tailwind 写，配色和字体想沿用 Anthropic 那种简洁风格。",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "网页做好了，帮我把整页截成一张图，我要贴到 PPT 里给领导汇报。",
+  "lang": "zh",
+  "persona": "adv:web"
+ },
+ {
+  "request": "Can you make me a single self-contained HTML file with a button that pops an alert when clicked? Keep it simple — no build step, no npm, just one file I can open in a browser.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "I need help picking a typeface pairing and color palette for a new marketing site — something with personality that doesn't read like a generic Bootstrap template.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Write a Playwright script that launches my local dev server, clicks the login button, and checks the browser console for errors.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Take screenshots of my portfolio page at 1440px and 375px widths so I can eyeball how the responsive layout is holding up.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "My existing index.html has a flexbox bug — the sidebar overlaps the footer on mobile widths. Can you find and fix the CSS?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "How do I generate an animated loading spinner GIF to drop into my project README?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "We're rebranding the product — help me define a logo direction, brand colors, and tone-of-voice guidelines before we touch any UI.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Here's a small JSX snippet — can you tell me why my useState value isn't updating after the click handler runs?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Can you build me a little dashboard I can actually click around in right here in the chat — sidebar, a few tabs, some filters, and a table that updates as I go?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "I need a small multi-screen thing inside the conversation, like a booking flow with a few steps and a summary at the end.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Make me an interactive quiz in the chat with several screens, a progress bar, and a results page with a chart.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Can you put together a mini expense tracker widget right here with add/edit/delete, categories, and a monthly view?",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "I want a kanban board I can drag cards around in, and it should live inside your reply.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Build a settings-style panel in the chat with toggles, tabs, dropdowns, and a modal or two.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Something like a tiny CRM inside the chat — list of contacts, click into one, edit the details, then go back.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "I'd love a small multi-step form wizard in the chat with validation and a review screen before I hit submit.",
+  "lang": "en",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "帮我把这版季度经营数据做成一个能在浏览器直接打开的多页仪表盘，左侧导航切换不同报表，顶部筛选条件要联动图表，用 React 和 Tailwind，组件风格参考 shadcn/ui。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "下周要给客户演示，需要做一个高保真可点击原型：登录、工作台、设置三个页面能互相跳转，表单填到一半切走再回来状态还在，最后能直接分享链接。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "这个单页 HTML 太像模板了，客户想要更独特的品牌感，字体、留白、配色都要重新设计，不要默认那种蓝紫渐变，你能只做视觉升级吗？",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "本地这个前端项目你帮我用 Playwright 跑一遍注册流程，点完每个步骤截几张关键页面图，顺便把浏览器控制台日志导出来看看有没有报错。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "我需要一个可交互的定价页，月付/年付切换时价格和权益列表实时变化，FAQ 能折叠展开，整体用 shadcn 那种组件风格，能嵌到 claude 里预览最好。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "把我们的设计稿转成能跑的前端页面，先只做静态展示，不要复杂交互和路由，但视觉上要像品牌官网一样有辨识度，别一看就是套模板。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "这个 React 组件库的 demo 页面需要加路由和全局状态，左边菜单点不同项右边内容跟着切，刷新后还能保持当前选中项，适合放到 claude 里当 artifact 预览。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "我们想快速验证一个多步骤表单的交互，步骤条、字段校验、上一步下一步的状态都要有，最后生成一个可以分享的 HTML artifact 给同事试用。",
+  "lang": "zh",
+  "persona": "adv:web-artifacts-builder"
+ },
+ {
+  "request": "Can you design a bold, editorial-style landing page for my bakery with custom typography and a warm color palette?",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Build a complex React dashboard artifact with Tailwind and shadcn/ui components for tracking team OKRs.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Take a screenshot of this public marketing site and give me feedback on the hero section's visual hierarchy.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Create an animated GIF that walks through the checkout flow on my deployed site.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Review my CSS and design tokens for contrast, spacing, and accessible color choices.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Write a Playwright tutorial explaining auto-waiting and best practices for test organization.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Debug why my Jest and React Testing Library unit test is failing for a button component.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Set up a new Next.js project with Tailwind and shadcn/ui from scratch, including routing and theme.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "I've got a little site running on localhost:3000 and the signup form just sits there when I hit submit — can you poke at it and tell me what's going on?",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Can you actually open my page in a browser and click around like a real person would? I want to know if the checkout flow falls apart anywhere.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Something's off with my dashboard — grab a picture of what it looks like when it first loads so I can see it with my own eyes.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "My app keeps throwing errors somewhere but I can't find them. Can you watch the browser console while you use the thing and tell me what shows up?",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "I need someone to pretend to be a user on my local app — log in, add a couple things to the cart, see if anything explodes along the way.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Take a screenshot of my site at phone width, it looks weird on my actual phone and I want to stare at it on a bigger screen.",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Every time I click the dropdown on my page, nothing happens. Can you reproduce it and figure out why it's dead?",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "Before I ship this, can you run through the main pages of my app on my machine and tell me if any buttons or links go nowhere?",
+  "lang": "en",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "帮我把本地这个 React 项目跑起来，走一遍注册流程看看有没有报错，顺便截几张关键页面的图。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "我们那个内部管理后台的登录页按钮点了没反应，你打开浏览器看看控制台到底报什么错。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "这个页面的配色和字体我看着不太顺眼，你先帮我改一版，然后打开确认下实际效果对不对。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "帮我用 React 加 Tailwind 做一个带路由的订单管理页面，做完自己点一遍确认交互没问题。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "本地前端服务已经起在 3000 端口了，帮我截一下首页和详情页的图，我要放到周报里。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "测试同学说购物车加购之后数量显示不对，你帮我复现一下，把浏览器日志和截图都留一份。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "帮我把这个单文件 HTML 原型改成能跑的多组件版本，顺便验证一下表单提交后的状态变化。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "我想看看现在这个落地页在手机尺寸下长什么样，布局有没有错位，截图给我看看。",
+  "lang": "zh",
+  "persona": "adv:webapp-testing"
+ },
+ {
+  "request": "I've got a messy sales.csv in my downloads — write me a Python script that reads it, cleans the rows, and prints a summary table to the terminal. No file output needed, just the script.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "Here's our quarterly numbers spreadsheet. Can you put together a Word report with a short narrative and a couple of tables summarizing the trends for the leadership team?",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "I need a Google Apps Script that pulls rows from our Google Sheet and posts them to a Slack webhook every morning. Walk me through setting up the trigger too.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "Take the attached CSV of survey responses and build a standalone HTML dashboard with a few charts I can open in a browser and email around.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "Set up an ETL pipeline that ingests the daily .tsv drops from our vendor into our Postgres warehouse, with dedupe and a nightly cron job.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "Can you turn this budget data into a PDF one-pager with a clean table and a bar chart? It needs to look polished for a board packet.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "I have a spreadsheet of campaign metrics — make me a 10-slide deck with the key charts and talking points for Friday's review.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "My pandas code keeps choking on an old .xls file with merged header cells. Help me debug it and rewrite the parsing logic so it handles the weird rows.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "hey can you take that mess of numbers my bookkeeper emailed me — the comma-separated thing sitting in my downloads — and turn it into something I can actually filter and total up? I need a real workbook back, not a screenshot.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "The stock count file on the shared drive is a disaster: headers are on row 4, there's a totals row stuck in the middle, and three blank columns nobody uses. Can you straighten it out and hand me back a clean sheet I can sort?",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "I've got two tab-delimited exports, one from the old system and one from the new one. I need them side by side in a single workbook with a column showing what changed between them. Save it as a proper spreadsheet please.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "My budget tracker keeps showing #REF! everywhere since I deleted a column. Can you open it, fix the broken formulas, and add a little chart of monthly spend at the top?",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "I typed the client list into a text file with commas between everything. I need it as a proper grid with names, emails, and phone numbers in their own columns, formatted so it doesn't look like a raw data dump.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "Can you pull the numbers out of the quarterly file and build me a fresh workbook where each region sits on its own tab? The original is the macro-enabled one I never actually use the macros in.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "There's a workbook my predecessor left behind — the 'Q3 final FINAL v2' one — and I need a summary tab added plus another tab with just the overdue invoices. Please keep the existing formatting intact.",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "I have a folder of monthly bank exports saved as plain text with commas. Can you stitch them all into one workbook, one sheet per month, with a running balance column and the dates all in the same format?",
+  "lang": "en",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "帮我把‘Q3销售数据.xlsx’里的内容整理成一份Word分析报告，重点写清楚各区域增长原因，下班前要。",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "我桌面上有个‘客户名单.xlsx’，能不能转成PDF并加上公司水印？我要直接发给客户。",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "把这个Excel里的项目进度数据做成PPT，每个部门一页，明天上午汇报用。",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "从这份PDF合同里把报价表格提取出来，整理成Excel，并自动算好总价和折扣。",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "帮我把这个CSV文件清洗一下，去掉重复和空值，然后直接同步到我们的PostgreSQL数据库里，不用生成Excel。",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "我需要把Google Sheets里的项目进度同步到本地Excel，并加上条件格式和图表，可以吗？",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "这个.xlsm文件里的宏失效了，你能帮我改成独立的Python脚本吗？以后我直接跑脚本处理数据。",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ },
+ {
+  "request": "把‘月度考勤.xlsx’里的异常记录筛出来，生成一个HTML页面，方便HR在浏览器里筛选查看。",
+  "lang": "zh",
+  "persona": "adv:xlsx"
+ }
+]

@@ -239,3 +239,19 @@ Two more things the validator required and holon had not checked: `name` must be
 CI now installs `skills-ref` and validates every skill folder in the repository. The check that matters is not this project's own; it is the one a host would run.
 
 What this says about the earlier sessions: nine sessions of tests, replay counts and byte measurements, and no one had run the one external check that decides whether the output is usable at all. The rule taken from this: when a format has a published validator, run it before anything else.
+
+## 21. Nine hundred requests nobody in this project wrote
+
+§18 ended by asking for a file of sentences the library did not write and the count of them that land. On 2026-10-17 that file was made at scale, for the anthropics/skills cards in a tree of 24, and the counting was done by a model reading the tree, not by `replay`. Everything is in `experiments/2026-10-anthropic-skills/` at the repository root: scripts, the 962 labeled requests, each round's cards, results and logs.
+
+Forty writers in thirty roles and six styles, half of them Chinese, wrote 976 requests without seeing skill names. Three labelers read the authors' own descriptions and said which skills each request needs; 962 requests had at least two labelers agreeing. 476 were used for tuning and 486 held back.
+
+What the numbers said, and what each changed:
+
+- **Tree routing by a model rose from 70.6% to 80.0% of the held-out requests** (exact set), after two rounds in which one agent per skill read its misses and proposed a new description. The first round's gain came with 15 of 69 example sentences failing `replay`. The cause was the sentences, not the descriptions: a parent's positive example that named only one child, a negative example that still held its own skill's cover word, a child's sentence without the child's words. One small agent per failure, with only the cards involved and every proposal checked by `replay` before it was kept, repaired 14 of 15. `organizer/README.md` now says to fix the sentence first.
+- **The same descriptions read as one flat list did better, 81.9% against 79 to 80%.** The difference is almost all requests that need two skills. A reader of the tree picks one branch per level; a reader of a list of 24 sees everything and can take two. At 24 skills the tree buys no accuracy, and the README now says so. Its case is the size of what is read when a library cannot be listed whole, which this experiment did not reach.
+- **Word matching reached the exact set for 46%**, 42% in Chinese. Synonyms raised it a little and then began sending requests to the wrong skill; the second round added nothing. `route` checks that the tree's own decisions still hold. It does not predict an agent.
+- **Generated synonym groups were attached to words no skill listed.** `training, 培训` and `email, 邮件` folded to nothing. `lint` now hints at such a group.
+- **Rule 1 was rewritten twice and kept.** "Go down every line that matches" gained requests that need two skills and lost more that need one; a more careful wording broke even. The present wording stays. A library whose owner minds a missing skill more than an extra one may prefer the careful wording; the experiment's README has both.
+
+What remains wrong is mostly one skill: `discernment-nudge`, about how to give advice, which applies alongside almost any task. In 25 of its 29 misses the tree had loaded every other skill the label wanted. A skill that cuts across the tree does not sit well in one branch, and no rule here handles it yet.

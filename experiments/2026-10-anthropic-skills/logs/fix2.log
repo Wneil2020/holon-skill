@@ -1,0 +1,18 @@
+start 54 69
+round 0 proposals 31 improving 28
+  accept Moved the single-child PDF trigger from office-docs to pdf, and replaced it with a cross-format parent trigger that span -> 56
+  accept Rewrote mcp-builder's ambiguous trigger to use 'MCP server' and avoid the claude-api cover word 'Claude'. Rewrote claude -> 58
+  accept Added 'typography, color palette' to webapp-testing excludes so the design-oriented negative trigger is blocked from mat -> 59
+  accept Rewrote the second positive trigger for web/frontend-design to use its cover words ('visual style', 'distinct', 'templat -> 60
+  accept The failing positive trigger did not contain the skill's cover word 'gif'. Rewrote it as a natural Chinese Slack GIF req -> 61
+  accept The first xlsx positive trigger had no cover word from office-docs or xlsx, so it was stopped at the ancestor and never  -> 62
+  accept The pptx positive trigger included 'brand colors', which matched brand-guidelines at the root and blocked descent to off -> 63
+  accept Added 'routing table' to web's excludes so the editing trigger about routing tables is blocked at the root, resolving th -> 64
+  accept Rewrote the failing Chinese positive trigger to use existing synonyms '共同撰写' (co-author) and '技术规范' (technical spec), so -> 65
+round 1 proposals 9 improving 6
+  accept The negative trigger for pdf contained 'PDF', which is a cover word, causing a negative hit. Removing 'and PDF' makes it -> 66
+  accept The failing sentence is a skill-tree editing request, but office-docs was matching via the 'office' substring in its pat -> 67
+  accept Added 'organization' to claude-api excludes so the org-rollout learning question is blocked from the API reference and r -> 68
+round 2 proposals 0 improving 0
+final 68 69 0 0
+[FAIL negative hit] web/webapp-testing: "choose typography and a color palette for a new landing page" -- this skill is one of the ambiguity candidates (or their ancestor)

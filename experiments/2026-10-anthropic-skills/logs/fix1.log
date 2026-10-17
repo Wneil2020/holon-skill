@@ -1,0 +1,19 @@
+start 54 69 0 0
+iter 0 no improvement []
+iter 1 no improvement []
+final 54 69 0 0
+[FAIL ambiguous] academy-guide: "How do I get started with Claude for my organization?" is taken by 2 top-level skills at once [academy-guide, claude-api] -> suspected duplicate, or a missing 'excludes'
+[FAIL ambiguous] claude-api: "connect our internal asset library to Claude with a small Python MCP server" is taken by 2 top-level skills at once [claude-api, mcp-builder] -> suspected duplicate, or a missing 'excludes'
+[FAIL not reached] doc-coauthoring: "帮我一起写一份技术方案，先对一下大纲、读者和边界，再逐节填充。" lands on root (nobody took it) (this skill did not take it: the sentence contains none of its cover words co-author,technical spec,decision doc)
+[FAIL ambiguous] editing: "create a sub-skill under office-docs and sync the parent routing table" is taken by 3 top-level skills at once [editing, office-docs, web] -> suspected duplicate, or a missing 'excludes'
+[FAIL ambiguous] editing: "validate the tree, the routing table looks stale" is taken by 2 top-level skills at once [editing, web] -> suspected duplicate, or a missing 'excludes'
+[FAIL ambiguous] mcp-builder: "expose our internal product catalog to Claude as a small server with a few well-designed tools" is taken by 2 top-level skills at once [claude-api, mcp-builder] -> suspected duplicate, or a missing 'excludes'
+[FAIL not reached] office-docs: "convert the Word report to a PDF" lands on office-docs/pdf (only child office-docs/pdf took this sentence, so routing descended into it -> a parent's positive example must contain cover words of two or more children; this one only has office-docs/pdf's -- if the child is new, this sentence is now its job: move it to the child's triggers and give the parent one that spans two children)
+[FAIL ambiguous] office-docs/pdf: "做张招聘海报，最后要导出成能直接送印的PDF" is taken by 2 top-level skills at once [canvas-design, office-docs] -> suspected duplicate, or a missing 'excludes'
+[FAIL negative hit] office-docs/pdf: "Design an A2 poster and export it as PNG and PDF" -- this skill is one of the ambiguity candidates (or their ancestor)
+[FAIL not reached] office-docs/pptx: "Add speaker notes to these slides and restyle the deck with our brand colors." lands on brand-guidelines
+[FAIL not reached] office-docs/xlsx: "帮我核对模型计费口径，把 API 成本测算表按最新信息更新一下" lands on root (nobody took it) (the sentence was stopped at ancestor office-docs: it contains none of office-docs's cover words office,cross-format,multi-format and none of the cover words below it, so none of this skill's either -- write the sentence with one of this skill's words, or fold its wording to one in synonyms.md)
+[FAIL not reached] slack-gif-creator: "帮我生成一个动图，表现学生点头理解的表情，用在 Slack 上回复消息。" lands on root (nobody took it) (this skill did not take it: the sentence contains none of its cover words gif,emoji)
+[FAIL not reached] web: "pick the typography, then screenshot the page in the browser" lands on web/webapp-testing (only child web/webapp-testing took this sentence, so routing descended into it -> a parent's positive example must contain cover words of two or more children; this one only has web/webapp-testing's -- if the child is new, this sentence is now its job: move it to the child's triggers and give the parent one that spans two children)
+[FAIL not reached] web/frontend-design: "build me a kanban board with drag and drop and filter by tag, I will use it for my assignments" lands on web/web-artifacts-builder
+[FAIL negative hit] web/webapp-testing: "choose typography and a color palette for a new landing page" -- this skill is one of the ambiguity candidates (or their ancestor)

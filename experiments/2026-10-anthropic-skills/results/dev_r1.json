@@ -1,0 +1,8955 @@
+[
+ {
+  "id": 2,
+  "kind": "single",
+  "label": [
+   "docx"
+  ],
+  "request": "turn this exported gdoc into a proper word doc with headings and a toc",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 3,
+  "kind": "single",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "make me some generative art, flow field kind of thing, seeded so i can rerun the same output",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 4,
+  "kind": "single",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "particle system art for the hero on our about page, p5.js",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 5,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "our landing page looks like every other saas template, help me make it actually feel distinct",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 6,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "redesign the pricing page, the typography reads super default right now",
+  "tree": [
+   "frontend-design",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "theme-factory",
+   "web/frontend-design"
+  ],
+  "tree_files": 4,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 8,
+  "kind": "single",
+  "label": [
+   "theme-factory"
+  ],
+  "request": "make a custom theme for our brand so i can reuse it on docs and slides",
+  "tree": [
+   "brand-guidelines",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "theme-factory"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 9,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "i keep asking you to format our weekly metrics the same way, can you make that reusable",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 16,
+  "kind": "single",
+  "label": [
+   "pptx"
+  ],
+  "request": "build me something reusable that makes our monthly metrics deck, same structure every time",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 18,
+  "kind": "none",
+  "label": [],
+  "request": "add a burn multiple column to the google sheet, formula pls",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 19,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "draft a cold email to 15 design partners, short, no fluff",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 23,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "quick q - safe vs convertible note, which is better for a pre-seed",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 28,
+  "kind": "single",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "Our landing page has slowly drifted away from the visual standards we agreed on last year, and I'm worried it now reads as off-brand to prospects. Could you review the colors and the fonts currently in use and tell me what would need to change to bring it back in line with our published guidelines?",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 30,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "The dashboard our customers see first is functional but visually flat, and I suspect it's costing us in demos. Could you suggest a stronger aesthetic direction — type choices, density, use of color — that would make it feel considered without hurting legibility?",
+  "tree": [
+   "frontend-design",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 4,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 31,
+  "kind": "single",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "We're hosting an internal showcase for our AI work next month, and I'd like a striking poster we can print at A2 for the lobby and also hand around as a PDF. Could you design something original for it? The theme is roughly 'building with models' and I'm happy to give you more detail if that helps.",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 36,
+  "kind": "single",
+  "label": [
+   "pptx"
+  ],
+  "request": "Someone sent me a presentation from a partner and I only need the words, not the file itself. Could you pull all the text out of it, including whatever is tucked away in the notes beneath the slides, and give it back to me in a form I can paste into a summary?",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 38,
+  "kind": "multi",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "We're presenting at a partner summit in six weeks and I'd like the deck to feel genuinely ours — the colors and typefaces should match what our marketing team publishes, and it should arrive as a finished presentation file with notes I can rehearse from. Could you take that on, working from the outline and the brand notes I'll send over?",
+  "tree": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 39,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "docx",
+   "pdf"
+  ],
+  "request": "Our written design standards currently live as a slightly embarrassing PDF, and I'd like to move them into a proper Word document that itself follows the standards it describes. Could you produce that, applying our approved palette and typefaces throughout and giving it a clean, navigable structure?",
+  "tree": [
+   "brand-guidelines",
+   "docx",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "office-docs",
+   "office-docs/docx",
+   "office-docs/pdf"
+  ],
+  "tree_files": 5,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 40,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "discernment-nudge",
+   "docx",
+   "internal-comms"
+  ],
+  "request": "I need to give our leadership team a short written memo explaining which Claude models we're considering for the assistant rebuild, what each would cost at our expected volume, and where the trade-offs sit. Could you draft it as a Word document, pitched for a non-technical audience and no longer than three pages?",
+  "tree": [
+   "discernment-nudge",
+   "docx",
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge",
+   "internal-comms",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 5,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 41,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "request": "We're starting work on a new customer-facing dashboard and I want a strong, intentional visual direction rather than the usual default look — but it also has to sit comfortably within the visual standards our company publishes. Could you advise on both, and tell me where the two pull against each other?",
+  "tree": [
+   "brand-guidelines",
+   "frontend-design",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "theme-factory",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 5,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 46,
+  "kind": "none",
+  "label": [],
+  "request": "We're prototyping something with OpenAI's API and I'm trying to understand how their function calling works in practice — what the request looks like, what comes back, and where it tends to trip people up. Could you walk me through it?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 47,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "Our competitive landscape lives in a Notion database and it's a mess of half-filled properties. What's a sensible way to structure it so people actually keep it up to date, and so I can filter it by segment and by threat level?",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 49,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "帮我用 p5.js 写个生成艺术，随机种子要固定、能复现，参数能实时拖着调的那种流场效果",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 51,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "我们内部那个管理后台页面，配色和字体按公司规范统一一下吧，现在看着太杂了",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 52,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "这个 dashboard 的视觉按品牌规范走一遍，色板和字体都换成官方那套",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 55,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "这份扫描的合同 PDF 帮我做下文字识别，之后要能全文搜索",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 56,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "手上有三个 PDF，帮我合并成一个，顺便每页加个「内部资料」的水印",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 57,
+  "kind": "zh",
+  "label": [],
+  "request": "我想做个新东西，用来检查我们接口的命名符不符合规范，帮我从零搭起来",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 60,
+  "kind": "zh",
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "request": "想做个复杂点的交互式页面 artifact，能切好几个视图、状态还得存住",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 62,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "request": "再来一版生成艺术，这回用公司的品牌色，我要放官网首屏当背景",
+  "tree": [
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 63,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "帮我做个内部数据看板的 artifact，React 加 shadcn 那套，视觉风格按公司品牌规范来",
+  "tree": [
+   "brand-guidelines",
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "web",
+   "web/web-artifacts-builder",
+   "web/frontend-design"
+  ],
+  "tree_files": 5,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 65,
+  "kind": "zh",
+  "label": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "request": "把登录页的视觉重新设计一版，改完你用浏览器跑一遍确认流程没坏",
+  "tree": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design",
+   "web/webapp-testing"
+  ],
+  "tree_files": 4,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 66,
+  "kind": "zh",
+  "label": [
+   "claude-api",
+   "pdf"
+  ],
+  "request": "我想做个东西，能自动读我们那份 PDF 规范文档，然后照着它检查代码",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 67,
+  "kind": "zh",
+  "label": [],
+  "request": "线上报了个空指针，堆栈我贴下面了，帮我看看是哪的问题",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 68,
+  "kind": "zh",
+  "label": [],
+  "request": "Postgres 里 JSONB 字段建 GIN 索引有啥坑没？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 70,
+  "kind": "zh",
+  "label": [],
+  "request": "Google Sheets 里想按 A 列去重再统计出现次数，公式咋写？",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 71,
+  "kind": "zh",
+  "label": [],
+  "request": "OpenAI 那套 function calling 的参数格式帮我理一下，我要跟我们的对齐",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 73,
+  "kind": "zh",
+  "label": [],
+  "request": "我那段 p5.js 代码报错跑不起来，帮我看看哪儿写错了",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 74,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "帮我把这份前端架构方案整理成 Word 文档，要有目录、页码、页眉放公司 logo，标题层级别乱。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 75,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "这个 .docx 里的表格帮我全部提出来重新排一版，再加一列负责人和状态。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 76,
+  "kind": "zh",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "localhost:3000 的注册流程刚改完，帮我用 Playwright 跑一遍，每个 step 截个图，有报错把 console log 也贴出来。",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 77,
+  "kind": "zh",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "我的 React app 里那个 drawer 在移动端点了没反应，帮我起个浏览器看下 DOM 和 console，定位一下问题。",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 78,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "我们现在用的是 claude-sonnet-4-5，想升到最新的，帮我对比下 model id、价格和 context window 的差别。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 79,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "prompt caching 具体怎么开？想把 system prompt 和 few-shot 缓存起来省 token，给我个 TypeScript 的示例。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 81,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "这份扫描版的设计规范 PDF 帮我 OCR 一下，我要能全文搜索的那种。",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 84,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "写一封给全组的周报，讲讲这周前端这边的进展、阻塞和下周计划。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "web",
+  "lex": []
+ },
+ {
+  "id": 85,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "昨天那个 P1 线上事故，帮我写个内部复盘通报，语气客观一点别甩锅。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "internal-comms",
+  "lex": [
+   "internal-comms"
+  ]
+ },
+ {
+  "id": 89,
+  "kind": "zh",
+  "label": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "request": "新做的 dashboard 页面帮我跑一遍浏览器截图，顺便看看视觉上是不是太像模板了，想改得有点辨识度。",
+  "tree": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design",
+   "web/webapp-testing"
+  ],
+  "tree_files": 4,
+  "lex_land": "web",
+  "lex": []
+ },
+ {
+  "id": 90,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "request": "把这份 PDF 白皮书转成 Word，原来的表格和标题层级要保留。",
+  "tree": [
+   "docx",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 92,
+  "kind": "zh",
+  "label": [],
+  "request": "我这段 useEffect 无限循环了，帮我看看是哪里出的问题。",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "web"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 94,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "帮我回一下设计同学的邮件，就说这个交互下个 sprint 再排。",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 95,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我把这个 Google Sheet 里的 VLOOKUP 改成 XLOOKUP，顺便看下有没有循环引用。",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 98,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我写个 Node 脚本，把 downloads 文件夹里所有 CSV 合并成一个，表头要对齐。",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 99,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "请把附件里第三季度经营分析的内容整理成一份正式的 Word 文档，需要有封面、目录、章节标题层级和页脚页码。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 100,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "这份 Word 版的服务协议模板，帮我把正文中所有「甲方」统一替换为「数据服务部」，并在末尾新增一节数据保密条款。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 102,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "帮我写一份本周数据团队的周报，发给部门负责人，重点说明核心指标波动、已完成事项和下周计划。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 103,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "上周数据管道中断了两个多小时，需要写一份事故复盘说明，包含影响范围、时间线、根本原因和整改措施。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 104,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "起草一份面向全公司的内部通知，说明新的数据取数流程自下月起执行，语气正式但不生硬。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "internal-comms",
+  "lex": [
+   "internal-comms"
+  ]
+ },
+ {
+  "id": 105,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "做一张用于内部分享会的海报，主题是「数据素养月」，竖版 A3，风格简洁现代。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 108,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "附件里这两套幻灯片内容有重叠，帮我合并成一套，去掉重复页面并统一页码。",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 114,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "xlsx"
+  ],
+  "request": "先把附件里的原始数据整理成规范的表格并算出关键指标，再据此写一份 Word 版的分析报告。",
+  "tree": [
+   "docx",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 117,
+  "kind": "zh",
+  "label": [],
+  "request": "我这段 Python 脚本跑起来报 KeyError，帮我看看是哪一步取字段出了问题。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 118,
+  "kind": "zh",
+  "label": [],
+  "request": "Google Sheets 里想跨工作表按条件求和，公式应该怎么写？",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 119,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "帮我拟一封邮件给外部供应商，说明本月对账数据有两处差异，需要他们本周内确认。",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 120,
+  "kind": "zh",
+  "label": [],
+  "request": "调用 OpenAI 的接口时返回 429，一般是什么原因，重试策略怎么写比较稳妥？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 121,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我写一条 SQL，按地区和月份汇总销售额，并筛出同比增长超过 10% 的行。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 122,
+  "kind": "zh",
+  "label": [],
+  "request": "我们内部的 BI 平台连不上数据仓库，报连接超时，排查的话应该先看哪几个地方？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 125,
+  "kind": "single",
+  "label": [
+   "pdf"
+  ],
+  "request": "I have 8 bank statement files in PDF, can you merge them into one file and put a small 'DRAFT - not for audit' text on every page?",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 130,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "I want to redo the design of our internal reporting page. Can you guide me on aesthetic choices so it feels like a real product and not a generic admin panel?",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 131,
+  "kind": "single",
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "request": "Can you make an interactive budget scenario tool as an artifact, with tabs for each cost centre, state that keeps the numbers, and routing between the views?",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/web-artifacts-builder",
+  "lex": [
+   "web-artifacts-builder"
+  ]
+ },
+ {
+  "id": 133,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "I am new to Claude. How do I get started for a finance team, is there any course or tutorial I can follow?",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 135,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "I want to create a reusable helper for our monthly variance commentary, so the whole team writes in the same style. Can you help me to build it?",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 137,
+  "kind": "single",
+  "label": [
+   "docx"
+  ],
+  "request": "Please write the audit committee report as a Word document, with headings, a summary table and a footer with page numbers.",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 139,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "Build a complex interactive dashboard artifact for our quarterly review, and please give it a distinctive visual style, not the default look.",
+  "tree": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 4,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 141,
+  "kind": "multi",
+  "label": [
+   "academy-guide",
+   "docx"
+  ],
+  "request": "We roll out Claude to 40 people in finance next month. Can you make a Word onboarding guide with exercises, and also recommend courses from the learning hub?",
+  "tree": [
+   "academy-guide",
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 142,
+  "kind": "none",
+  "label": [],
+  "request": "In Google Sheets my VLOOKUP returns a wrong value when the ID has leading zeros, how to fix this?",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 146,
+  "kind": "none",
+  "label": [],
+  "request": "In Google Docs the table of contents does not update when I add a new heading, is there a way to refresh it?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 147,
+  "kind": "none",
+  "label": [],
+  "request": "Please explain me the difference between a provision and an accrual under IFRS, in simple words for my team training.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 150,
+  "kind": "single",
+  "label": [
+   "xlsx"
+  ],
+  "request": "clean this onboarding checklist sheet up, dupes everywhere and the headers are merged weird",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 152,
+  "kind": "multi",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "put a theme on the new hire deck, something warm, not corporate blue",
+  "tree": [
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory"
+  ],
+  "tree_files": 2,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 154,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "mock up a careers page for our eng roles, i want it to not look like every other startup",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 156,
+  "kind": "multi",
+  "label": [
+   "academy-guide",
+   "internal-comms"
+  ],
+  "request": "how do i get my team started with claude? want something i can send them monday",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 157,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "is there a course for new hires on using claude for writing? id assign it as prework",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 158,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "teach me how to set up projects for the recruiting team",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 159,
+  "kind": "single",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "make a gif for #hr-announcements for our 50th hire this year",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 161,
+  "kind": "multi",
+  "label": [
+   "theme-factory",
+   "xlsx"
+  ],
+  "request": "build the spreadsheet from the engagement survey results and then turn the summary into a themed one-pager for the execs",
+  "tree": [
+   "theme-factory",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "theme-factory",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 162,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "request": "redo the careers page so it actually looks like us — our colors, our type",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 163,
+  "kind": "multi",
+  "label": [
+   "pptx",
+   "xlsx"
+  ],
+  "request": "pull the headcount numbers out of this deck into a sheet i can filter",
+  "tree": [
+   "pptx",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 164,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "slack-gif-creator"
+  ],
+  "request": "gif for slack using our brand colors, for wellness week",
+  "tree": [
+   "brand-guidelines",
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 166,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "write a gentle rejection email for a candidate we liked but couldnt hire",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 168,
+  "kind": "none",
+  "label": [],
+  "request": "how do i merge two google docs and keep the comments intact",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 169,
+  "kind": "none",
+  "label": [],
+  "request": "quick q — holiday schedule going out on slack or email this yr?",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 174,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "discernment-nudge"
+  ],
+  "request": "We are thinking about wiring our marketing copy generator into Claude, and I need help understanding which model would be the most sensible and cost-effective choice for short-form social posts, along with what the current per-token pricing looks like and whether caching would actually help us here.",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 176,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "I would love to connect our internal campaign asset library to an AI assistant so that people can search for and pull approved logos and imagery. Could you help me build a small service that lets the assistant look things up and fetch individual assets?",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 180,
+  "kind": "multi",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "Could you take the deck you helped me draft and apply a consistent visual treatment across the whole thing? I am after a warm, editorial feel with serif headings, and I am happy for you to pick from your existing set or create something new.",
+  "tree": [
+   "pptx",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 183,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "I built a small helper for writing press releases a while back, but it does not seem to trigger reliably when I need it. Would you review it and suggest improvements, and maybe set up a few test cases so we can check whether the changes actually help?",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 187,
+  "kind": "multi",
+  "label": [
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "request": "Could you create a generative art piece for our annual report cover, something algorithmic and repeatable, and then make sure the colors and type sit comfortably alongside our brand identity?",
+  "tree": [
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 189,
+  "kind": "multi",
+  "label": [
+   "academy-guide",
+   "doc-coauthoring",
+   "skill-creator"
+  ],
+  "request": "I want to write up a proper guide for the team on how to use the assistant for campaign work, and I would also like to package the recurring parts into something reusable. Could you help with both the write-up and the packaging?",
+  "tree": [
+   "academy-guide",
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide",
+   "skill-creator"
+  ],
+  "tree_files": 3,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 190,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "There is a small bug in our landing page signup form where the validation message does not clear after someone fixes their email address. Could you take a look and tell me what is going wrong?",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 193,
+  "kind": "none",
+  "label": [],
+  "request": "We are experimenting with OpenAI's API for a quick prototype and I keep hitting a rate limit error I do not really understand. Any idea what is happening and how I should think about it?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 197,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "帮我把这季度做的几个项目整理成一份提案 deck，大概 15 页，要有封面、目录和最后放联系方式的收尾页。",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 198,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "客户发来的这个 pptx 我想改一下，把第 3 页到第 6 页的顺序调一调，顺便把讲者备注也一起更新下。",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 205,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "帮我做一张线下活动的海报，A2 竖版，主题是“城市与光”，风格我想偏冷静一点，别太花。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 211,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "request": "客户把修改意见写在 pdf 里了，帮我转成一份 word，我好在上面直接改。",
+  "tree": [
+   "docx",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 212,
+  "kind": "zh",
+  "label": [
+   "pdf",
+   "pptx"
+  ],
+  "request": "这份 pdf 调研报告帮我做成一份 deck，里面的图表能重画就重画，别直接截图贴上去。",
+  "tree": [
+   "pdf",
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 215,
+  "kind": "zh",
+  "label": [],
+  "request": "我这段 JS 报 undefined，明明前面已经赋值了，帮我看看是哪儿出的问题。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 220,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我改下 package.json 里的 build 脚本，现在每次都得手动删 dist 再跑，太麻烦了。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 222,
+  "kind": "zh",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "帮我生成一个动图，表现学生点头理解的表情，用在 Slack 上回复消息。",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 223,
+  "kind": "zh",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "我想要一个 GIF，显示‘加油’两个字闪烁，放在 Slack 频道里鼓励学生。",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 227,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "设计一个在线课程介绍页，要有独特的视觉风格，不要像 Bootstrap 默认模板。",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 228,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "帮我做一个班级项目的 landing page，需要有个性的排版和配色，别太普通。",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "?",
+  "lex": []
+ },
+ {
+  "id": 229,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "我在用 Claude API 做自动出题工具，怎么设置 system prompt 和 temperature 比较合适？",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 230,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "Claude API 的 pricing 是怎么算的？我想估算一下批改 100 份作业的成本。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 232,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "帮我把这个 PPT 的配色改成学校官方品牌指南里的颜色。",
+  "tree": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 233,
+  "kind": "zh",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "我想创建一个新的 skill，用来帮我自动生成随堂练习，怎么设计它的 description？",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 236,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "pptx"
+  ],
+  "request": "根据我写的 Word 教案，自动生成一套 PPT 课件。",
+  "tree": [
+   "docx",
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 237,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "用这个 Excel 里的成绩数据，做一个网页图表展示，要好看。",
+  "tree": [
+   "frontend-design",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "web",
+   "office-docs/xlsx",
+   "web/frontend-design"
+  ],
+  "tree_files": 5,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 242,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "OpenAI 的 API 和 Claude API 有什么区别？",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 244,
+  "kind": "zh",
+  "label": [],
+  "request": "这个 JavaScript 报错 `Uncaught TypeError: Cannot read property 'map' of undefined` 怎么解决？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 245,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我查一下明天北京的天气，我要决定体育课是否在户外上。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 248,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "请用 p5.js 生成一幅基于噪声场的生成艺术作品，画面要能通过参数调整密度和流动方向，并固定随机种子以便复现。",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 249,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "帮我做一个粒子系统的动态视觉作品，用于课题组年度展示，希望可以调节粒子数量与引力强度。",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 250,
+  "kind": "zh",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "我想为组会纪要建立一个可复用的处理流程，请帮我从零创建一个新的能力模块，并写好它的触发条件。",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 251,
+  "kind": "zh",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "之前建的那个能力模块经常在该触发的时候没反应，请帮我优化它的说明文字，并设计一组测试来评估效果。",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 255,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "请写一封面向全组的内部通知，说明下周实验室仪器维护期间的安排和注意事项。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "internal-comms",
+  "lex": [
+   "internal-comms"
+  ]
+ },
+ {
+  "id": 258,
+  "kind": "zh",
+  "label": [
+   "xlsx"
+  ],
+  "request": "请在这份 Excel 里补充计算列和公式，并做一个按月份汇总的数据透视表。",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 259,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "请生成一幅流场风格的生成艺术图，输出为高分辨率图片，我要用作论文封面的背景。",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 264,
+  "kind": "zh",
+  "label": [],
+  "request": "我的 Python 脚本在 pandas 做 merge 时报了 KeyError，帮我看看问题出在哪里。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 266,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "帮我写一封邮件给期刊编辑，礼貌地询问稿件当前的审稿进度。",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 267,
+  "kind": "zh",
+  "label": [],
+  "request": "我在 Google Sheets 里设置的共享权限，合作者打不开，可能是什么原因？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 269,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我把这段实验流程用 mermaid 画成流程图，我贴到文档里。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 270,
+  "kind": "zh",
+  "label": [],
+  "request": "我的 LaTeX 参考文献格式一直报错，帮我看看 bib 文件哪里写错了。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 272,
+  "kind": "single",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "I need gif for slack when sprint is finish, confetti and maybe dancing banana, keep it small size please.",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 273,
+  "kind": "single",
+  "label": [
+   "xlsx"
+  ],
+  "request": "Can you clean this csv in my downloads folder, it have messy rows and headers in wrong place, I want proper spreadsheet file back with nice formatting.",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 276,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "Please test the signup page on my local dev server localhost:5173, take screenshot when it break, I need see the error.",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 278,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "Build me a kanban board with drag and drop and filter by tag, I will use it for my assignments.",
+  "tree": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 4,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 281,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "I want create a reusable skill for our team so the agent always format weekly report in same structure, can you help me build from zero?",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 285,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "I want build a dashboard but first help me choose visual style so it not look generic, then build it.",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 290,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "Write email to my professor asking for extension on assignment deadline, polite and short.",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 299,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "redesign the login page for our case management tool, make it feel less templated",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 300,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "build an interactive web app to compare clauses accross multiple contracts",
+  "tree": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 4,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 303,
+  "kind": "single",
+  "label": [
+   "pdf"
+  ],
+  "request": "merge these three pdfs into one",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 305,
+  "kind": "single",
+  "label": [
+   "pdf"
+  ],
+  "request": "add a confidential watermark to this pdf",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 306,
+  "kind": "single",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "make this memo follow our brand colors and fonts",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 308,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "request": "co-author a client proposal for the merger, need structure",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 310,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "build a web app for our legal intake form and make it match our brand colors",
+  "tree": [
+   "brand-guidelines",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "brand-guidelines",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 4,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 315,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "draft an email to opposing counsel asking for a two-week extension",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 316,
+  "kind": "none",
+  "label": [],
+  "request": "add a new column to this google sheet with case numbers",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 319,
+  "kind": "none",
+  "label": [],
+  "request": "can you explain the difference between an llc and a corporation?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 320,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "帮我做张海报呗，下个月客服感恩周要用，A3竖版，能直接打印那种",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 325,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "这份合同PDF里的条款帮我抠成表格，我要贴到别的文档里用",
+  "tree": [
+   "docx",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx",
+   "office-docs/pdf"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 327,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "做个内部工单看板的页面，能按状态和优先级筛选，数据先用假的",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 328,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "想弄个客户满意度计算器，网页上能点的那种，界面别太丑就行",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 334,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "request": "把这份PDF版的质检标准转成能编辑的Word，格式尽量别乱",
+  "tree": [
+   "docx",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 335,
+  "kind": "zh",
+  "label": [
+   "canvas-design",
+   "pdf"
+  ],
+  "request": "做张招聘海报，最后要导出成能直接送印的PDF",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 336,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "帮我搭个内部小工具页面，先把整体风格定下来再做，别一眼AI味",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 337,
+  "kind": "zh",
+  "label": [
+   "academy-guide",
+   "claude-api"
+  ],
+  "request": "想给团队做Claude API的上手培训，技术细节要讲清楚，最好再配点课程",
+  "tree": [
+   "academy-guide",
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide",
+   "claude-api"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 338,
+  "kind": "zh",
+  "label": [],
+  "request": "我这段Python脚本报错了，帮我看看是哪儿的问题",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 341,
+  "kind": "zh",
+  "label": [],
+  "request": "我们用的是Zendesk，它的API怎么拉工单列表？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 342,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我把这段文字放进Google Docs排一下版",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 344,
+  "kind": "zh",
+  "label": [],
+  "request": "把上周的客诉数据帮我贴成一段文字，我要发到群里",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 345,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "帮我 co-author 一份新的 on-call runbook，覆盖 P0 incident 的 escalation 和 rollback 流程，先别写正文，我们对一下大纲、读者和边界",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 348,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "帮我起草一份 SLO 规范文档，分阶段来，每写完一节让我确认再往下走",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 350,
+  "kind": "zh",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "团队想推一波 AI 工具的使用，有没有适合的学习路径或者培训内容可以给大家？",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 355,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "用 p5.js 生成一组 flow field 的抽象图，seed 固定，冷色系，想拿来当团队分享会的封面",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 356,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "帮我做一组 particle system 的生成图，参数可以实时调，我想 explore 一下不同 density 的效果",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 357,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "帮我把这份文档的视觉统一一下，用我们的品牌色和字体规范，别看着像默认模板",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 364,
+  "kind": "zh",
+  "label": [],
+  "request": "问个概念问题：etcd 的 compaction 和 defrag 到底啥区别，什么时候该手动跑",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 365,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "帮我写封邮件给供应商，催一下 license 续费的 quote，语气客气但别太软",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 367,
+  "kind": "zh",
+  "label": [],
+  "request": "用 Datadog 的 API 拉一下最近一小时的 error rate，按 service 分组，写成个小脚本",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 368,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我把这个 Google Docs 里的会议记录整理成一份纪要，重点标出来，别改我的原话",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 370,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "帮我把这份40页的发行合同PDF里的分成条款和终止条款提取出来，整理成中文要点清单。",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 371,
+  "kind": "zh",
+  "label": [],
+  "request": "我这段Unity的协程在切换场景之后会报空引用，麻烦帮我分析一下可能的原因。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 372,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "为我们的新作《雾港回声》设计一张A2尺寸的宣传海报，冷色调、极简风格，需要同时输出PDF和PNG。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 374,
+  "kind": "zh",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "本地跑起来的存档管理页面，点“导出存档”后控制台报错，帮我用浏览器复现一下，并抓取日志和截图。",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 375,
+  "kind": "zh",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "给下周发行商路演的演示文稿统一套一套视觉主题，配色偏深蓝配琥珀，字体要有科技感。",
+  "tree": [
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory"
+  ],
+  "tree_files": 2,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 376,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "request": "我想写一份《战斗数值系统技术设计文档》，先帮我把大纲和待确认问题列出来，再逐节填充。",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 378,
+  "kind": "zh",
+  "label": [],
+  "request": "我们Google Sheets里的玩家反馈汇总表，怎么设置条件格式让高优先级条目自动标红？",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 379,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "这几份扫描版的美术外包发票都是图片型PDF，请做OCR识别后合并成一个可搜索文件，再按月份拆分。",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 381,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "起草一份面向发行商的项目周报，包含里程碑完成情况、风险项和需要的支持。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 383,
+  "kind": "zh",
+  "label": [
+   "canvas-design",
+   "theme-factory"
+  ],
+  "request": "为下个月的展会做一张展位主视觉：先按我们的品牌色生成一套主题，再据此完成海报设计。",
+  "tree": [
+   "brand-guidelines",
+   "canvas-design",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "theme-factory",
+   "canvas-design"
+  ],
+  "tree_files": 4,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 385,
+  "kind": "zh",
+  "label": [],
+  "request": "把AssetBundle的打包脚本改成支持增量构建，用Python写。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 388,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "帮我写一封邮件回复外包美术团队，说明本次交付未达标准，要求返工。",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 389,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "把这份20页的策划案PDF拆成单页，给第5页加“草稿”水印，再重新合并。",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 390,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "我们要给外包团队写一份美术资产交付规范，帮我一起把结构理顺并逐节完善。",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 391,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我看看这段C#代码有没有性能问题，顺便逐行解释一下逻辑。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 393,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "这份HTML版的玩家常见问题页面需要统一视觉主题，颜色和排版要跟品牌手册一致。",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 394,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "帮我把这份会议纪要压缩成三句话，我贴到群里同步一下。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 397,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "I want to create a new skill for our onboarding checklist process. Can you help me write it from zero, with clear instructions and a good description so it triggers in the right moments?",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 398,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "Our existing skill for meeting notes is not triggering when it should. Can you improve the description and also run some tests to compare the performance before and after?",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 401,
+  "kind": "single",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "Draft an FAQ for the team about the new hybrid work policy. Around 10 questions, tone should be calm and clear, not too corporate.",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 402,
+  "kind": "single",
+  "label": [
+   "pdf"
+  ],
+  "request": "I have five PDF invoices. Please merge them into one file and add a page number watermark at the bottom. Also the scanned one — can you make it searchable?",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 403,
+  "kind": "multi",
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "request": "Extract all the tables from this annual report PDF and put them into a spreadsheet, I want to check the numbers myself.",
+  "tree": [
+   "pdf",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 407,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "request": "Please check this deck and tell me if the visual formatting follows our design standards, especially the colors and the typography.",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 408,
+  "kind": "single",
+  "label": [
+   "claude-api"
+  ],
+  "request": "We still use an old model in production. Can you write the migration steps to a newer one, including the parameter changes and what we should watch in the output quality?",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 409,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "request": "Build a small landing page artifact for our internal AI workshop, and please use our brand colors and typography so it matches our other materials.",
+  "tree": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 4,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 411,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "Every month I write the same kind of project update. Can you turn my template and my two past examples into a reusable skill so the agent writes it in our style?",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 412,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "internal-comms"
+  ],
+  "request": "Write the company newsletter for this quarter, and make it follow our brand style guide for the header and the section titles.",
+  "tree": [
+   "brand-guidelines",
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 413,
+  "kind": "none",
+  "label": [],
+  "request": "My pandas merge is giving duplicated rows after joining two dataframes. Can you find the bug? I paste the code below.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 414,
+  "kind": "none",
+  "label": [],
+  "request": "In Google Sheets I need a formula that sums column C only when column A contains a certain word and the date in B is from this month. Can you give me the formula?",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 416,
+  "kind": "none",
+  "label": [],
+  "request": "I have a PNG screenshot of a scanned table. Can you read the numbers from it and give me back as text?",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "web",
+  "lex": []
+ },
+ {
+  "id": 418,
+  "kind": "none",
+  "label": [],
+  "request": "Help me write a SQL query that finds customers who bought in January but not in February, and explain me the join logic.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 419,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "draft a pitch for the water utility series, 200 words, aimed at my editor",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 420,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "i've got 3 weeks and 4k for the ghana trip. sketch a reporting plan",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 422,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "draft a short memo to the ed board on why we should run the foia story before election day",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 424,
+  "kind": "single",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "need a header image for the longread on the floods, 1600x900, moody, no text",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 425,
+  "kind": "single",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "design a square insta graphic for the new podcast ep, minimal, max 2 lines",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 426,
+  "kind": "single",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "make a gif for #newsroom, rubber stamp that says filed, looping",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 432,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "build an interactive artifact of the scandal timeline, tabs by year plus a filter",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 434,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "wrap our claude summariser as a server i can call from chat, use the anthropic sdk",
+  "tree": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder",
+   "claude-api"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 438,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "draft an email to the police press office chasing the incident report",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 439,
+  "kind": "none",
+  "label": [],
+  "request": "add a formula to this google sheet that counts rows per month",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 440,
+  "kind": "none",
+  "label": [],
+  "request": "openai keeps 429ing on my summariser script, what am i doing wrong",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 441,
+  "kind": "none",
+  "label": [],
+  "request": "whats the foia response deadline in illinois",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 442,
+  "kind": "none",
+  "label": [],
+  "request": "my git push got rejected, how do i fix it",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 443,
+  "kind": "none",
+  "label": [],
+  "request": "convert this google doc to markdown for the cms",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 447,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "I'm trying to prototype a small internal tool for tracking project requests. It needs multiple views, a form, and some state management—basically a mini web app. Could you build a complex interactive web application that uses modern frontend technologies like React and Tailwind, with a few pre-styled components? I'd like it to feel like a real application, not just a static page.",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/web-artifacts-builder",
+  "lex": [
+   "web-artifacts-builder"
+  ]
+ },
+ {
+  "id": 448,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "Our team wants a dashboard that shows different metrics and lets users filter and sort. Could you create an elaborate web application with routing between pages, a sidebar, and some data tables? It should be more than a simple page—something with real components and state, and I'd be grateful for your help.",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "web",
+  "lex": []
+ },
+ {
+  "id": 449,
+  "kind": "single",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "I need a beautiful poster for our upcoming wellness week. Could you design a static visual piece—something artistic and original—that I can print as a PDF or PNG? I'd like it to have a calming color palette and elegant typography, and I would be so thankful if you could make it look professional.",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 450,
+  "kind": "single",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "For a retirement party, I'd like a commemorative art print that we can frame. Could you create a design with a nice composition, maybe abstract shapes and a heartfelt quote? Please make it available as a high-resolution image and a PDF, and I'd appreciate your creative touch.",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 452,
+  "kind": "single",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "I have to draft a technical specification for our engineering team. I want to make sure it's well-organized and covers all the necessary details. Would you help me co-author it by asking me questions and then shaping it into a polished document? I'd be very grateful for your patience and expertise.",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 453,
+  "kind": "single",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "There's a decision document I need to prepare for leadership about whether to adopt a new software. Could you walk me through a collaborative writing workflow, from outlining the problem to finalizing the recommendation, so that the final doc is thorough and easy to follow? I'd like to make sure nothing is overlooked.",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 455,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "theme-factory"
+  ],
+  "request": "We're building a landing page for an event, and I want it to have a distinctive look. Could you take the existing content and style it with a theme that includes a specific color palette and typography, either from a set of ready-made options or a new one you create on the fly? I'm open to suggestions if you think a particular theme would work well.",
+  "tree": [
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory"
+  ],
+  "tree_files": 2,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 458,
+  "kind": "multi",
+  "label": [
+   "doc-coauthoring",
+   "theme-factory"
+  ],
+  "request": "I need to write a white paper about our new sustainability initiative, and I want it to look visually polished with a consistent theme. Could you help me co-author the content step by step and then apply a beautiful theme to the final document? I'd love for it to be both well-written and visually appealing.",
+  "tree": [
+   "doc-coauthoring",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring",
+   "theme-factory"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 459,
+  "kind": "multi",
+  "label": [
+   "theme-factory",
+   "web-artifacts-builder"
+  ],
+  "request": "I'd like to build an interactive quiz web app for our training session. It should have multiple screens and state. Also, I want it to have a fun, cohesive theme with specific colors and fonts. Could you handle both the complex build and the theming? I think it would make the training much more engaging.",
+  "tree": [
+   "frontend-design",
+   "theme-factory",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "theme-factory",
+   "web/frontend-design",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 5,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 460,
+  "kind": "multi",
+  "label": [
+   "canvas-design",
+   "theme-factory"
+  ],
+  "request": "I need a series of posters for our internal campaign, and I want them to share a unified visual theme. Could you design the posters and also create a theme that ties them together, so they look like a set? I'd be so grateful for your creative direction.",
+  "tree": [
+   "canvas-design",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design",
+   "theme-factory"
+  ],
+  "tree_files": 3,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 462,
+  "kind": "none",
+  "label": [],
+  "request": "I'm writing a Python script to read a CSV file, but I keep getting a TypeError: 'NoneType' object is not subscriptable. Could you help me figure out what's wrong? I'm using pandas and I'm not sure where to start debugging.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 463,
+  "kind": "none",
+  "label": [],
+  "request": "What's the difference between a list and a tuple in Python? I'm trying to understand when to use each, and I'd appreciate a simple explanation.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 464,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "Could you please draft a polite email to a vendor asking for an extension on a deadline? I want to sound apologetic but professional, and I'd like to maintain a good relationship.",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 465,
+  "kind": "none",
+  "label": [],
+  "request": "I need to create a new Google Sheet and share it with my team with edit permissions. Can you walk me through the steps? I'm not very familiar with the sharing settings.",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 466,
+  "kind": "none",
+  "label": [],
+  "request": "How do I use the SendGrid API to send a transactional email? I'm using Node.js and I have an API key. I'd appreciate a code example if possible.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 470,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "流式输出我这边老是断，正确的写法应该长啥样，给我贴个能跑的示例呗",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 472,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "系统提示词特别长，听说有个缓存的办法能省钱，具体怎么开？",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 473,
+  "kind": "zh",
+  "label": [
+   "claude-api",
+   "discernment-nudge"
+  ],
+  "request": "我们要从老型号换到新的，哪些参数已经不能用了？给我列个对照表",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 476,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "帮我做张实验室开放日的海报，A3 竖版，要能直接打印",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 477,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "想搞一组视觉图，把我们这半年做的几个项目讲清楚，别太正经",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 478,
+  "kind": "zh",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "我想把内部的实验数据接口包一层，让模型能直接查，用 Python 写，工具别设计得太碎",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 481,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "下周要给全组做季度更新，帮我拟个稿子，重点讲进展和踩的坑",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 484,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "request": "招人海报来一张，颜色和字体用公司标准的那套",
+  "tree": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 485,
+  "kind": "zh",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "想搭个服务把我们自己的模型网关封一下，让别的 agent 也能调我们的模型，顺便帮我把调用的参数写对",
+  "tree": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder",
+   "claude-api"
+  ],
+  "tree_files": 3,
+  "lex_land": "mcp-builder",
+  "lex": [
+   "mcp-builder"
+  ]
+ },
+ {
+  "id": 486,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "季度总结我想做成 slides，风格照着公司模板来，内容我口述给你",
+  "tree": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "brand-guidelines",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 487,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我看下这段 Python，跑到一半报 KeyError，我找半天没找到哪出的问题",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 488,
+  "kind": "zh",
+  "label": [],
+  "request": "Google Sheets 里想按条件统计另一张表的条数，是不是用 SUMIFS？",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 490,
+  "kind": "zh",
+  "label": [],
+  "request": "OpenAI 那边 function calling 的参数格式你还记得吗？想跟我们这边的写法对比一下",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 492,
+  "kind": "zh",
+  "label": [],
+  "request": "这篇 arXiv 的方法部分帮我用中文讲一下大概思路",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 496,
+  "kind": "zh",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "我想创建一个新的 skill，用于自动回复社区里常见的新手问题，你能帮我设计吗？",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 498,
+  "kind": "zh",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "帮我做一个社区数据看板，用 React 和 Tailwind，能实时显示成员增长、活跃度等。",
+  "tree": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 4,
+  "lex_land": "web",
+  "lex": []
+ },
+ {
+  "id": 499,
+  "kind": "zh",
+  "label": [],
+  "request": "Slack 的 rate limit 具体是多少？有没有官方文档链接？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 500,
+  "kind": "zh",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "我们社区的活动报名页面在本地跑起来了，能帮我用 Playwright 测试一下注册流程吗？",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 504,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "internal-comms"
+  ],
+  "request": "帮我写一份社区 newsletter，然后导出成 Word 文档。",
+  "tree": [
+   "docx",
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 505,
+  "kind": "zh",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "我们现有的一个 skill 触发不太准，能帮我优化一下它的描述吗？",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 506,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "把这份社区反馈整理成 Word 文档，要有标题、目录和页码。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 508,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "起草一份关于社区规则更新的公告，语气要友好但明确。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 510,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我写一个简单的 HTML 页面，就一个表格显示社区规则。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 512,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "webapp-testing"
+  ],
+  "request": "用 Playwright 测试我们社区活动的注册页面，然后把测试结果整理成一份 Word 报告。",
+  "tree": [
+   "docx",
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "office-docs",
+   "web/webapp-testing",
+   "office-docs/docx"
+  ],
+  "tree_files": 5,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 513,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "帮我编辑这个 .docx 文件，把里面的表格格式调整一下。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 514,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "写一份 incident report，关于昨天 Slack 频道被 spam 攻击的事件。",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 515,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "internal-comms",
+   "skill-creator"
+  ],
+  "request": "帮我设计一个 skill 用来写社区周报，然后实际写一篇看看效果。",
+  "tree": [
+   "internal-comms",
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator",
+   "internal-comms"
+  ],
+  "tree_files": 3,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 516,
+  "kind": "zh",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "创建一个交互式的社区活动日历，支持筛选和报名功能，用 shadcn/ui 组件。",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/web-artifacts-builder",
+  "lex": [
+   "web-artifacts-builder"
+  ]
+ },
+ {
+  "id": 518,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "帮我把 Claude API 各模型的输入、输出计费方式整理成一张对照表，按每百万 token 列出价格。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 519,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "我们现有代码里调用的是较旧的模型，计划统一迁移到最新的 Sonnet，请给出需要改动的参数清单和迁移注意事项。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 520,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "想确认一下：在 Claude API 里做提示词缓存需要满足哪些条件？命中缓存的部分费用怎么计算？",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 525,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "帮我把这份 40 页 PDF 中的测试用例表格抽出来，保持原来的行列对应关系，不要串行。",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 526,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "请把这几份 PDF 合并成一份，并在每页右下角加上“内部资料，请勿外传”的水印。",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 528,
+  "kind": "zh",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "下个月我们准备在公司内部推广 Claude，有没有现成的课程或教程可以按角色推荐给不同同事？",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 533,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "request": "把这份 PDF 格式的需求规格说明书转成可编辑的 Word 文档，保留章节层级和表格结构。",
+  "tree": [
+   "docx",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 534,
+  "kind": "zh",
+  "label": [
+   "academy-guide",
+   "claude-api"
+  ],
+  "request": "我们要给研发团队做一次 Claude API 的内部培训，请先梳理接口能力要点，再推荐配套的学习课程。",
+  "tree": [
+   "academy-guide",
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api",
+   "academy-guide"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 535,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "slack-gif-creator"
+  ],
+  "request": "做一张用于 Slack 发布公告的 GIF，配色和字体要符合公司品牌规范。",
+  "tree": [
+   "brand-guidelines",
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 536,
+  "kind": "zh",
+  "label": [],
+  "request": "我这段 Python 脚本运行时报 KeyError，帮我看看是哪里的问题，顺便给个修好的版本。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 537,
+  "kind": "zh",
+  "label": [],
+  "request": "在压测场景下，HTTP 和 HTTPS 的主要差异是什么？会不会明显影响我们测出来的 QPS？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 542,
+  "kind": "zh",
+  "label": [],
+  "request": "写个 Python 脚本读一下本地那个 CSV，统计每个用例执行结果的分布，直接打印到控制台就行。",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 547,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "How can I get started with Claude for my organization? We are 12 people and most of us never used it. I want to know what training is available.",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 548,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "Some of my colleagues ask me how to use Claude for writing reports. Is there a course or tutorial I can share with them?",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 549,
+  "kind": "single",
+  "label": [
+   "xlsx"
+  ],
+  "request": "I have a spreadsheet with 240 donor names and amounts from last year. Some rows have the same person two times with different spelling. Can you clean it and give me one list?",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 552,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "request": "I want to write a grant proposal for a community health project. Can you help me step by step? I have the project idea but the writing is difficult for me.",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 553,
+  "kind": "single",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "We need a volunteer handbook. It should explain our rules, safety, and how to report problems. Let us work on it together, section by section.",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 554,
+  "kind": "single",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "Can you make a small animated picture for our Slack channel? It is for thanking volunteers after the weekend event. Something with confetti maybe.",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 556,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "doc-coauthoring"
+  ],
+  "request": "Let us write a donor impact report together, and when the text is ready please make it look like our brand, with colors, fonts, and a cover page.",
+  "tree": [
+   "brand-guidelines",
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 560,
+  "kind": "none",
+  "label": [],
+  "request": "My Python script that reads the donor CSV and sends thank you emails is giving an error. Can you help me find the problem? The error says KeyError: 'email'.",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 563,
+  "kind": "none",
+  "label": [],
+  "request": "In Google Sheets, how do I use IMPORTRANGE to pull data from another file? I never used it before.",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 564,
+  "kind": "none",
+  "label": [],
+  "request": "How do I add page numbers in Google Docs? I cannot find the option anywhere.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 565,
+  "kind": "none",
+  "label": [],
+  "request": "We want to connect our Mailchimp account to our website so new subscribers go automatically to a list. Can you explain how the API works?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "mcp-builder",
+  "lex": [
+   "mcp-builder"
+  ]
+ },
+ {
+  "id": 566,
+  "kind": "none",
+  "label": [],
+  "request": "I have a Word document and I need to change it to Google Docs format for our shared drive. What is the easiest way?",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 570,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "request": "help me write a proposal for a small business grant. i need to include our mission and financials.",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 576,
+  "kind": "single",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "can you apply anthropic's brand colors and fonts to this menu i already have?",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 577,
+  "kind": "single",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "i have a flyer draft. can you restyle it to match anthropic's brand guidelines?",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 578,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "my sales dropped 10% last month. what should i look at first?",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 580,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "estimate how much i'd save if i switched to a cheaper POS system.",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 585,
+  "kind": "none",
+  "label": [],
+  "request": "my python script for inventory keeps crashing, can you fix it?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 587,
+  "kind": "none",
+  "label": [],
+  "request": "can you turn this into a polite email: 'where is my order? it's late.'",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 589,
+  "kind": "none",
+  "label": [],
+  "request": "how do i integrate stripe payments into my website?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 590,
+  "kind": "none",
+  "label": [],
+  "request": "can you help me write a blog post for our website?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 591,
+  "kind": "none",
+  "label": [],
+  "request": "what's the difference between arabica and robusta beans?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 592,
+  "kind": "single",
+  "label": [
+   "pptx"
+  ],
+  "request": "Would you mind putting together a slide deck for next week's onboarding session? I'd like roughly fifteen slides covering how our documentation workflow fits together, with a few notes under each one so I can talk around them without rehearsing too much.",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 593,
+  "kind": "single",
+  "label": [
+   "pptx"
+  ],
+  "request": "I've attached the presentation file from our last quarterly review — could you pull all of the text out of it into a plain outline for me? I want to reuse some of the wording in a written summary, so an unformatted list would be ideal.",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 594,
+  "kind": "single",
+  "label": [
+   "pptx"
+  ],
+  "request": "We have two versions of the same presentation floating around and I need them brought together into a single file. Could you combine them, tidy up any duplicated slides, and make sure the remarks people have left on them survive the process?",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 596,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "Our team is rolling Claude out across the documentation group next month and I've been asked to run an introductory session for everyone. Do you know of any ready-made training material I could build that around, rather than writing it all from scratch?",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 601,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "We had a brief outage on the docs site yesterday and my manager has asked for a write-up. Would you help me put together an account of what happened that's honest about the problems without being alarmist?",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 603,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "We want to expose a handful of endpoints from our translation service to an AI assistant. I'd prefer to write it in TypeScript — could you walk me through building it in a way that will hold up in production?",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 608,
+  "kind": "multi",
+  "label": [
+   "academy-guide",
+   "doc-coauthoring"
+  ],
+  "request": "We're putting together a guide for colleagues who are new to using Claude, and I'd like to work on it with you rather than have you draft it alone. It would also help if you could suggest some guided learning people could follow once they've read it.",
+  "tree": [
+   "academy-guide",
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide",
+   "doc-coauthoring"
+  ],
+  "tree_files": 3,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 609,
+  "kind": "multi",
+  "label": [
+   "doc-coauthoring",
+   "pptx"
+  ],
+  "request": "I'm giving a conference talk in six weeks and I need to build the narrative before I touch any slides at all. Could you work through the story with me first, and then turn it into a presentation once we're both happy with it?",
+  "tree": [
+   "doc-coauthoring",
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 610,
+  "kind": "none",
+  "label": [],
+  "request": "My Python script keeps throwing a KeyError when it parses the front matter of our Markdown files, and I can't for the life of me see why. Here's the traceback and the function in question — any ideas?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 615,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "A quick style question: do you think we should use sentence case or title case for our documentation headings? I keep going back and forth and I'd like an answer I can actually defend.",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 617,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "帮我一起写一份模型上线的技术方案吧，我先把背景和约束发你，然后咱们一版一版改到能过评审",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 618,
+  "kind": "zh",
+  "label": [
+   "xlsx"
+  ],
+  "request": "这个月的实验指标表在我下载文件夹里，帮我加一列相对基线的提升幅度，再按提升从高到低排一下",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 619,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "下周三要给老板讲Q3路线图，帮我搞个十几页的幻灯片，先出大纲我们再往里填内容",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 623,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "想写份决策记录，关于要不要自建推理集群，帮我把选项、权衡和最终结论理清楚",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 624,
+  "kind": "zh",
+  "label": [
+   "xlsx"
+  ],
+  "request": "从零帮我建个表，跟踪各个实验的负责人、状态、开始时间和预计完成时间",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 625,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "把这个ppt里的演讲备注都提出来，我想看看讲稿和页面内容有没有对不上的地方",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 627,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "用代码生成一张流场图，种子固定住，我改参数的时候画面要跟着变",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 629,
+  "kind": "zh",
+  "label": [
+   "xlsx"
+  ],
+  "request": "这个csv太乱了，表头错位还有一堆空行，帮我清理成规规矩矩的表",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 630,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "这份报告整体视觉按公司规范来吧，颜色和字号都统一一下",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 633,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "doc-coauthoring"
+  ],
+  "request": "一起写份技术白皮书吧，最后排版和视觉得按公司规范来",
+  "tree": [
+   "brand-guidelines",
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 634,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "request": "做一张生成艺术作品当封面，配色要用公司品牌色",
+  "tree": [
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art",
+   "brand-guidelines"
+  ],
+  "tree_files": 3,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 636,
+  "kind": "zh",
+  "label": [],
+  "request": "pandas里groupby之后怎么同时算均值和计数啊，忘了",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 638,
+  "kind": "zh",
+  "label": [],
+  "request": "Google Docs里怎么设置只有评论权限的分享链接",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 640,
+  "kind": "zh",
+  "label": [],
+  "request": "OpenAI的batch接口现在怎么计费的？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 641,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我用matplotlib画个训练损失曲线，截个图贴到周报里",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 642,
+  "kind": "zh",
+  "label": [
+   "theme-factory"
+  ],
+  "request": "帮我给这份 HTML report 换一套 theme，现在配色太土了，想要深色科技感那种，字体也想一起换",
+  "tree": [
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory"
+  ],
+  "tree_files": 2,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 643,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "我在做 side project 的 landing page，看起来特别像 Bootstrap 默认模板，怎么让它有点辨识度？",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 645,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "帮我写一下这周的 project status update，给 leadership 看的，语气正式一点",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "internal-comms",
+  "lex": [
+   "internal-comms"
+  ]
+ },
+ {
+  "id": 648,
+  "kind": "zh",
+  "label": [],
+  "request": "Python 里 asyncio.gather 和 as_completed 到底啥区别，什么时候该用哪个？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 650,
+  "kind": "zh",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "做个 GIF 丢 Slack 用，内容就是 deploy 成功之后大家欢呼那种感觉",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 656,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "做个 particle system 的算法艺术，能交互调参数那种，用 p5.js 写",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 657,
+  "kind": "zh",
+  "label": [],
+  "request": "OpenAI 的 tool use 格式给我讲讲，我想把现在的代码迁过去，和现在用的有啥差别",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 658,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "这个月的 team newsletter 帮我写一下，主题是我们上线了新的 search feature",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 659,
+  "kind": "zh",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "做一个 React + Tailwind 的 artifact，要有 routing 和几个 shadcn 组件，视觉上别太像模板",
+  "tree": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder",
+   "web/frontend-design"
+  ],
+  "tree_files": 4,
+  "lex_land": "web/web-artifacts-builder",
+  "lex": [
+   "web-artifacts-builder"
+  ]
+ },
+ {
+  "id": 661,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "昨天 staging 挂了 40 分钟，帮我写个 incident report 的初稿",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "internal-comms",
+  "lex": [
+   "internal-comms"
+  ]
+ },
+ {
+  "id": 663,
+  "kind": "zh",
+  "label": [
+   "algorithmic-art",
+   "slack-gif-creator"
+  ],
+  "request": "给 Slack 做个 GIF，内容是程序生成的流动线条动画，那种 generative 的感觉",
+  "tree": [
+   "algorithmic-art",
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator",
+   "algorithmic-art"
+  ],
+  "tree_files": 3,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 664,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "帮我 co-author 一份 decision doc，比较 Postgres 和 DynamoDB 这两个方案",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 665,
+  "kind": "zh",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "做个 Slack 用的 GIF，一只猫在敲键盘，要能在 Slack 里正常 loop",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 666,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我把这个 curl 命令转成 Python requests 的写法",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 667,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "请根据公司品牌视觉规范，检查这份对外技术白皮书封面的配色、字体和标志位置，列出所有偏差项并给出修改建议。",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 668,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "做一张年度技术峰会的主视觉海报，A2 竖版，科技感但不过度，输出 PDF 和 PNG 两种格式。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 669,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "把这套对外宣讲材料按公司品牌规范调整字体、配色和留白，给出具体参数和调整前后的对比说明。",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 671,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "生成一份 .docx 格式的供应商技术评估报告模板，包含评分表和结论页，方便各团队直接填写。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 673,
+  "kind": "zh",
+  "label": [
+   "claude-api",
+   "xlsx"
+  ],
+  "request": "帮我核对一下我们现在使用的模型标识、上下文长度和计费口径，把 API 成本测算表按最新信息更新。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 674,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "我们的流式接口偶尔中断，请梳理工具调用的正确写法和重试策略，给出一份可落地的排查清单。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 676,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "我们打算启用提示词缓存，请测算命中与未命中两种情况下的成本差异，并给出建议的启用范围。",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 679,
+  "kind": "zh",
+  "label": [
+   "mcp-builder"
+  ],
+  "request": "为代码仓库检索能力实现一个服务端，用 Python 写，要求工具描述清晰、错误返回可读。",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 681,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "docx"
+  ],
+  "request": "把这份技术白皮书的内容整理成正式 Word 文档，封面和版式要符合公司品牌视觉规范。",
+  "tree": [
+   "brand-guidelines",
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "brand-guidelines",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 685,
+  "kind": "zh",
+  "label": [],
+  "request": "我们一个 Python 服务的定时任务偶发重复执行，报错栈如下，帮我定位原因并给出修复方案。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 686,
+  "kind": "zh",
+  "label": [],
+  "request": "这条 SQL 在生产库上要跑四十秒，执行计划我贴在下面，帮我看看能不能优化。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 690,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "下周要做 Kubernetes 集群版本升级，帮我列一份上线前检查清单和回滚预案。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 694,
+  "kind": "single",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "Create a generative art piece with soft moving lines for the background of our recruiting event invitation.",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 695,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "Design a clean landing page concept for our open roles page, with a strong hero area and simple navigation.",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 696,
+  "kind": "single",
+  "label": [
+   "pdf"
+  ],
+  "request": "Take these three offer letters as PDF files and combine them into one document, then remove the blank pages.",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 698,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "Test our internal referral portal on mobile size in the browser, click the main buttons, and capture screenshots if something looks wrong.",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 703,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "Open the demo of our new interview scheduling tool in a browser and check if the calendar picker works when I choose a date.",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 704,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "internal-comms"
+  ],
+  "request": "Write a project update for the recruiting team about this month's hiring progress and next steps.",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 705,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "Review our new careers page design, then open it in a browser and check that the filters work on mobile.",
+  "tree": [
+   "frontend-design",
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design",
+   "web/webapp-testing"
+  ],
+  "tree_files": 4,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 708,
+  "kind": "none",
+  "label": [],
+  "request": "Fix this Python script error: it says KeyError when I read the candidate CSV file.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 709,
+  "kind": "none",
+  "label": [],
+  "request": "What is the difference between a list and a tuple in Python?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 715,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "start the dev server and screenshot the dashboard empty state at 375px, i think the sidebar overlaps",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 716,
+  "kind": "single",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "write the weekly team update — shipped new billing flow, fixed 2 bugs, hiring a backend eng",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 718,
+  "kind": "single",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "need a company wide faq on the new pto policy, short + friendly pls",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 719,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "how do i get my whole team started with claude, what should i send them first",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 720,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "is there a course or tutorial for using projects? my eng leads keep asking me",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 723,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "request": "i need to draft a proposal for the new data pipeline, walk me thru it step by step",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 728,
+  "kind": "multi",
+  "label": [
+   "internal-comms",
+   "webapp-testing"
+  ],
+  "request": "the checkout page is throwing errors on localhost, test it and then write a short status update for the team on whats broken",
+  "tree": [
+   "internal-comms",
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "internal-comms",
+   "web/webapp-testing"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 729,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "doc-coauthoring"
+  ],
+  "request": "help me write a spec for our llm gateway, using the anthropic sdk — need model ids + caching in there",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 733,
+  "kind": "none",
+  "label": [],
+  "request": "in the google sheet 'q3 pipeline' add a col that sums deal value by owner",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 735,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "draft a cold email to vp engs at series b startups about our devtool",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 740,
+  "kind": "multi",
+  "label": [
+   "academy-guide",
+   "claude-api"
+  ],
+  "request": "Hi there — could you help me understand how connectors work in Claude, and let me know whether there's any learning material I could pass along to my team so they can try things out themselves? Ideally something short and self-paced that we could assign as pre-work before our next team meeting.",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 742,
+  "kind": "multi",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "I have a fairly plain set of slides that I need to present to our leadership team next week, and I'd love it if you could give the whole thing a more polished, cohesive visual identity — colors, typography, spacing, all of it. Something modern and confident, but not flashy.",
+  "tree": [
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory"
+  ],
+  "tree_files": 2,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 746,
+  "kind": "single",
+  "label": [
+   "pptx"
+  ],
+  "request": "Hello! I need to build a twelve-slide pitch deck for a feature we're proposing, covering the problem, the opportunity, the approach, and the ask. Could you put the whole thing together as a presentation file that I can then refine with my own edits?",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 748,
+  "kind": "single",
+  "label": [
+   "pptx"
+  ],
+  "request": "I'd love your help combining two presentation files into one, keeping all of the speaker notes intact, and then reordering the sections so the overall narrative flows a little better.",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 749,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "request": "Could you take the presentation I've drafted and make sure it genuinely reflects our official company colors and typography? I want it to look like it came out of our design team rather than something I threw together at the last minute.",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "office-docs/pptx",
+  "lex": [
+   "pptx"
+  ]
+ },
+ {
+  "id": 751,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "Hi! Our team would like Claude to be able to look things up in our internal product catalog system, and I've been told we could build a small server that exposes a few well-designed tools for that purpose. Could you help me design and build it, ideally in Python?",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 753,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "request": "We're putting together a presentation for our partner summit in November, and I'd like it to follow our official brand colors and typography from the very first slide through the closing thank-you. Could you build the deck and make sure the styling is consistent throughout?",
+  "tree": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 754,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "canvas-design",
+   "pdf"
+  ],
+  "request": "I need a print-ready one-page overview for a conference booth, and it should look unmistakably like it belongs to our company — our exact colors, our typefaces, our general design language. Could you create that for me as a PDF?",
+  "tree": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 755,
+  "kind": "multi",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "Could you take our existing deck and give it a completely new visual treatment? I'd like different colors and fonts so it feels refreshed, and I'd appreciate seeing a couple of directions before I commit to one.",
+  "tree": [
+   "pptx",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "theme-factory",
+   "office-docs/pptx"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 757,
+  "kind": "none",
+  "label": [],
+  "request": "I've got a Python script that reads a CSV of survey responses and writes a summary file, but it keeps throwing a KeyError on one of the column names even though I'm fairly sure the column exists. Could you take a look and help me figure out what's going wrong?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 759,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "Would you mind drafting a polite but firm email to our analytics vendor about the contract renewal? I'd like to ask for a revised quote, mention that we're comparing options, and keep the tone friendly enough that the relationship stays intact.",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 760,
+  "kind": "none",
+  "label": [],
+  "request": "Here's a link to a Google Doc with our draft positioning statement — could you read through it and give me a short summary of the main arguments, plus a few specific places where the logic feels thin? I'd rather not edit the file directly, just get your read on it.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 761,
+  "kind": "none",
+  "label": [],
+  "request": "Our checkout flow uses Stripe, and I'm trying to understand how to handle a partial refund with their API. Could you explain the relevant endpoint and the parameters I'd need, and flag anything that commonly trips people up?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 762,
+  "kind": "multi",
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "request": "I'm writing the FAQ section for our new help center in Google Docs, and I'd appreciate your help turning our support tickets into clear, friendly answers. It doesn't need to be a formal document — just good copy I can paste in.",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 764,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "帮我看下这个落地页的配色和字体，得按公司的品牌规范来，主色、辅助色、字号层级都对齐一下",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 765,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "request": "做一版版本发布公告的图，颜色字体走官方那套，别自己发挥",
+  "tree": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 766,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "下周要交技术方案，我想先跟你把大纲捋一遍，再一段段往里填内容",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 767,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "帮我起个架构决策记录的草稿，我边写边给你反馈，最后得能让没参与的人也看懂",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 768,
+  "kind": "zh",
+  "label": [
+   "doc-coauthoring"
+  ],
+  "request": "这个项目复盘文档咱俩一起写吧，素材我发你，你帮我把结构撑起来",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 769,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "我们要把模型从 sonnet 换到新的，迁移的时候有啥要注意的？缓存那块怎么配",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 771,
+  "kind": "zh",
+  "label": [
+   "claude-api"
+  ],
+  "request": "批量跑分类任务，token 怎么算、成本大概多少？给我个估算方法",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 773,
+  "kind": "zh",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "线上刚出了个故障，帮我写份复盘通报，要有时间线、影响面和后续动作",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "internal-comms",
+  "lex": [
+   "internal-comms"
+  ]
+ },
+ {
+  "id": 779,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "pdf"
+  ],
+  "request": "这份白皮书帮我排成品牌风格的版式，最后导出 PDF 给客户",
+  "tree": [
+   "brand-guidelines",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 783,
+  "kind": "zh",
+  "label": [],
+  "request": "Google Sheets 里想按 A 列分组求和，用哪个公式比较稳",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 787,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我把这份 Markdown 转成 HTML，我要贴到内部 wiki 上",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 792,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "这个 .docx 里有一些批注和修订记录，帮我全部接受掉，然后导出一版干净的。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 794,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "这个组件的 spacing 和颜色有点 generic，帮我调一版更有性格的，别用那种到处都是的蓝紫渐变。",
+  "tree": [
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 799,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "这是上周的用户访谈记录，帮我分析一下我们该不该优先做批量导出这个功能，给个结论。",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 801,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "根据这个 benchmark 结果，估算一下我们迁移到 Vite 大概要多少人天。",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "web"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 803,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "xlsx"
+  ],
+  "request": "读一下这个 A/B test 的 xlsx，帮我分析两组差异到底显不显著，然后给个下一步怎么走的建议。",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 805,
+  "kind": "zh",
+  "label": [
+   "docx",
+   "pdf"
+  ],
+  "request": "把这份 PDF 合同转成可编辑的 Word，尽量保留原来的段落结构。",
+  "tree": [
+   "docx",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 807,
+  "kind": "zh",
+  "label": [],
+  "request": "React 里 useEffect 一直重复执行，依赖数组我明明写了，帮我看看哪里出问题。",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "web"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 808,
+  "kind": "zh",
+  "label": [],
+  "request": "CSS 里 grid 和 flex 什么时候用哪个？一直搞不太清楚。",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "web"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 813,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我把这段同步的 Python 请求代码改成 async，用 httpx。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 815,
+  "kind": "zh",
+  "label": [
+   "web-artifacts-builder"
+  ],
+  "request": "请开发一个复杂的React组件，用于内部数据监控面板，需要支持状态管理和路由跳转。",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/web-artifacts-builder",
+  "lex": [
+   "web-artifacts-builder"
+  ]
+ },
+ {
+  "id": 821,
+  "kind": "zh",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "我们团队计划引入Claude，请问有哪些培训材料或入门指南可以帮助成员快速上手？",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 823,
+  "kind": "zh",
+  "label": [
+   "docx"
+  ],
+  "request": "请编辑这份Word文档，在指定位置插入图表，并自动更新目录和页码。",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 824,
+  "kind": "zh",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "请制作一个庆祝团队完成季度目标的动态GIF，用于在Slack频道中分享。",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 825,
+  "kind": "zh",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "请创建一个表示‘正在加载’的循环动画GIF，用于Slack机器人提示。",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 826,
+  "kind": "zh",
+  "label": [
+   "xlsx"
+  ],
+  "request": "请帮我创建一个Excel工作簿，包含多个工作表，并设置公式和数据透视表来分析月度销售数据。",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 828,
+  "kind": "zh",
+  "label": [
+   "pdf",
+   "xlsx"
+  ],
+  "request": "请从这份PDF财务报表中提取数据，并导入到Excel中生成分析图表。",
+  "tree": [
+   "pdf",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs",
+  "lex": []
+ },
+ {
+  "id": 830,
+  "kind": "zh",
+  "label": [
+   "frontend-design",
+   "pdf",
+   "web-artifacts-builder"
+  ],
+  "request": "请创建一个交互式数据故事网页，然后将其导出为PDF供打印。",
+  "tree": [
+   "frontend-design",
+   "pdf",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "office-docs",
+   "web/frontend-design",
+   "web/web-artifacts-builder",
+   "office-docs/pdf"
+  ],
+  "tree_files": 6,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 831,
+  "kind": "zh",
+  "label": [
+   "academy-guide",
+   "docx"
+  ],
+  "request": "请为我制定一份学习Claude数据功能的培训计划，并输出为Word文档。",
+  "tree": [
+   "academy-guide",
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 835,
+  "kind": "zh",
+  "label": [],
+  "request": "请解释一下OpenAI的GPT-4和Claude在数据分析任务上的性能差异。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 838,
+  "kind": "zh",
+  "label": [],
+  "request": "请帮我从一张包含文字的图片中提取所有文本内容。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 840,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "We have a local web app for invoice approval. Can you test if the submit button works and take a screenshot of the form?",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 842,
+  "kind": "single",
+  "label": [
+   "claude-api"
+  ],
+  "request": "What are the current model IDs and pricing for Claude? I need to estimate cost for our financial report summarization.",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 843,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "request": "Can you make a simple HTML page for our department's finance dashboard using the Anthropic brand colors and fonts?",
+  "tree": [
+   "brand-guidelines",
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 4,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 845,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "Please check our internal budget tracking web tool. I want to know if the filter by department is working correctly and see any browser errors.",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 846,
+  "kind": "multi",
+  "label": [
+   "academy-guide",
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "Can you guide me to build a connector for our CRM so the AI can read customer invoices? I want it to work with Python.",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "mcp-builder",
+  "lex": [
+   "mcp-builder"
+  ]
+ },
+ {
+  "id": 847,
+  "kind": "multi",
+  "label": [
+   "academy-guide",
+   "claude-api"
+  ],
+  "request": "How do I use the Claude API to process a batch of PDF invoices and extract totals? Please show me an example with streaming.",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 848,
+  "kind": "single",
+  "label": [
+   "skill-creator"
+  ],
+  "request": "I want to create a new reusable instruction set for our team's month-end close checklist. Can you help me design it?",
+  "tree": [
+   "skill-creator"
+  ],
+  "tree_path": [
+   ".",
+   "skill-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "skill-creator",
+  "lex": [
+   "skill-creator"
+  ]
+ },
+ {
+  "id": 849,
+  "kind": "single",
+  "label": [
+   "xlsx"
+  ],
+  "request": "I need to merge two spreadsheets with vendor payments and remove duplicates. Can you do that and produce a new .xlsx file?",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 850,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "I have a local web page for expense submission. Can you check if the validation messages appear correctly when I leave a field empty?",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 851,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "I need to build a server that exposes our financial database to an AI assistant. Can you help me with the design and code?",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "claude-api",
+  "lex": [
+   "claude-api"
+  ]
+ },
+ {
+  "id": 852,
+  "kind": "single",
+  "label": [
+   "claude-api"
+  ],
+  "request": "I need to count tokens for a large financial document before sending to Claude. How can I do that with the API?",
+  "tree": [
+   "claude-api"
+  ],
+  "tree_path": [
+   ".",
+   "claude-api"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 853,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "xlsx"
+  ],
+  "request": "I have an Excel file with our monthly expenses. Can you clean it and also apply the Anthropic brand colors to the charts and headers?",
+  "tree": [
+   "brand-guidelines",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "brand-guidelines",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 4,
+  "lex_land": "brand-guidelines",
+  "lex": [
+   "brand-guidelines"
+  ]
+ },
+ {
+  "id": 854,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "webapp-testing"
+  ],
+  "request": "We have a local web app that uses the Claude API to summarize invoices. Can you test the app and check if the API calls are working correctly?",
+  "tree": [
+   "claude-api",
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "claude-api",
+   "web/webapp-testing"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 855,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "I want to build a connector for our ERP that uses the Claude API to answer questions about financial data. Can you help me design and build this?",
+  "tree": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder",
+   "claude-api"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 857,
+  "kind": "none",
+  "label": [],
+  "request": "My Python script for calculating depreciation is giving wrong numbers. Can you check the code and fix the bug?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 858,
+  "kind": "none",
+  "label": [],
+  "request": "What is the difference between accrual and cash accounting?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 859,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "Write an email to our vendor about a missing invoice for last month.",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 861,
+  "kind": "none",
+  "label": [],
+  "request": "How do I use the QuickBooks API to get a list of unpaid invoices?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 865,
+  "kind": "multi",
+  "label": [
+   "claude-api",
+   "mcp-builder"
+  ],
+  "request": "need a mcp server in python for our internal employee directory, lookup by name or dept is enough",
+  "tree": [
+   "mcp-builder"
+  ],
+  "tree_path": [
+   ".",
+   "mcp-builder"
+  ],
+  "tree_files": 2,
+  "lex_land": "mcp-builder",
+  "lex": [
+   "mcp-builder"
+  ]
+ },
+ {
+  "id": 867,
+  "kind": "single",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "make some generative flow field art we can loop on the lobby screens for wellness week",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 868,
+  "kind": "single",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "want a seeded particle animation as a calm background for the recruiting page",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 871,
+  "kind": "single",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "new hires keep asking how to get started w claude, got any onboarding material i can send",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 875,
+  "kind": "single",
+  "label": [
+   "slack-gif-creator"
+  ],
+  "request": "gif of a coffee cup bouncing, for the wellness channel",
+  "tree": [
+   "slack-gif-creator"
+  ],
+  "tree_path": [
+   ".",
+   "slack-gif-creator"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 877,
+  "kind": "single",
+  "label": [
+   "webapp-testing"
+  ],
+  "request": "the referral form on the intranet wont submit, can you open it and check the console",
+  "tree": [
+   "webapp-testing"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/webapp-testing"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/webapp-testing",
+  "lex": [
+   "webapp-testing"
+  ]
+ },
+ {
+  "id": 878,
+  "kind": "multi",
+  "label": [
+   "docx",
+   "internal-comms"
+  ],
+  "request": "write our q3 people ops update and hand it to me as a word doc",
+  "tree": [
+   "docx",
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 4,
+  "lex_land": "office-docs/docx",
+  "lex": [
+   "docx"
+  ]
+ },
+ {
+  "id": 883,
+  "kind": "none",
+  "label": [],
+  "request": "share the onboarding tracker google sheet w the new manager and give edit access",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 885,
+  "kind": "none",
+  "label": [],
+  "request": "pull our applicant list from the greenhouse api into a script",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 887,
+  "kind": "single",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "write a jd for a mid level data analyst",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 889,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "I'd be so grateful if you could build an interactive web artifact for our upcoming product launch — something with a few tabs, a small stateful calculator, and modern React and Tailwind styling that I can share with the sales team.",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/web-artifacts-builder",
+  "lex": [
+   "web-artifacts-builder"
+  ]
+ },
+ {
+  "id": 890,
+  "kind": "single",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "When you have a moment, would you please create a generative art piece using code, with a seeded flow field that we can adjust, so we have a unique hero image for our campaign microsite?",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "algorithmic-art",
+  "lex": [
+   "algorithmic-art"
+  ]
+ },
+ {
+  "id": 891,
+  "kind": "single",
+  "label": [
+   "pdf"
+  ],
+  "request": "Could you kindly take the three PDFs in this folder, merge them into one, add page numbers, and compress the result so it's easy to email to our retail partners?",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 893,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "Please help me design a distinctive landing page for our new webinar. I want the visual direction to feel intentional rather than templated, with strong typography and a clear hierarchy.",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 894,
+  "kind": "multi",
+  "label": [
+   "brand-guidelines",
+   "pptx"
+  ],
+  "request": "We're updating our media kit, and I'd love for the slide master, charts, and footer to follow our brand's exact color palette and font rules. Could you please make that happen?",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 895,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "Could you build a complex HTML artifact for our ABM target list — a filterable dashboard with search, sorting, and a detail panel, using modern frontend components?",
+  "tree": [
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 3,
+  "lex_land": "web/frontend-design",
+  "lex": [
+   "frontend-design"
+  ]
+ },
+ {
+  "id": 896,
+  "kind": "single",
+  "label": [
+   "algorithmic-art"
+  ],
+  "request": "For our holiday email header, please generate an algorithmic artwork with particle motion and gentle randomness, and then give me a few parameter variations to choose from.",
+  "tree": [
+   "algorithmic-art"
+  ],
+  "tree_path": [
+   ".",
+   "algorithmic-art"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 898,
+  "kind": "single",
+  "label": [
+   "docx"
+  ],
+  "request": "Please turn these rough meeting notes into a professional Word memo with clear headings, action items, and a signature block. I'd really appreciate your help with the formatting.",
+  "tree": [
+   "docx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/docx"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 899,
+  "kind": "single",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "I'm not happy with our current pricing page — it feels a bit flat. Could you help reshape the UI with a more intentional aesthetic, better type scale, and more distinctive visual choices?",
+  "tree": [
+   "frontend-design"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 900,
+  "kind": "single",
+  "label": [
+   "brand-guidelines"
+  ],
+  "request": "Please create an HTML email template that strictly uses our approved brand colors, logo spacing, and typography, so it matches our design standards exactly.",
+  "tree": [
+   "brand-guidelines"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 904,
+  "kind": "multi",
+  "label": [
+   "frontend-design",
+   "web-artifacts-builder"
+  ],
+  "request": "Please build an interactive web artifact for our product tour, and give it a distinctive visual design with non-generic typography and layout choices.",
+  "tree": [
+   "frontend-design",
+   "theme-factory",
+   "web-artifacts-builder"
+  ],
+  "tree_path": [
+   ".",
+   "web",
+   "theme-factory",
+   "web/frontend-design",
+   "web/web-artifacts-builder"
+  ],
+  "tree_files": 5,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 906,
+  "kind": "none",
+  "label": [],
+  "request": "There's a small bug in our internal analytics script — it throws an error when the campaign ID is missing. Could you help me understand what's wrong and suggest a fix?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 909,
+  "kind": "none",
+  "label": [],
+  "request": "I've shared a Google Doc with the latest messaging draft. Could you open it and leave comments on the sections that feel unclear?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 910,
+  "kind": "none",
+  "label": [],
+  "request": "We're trying to pull conversion data from HubSpot's API into our reporting tool. Can you explain how their OAuth flow works and what scopes we'd need?",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 912,
+  "kind": "single",
+  "label": [
+   "internal-comms"
+  ],
+  "request": "I'm putting together a quick poll for the team about the new brand rollout. Could you suggest five multiple-choice questions we could ask in Slack?",
+  "tree": [
+   "internal-comms"
+  ],
+  "tree_path": [
+   ".",
+   "internal-comms"
+  ],
+  "tree_files": 2,
+  "lex_land": "slack-gif-creator",
+  "lex": [
+   "slack-gif-creator"
+  ]
+ },
+ {
+  "id": 913,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "帮我做张周末分享会的海报，A3 竖版，主题是“留白”，要能直接打印的那种，颜色别太跳。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 914,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "下个月公司开放日想搞块展板，风格极简一点，尺寸回头给你，先出个能送印的文件呗。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 917,
+  "kind": "zh",
+  "label": [
+   "pdf"
+  ],
+  "request": "这份八十多页的 PDF 帮我拆一下，把 12 到 25 页单独存出来发客户。",
+  "tree": [
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/pdf",
+  "lex": [
+   "pdf"
+  ]
+ },
+ {
+  "id": 920,
+  "kind": "zh",
+  "label": [
+   "xlsx"
+  ],
+  "request": "这个表格里颜色那列写得乱七八糟的，帮我清一下再按色系统计个数。",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 921,
+  "kind": "zh",
+  "label": [
+   "xlsx"
+  ],
+  "request": "我导出的素材清单 csv 想按尺寸排个序，顺便标出重复的，弄成个正经表格给我。",
+  "tree": [
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 3,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 925,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "我打算跟老板提把设计外包预算砍一半，帮我顺一下这个说法，顺便告诉我哪里可能站不住脚。",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 929,
+  "kind": "zh",
+  "label": [
+   "canvas-design",
+   "pdf"
+  ],
+  "request": "客户发的白皮书 PDF 封面太丑了，帮我重新设计个封面页，最后还是输出 PDF。",
+  "tree": [
+   "canvas-design",
+   "pdf"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design",
+   "office-docs",
+   "office-docs/pdf"
+  ],
+  "tree_files": 4,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 930,
+  "kind": "zh",
+  "label": [
+   "brand-guidelines",
+   "xlsx"
+  ],
+  "request": "给这份数据表配一套符合公司视觉的表头和图表配色，顺手把数据也整理干净。",
+  "tree": [
+   "brand-guidelines",
+   "xlsx"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "office-docs",
+   "office-docs/xlsx"
+  ],
+  "tree_files": 4,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 933,
+  "kind": "zh",
+  "label": [],
+  "request": "Google Sheets 里那个公式怎么写来着，我想按条件求和。",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 934,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge"
+  ],
+  "request": "帮我给客户写封邮件，说交付要延两天，语气别太卑微。",
+  "tree": [
+   "discernment-nudge"
+  ],
+  "tree_path": [
+   ".",
+   "discernment-nudge"
+  ],
+  "tree_files": 2,
+  "lex_land": "discernment-nudge",
+  "lex": [
+   "discernment-nudge"
+  ]
+ },
+ {
+  "id": 936,
+  "kind": "zh",
+  "label": [],
+  "request": "帮我在 Google Docs 那个需求文档里加个目录，怎么弄？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 939,
+  "kind": "zh",
+  "label": [
+   "pptx"
+  ],
+  "request": "我之前做的那份 pptx 你能帮我改一下吗？把第 4 到第 7 页的要点精简，再统一一下字体和字号。",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 940,
+  "kind": "zh",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "教研组下周三要做汇报，帮我从零搭一个 deck，主题是「AI 在课堂里的实际用法」，风格干净专业，别太花。",
+  "tree": [
+   "pptx"
+  ],
+  "tree_path": [
+   ".",
+   "office-docs",
+   "office-docs/pptx"
+  ],
+  "tree_files": 3,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 941,
+  "kind": "zh",
+  "label": [
+   "discernment-nudge",
+   "doc-coauthoring"
+  ],
+  "request": "我要写一份给教务处的 proposal，关于下学期开一门 AI 素养选修课的试点方案。想跟你一起 co-author，先帮我理 outline，再一段一段打磨。",
+  "tree": [
+   "doc-coauthoring"
+  ],
+  "tree_path": [
+   ".",
+   "doc-coauthoring"
+  ],
+  "tree_files": 2,
+  "lex_land": "doc-coauthoring",
+  "lex": [
+   "doc-coauthoring"
+  ]
+ },
+ {
+  "id": 943,
+  "kind": "zh",
+  "label": [
+   "frontend-design"
+  ],
+  "request": "帮我 redesign 一下班级主页的视觉，现在看起来就是默认 bootstrap 风，我想要更有辨识度一点的排版和配色。",
+  "tree": [
+   "frontend-design",
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory",
+   "web",
+   "web/frontend-design"
+  ],
+  "tree_files": 4,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 946,
+  "kind": "zh",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "学校想在全校范围推 Claude，有没有现成的 onboarding 资源或者 training materials 可以给老师们直接用？",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 947,
+  "kind": "zh",
+  "label": [
+   "academy-guide"
+  ],
+  "request": "怎么用 Projects 把一门课的资料都放在一起？有没有相关的教程或者课程推荐？",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "academy-guide",
+  "lex": [
+   "academy-guide"
+  ]
+ },
+ {
+  "id": 948,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "帮我做一张校园读书节的海报，A3 竖版，要能直接打印，风格偏文艺一点。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 949,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "帮我设计一张毕业典礼的邀请卡，正面是主视觉，背面写时间和流程。",
+  "tree": [
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "canvas-design"
+  ],
+  "tree_files": 2,
+  "lex_land": "canvas-design",
+  "lex": [
+   "canvas-design"
+  ]
+ },
+ {
+  "id": 951,
+  "kind": "zh",
+  "label": [
+   "pptx",
+   "theme-factory"
+  ],
+  "request": "这个 deck 的内容差不多了，但配色太土，帮我套一个专业一点的主题，字体也一起换掉。",
+  "tree": [
+   "theme-factory"
+  ],
+  "tree_path": [
+   ".",
+   "theme-factory"
+  ],
+  "tree_files": 2,
+  "lex_land": "theme-factory",
+  "lex": [
+   "theme-factory"
+  ]
+ },
+ {
+  "id": 952,
+  "kind": "zh",
+  "label": [
+   "canvas-design"
+  ],
+  "request": "帮我做一张秋季招生宣传的单页，要符合学校的 brand guidelines，颜色和字体都按规范来。",
+  "tree": [
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "tree_path": [
+   ".",
+   "brand-guidelines",
+   "canvas-design"
+  ],
+  "tree_files": 3,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 953,
+  "kind": "zh",
+  "label": [
+   "academy-guide",
+   "doc-coauthoring"
+  ],
+  "request": "我要给新入职的老师写一份 Claude 上手指南，同时想在里面附上对应的学习课程，帮我一起弄。",
+  "tree": [
+   "academy-guide"
+  ],
+  "tree_path": [
+   ".",
+   "academy-guide"
+  ],
+  "tree_files": 2,
+  "lex_land": "ambiguous,",
+  "lex": []
+ },
+ {
+  "id": 955,
+  "kind": "zh",
+  "label": [],
+  "request": "我这段 Python 用 pandas 读 CSV 一直报 UnicodeDecodeError，帮我看看是什么问题。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "office-docs/xlsx",
+  "lex": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": 956,
+  "kind": "zh",
+  "label": [],
+  "request": "Google Sheets 里怎么做条件格式，让低于 60 分的单元格自动变红？",
+  "tree": [],
+  "tree_path": [
+   ".",
+   "office-docs"
+  ],
+  "tree_files": 2,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 960,
+  "kind": "zh",
+  "label": [],
+  "request": "怎么用初中生能听懂的话解释什么是 neural network？",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ },
+ {
+  "id": 961,
+  "kind": "zh",
+  "label": [],
+  "request": "我把教研会的录音转成文字稿了，帮我整理成要点，我直接贴给你。",
+  "tree": [],
+  "tree_path": [
+   "."
+  ],
+  "tree_files": 1,
+  "lex_land": "root",
+  "lex": []
+ }
+]

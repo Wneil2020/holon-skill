@@ -64,6 +64,8 @@ python3 organizer/scripts/organizer_cli.py replay .  # 例句仍然落在该落�
 
 反例可能只是避开了自己的 skill，却没有到达声明的目标，仍算通过。这时 `replay` 会打印 `NOTE negative did not reach its target`，该提示不改变退出码；不要只看 passed 计数。同样，引用文件缺失属于 lint 警告，不是执行验收。三个零退出码不保证依赖齐全、任务能运行，也不保证真实 agent 走同一条路。
 
+`replay` 通过，和 agent 找到对的 skill，是两回事。在 `experiments/2026-10-anthropic-skills` 的实验里，一轮 description 改写把模型路由真实请求的正确率从 70% 提到 81%，同时弄坏了 69 条例句里的 15 条；而同一批请求，词匹配完全命中的只有 46%。坏的大多是例句，不是 description：父级的正例只用了一个子 skill 的词；反例里还留着这个 skill 自己的覆盖词；子 skill 的例句里一个它自己的词都没有。先改例句；只有例句本身已经是一句正常的请求时，才去改 description。
+
 非 ASCII 覆盖词按子串匹配，不做分词：`文件` 也会命中 `文件夹`。将 COVER_MIN 降为 1 会增加这个风险，不会获得中文分词能力。同义词是全局、无上下文的折叠；修好一次漏匹配的别名，也可能造成新的误匹配。每次修改后都要复测应当命中及不相关的请求。
 
 如果 skill 引用了父级或根的资料、其他 skill，或树相对路径的反例目标，它就不是自包含目录。复制到另一棵树前，要带上依赖或调整引用与例句，再运行检查。organizer 脚本本身也依赖根目录的 `scripts/holon.py`。

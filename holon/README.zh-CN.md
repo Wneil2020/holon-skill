@@ -266,11 +266,11 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 
 已经验证过的：测试在 Linux、macOS、Windows 上用 Python 3.8 到 3.13 运行；这一页上的每一段命令输出，都由 `tests/test_readme_outputs.py` 和真实输出逐字比对；仓库里每个 `SKILL.md` 都通过了 Agent Skills 规范的官方验证器。
 
-还没有验证过的：这些规则只用在过两个库上，一个是二十个 skill 的公开库，一个是为这个项目自己的工作写的三个 skill。用的过程中规则改过两处。还没有在几百个 skill 的库上试过。规则里的数字（五个覆盖词、每个父级九个子 skill、0.4 的重叠）是让这两个库能被检查的取值，不是测出来的最优值。它们是可以调的设置：怎么为你自己的库修改，见 [organizer/README.zh-CN.md](organizer/README.zh-CN.md#为你自己的库调整参数)。
+还没有验证过的：这些规则用在过三个库上：一个二十个 skill 的公开库；为这个项目自己的工作写的三个 skill；以及 2026 年 10 月 anthropics/skills 的 19 个 skill，组成一棵 24 个 skill 的树。用的过程中规则改过两处，第三次导入改了工具（见更新日志）。还没有在几百个 skill 的库上试过。规则里的数字（五个覆盖词、每个父级九个子 skill、0.4 的重叠）是让这两个库能被检查的取值，不是测出来的最优值。它们是可以调的设置：怎么为你自己的库修改，见 [organizer/README.zh-CN.md](organizer/README.zh-CN.md#为你自己的库调整参数)。
 
 路由比对的是词，不是意思。一句话里一个 skill 的词都没出现，就到不了那个 skill。办法是在 `synonyms.md` 里加一行；agent 遇到这种情况时会记到 `_feedback.md` 里，等人来补。同样的比对不懂否定（"什么都不要 absorb"里仍然有 `absorb`）；一句话同时要两件不相干的事时，可能被两个分支的 `excludes` 同时挡住，停在根上。
 
-`replay` 和 `route` 检查的是词的模型，不是 agent。读路由表的 agent 按意思判断，可能去到词的模型不会去的地方，两个方向都有可能。路由表的每一行都列出工具用来匹配的词，包括父级通过下面的 skill 接住的词（`also takes, through its sub-skills: ...`），所以两者至少读的是同一批词；某个模型会不会照着走，还没有测过。目前还没有发布过让真实 agent 分别使用树和平铺文件夹、对照同一批 skill 的结果。
+`replay` 和 `route` 检查的是词的模型，不是 agent。读路由表的 agent 按意思判断，可能去到词的模型不会去的地方，两个方向都有可能。路由表的每一行都列出工具用来匹配的词，包括父级通过下面的 skill 接住的词（`also takes, through its sub-skills: ...`），所以两者至少读的是同一批词；某个模型会不会照着走，测过一次。在 [experiments/2026-10-anthropic-skills](../experiments/2026-10-anthropic-skills/README.zh-CN.md) 里，由别的 agent 写出并标注的 486 条请求交给模型路由：读树时，79% 到 80% 的请求加载的 skill 完全正确；把同样 24 条 description 放进一张平铺列表读，是 82%；词匹配（`route`）是 46%。在这个规模下平铺列表更准，差距主要在需要两个 skill 的请求上，因为读树的人每一层只选一个分支。树省下的是库大到列不全时每次要读的内容，这一点没有测。
 
 根的描述写的是"Use for every task"，这样只列顶层文件夹的工具会选中这棵树。如果同一个 skills 文件夹里还有别的顶层 skill，这一句会和它们抢；这时给根写一个说明这棵树管什么的描述（`init 名字 --desc ...`）。
 

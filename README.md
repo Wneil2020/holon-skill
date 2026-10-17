@@ -2,7 +2,7 @@
 
 Rules and tools for keeping a large collection of AI agent skills in order: which folder each skill goes in, how the agent finds the right one, and how to check that it does.
 
-> **Early stage.** Version 1.0.0 is the first public release. It is tested on Linux, macOS and Windows, but it has only been used on two small skill libraries, and the rules and command options may still change. Changes are recorded in [holon/CHANGELOG.md](holon/CHANGELOG.md).
+> **Early stage.** Version 1.0.0 is the first public release. It is tested on Linux, macOS and Windows, but it has only been used on three skill libraries of at most 24 skills, and the rules and command options may still change. Changes are recorded in [holon/CHANGELOG.md](holon/CHANGELOG.md).
 
 [中文说明](README.zh-CN.md)
 
@@ -46,6 +46,7 @@ The tree, the rules and the checks are one package, `holon/`. The rules live in 
 | [`holon/`](holon/README.md) | The package: the skill tree, the rules for placing skills in it (`organizer/`), and the tools that check both |
 | `install.py` | the one-command installer that users run (see Quick start) |
 | `scripts/` | `check.py` (any system) and `check.sh` (bash) run locally what CI runs |
+| [`experiments/`](experiments/2026-10-anthropic-skills/README.md) | measurements kept whole, with scripts, data and logs; not installed |
 
 ## Checking a change
 
