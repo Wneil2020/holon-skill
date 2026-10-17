@@ -267,3 +267,13 @@ What remains wrong is mostly one skill: `discernment-nudge`, about how to give a
 
 The questions were lookups, and one model family wrote questions, plans, answers and judgments; a task that needs several parts of a split skill at once is untested.
 
+## 23. Five hundred skills, and edges
+
+§21 left open whether the tree pays off when a library is too large to list. The Graph of Skills `skills_500` library and the 87 SkillsBench tasks were used to ask it once (`experiments/2026-10-gos-scale/`). A model grouped the 500 skills into a tree of 104 tables in one pass; a model then routed each task through it, and separately read all 500 descriptions as a flat list.
+
+- The flat list found 0.900 of the oracle skills and the tree 0.700, while the tree read 8,228 characters against 95,188. Most of the tree's misses (43 of 73) were skills the flat list found, so they are routing losses, spread across every domain branch and worst on tasks needing several skills.
+- At about 24k tokens the flat list still fitted this model well. The tree's case is a context too small for the whole list, or a library several times larger; neither was measured.
+- One-hop `needs` edges, chosen offline by a model for each skill without seeing any task, added 1.9 points to the tree and 1.3 to the flat list. Three agents had agreed beforehand that `needs` should be added only for +5 or more over the tree without edges. It is not added.
+
+The tree here was built in one pass and never tuned on its misses, which raised tree routing by 9 points in §21. What the result does say: a tree is a way to read less, not a way to route better, and below the size where the list stops fitting, the list routes better.
+

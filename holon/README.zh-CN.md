@@ -266,7 +266,7 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 
 已经验证过的：测试在 Linux、macOS、Windows 上用 Python 3.8 到 3.13 运行；这一页上的每一段命令输出，都由 `tests/test_readme_outputs.py` 和真实输出逐字比对；仓库里每个 `SKILL.md` 都通过了 Agent Skills 规范的官方验证器。
 
-还没有验证过的：这些规则用在过三个库上：一个二十个 skill 的公开库；为这个项目自己的工作写的三个 skill；以及 2026 年 10 月 anthropics/skills 的 19 个 skill，组成一棵 24 个 skill 的树。用的过程中规则改过两处，第三次导入改了工具（见更新日志）。还没有在几百个 skill 的库上试过。规则里的数字（五个覆盖词、每个父级九个子 skill、0.4 的重叠）是让这两个库能被检查的取值，不是测出来的最优值。它们是可以调的设置：怎么为你自己的库修改，见 [organizer/README.zh-CN.md](organizer/README.zh-CN.md#为你自己的库调整参数)。
+还没有验证过的：这些规则用在过三个库上：一个二十个 skill 的公开库；为这个项目自己的工作写的三个 skill；以及 2026 年 10 月 anthropics/skills 的 19 个 skill，组成一棵 24 个 skill 的树。用的过程中规则改过两处，第三次导入改了工具（见更新日志）。500 个 skill 的树路由测过一次（见下文），但还没有把这些规则用在那么大的库上。规则里的数字（五个覆盖词、每个父级九个子 skill、0.4 的重叠）是让这两个库能被检查的取值，不是测出来的最优值。它们是可以调的设置：怎么为你自己的库修改，见 [organizer/README.zh-CN.md](organizer/README.zh-CN.md#为你自己的库调整参数)。
 
 路由比对的是词，不是意思。一句话里一个 skill 的词都没出现，就到不了那个 skill。办法是在 `synonyms.md` 里加一行；agent 遇到这种情况时会记到 `_feedback.md` 里，等人来补。同样的比对不懂否定（"什么都不要 absorb"里仍然有 `absorb`）；一句话同时要两件不相干的事时，可能被两个分支的 `excludes` 同时挡住，停在根上。
 
@@ -275,6 +275,8 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 根的描述写的是"Use for every task"，这样只列顶层文件夹的工具会选中这棵树。如果同一个 skills 文件夹里还有别的顶层 skill，这一句会和它们抢；这时给根写一个说明这棵树管什么的描述（`init 名字 --desc ...`）。
 
 `organizer/references/design-notes.md`（§17）里的上下文测量，数的是路径上 `SKILL.md` 的字节，不是 token，也不包括路由之后做任务时读的内容。那里的数字也显示，大部分节省来自把背景材料移进 `references/`，而这一点平铺的库同样能做。
+
+在 500 个 skill 的规模上也测过一次，见 [experiments/2026-10-gos-scale](../experiments/2026-10-gos-scale/README.zh-CN.md)。库是 Graph of Skills 的，任务是 87 个 SkillsBench 任务。模型读平铺列表，找到标准 skill 的 90%；读一棵由模型一次建成的树，只找到 70%，但读的内容只有平铺的约十二分之一。所以树是一种少读的办法，不是一种路由更准的办法。离线写的一跳 `needs` 依赖边只提高了 1.9 个百分点，没有达到事先定的门槛，因此没有加入。
 
 拆分单个长 skill 也测过一次。在 [experiments/2026-10-split-big-skills](../experiments/2026-10-split-big-skills/README.zh-CN.md) 里，我们从 Graph of Skills 库中取了四个长文件，由 agent 按这些规则拆分：没有丢任何一行；在不看文件就答不上的题目上，答对 54 题中的 52 题（读整个文件是 54 题），读的内容少了 27%。按标题机械拆分，读的反而比整个文件多 44%，原因是它的指引行没说明后面放的是什么。至于本身自我重复的文件，无论怎么拆，拆完读得都更多。
 

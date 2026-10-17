@@ -1,0 +1,2494 @@
+[
+ {
+  "id": "3d-scan-calc",
+  "gold": [
+   "mesh-analysis"
+  ],
+  "flat": [
+   "mesh-analysis"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "mesh-analysis"
+  ],
+  "tree_chars": 7527,
+  "flat_needs": [
+   "mesh-analysis"
+  ],
+  "tree_needs": [
+   "mesh-analysis"
+  ]
+ },
+ {
+  "id": "adaptive-cruise-control",
+  "gold": [
+   "csv-processing",
+   "pid-controller",
+   "simulation-metrics",
+   "vehicle-dynamics",
+   "yaml-config"
+  ],
+  "flat": [
+   "pid-controller",
+   "vehicle-dynamics",
+   "simulation-metrics",
+   "yaml-config",
+   "csv-processing",
+   "imc-tuning-rules",
+   "safety-interlocks",
+   "planning-with-files"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pid-controller",
+   "safety-interlocks",
+   "simulation-metrics",
+   "vehicle-dynamics"
+  ],
+  "tree_chars": 8075,
+  "flat_needs": [
+   "pid-controller",
+   "vehicle-dynamics",
+   "simulation-metrics",
+   "yaml-config",
+   "csv-processing",
+   "imc-tuning-rules",
+   "safety-interlocks",
+   "planning-with-files"
+  ],
+  "tree_needs": [
+   "pid-controller",
+   "safety-interlocks",
+   "simulation-metrics",
+   "vehicle-dynamics"
+  ]
+ },
+ {
+  "id": "azure-bgp-oscillation-route-leak",
+  "gold": [
+   "azure-bgp"
+  ],
+  "flat": [
+   "azure-bgp"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "azure-bgp"
+  ],
+  "tree_chars": 5913,
+  "flat_needs": [
+   "azure-bgp"
+  ],
+  "tree_needs": [
+   "azure-bgp"
+  ]
+ },
+ {
+  "id": "citation-check",
+  "gold": [
+   "citation-management"
+  ],
+  "flat": [
+   "citation-management"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "citation-management"
+  ],
+  "tree_chars": 8094,
+  "flat_needs": [
+   "citation-management"
+  ],
+  "tree_needs": [
+   "citation-management"
+  ]
+ },
+ {
+  "id": "civ6-adjacency-optimizer",
+  "gold": [
+   "civ6lib",
+   "hex-grid-spatial",
+   "map-optimization-strategy",
+   "sqlite-map-parser"
+  ],
+  "flat": [
+   "civ6lib",
+   "hex-grid-spatial",
+   "map-optimization-strategy",
+   "sqlite-map-parser"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "civ6lib"
+  ],
+  "tree_chars": 6048,
+  "flat_needs": [
+   "civ6lib",
+   "hex-grid-spatial",
+   "map-optimization-strategy",
+   "sqlite-map-parser"
+  ],
+  "tree_needs": [
+   "civ6lib",
+   "hex-grid-spatial"
+  ]
+ },
+ {
+  "id": "court-form-filling",
+  "gold": [
+   "pdf"
+  ],
+  "flat": [
+   "pdf"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pdf"
+  ],
+  "tree_chars": 5735,
+  "flat_needs": [
+   "pdf"
+  ],
+  "tree_needs": [
+   "pdf"
+  ]
+ },
+ {
+  "id": "crystallographic-wyckoff-position-analysis",
+  "gold": [
+   "pymatgen",
+   "sympy"
+  ],
+  "flat": [
+   "pymatgen"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pymatgen"
+  ],
+  "tree_chars": 8094,
+  "flat_needs": [
+   "pymatgen"
+  ],
+  "tree_needs": [
+   "pymatgen"
+  ]
+ },
+ {
+  "id": "dapt-intrusion-detection",
+  "gold": [
+   "pcap-analysis",
+   "threat-detection"
+  ],
+  "flat": [
+   "pcap-analysis",
+   "pcap-triage-tshark",
+   "threat-detection"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pcap-analysis",
+   "pcap-triage-tshark",
+   "threat-detection"
+  ],
+  "tree_chars": 5913,
+  "flat_needs": [
+   "pcap-analysis",
+   "pcap-triage-tshark",
+   "threat-detection"
+  ],
+  "tree_needs": [
+   "pcap-analysis",
+   "pcap-triage-tshark",
+   "threat-detection"
+  ]
+ },
+ {
+  "id": "data-to-d3",
+  "gold": [
+   "d3-visualization"
+  ],
+  "flat": [
+   "d3-visualization"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "web-interface-guidelines"
+  ],
+  "tree_chars": 7578,
+  "flat_needs": [
+   "d3-visualization"
+  ],
+  "tree_needs": [
+   "web-interface-guidelines"
+  ]
+ },
+ {
+  "id": "dialogue-parser",
+  "gold": [
+   "dialogue_graph"
+  ],
+  "flat": [
+   "dialogue_graph"
+  ],
+  "flat_chars": 95188,
+  "tree": [],
+  "tree_chars": 8884,
+  "flat_needs": [
+   "dialogue_graph"
+  ],
+  "tree_needs": []
+ },
+ {
+  "id": "dynamic-object-aware-egomotion",
+  "gold": [
+   "dyn-object-masks",
+   "egomotion-estimation",
+   "output-validation",
+   "sampling-and-indexing"
+  ],
+  "flat": [
+   "egomotion-estimation",
+   "dyn-object-masks",
+   "sampling-and-indexing",
+   "output-validation",
+   "video-frame-extraction"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "egomotion-estimation",
+   "dyn-object-masks"
+  ],
+  "tree_chars": 7556,
+  "flat_needs": [
+   "egomotion-estimation",
+   "dyn-object-masks",
+   "sampling-and-indexing",
+   "output-validation",
+   "video-frame-extraction"
+  ],
+  "tree_needs": [
+   "egomotion-estimation",
+   "dyn-object-masks",
+   "sampling-and-indexing"
+  ]
+ },
+ {
+  "id": "earthquake-phase-association",
+  "gold": [
+   "gamma-phase-associator",
+   "obspy-data-api",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ],
+  "flat": [
+   "gamma-phase-associator",
+   "obspy-data-api",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "gamma-phase-associator",
+   "obspy-data-api",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ],
+  "tree_chars": 8106,
+  "flat_needs": [
+   "gamma-phase-associator",
+   "obspy-data-api",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ],
+  "tree_needs": [
+   "gamma-phase-associator",
+   "obspy-data-api",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ]
+ },
+ {
+  "id": "earthquake-plate-calculation",
+  "gold": [
+   "geospatial-analysis"
+  ],
+  "flat": [
+   "geospatial-analysis"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "geospatial-analysis"
+  ],
+  "tree_chars": 8099,
+  "flat_needs": [
+   "geospatial-analysis"
+  ],
+  "tree_needs": [
+   "geospatial-analysis"
+  ]
+ },
+ {
+  "id": "econ-detrending-correlation",
+  "gold": [
+   "timeseries-detrending"
+  ],
+  "flat": [
+   "timeseries-detrending"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "timeseries-detrending",
+   "csv-processing"
+  ],
+  "tree_chars": 11684,
+  "flat_needs": [
+   "timeseries-detrending"
+  ],
+  "tree_needs": [
+   "timeseries-detrending",
+   "csv-processing"
+  ]
+ },
+ {
+  "id": "energy-ac-optimal-power-flow",
+  "gold": [
+   "ac-branch-pi-model",
+   "casadi-ipopt-nlp",
+   "power-flow-data"
+  ],
+  "flat": [
+   "ac-branch-pi-model",
+   "power-flow-data",
+   "economic-dispatch",
+   "casadi-ipopt-nlp"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "ac-branch-pi-model",
+   "economic-dispatch",
+   "power-flow-data"
+  ],
+  "tree_chars": 7542,
+  "flat_needs": [
+   "ac-branch-pi-model",
+   "power-flow-data",
+   "economic-dispatch",
+   "casadi-ipopt-nlp",
+   "dc-power-flow"
+  ],
+  "tree_needs": [
+   "ac-branch-pi-model",
+   "economic-dispatch",
+   "power-flow-data",
+   "dc-power-flow"
+  ]
+ },
+ {
+  "id": "energy-market-pricing",
+  "gold": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "locational-marginal-prices",
+   "power-flow-data"
+  ],
+  "flat": [
+   "dc-power-flow",
+   "power-flow-data",
+   "economic-dispatch",
+   "locational-marginal-prices"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "locational-marginal-prices",
+   "power-flow-data"
+  ],
+  "tree_chars": 7542,
+  "flat_needs": [
+   "dc-power-flow",
+   "power-flow-data",
+   "economic-dispatch",
+   "locational-marginal-prices"
+  ],
+  "tree_needs": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "locational-marginal-prices",
+   "power-flow-data"
+  ]
+ },
+ {
+  "id": "enterprise-information-search",
+  "gold": [
+   "enterprise-artifact-search"
+  ],
+  "flat": [
+   "enterprise-artifact-search"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "13f-analyzer",
+   "civ6lib",
+   "fuzzy-name-search",
+   "powerlifting",
+   "search-accommodations",
+   "search-attractions",
+   "search-cities",
+   "search-driving-distance",
+   "search-flights",
+   "search-restaurants"
+  ],
+  "tree_chars": 6048,
+  "flat_needs": [
+   "enterprise-artifact-search"
+  ],
+  "tree_needs": [
+   "13f-analyzer",
+   "civ6lib",
+   "fuzzy-name-search",
+   "powerlifting",
+   "search-accommodations",
+   "search-attractions",
+   "search-cities",
+   "search-driving-distance",
+   "search-flights",
+   "search-restaurants",
+   "hex-grid-spatial"
+  ]
+ },
+ {
+  "id": "exceltable-in-ppt",
+  "gold": [
+   "pptx",
+   "xlsx"
+  ],
+  "flat": [
+   "pptx",
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pptx",
+   "xlsx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "pptx",
+   "xlsx"
+  ],
+  "tree_needs": [
+   "pptx",
+   "xlsx"
+  ]
+ },
+ {
+  "id": "exoplanet-detection-period",
+  "gold": [
+   "box-least-squares",
+   "exoplanet-workflows",
+   "light-curve-preprocessing",
+   "lomb-scargle-periodogram",
+   "transit-least-squares"
+  ],
+  "flat": [
+   "light-curve-preprocessing",
+   "lomb-scargle-periodogram",
+   "transit-least-squares",
+   "box-least-squares",
+   "exoplanet-workflows"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "box-least-squares",
+   "exoplanet-workflows",
+   "light-curve-preprocessing",
+   "lomb-scargle-periodogram",
+   "transit-least-squares"
+  ],
+  "tree_chars": 8468,
+  "flat_needs": [
+   "light-curve-preprocessing",
+   "lomb-scargle-periodogram",
+   "transit-least-squares",
+   "box-least-squares",
+   "exoplanet-workflows"
+  ],
+  "tree_needs": [
+   "box-least-squares",
+   "exoplanet-workflows",
+   "light-curve-preprocessing",
+   "lomb-scargle-periodogram",
+   "transit-least-squares"
+  ]
+ },
+ {
+  "id": "financial-modeling-qa",
+  "gold": [
+   "pdf",
+   "xlsx"
+  ],
+  "flat": [
+   "xlsx",
+   "pdf-reading"
+  ],
+  "flat_chars": 95188,
+  "tree": [],
+  "tree_chars": 8996,
+  "flat_needs": [
+   "xlsx",
+   "pdf-reading"
+  ],
+  "tree_needs": []
+ },
+ {
+  "id": "find-topk-similiar-chemicals",
+  "gold": [
+   "pdf",
+   "pubchem-database",
+   "rdkit"
+  ],
+  "flat": [
+   "pubchem-database",
+   "rdkit",
+   "pdf-reading"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pdf-reading",
+   "pubchem-database",
+   "rdkit"
+  ],
+  "tree_chars": 9928,
+  "flat_needs": [
+   "pubchem-database",
+   "rdkit",
+   "pdf-reading"
+  ],
+  "tree_needs": [
+   "pdf-reading",
+   "pubchem-database",
+   "rdkit"
+  ]
+ },
+ {
+  "id": "fix-build-agentops",
+  "gold": [
+   "analyze-ci",
+   "temporal-python-testing",
+   "testing-python",
+   "uv-package-manager"
+  ],
+  "flat": [
+   "find-bugs",
+   "setup-env"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "setup-env"
+  ],
+  "tree_chars": 8884,
+  "flat_needs": [
+   "find-bugs",
+   "setup-env"
+  ],
+  "tree_needs": [
+   "setup-env"
+  ]
+ },
+ {
+  "id": "fix-build-google-auto",
+  "gold": [
+   "maven-build-lifecycle",
+   "maven-dependency-management",
+   "maven-plugin-configuration"
+  ],
+  "flat": [
+   "analyze-ci",
+   "maven-build-lifecycle",
+   "maven-dependency-management",
+   "maven-plugin-configuration",
+   "senior-java"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "jakarta-namespace",
+   "maven-build-lifecycle",
+   "maven-dependency-management",
+   "maven-plugin-configuration",
+   "spring-boot-migration"
+  ],
+  "tree_chars": 9252,
+  "flat_needs": [
+   "analyze-ci",
+   "maven-build-lifecycle",
+   "maven-dependency-management",
+   "maven-plugin-configuration",
+   "senior-java"
+  ],
+  "tree_needs": [
+   "jakarta-namespace",
+   "maven-build-lifecycle",
+   "maven-dependency-management",
+   "maven-plugin-configuration",
+   "spring-boot-migration"
+  ]
+ },
+ {
+  "id": "fix-druid-loophole-cve",
+  "gold": [
+   "jackson-security",
+   "senior-java"
+  ],
+  "flat": [
+   "senior-security",
+   "senior-java",
+   "maven-build-lifecycle",
+   "jackson-security",
+   "planning-with-files"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "maven-build-lifecycle",
+   "senior-java"
+  ],
+  "tree_chars": 9252,
+  "flat_needs": [
+   "senior-security",
+   "senior-java",
+   "maven-build-lifecycle",
+   "jackson-security",
+   "planning-with-files"
+  ],
+  "tree_needs": [
+   "maven-build-lifecycle",
+   "senior-java"
+  ]
+ },
+ {
+  "id": "fix-erlang-ssh-cve",
+  "gold": [
+   "erlang-concurrency",
+   "erlang-distribution",
+   "erlang-otp-behaviors",
+   "find-bugs",
+   "senior-security",
+   "ssh-penetration-testing"
+  ],
+  "flat": [
+   "find-bugs",
+   "senior-security",
+   "ssh-penetration-testing",
+   "erlang-otp-behaviors"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "ssh-penetration-testing",
+   "senior-security"
+  ],
+  "tree_chars": 6888,
+  "flat_needs": [
+   "find-bugs",
+   "senior-security",
+   "ssh-penetration-testing",
+   "erlang-otp-behaviors"
+  ],
+  "tree_needs": [
+   "ssh-penetration-testing",
+   "senior-security"
+  ]
+ },
+ {
+  "id": "fix-visual-stability",
+  "gold": [
+   "browser-testing",
+   "react-best-practices",
+   "web-interface-guidelines"
+  ],
+  "flat": [
+   "react-best-practices",
+   "browser-testing",
+   "web-interface-guidelines"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "browser-testing",
+   "react-best-practices",
+   "web-interface-guidelines"
+  ],
+  "tree_chars": 7578,
+  "flat_needs": [
+   "react-best-practices",
+   "browser-testing",
+   "web-interface-guidelines"
+  ],
+  "tree_needs": [
+   "browser-testing",
+   "react-best-practices",
+   "web-interface-guidelines"
+  ]
+ },
+ {
+  "id": "flink-query",
+  "gold": [
+   "pdf",
+   "senior-data-engineer"
+  ],
+  "flat": [
+   "pdf-reading",
+   "pdf",
+   "senior-data-engineer",
+   "senior-java",
+   "maven-build-lifecycle",
+   "discover-important-function",
+   "planning-with-files"
+  ],
+  "flat_chars": 95188,
+  "tree": [],
+  "tree_chars": 9252,
+  "flat_needs": [
+   "pdf-reading",
+   "pdf",
+   "senior-data-engineer",
+   "senior-java",
+   "maven-build-lifecycle",
+   "discover-important-function",
+   "planning-with-files"
+  ],
+  "tree_needs": []
+ },
+ {
+  "id": "flood-risk-analysis",
+  "gold": [
+   "flood-detection",
+   "nws-flood-thresholds",
+   "usgs-data-download"
+  ],
+  "flat": [
+   "flood-detection",
+   "nws-flood-thresholds",
+   "csv-processing"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "csv-processing"
+  ],
+  "tree_chars": 8652,
+  "flat_needs": [
+   "flood-detection",
+   "nws-flood-thresholds",
+   "csv-processing",
+   "usgs-data-download"
+  ],
+  "tree_needs": [
+   "csv-processing"
+  ]
+ },
+ {
+  "id": "gh-repo-analytics",
+  "gold": [
+   "gh-cli"
+  ],
+  "flat": [
+   "gh-cli"
+  ],
+  "flat_chars": 95188,
+  "tree": [],
+  "tree_chars": 9289,
+  "flat_needs": [
+   "gh-cli"
+  ],
+  "tree_needs": []
+ },
+ {
+  "id": "glm-lake-mendota",
+  "gold": [
+   "glm-basics",
+   "glm-calibration",
+   "glm-output"
+  ],
+  "flat": [
+   "glm-basics",
+   "glm-calibration",
+   "glm-output"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "glm-basics",
+   "glm-calibration",
+   "glm-output"
+  ],
+  "tree_chars": 8099,
+  "flat_needs": [
+   "glm-basics",
+   "glm-calibration",
+   "glm-output",
+   "csv-processing"
+  ],
+  "tree_needs": [
+   "glm-basics",
+   "glm-calibration",
+   "glm-output",
+   "csv-processing"
+  ]
+ },
+ {
+  "id": "gravitational-wave-detection",
+  "gold": [
+   "conditioning",
+   "matched-filtering"
+  ],
+  "flat": [
+   "conditioning",
+   "matched-filtering"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "conditioning",
+   "matched-filtering"
+  ],
+  "tree_chars": 8468,
+  "flat_needs": [
+   "conditioning",
+   "matched-filtering"
+  ],
+  "tree_needs": [
+   "conditioning",
+   "matched-filtering"
+  ]
+ },
+ {
+  "id": "grid-dispatch-operator",
+  "gold": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "power-flow-data"
+  ],
+  "flat": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "power-flow-data"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "power-flow-data"
+  ],
+  "tree_chars": 7542,
+  "flat_needs": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "power-flow-data"
+  ],
+  "tree_needs": [
+   "dc-power-flow",
+   "economic-dispatch",
+   "power-flow-data"
+  ]
+ },
+ {
+  "id": "hvac-control",
+  "gold": [
+   "excitation-signal-design",
+   "first-order-model-fitting",
+   "imc-tuning-rules",
+   "safety-interlocks",
+   "scipy-curve-fit"
+  ],
+  "flat": [
+   "pid-controller",
+   "first-order-model-fitting",
+   "imc-tuning-rules",
+   "excitation-signal-design",
+   "simulation-metrics",
+   "scipy-curve-fit",
+   "safety-interlocks"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "excitation-signal-design",
+   "first-order-model-fitting",
+   "imc-tuning-rules",
+   "pid-controller",
+   "simulation-metrics"
+  ],
+  "tree_chars": 8075,
+  "flat_needs": [
+   "pid-controller",
+   "first-order-model-fitting",
+   "imc-tuning-rules",
+   "excitation-signal-design",
+   "simulation-metrics",
+   "scipy-curve-fit",
+   "safety-interlocks"
+  ],
+  "tree_needs": [
+   "excitation-signal-design",
+   "first-order-model-fitting",
+   "imc-tuning-rules",
+   "pid-controller",
+   "simulation-metrics",
+   "scipy-curve-fit"
+  ]
+ },
+ {
+  "id": "invoice-fraud-detection",
+  "gold": [
+   "fuzzy-match",
+   "pdf",
+   "xlsx"
+  ],
+  "flat": [
+   "pdf-reading",
+   "xlsx",
+   "fuzzy-match"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pdf-reading",
+   "xlsx"
+  ],
+  "tree_chars": 7388,
+  "flat_needs": [
+   "pdf-reading",
+   "xlsx",
+   "fuzzy-match"
+  ],
+  "tree_needs": [
+   "pdf-reading",
+   "xlsx"
+  ]
+ },
+ {
+  "id": "jax-computing-basics",
+  "gold": [
+   "jax-skills"
+  ],
+  "flat": [
+   "jax-skills"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "setup-env"
+  ],
+  "tree_chars": 8884,
+  "flat_needs": [
+   "jax-skills"
+  ],
+  "tree_needs": [
+   "setup-env"
+  ]
+ },
+ {
+  "id": "jpg-ocr-stat",
+  "gold": [
+   "image-ocr",
+   "openai-vision",
+   "pdf",
+   "video-frame-extraction",
+   "xlsx"
+  ],
+  "flat": [
+   "image-ocr",
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "xlsx",
+   "image-ocr"
+  ],
+  "tree_chars": 9836,
+  "flat_needs": [
+   "image-ocr",
+   "xlsx"
+  ],
+  "tree_needs": [
+   "xlsx",
+   "image-ocr"
+  ]
+ },
+ {
+  "id": "lab-unit-harmonization",
+  "gold": [
+   "lab-unit-harmonization"
+  ],
+  "flat": [
+   "lab-unit-harmonization"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "lab-unit-harmonization"
+  ],
+  "tree_chars": 8652,
+  "flat_needs": [
+   "lab-unit-harmonization"
+  ],
+  "tree_needs": [
+   "lab-unit-harmonization"
+  ]
+ },
+ {
+  "id": "lake-warming-attribution",
+  "gold": [
+   "contribution-analysis",
+   "meteorology-driver-classification",
+   "pca-decomposition",
+   "trend-analysis"
+  ],
+  "flat": [
+   "trend-analysis",
+   "contribution-analysis",
+   "meteorology-driver-classification",
+   "csv-processing"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "trend-analysis",
+   "contribution-analysis"
+  ],
+  "tree_chars": 8996,
+  "flat_needs": [
+   "trend-analysis",
+   "contribution-analysis",
+   "meteorology-driver-classification",
+   "csv-processing"
+  ],
+  "tree_needs": [
+   "trend-analysis",
+   "contribution-analysis"
+  ]
+ },
+ {
+  "id": "latex-formula-extraction",
+  "gold": [
+   "marker",
+   "pdf"
+  ],
+  "flat": [
+   "marker",
+   "pdf-reading",
+   "pdf"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "marker"
+  ],
+  "tree_chars": 5735,
+  "flat_needs": [
+   "marker",
+   "pdf-reading",
+   "pdf"
+  ],
+  "tree_needs": [
+   "marker"
+  ]
+ },
+ {
+  "id": "lean4-proof",
+  "gold": [
+   "lean4-memories",
+   "lean4-theorem-proving"
+  ],
+  "flat": [
+   "lean4-theorem-proving"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "lean4-theorem-proving"
+  ],
+  "tree_chars": 7213,
+  "flat_needs": [
+   "lean4-theorem-proving"
+  ],
+  "tree_needs": [
+   "lean4-theorem-proving"
+  ]
+ },
+ {
+  "id": "manufacturing-codebook-normalization",
+  "gold": [
+   "manufacturing-failure-reason-codebook-normalization"
+  ],
+  "flat": [
+   "manufacturing-failure-reason-codebook-normalization"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "manufacturing-failure-reason-codebook-normalization"
+  ],
+  "tree_chars": 8652,
+  "flat_needs": [
+   "manufacturing-failure-reason-codebook-normalization"
+  ],
+  "tree_needs": [
+   "manufacturing-failure-reason-codebook-normalization"
+  ]
+ },
+ {
+  "id": "manufacturing-equipment-maintenance",
+  "gold": [
+   "reflow-profile-compliance-toolkit",
+   "reflow_machine_maintenance_guidance"
+  ],
+  "flat": [
+   "csv-processing",
+   "pdf-reading",
+   "reflow-profile-compliance-toolkit",
+   "reflow_machine_maintenance_guidance"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pdf-reading",
+   "xlsx",
+   "senior-data-scientist",
+   "csv-processing",
+   "data_cleaning"
+  ],
+  "tree_chars": 15171,
+  "flat_needs": [
+   "csv-processing",
+   "pdf-reading",
+   "reflow-profile-compliance-toolkit",
+   "reflow_machine_maintenance_guidance"
+  ],
+  "tree_needs": [
+   "pdf-reading",
+   "xlsx",
+   "senior-data-scientist",
+   "csv-processing",
+   "data_cleaning"
+  ]
+ },
+ {
+  "id": "manufacturing-fjsp-optimization",
+  "gold": [
+   "fjsp-baseline-repair-with-downtime-and-policy"
+  ],
+  "flat": [
+   "fjsp-baseline-repair-with-downtime-and-policy"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "fjsp-baseline-repair-with-downtime-and-policy"
+  ],
+  "tree_chars": 7160,
+  "flat_needs": [
+   "fjsp-baseline-repair-with-downtime-and-policy"
+  ],
+  "tree_needs": [
+   "fjsp-baseline-repair-with-downtime-and-policy"
+  ]
+ },
+ {
+  "id": "mario-coin-counting",
+  "gold": [
+   "ffmpeg",
+   "image_editing",
+   "object_counter"
+  ],
+  "flat": [
+   "video-frame-extraction",
+   "ffmpeg",
+   "object_counter",
+   "image_editing"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "video-frame-extraction",
+   "image_editing",
+   "object_counter"
+  ],
+  "tree_chars": 7208,
+  "flat_needs": [
+   "video-frame-extraction",
+   "ffmpeg",
+   "object_counter",
+   "image_editing"
+  ],
+  "tree_needs": [
+   "video-frame-extraction",
+   "image_editing",
+   "object_counter"
+  ]
+ },
+ {
+  "id": "mars-clouds-clustering",
+  "gold": [
+   "custom-distance-metrics",
+   "parallel-processing",
+   "pareto-optimization"
+  ],
+  "flat": [
+   "custom-distance-metrics",
+   "parallel-processing",
+   "pareto-optimization"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pareto-optimization",
+   "parallel-processing",
+   "custom-distance-metrics"
+  ],
+  "tree_chars": 11912,
+  "flat_needs": [
+   "custom-distance-metrics",
+   "parallel-processing",
+   "pareto-optimization"
+  ],
+  "tree_needs": [
+   "pareto-optimization",
+   "parallel-processing",
+   "custom-distance-metrics"
+  ]
+ },
+ {
+  "id": "mhc-layer-impl",
+  "gold": [
+   "mhc-algorithm",
+   "modal-gpu",
+   "nanogpt-training"
+  ],
+  "flat": [
+   "mhc-algorithm",
+   "modal-gpu",
+   "nanogpt-training"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "mhc-algorithm",
+   "modal-gpu",
+   "nanogpt-training"
+  ],
+  "tree_chars": 6836,
+  "flat_needs": [
+   "mhc-algorithm",
+   "modal-gpu",
+   "nanogpt-training"
+  ],
+  "tree_needs": [
+   "mhc-algorithm",
+   "modal-gpu",
+   "nanogpt-training"
+  ]
+ },
+ {
+  "id": "multilingual-video-dubbing",
+  "gold": [
+   "ffmpeg-audio-processing",
+   "ffmpeg-format-conversion",
+   "ffmpeg-media-info",
+   "ffmpeg-video-editing",
+   "ffmpeg-video-filters",
+   "text-to-speech"
+  ],
+  "flat": [
+   "elevenlabs-tts",
+   "ffmpeg-audio-processing",
+   "ffmpeg-format-conversion",
+   "ffmpeg-media-info",
+   "ffmpeg-video-editing",
+   "openai-tts",
+   "report-generator",
+   "text-to-speech"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "elevenlabs-tts",
+   "openai-tts",
+   "text-to-speech",
+   "ffmpeg-format-conversion",
+   "ffmpeg-media-info",
+   "ffmpeg-video-editing",
+   "report-generator"
+  ],
+  "tree_chars": 8467,
+  "flat_needs": [
+   "elevenlabs-tts",
+   "ffmpeg-audio-processing",
+   "ffmpeg-format-conversion",
+   "ffmpeg-media-info",
+   "ffmpeg-video-editing",
+   "openai-tts",
+   "report-generator",
+   "text-to-speech"
+  ],
+  "tree_needs": [
+   "elevenlabs-tts",
+   "openai-tts",
+   "text-to-speech",
+   "ffmpeg-format-conversion",
+   "ffmpeg-media-info",
+   "ffmpeg-video-editing",
+   "report-generator",
+   "ffmpeg-audio-processing"
+  ]
+ },
+ {
+  "id": "offer-letter-generator",
+  "gold": [
+   "docx"
+  ],
+  "flat": [
+   "docx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "docx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "docx"
+  ],
+  "tree_needs": [
+   "docx"
+  ]
+ },
+ {
+  "id": "organize-messy-files",
+  "gold": [
+   "docx",
+   "file-organizer",
+   "pdf",
+   "planning-with-files",
+   "pptx"
+  ],
+  "flat": [
+   "docx",
+   "file-organizer",
+   "pdf",
+   "pdf-reading",
+   "planning-with-files",
+   "pptx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "file-organizer"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "docx",
+   "file-organizer",
+   "pdf",
+   "pdf-reading",
+   "planning-with-files",
+   "pptx"
+  ],
+  "tree_needs": [
+   "file-organizer"
+  ]
+ },
+ {
+  "id": "paper-anonymizer",
+  "gold": [
+   "academic-pdf-redaction",
+   "pdf"
+  ],
+  "flat": [
+   "academic-pdf-redaction"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "academic-pdf-redaction"
+  ],
+  "tree_chars": 5735,
+  "flat_needs": [
+   "academic-pdf-redaction"
+  ],
+  "tree_needs": [
+   "academic-pdf-redaction"
+  ]
+ },
+ {
+  "id": "parallel-tfidf-search",
+  "gold": [
+   "memory-optimization",
+   "python-parallelization",
+   "workload-balancing"
+  ],
+  "flat": [
+   "python-parallelization",
+   "parallel-processing",
+   "workload-balancing"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "python-parallelization"
+  ],
+  "tree_chars": 8884,
+  "flat_needs": [
+   "python-parallelization",
+   "parallel-processing",
+   "workload-balancing"
+  ],
+  "tree_needs": [
+   "python-parallelization"
+  ]
+ },
+ {
+  "id": "pddl-tpp-planning",
+  "gold": [
+   "pddl-skills"
+  ],
+  "flat": [
+   "pddl-skills"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pddl-skills"
+  ],
+  "tree_chars": 7329,
+  "flat_needs": [
+   "pddl-skills"
+  ],
+  "tree_needs": [
+   "pddl-skills"
+  ]
+ },
+ {
+  "id": "pdf-excel-diff",
+  "gold": [
+   "pdf",
+   "xlsx"
+  ],
+  "flat": [
+   "pdf",
+   "pdf-reading",
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pdf-reading",
+   "xlsx"
+  ],
+  "tree_chars": 7388,
+  "flat_needs": [
+   "pdf",
+   "pdf-reading",
+   "xlsx"
+  ],
+  "tree_needs": [
+   "pdf-reading",
+   "xlsx"
+  ]
+ },
+ {
+  "id": "pedestrian-traffic-counting",
+  "gold": [
+   "gemini-count-in-video",
+   "gemini-video-understanding",
+   "gpt-multimodal",
+   "video-frame-extraction"
+  ],
+  "flat": [
+   "gemini-count-in-video",
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "gemini-count-in-video",
+   "xlsx"
+  ],
+  "tree_chars": 9836,
+  "flat_needs": [
+   "gemini-count-in-video",
+   "xlsx"
+  ],
+  "tree_needs": [
+   "gemini-count-in-video",
+   "xlsx"
+  ]
+ },
+ {
+  "id": "pg-essay-to-audiobook",
+  "gold": [
+   "audiobook",
+   "elevenlabs-tts",
+   "gtts",
+   "openai-tts"
+  ],
+  "flat": [
+   "audiobook"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "audiobook",
+   "elevenlabs-automation"
+  ],
+  "tree_chars": 14660,
+  "flat_needs": [
+   "audiobook",
+   "gtts",
+   "openai-tts",
+   "elevenlabs-tts"
+  ],
+  "tree_needs": [
+   "audiobook",
+   "elevenlabs-automation",
+   "gtts",
+   "openai-tts",
+   "elevenlabs-tts"
+  ]
+ },
+ {
+  "id": "powerlifting-coef-calc",
+  "gold": [
+   "powerlifting",
+   "senior-data-scientist",
+   "xlsx"
+  ],
+  "flat": [
+   "powerlifting",
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "xlsx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "powerlifting",
+   "xlsx"
+  ],
+  "tree_needs": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": "pptx-reference-formatting",
+  "gold": [
+   "pptx"
+  ],
+  "flat": [
+   "pptx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pptx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "pptx"
+  ],
+  "tree_needs": [
+   "pptx"
+  ]
+ },
+ {
+  "id": "protein-expression-analysis",
+  "gold": [
+   "xlsx"
+  ],
+  "flat": [
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "xlsx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "xlsx"
+  ],
+  "tree_needs": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": "python-scala-translation",
+  "gold": [
+   "python-scala-collections",
+   "python-scala-functional",
+   "python-scala-idioms",
+   "python-scala-libraries",
+   "python-scala-oop",
+   "python-scala-syntax-mapping"
+  ],
+  "flat": [
+   "python-scala-collections",
+   "python-scala-functional",
+   "python-scala-idioms",
+   "python-scala-libraries",
+   "python-scala-oop",
+   "python-scala-syntax-mapping"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "python-scala-collections",
+   "python-scala-functional",
+   "python-scala-idioms",
+   "python-scala-libraries",
+   "python-scala-oop",
+   "python-scala-syntax-mapping"
+  ],
+  "tree_chars": 8447,
+  "flat_needs": [
+   "python-scala-collections",
+   "python-scala-functional",
+   "python-scala-idioms",
+   "python-scala-libraries",
+   "python-scala-oop",
+   "python-scala-syntax-mapping"
+  ],
+  "tree_needs": [
+   "python-scala-collections",
+   "python-scala-functional",
+   "python-scala-idioms",
+   "python-scala-libraries",
+   "python-scala-oop",
+   "python-scala-syntax-mapping"
+  ]
+ },
+ {
+  "id": "quantum-numerical-simulation",
+  "gold": [
+   "qutip"
+  ],
+  "flat": [
+   "qutip",
+   "csv-processing"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "qutip"
+  ],
+  "tree_chars": 8094,
+  "flat_needs": [
+   "qutip",
+   "csv-processing"
+  ],
+  "tree_needs": [
+   "qutip"
+  ]
+ },
+ {
+  "id": "r2r-mpc-control",
+  "gold": [
+   "finite-horizon-lqr",
+   "integral-action-design",
+   "mpc-horizon-tuning",
+   "state-space-linearization"
+  ],
+  "flat": [
+   "mpc-horizon-tuning",
+   "state-space-linearization",
+   "finite-horizon-lqr",
+   "integral-action-design",
+   "simulation-metrics"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "finite-horizon-lqr",
+   "integral-action-design",
+   "mpc-horizon-tuning",
+   "simulation-metrics",
+   "state-space-linearization"
+  ],
+  "tree_chars": 8075,
+  "flat_needs": [
+   "mpc-horizon-tuning",
+   "state-space-linearization",
+   "finite-horizon-lqr",
+   "integral-action-design",
+   "simulation-metrics"
+  ],
+  "tree_needs": [
+   "finite-horizon-lqr",
+   "integral-action-design",
+   "mpc-horizon-tuning",
+   "simulation-metrics",
+   "state-space-linearization"
+  ]
+ },
+ {
+  "id": "react-performance-debugging",
+  "gold": [
+   "browser-testing",
+   "react-best-practices"
+  ],
+  "flat": [
+   "react-best-practices",
+   "web-interface-guidelines",
+   "browser-testing",
+   "planning-with-files"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "react-best-practices",
+   "browser-testing"
+  ],
+  "tree_chars": 7578,
+  "flat_needs": [
+   "react-best-practices",
+   "web-interface-guidelines",
+   "browser-testing",
+   "planning-with-files"
+  ],
+  "tree_needs": [
+   "react-best-practices",
+   "browser-testing"
+  ]
+ },
+ {
+  "id": "reserves-at-risk-calc",
+  "gold": [
+   "xlsx"
+  ],
+  "flat": [
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "data-reconciliation",
+   "xlsx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "xlsx"
+  ],
+  "tree_needs": [
+   "data-reconciliation",
+   "xlsx"
+  ]
+ },
+ {
+  "id": "sales-pivot-analysis",
+  "gold": [
+   "pdf",
+   "xlsx"
+  ],
+  "flat": [
+   "pdf",
+   "pdf-reading",
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pdf-reading",
+   "xlsx"
+  ],
+  "tree_chars": 7388,
+  "flat_needs": [
+   "pdf",
+   "pdf-reading",
+   "xlsx"
+  ],
+  "tree_needs": [
+   "pdf-reading",
+   "xlsx"
+  ]
+ },
+ {
+  "id": "scheduling-email-assistant",
+  "gold": [
+   "constraint-parser",
+   "gmail-skill"
+  ],
+  "flat": [
+   "gmail-skill",
+   "constraint-parser"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "gmail-skill"
+  ],
+  "tree_chars": 10037,
+  "flat_needs": [
+   "gmail-skill",
+   "constraint-parser"
+  ],
+  "tree_needs": [
+   "gmail-skill"
+  ]
+ },
+ {
+  "id": "sec-financial-report",
+  "gold": [
+   "13f-analyzer",
+   "fuzzy-name-search"
+  ],
+  "flat": [
+   "13f-analyzer",
+   "fuzzy-name-search"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "13f-analyzer",
+   "fuzzy-name-search"
+  ],
+  "tree_chars": 6048,
+  "flat_needs": [
+   "13f-analyzer",
+   "fuzzy-name-search"
+  ],
+  "tree_needs": [
+   "13f-analyzer",
+   "fuzzy-name-search"
+  ]
+ },
+ {
+  "id": "seismic-phase-picking",
+  "gold": [
+   "obspy-data-api",
+   "obspy-datacenter-client",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ],
+  "flat": [
+   "obspy-data-api",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "seismic-picker-selection",
+   "seisbench-model-api",
+   "obspy-data-api"
+  ],
+  "tree_chars": 8106,
+  "flat_needs": [
+   "obspy-data-api",
+   "seisbench-model-api",
+   "seismic-picker-selection"
+  ],
+  "tree_needs": [
+   "seismic-picker-selection",
+   "seisbench-model-api",
+   "obspy-data-api"
+  ]
+ },
+ {
+  "id": "setup-fuzzing-py",
+  "gold": [
+   "discover-important-function",
+   "fuzzing-python",
+   "setup-env"
+  ],
+  "flat": [
+   "fuzzing-python",
+   "setup-env",
+   "discover-important-function"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "fuzzing-python",
+   "setup-env"
+  ],
+  "tree_chars": 8884,
+  "flat_needs": [
+   "fuzzing-python",
+   "setup-env",
+   "discover-important-function"
+  ],
+  "tree_needs": [
+   "fuzzing-python",
+   "setup-env"
+  ]
+ },
+ {
+  "id": "shock-analysis-demand",
+  "gold": [
+   "xlsx"
+  ],
+  "flat": [
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "xlsx"
+  ],
+  "tree_chars": 8676,
+  "flat_needs": [
+   "xlsx"
+  ],
+  "tree_needs": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": "shock-analysis-supply",
+  "gold": [
+   "xlsx"
+  ],
+  "flat": [
+   "xlsx",
+   "timeseries-detrending"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "xlsx",
+   "senior-data-scientist",
+   "timeseries-detrending"
+  ],
+  "tree_chars": 15508,
+  "flat_needs": [
+   "xlsx",
+   "timeseries-detrending"
+  ],
+  "tree_needs": [
+   "xlsx",
+   "senior-data-scientist",
+   "timeseries-detrending"
+  ]
+ },
+ {
+  "id": "simpo-code-reproduction",
+  "gold": [
+   "nlp-research-repo-package-installment",
+   "pdf"
+  ],
+  "flat": [
+   "nlp-research-repo-package-installment",
+   "setup-env",
+   "pdf-reading",
+   "marker",
+   "testing-python"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "nlp-research-repo-package-installment",
+   "setup-env",
+   "testing-python"
+  ],
+  "tree_chars": 8884,
+  "flat_needs": [
+   "nlp-research-repo-package-installment",
+   "setup-env",
+   "pdf-reading",
+   "marker",
+   "testing-python"
+  ],
+  "tree_needs": [
+   "nlp-research-repo-package-installment",
+   "setup-env",
+   "testing-python"
+  ]
+ },
+ {
+  "id": "software-dependency-audit",
+  "gold": [
+   "cvss-score-extraction",
+   "trivy-offline-vulnerability-scanning",
+   "vulnerability-csv-reporting"
+  ],
+  "flat": [
+   "trivy-offline-vulnerability-scanning",
+   "cvss-score-extraction",
+   "vulnerability-csv-reporting"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "trivy-offline-vulnerability-scanning",
+   "vulnerability-csv-reporting",
+   "cvss-score-extraction"
+  ],
+  "tree_chars": 6888,
+  "flat_needs": [
+   "trivy-offline-vulnerability-scanning",
+   "cvss-score-extraction",
+   "vulnerability-csv-reporting"
+  ],
+  "tree_needs": [
+   "trivy-offline-vulnerability-scanning",
+   "vulnerability-csv-reporting",
+   "cvss-score-extraction"
+  ]
+ },
+ {
+  "id": "speaker-diarization-subtitles",
+  "gold": [
+   "automatic-speech-recognition",
+   "multimodal-fusion",
+   "speaker-clustering",
+   "voice-activity-detection"
+  ],
+  "flat": [
+   "audio-extractor",
+   "automatic-speech-recognition",
+   "speaker-clustering",
+   "speech-to-text",
+   "voice-activity-detection",
+   "whisper-transcription"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "audio-extractor",
+   "voice-activity-detection",
+   "speaker-clustering",
+   "automatic-speech-recognition"
+  ],
+  "tree_chars": 8642,
+  "flat_needs": [
+   "audio-extractor",
+   "automatic-speech-recognition",
+   "speaker-clustering",
+   "speech-to-text",
+   "voice-activity-detection",
+   "whisper-transcription"
+  ],
+  "tree_needs": [
+   "audio-extractor",
+   "voice-activity-detection",
+   "speaker-clustering",
+   "automatic-speech-recognition"
+  ]
+ },
+ {
+  "id": "spring-boot-jakarta-migration",
+  "gold": [
+   "hibernate-upgrade",
+   "jakarta-namespace",
+   "restclient-migration",
+   "spring-boot-migration",
+   "spring-security-6"
+  ],
+  "flat": [
+   "spring-boot-migration",
+   "hibernate-upgrade",
+   "jakarta-namespace",
+   "restclient-migration",
+   "spring-security-6",
+   "maven-dependency-management",
+   "maven-plugin-configuration"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "hibernate-upgrade",
+   "jakarta-namespace",
+   "maven-dependency-management",
+   "restclient-migration",
+   "spring-boot-migration",
+   "spring-security-6"
+  ],
+  "tree_chars": 9252,
+  "flat_needs": [
+   "spring-boot-migration",
+   "hibernate-upgrade",
+   "jakarta-namespace",
+   "restclient-migration",
+   "spring-security-6",
+   "maven-dependency-management",
+   "maven-plugin-configuration",
+   "maven-build-lifecycle"
+  ],
+  "tree_needs": [
+   "hibernate-upgrade",
+   "jakarta-namespace",
+   "maven-dependency-management",
+   "restclient-migration",
+   "spring-boot-migration",
+   "spring-security-6"
+  ]
+ },
+ {
+  "id": "suricata-custom-exfil",
+  "gold": [
+   "pcap-triage-tshark",
+   "suricata-offline-evejson",
+   "suricata-rules-basics"
+  ],
+  "flat": [
+   "suricata-offline-evejson",
+   "suricata-rules-basics",
+   "pcap-triage-tshark"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "suricata-rules-basics",
+   "suricata-offline-evejson",
+   "pcap-triage-tshark"
+  ],
+  "tree_chars": 5913,
+  "flat_needs": [
+   "suricata-offline-evejson",
+   "suricata-rules-basics",
+   "pcap-triage-tshark"
+  ],
+  "tree_needs": [
+   "suricata-rules-basics",
+   "suricata-offline-evejson",
+   "pcap-triage-tshark"
+  ]
+ },
+ {
+  "id": "syzkaller-ppdev-syzlang",
+  "gold": [
+   "syz-extract-constants",
+   "syzkaller-build-loop",
+   "syzlang-ioctl-basics"
+  ],
+  "flat": [
+   "syzkaller-build-loop",
+   "syzlang-ioctl-basics",
+   "syz-extract-constants"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "syz-extract-constants",
+   "syzkaller-build-loop",
+   "syzlang-ioctl-basics"
+  ],
+  "tree_chars": 5211,
+  "flat_needs": [
+   "syzkaller-build-loop",
+   "syzlang-ioctl-basics",
+   "syz-extract-constants"
+  ],
+  "tree_needs": [
+   "syz-extract-constants",
+   "syzkaller-build-loop",
+   "syzlang-ioctl-basics"
+  ]
+ },
+ {
+  "id": "taxonomy-tree-merge",
+  "gold": [
+   "hierarchical-taxonomy-clustering"
+  ],
+  "flat": [
+   "hierarchical-taxonomy-clustering"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "hierarchical-taxonomy-clustering",
+   "csv-processing",
+   "data_cleaning",
+   "fuzzy-match"
+  ],
+  "tree_chars": 11684,
+  "flat_needs": [
+   "hierarchical-taxonomy-clustering"
+  ],
+  "tree_needs": [
+   "hierarchical-taxonomy-clustering",
+   "csv-processing",
+   "data_cleaning",
+   "fuzzy-match"
+  ]
+ },
+ {
+  "id": "threejs-structure-parser",
+  "gold": [
+   "obj-exporter",
+   "threejs"
+  ],
+  "flat": [
+   "threejs",
+   "obj-exporter"
+  ],
+  "flat_chars": 95188,
+  "tree": [],
+  "tree_chars": 6572,
+  "flat_needs": [
+   "threejs",
+   "obj-exporter"
+  ],
+  "tree_needs": []
+ },
+ {
+  "id": "threejs-to-obj",
+  "gold": [
+   "obj-exporter",
+   "threejs"
+  ],
+  "flat": [
+   "threejs",
+   "obj-exporter"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "obj-exporter",
+   "threejs"
+  ],
+  "tree_chars": 7527,
+  "flat_needs": [
+   "threejs",
+   "obj-exporter"
+  ],
+  "tree_needs": [
+   "obj-exporter",
+   "threejs"
+  ]
+ },
+ {
+  "id": "travel-planning",
+  "gold": [
+   "search-accommodations",
+   "search-attractions",
+   "search-cities",
+   "search-driving-distance",
+   "search-flights",
+   "search-restaurants"
+  ],
+  "flat": [
+   "search-accommodations",
+   "search-attractions",
+   "search-cities",
+   "search-driving-distance",
+   "search-restaurants"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "search-accommodations",
+   "search-attractions",
+   "search-cities",
+   "search-driving-distance",
+   "search-restaurants"
+  ],
+  "tree_chars": 6048,
+  "flat_needs": [
+   "search-accommodations",
+   "search-attractions",
+   "search-cities",
+   "search-driving-distance",
+   "search-restaurants"
+  ],
+  "tree_needs": [
+   "search-accommodations",
+   "search-attractions",
+   "search-cities",
+   "search-driving-distance",
+   "search-restaurants"
+  ]
+ },
+ {
+  "id": "trend-anomaly-causal-inference",
+  "gold": [
+   "data_cleaning",
+   "did_causal_analysis",
+   "feature_engineering",
+   "time_series_anomaly_detection"
+  ],
+  "flat": [
+   "data_cleaning",
+   "time_series_anomaly_detection",
+   "feature_engineering",
+   "did_causal_analysis"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "did_causal_analysis",
+   "feature_engineering",
+   "time_series_anomaly_detection",
+   "senior-data-scientist",
+   "csv-processing",
+   "data_cleaning"
+  ],
+  "tree_chars": 11684,
+  "flat_needs": [
+   "data_cleaning",
+   "time_series_anomaly_detection",
+   "feature_engineering",
+   "did_causal_analysis"
+  ],
+  "tree_needs": [
+   "did_causal_analysis",
+   "feature_engineering",
+   "time_series_anomaly_detection",
+   "senior-data-scientist",
+   "csv-processing",
+   "data_cleaning"
+  ]
+ },
+ {
+  "id": "video-filler-word-remover",
+  "gold": [
+   "ffmpeg-video-editing",
+   "filler-word-processing",
+   "whisper-transcription"
+  ],
+  "flat": [
+   "filler-word-processing",
+   "speech-to-text",
+   "whisper-transcription",
+   "ffmpeg-video-editing",
+   "video-processor"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "whisper-transcription",
+   "ffmpeg-audio-processing",
+   "filler-word-processing",
+   "ffmpeg-video-editing",
+   "video-processor"
+  ],
+  "tree_chars": 10673,
+  "flat_needs": [
+   "filler-word-processing",
+   "speech-to-text",
+   "whisper-transcription",
+   "ffmpeg-video-editing",
+   "video-processor"
+  ],
+  "tree_needs": [
+   "whisper-transcription",
+   "ffmpeg-audio-processing",
+   "filler-word-processing",
+   "ffmpeg-video-editing",
+   "video-processor"
+  ]
+ },
+ {
+  "id": "video-silence-remover",
+  "gold": [
+   "audio-extractor",
+   "energy-calculator",
+   "pause-detector",
+   "report-generator",
+   "segment-combiner",
+   "silence-detector",
+   "video-processor"
+  ],
+  "flat": [
+   "audio-extractor",
+   "energy-calculator",
+   "silence-detector",
+   "pause-detector",
+   "segment-combiner",
+   "video-processor",
+   "report-generator",
+   "ffmpeg-media-info"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "audio-extractor",
+   "energy-calculator",
+   "pause-detector",
+   "silence-detector",
+   "ffmpeg-audio-processing",
+   "ffmpeg-media-info",
+   "ffmpeg-video-editing",
+   "video-processor",
+   "report-generator"
+  ],
+  "tree_chars": 12356,
+  "flat_needs": [
+   "audio-extractor",
+   "energy-calculator",
+   "silence-detector",
+   "pause-detector",
+   "segment-combiner",
+   "video-processor",
+   "report-generator",
+   "ffmpeg-media-info"
+  ],
+  "tree_needs": [
+   "audio-extractor",
+   "energy-calculator",
+   "pause-detector",
+   "silence-detector",
+   "ffmpeg-audio-processing",
+   "ffmpeg-media-info",
+   "ffmpeg-video-editing",
+   "video-processor",
+   "report-generator"
+  ]
+ },
+ {
+  "id": "video-tutorial-indexer",
+  "gold": [
+   "speech-to-text"
+  ],
+  "flat": [
+   "audio-extractor",
+   "automatic-speech-recognition",
+   "ffmpeg",
+   "ffmpeg-audio-processing",
+   "ffmpeg-media-info",
+   "gemini-video-understanding",
+   "image-ocr",
+   "pause-detector",
+   "speech-to-text",
+   "video-frame-extraction",
+   "whisper-transcription"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "speech-to-text"
+  ],
+  "tree_chars": 8642,
+  "flat_needs": [
+   "audio-extractor",
+   "automatic-speech-recognition",
+   "ffmpeg",
+   "ffmpeg-audio-processing",
+   "ffmpeg-media-info",
+   "gemini-video-understanding",
+   "image-ocr",
+   "pause-detector",
+   "speech-to-text",
+   "video-frame-extraction",
+   "whisper-transcription",
+   "energy-calculator"
+  ],
+  "tree_needs": [
+   "speech-to-text"
+  ]
+ },
+ {
+  "id": "virtualhome-agent-planning",
+  "gold": [
+   "pddl-skills"
+  ],
+  "flat": [
+   "pddl-skills"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "pddl-skills"
+  ],
+  "tree_chars": 7329,
+  "flat_needs": [
+   "pddl-skills"
+  ],
+  "tree_needs": [
+   "pddl-skills"
+  ]
+ },
+ {
+  "id": "weighted-gdp-calc",
+  "gold": [
+   "xlsx"
+  ],
+  "flat": [
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "xlsx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "xlsx"
+  ],
+  "tree_needs": [
+   "xlsx"
+  ]
+ },
+ {
+  "id": "xlsx-recover-data",
+  "gold": [
+   "data-reconciliation",
+   "xlsx"
+  ],
+  "flat": [
+   "data-reconciliation",
+   "xlsx"
+  ],
+  "flat_chars": 95188,
+  "tree": [
+   "data-reconciliation",
+   "xlsx"
+  ],
+  "tree_chars": 6529,
+  "flat_needs": [
+   "data-reconciliation",
+   "xlsx"
+  ],
+  "tree_needs": [
+   "data-reconciliation",
+   "xlsx"
+  ]
+ }
+]

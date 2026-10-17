@@ -1,0 +1,26 @@
+big . [264, 13, 36, 30, 37, 15, 46, 49, 10] defaulted 0
+built securityvulnerabilityandnetworkforensics 15 -> 3 groups 0 leaves
+built documentsfilesandpublishing 13 -> 3 groups 0 leaves
+built softwareengineeringcodemigrationandbuild 37 -> 7 groups 0 leaves
+built scientificsimulationandengineeringdomain 46 -> 7 groups 0 leaves
+built datasciencemlandnumericaloptimization 30 -> 5 groups 0 leaves
+built mediaspeechandmultimodalprocessing 36 -> 4 groups 0 leaves
+built agentroboticsplanningandskillevaluation/alfworld-object-manipulation 13 -> 3 groups 0 leaves
+built agentroboticsplanningandskillevaluation/alfworld-search-navigation 14 -> 3 groups 0 leaves
+built agentroboticsplanningandskillevaluation 49 -> 6 groups 0 leaves
+big saasapiworkflowautomation [23, 27, 10, 18, 38, 52, 22, 43, 31] defaulted 0
+built saasapiworkflowautomation/crmsalesandcustomerpipeline 23 -> 3 groups 0 leaves
+built saasapiworkflowautomation/marketingadvertisingseoandsocialmedia 27 -> 3 groups 0 leaves
+built saasapiworkflowautomation/financepaymentsaccountingandbilling 18 -> 3 groups 0 leaves
+built saasapiworkflowautomation/commercesupportandverticalbusinessoperat 31 -> 4 groups 0 leaves
+built saasapiworkflowautomation/developerclouddevopsandsecurity/devops-cloud-infrastructure 13 -> 3 groups 0 leaves
+built saasapiworkflowautomation/developerclouddevopsandsecurity 38 -> 4 groups 0 leaves
+built saasapiworkflowautomation/productivityprojectmanagementschedulinga 22 -> 4 groups 0 leaves
+built saasapiworkflowautomation/dataaianalyticsandresearch/ai-media-automation 14 -> 3 groups 0 leaves
+built saasapiworkflowautomation/dataaianalyticsandresearch/general-data-apis 13 -> 5 groups 0 leaves
+built saasapiworkflowautomation/dataaianalyticsandresearch 52 -> 5 groups 0 leaves
+built saasapiworkflowautomation/documentscontente-signatureandmediaopera/documents-pdf 16 -> 3 groups 0 leaves
+built saasapiworkflowautomation/documentscontente-signatureandmediaopera 43 -> 4 groups 0 leaves
+built saasapiworkflowautomation 264 -> 9 groups 0 leaves
+built . 500 -> 9 groups 0 leaves
+nodes 104 max depth 4 max table 12

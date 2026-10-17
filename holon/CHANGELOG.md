@@ -5,6 +5,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### A tree of 500 skills (2026-10-17)
+- Routed the 87 SkillsBench tasks over the Graph of Skills `skills_500` library: flat list recall 0.900, a one-pass model-built tree 0.700 while reading a twelfth as much (8,228 against 95,188 characters). One-hop `needs` edges written offline added 1.9 points to the tree, below the +5 agreed beforehand, so no `needs` field is added. Scripts, the tree, the edges, the agents' debate and results: `experiments/2026-10-gos-scale/`; design notes §23.
+
 ### Splitting four long skills (2026-10-17)
 - Measured `split` on the four longest relevant files of the Graph of Skills `skills_1000` library with 96 lookup questions written before the split. No text lost. On the 54 questions the model could not answer without the file, the split planned from holon's rules answered 52 (whole file 54) and read 27% fewer characters; a mechanical split by `##` heading answered 52 and read 44% more than the whole file. A grab-bag that repeats itself read more after splitting. Scripts, questions, saved plans and results: `experiments/2026-10-split-big-skills/`; design notes §22.
 - editing step 4: a split's pointer line says what the moved text is for and when to open it.

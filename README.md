@@ -46,7 +46,7 @@ The tree, the rules and the checks are one package, `holon/`. The rules live in 
 | [`holon/`](holon/README.md) | The package: the skill tree, the rules for placing skills in it (`organizer/`), and the tools that check both |
 | `install.py` | the one-command installer that users run (see Quick start) |
 | `scripts/` | `check.py` (any system) and `check.sh` (bash) run locally what CI runs |
-| [`experiments/`](experiments/) | measurements kept whole, with scripts, data and logs; not installed: [routing](experiments/2026-10-anthropic-skills/README.md), [splitting long skills](experiments/2026-10-split-big-skills/README.md) |
+| [`experiments/`](experiments/) | measurements kept whole, with scripts, data and logs; not installed: [routing](experiments/2026-10-anthropic-skills/README.md), [splitting long skills](experiments/2026-10-split-big-skills/README.md), [500 skills](experiments/2026-10-gos-scale/README.md) |
 
 ## Checking a change
 

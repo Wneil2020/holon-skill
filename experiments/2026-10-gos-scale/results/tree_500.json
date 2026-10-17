@@ -1,0 +1,1330 @@
+{
+ "path": ".",
+ "leaves": [],
+ "groups": [
+  {
+   "path": "saasapiworkflowautomation",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "saasapiworkflowautomation/crmsalesandcustomerpipeline",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/crmsalesandcustomerpipeline/crm-pipeline",
+       "leaves": [
+        "accelo-automation",
+        "affinity-automation",
+        "agencyzoom-automation",
+        "agiled-automation",
+        "apex27-automation",
+        "attio-automation",
+        "axonaut-automation",
+        "blackbaud-automation",
+        "capsule-crm-automation",
+        "capsule_crm-automation",
+        "centralstationcrm-automation",
+        "dynamics365-automation"
+       ],
+       "groups": [],
+       "description": "Use when you need to automate CRM or relationship-management tasks for Accelo, Affinity, AgencyZoom, Agiled, Apex27, Attio, Axonaut, Blackbaud, Capsule CRM, CentralStationCRM, or Dynamics 365: covers CRM contacts, deals, pipelines, records, tasks; excludes lead generation, enrichment, outreach, and generic SaaS tool automation.",
+       "name": "crm-pipeline"
+      },
+      {
+       "path": "saasapiworkflowautomation/crmsalesandcustomerpipeline/lead-gen-outreach",
+       "leaves": [
+        "aeroleads-automation",
+        "apollo-automation",
+        "autobound-automation",
+        "bouncer-automation",
+        "callingly-automation",
+        "convolo-ai-automation",
+        "datagma-automation",
+        "dropcontact-automation"
+       ],
+       "groups": [],
+       "description": "Use when you need prospecting, enrichment, verification, calling, or outreach automation for AeroLeads, Apollo, Autobound, Bouncer, Callingly, Convolo AI, Datagma, or Dropcontact: covers lead search, contact enrichment, email verification, calling, outreach; excludes CRM record management and generic SaaS tool automation.",
+       "name": "lead-gen-outreach"
+      },
+      {
+       "path": "saasapiworkflowautomation/crmsalesandcustomerpipeline/misc-saas-automation",
+       "leaves": [
+        "amcards-automation",
+        "autom-automation",
+        "conveyor-automation"
+       ],
+       "groups": [],
+       "description": "Use when you need to automate assorted SaaS or business tools via Rube MCP for Amcards, Autom, or Conveyor: covers task automation, card sending, workflow triggers, buyer-experience tasks; excludes CRM, lead generation, enrichment, and outreach.",
+       "name": "misc-saas-automation"
+      }
+     ],
+     "description": "Use when a task involves managing contacts, companies, deals, leads, pipelines, or customer relationships in a CRM or sales tool: covers CRM records, lead enrichment, pipeline stages, outreach sequences; excludes marketing campaigns, support tickets, and finance transactions.",
+     "name": "crmsalesandcustomerpipeline"
+    },
+    {
+     "path": "saasapiworkflowautomation/marketingadvertisingseoandsocialmedia",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/marketingadvertisingseoandsocialmedia/email-lifecycle-automation",
+       "leaves": [
+        "active-campaign-automation",
+        "benchmark-email-automation",
+        "bigmailer-automation",
+        "campaign-cleaner-automation",
+        "campayn-automation",
+        "curated-automation",
+        "customerio-automation",
+        "deadline-funnel-automation",
+        "doppler-marketing-automation-automation",
+        "dripcel-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating email marketing, newsletters, lifecycle messaging, list hygiene, drip/SMS engagement, or deadline funnels: covers email broadcasts, lifecycle segments, drip/SMS, list hygiene, newsletters, deadline funnels; excludes social/creative, SEO/analytics, QR/call outreach.",
+       "name": "email-lifecycle-automation"
+      },
+      {
+       "path": "saasapiworkflowautomation/marketingadvertisingseoandsocialmedia/social-creative-automation",
+       "leaves": [
+        "abyssale-automation",
+        "adrapid-automation",
+        "ayrshare-automation",
+        "beamer-automation",
+        "brandfetch-automation",
+        "cardly-automation",
+        "competitive-ads-extractor",
+        "countdown-api-automation",
+        "cutt-ly-automation",
+        "demio-automation",
+        "dotsimple-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating social publishing, ad creative, competitor ad research, brand assets, direct mail, countdowns, URL shortening, webinars, or announcements: covers social scheduling, ad creative, competitor ads, brand/direct-mail, timers/links, webinars/announcements; excludes email/lifecycle, SEO/analytics, QR/call outreach.",
+       "name": "social-creative-automation"
+      },
+      {
+       "path": "saasapiworkflowautomation/marketingadvertisingseoandsocialmedia/growth-analytics-lead-outreach-automatio",
+       "leaves": [
+        "adyntel-automation",
+        "ahrefs-automation",
+        "appsflyer-automation",
+        "beaconstac-automation",
+        "callpage-automation",
+        "dialmycalls-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating SEO research, mobile attribution analytics, ad intelligence, QR code campaigns, callbacks, or voice outreach: covers SEO metrics, app attribution, ad intelligence, QR campaigns, callback/voice outreach; excludes email/lifecycle, social/creative, direct-mail/webinar/content distribution.",
+       "name": "growth-analytics-lead-outreach-automatio"
+      }
+     ],
+     "description": "Use when a task involves promoting a brand, growing an audience, running campaigns, or analyzing marketing performance: covers SEO, ads, email marketing, social posting, landing pages, brand assets; excludes CRM deal management, HR recruiting, and product support.",
+     "name": "marketingadvertisingseoandsocialmedia"
+    },
+    {
+     "path": "saasapiworkflowautomation/hrrecruitingandpeopleoperations",
+     "leaves": [
+      "anonyflow-automation",
+      "ashby-automation",
+      "async-interview-automation",
+      "breezy-hr-automation",
+      "canvas-automation",
+      "cats-automation",
+      "coassemble-automation",
+      "connecteam-automation",
+      "deel-automation",
+      "desktime-automation"
+     ],
+     "groups": [],
+     "description": "Use when a task involves hiring, onboarding, employee scheduling, time tracking, payroll administration, or team management: covers recruiting, candidates, jobs, interviews, staff schedules, workforce admin; excludes sales pipelines, marketing campaigns, and finance accounting.",
+     "name": "hrrecruitingandpeopleoperations"
+    },
+    {
+     "path": "saasapiworkflowautomation/financepaymentsaccountingandbilling",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/financepaymentsaccountingandbilling/market-data-research",
+       "leaves": [
+        "alpha-vantage-automation",
+        "benzinga-automation",
+        "coinmarketcal-automation",
+        "coinmarketcap-automation",
+        "coinranking-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task needs market prices, financial news, crypto event calendars, crypto rankings, or investment research feeds: covers market data, financial news, event calendars, rankings, research feeds; excludes crypto wallet/payment/chain operations, accounting, invoicing, payments, procurement, and spend management.",
+       "name": "market-data-research"
+      },
+      {
+       "path": "saasapiworkflowautomation/financepaymentsaccountingandbilling/crypto-web3",
+       "leaves": [
+        "beaconchain-automation",
+        "btcpay-server-automation",
+        "coinbase-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task needs blockchain chain data, crypto payment processing, or wallet/account/portfolio operations: covers staking/chain data, crypto payments, wallets/accounts/portfolio; excludes market data, rankings, event calendars, and fiat finance/payments/accounting.",
+       "name": "crypto-web3"
+      },
+      {
+       "path": "saasapiworkflowautomation/financepaymentsaccountingandbilling/finance-business-ops",
+       "leaves": [
+        "altoviz-automation",
+        "bench-automation",
+        "bonsai-automation",
+        "braintree-automation",
+        "brex-automation",
+        "brex-staging-automation",
+        "chaser-automation",
+        "coupa-automation",
+        "daffy-automation",
+        "elorus-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task involves accounting/bookkeeping, invoicing/billing, freelance business management, payment processing, corporate cards/spend, procurement, accounts receivable, or charitable giving: covers accounting/bookkeeping, invoicing/billing, payments, spend/procurement, receivables, charitable giving; excludes crypto/Web3 operations and market/news/rankings data.",
+       "name": "finance-business-ops"
+      }
+     ],
+     "description": "Use when a task involves money movement, invoices, expenses, budgets, financial records, or market data: covers payments, billing, invoicing, expenses, accounting, crypto wallets, market quotes; excludes CRM contacts, HR payroll admin, and e-commerce order fulfillment.",
+     "name": "financepaymentsaccountingandbilling"
+    },
+    {
+     "path": "saasapiworkflowautomation/developerclouddevopsandsecurity",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/developerclouddevopsandsecurity/devops-cloud-infrastructure",
+       "leaves": [],
+       "groups": [
+        {
+         "path": "saasapiworkflowautomation/developerclouddevopsandsecurity/devops-cloud-infrastructure/ci-cd-and-code-quality",
+         "leaves": [
+          "appcircle-automation",
+          "appveyor-automation",
+          "buildkite-automation",
+          "codacy-automation",
+          "docker-hub-automation",
+          "docker_hub-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating build, test, deployment, code quality, or container registry tasks: covers CI/CD, build pipelines, code quality, container registry; excludes cloud infrastructure, CDN, monitoring, and error tracking",
+         "name": "ci-cd-and-code-quality"
+        },
+        {
+         "path": "saasapiworkflowautomation/developerclouddevopsandsecurity/devops-cloud-infrastructure/cloud-infra-and-cdn",
+         "leaves": [
+          "backendless-automation",
+          "bunnycdn-automation",
+          "cloudflare-automation",
+          "cloudlayer-automation",
+          "digital-ocean-automation"
+         ],
+         "groups": [],
+         "description": "Use when managing cloud infrastructure, CDN, DNS, hosting, or backend-as-a-service resources: covers cloud hosting, CDN, DNS, BaaS; excludes CI/CD, code quality, container registry, monitoring, and error tracking",
+         "name": "cloud-infra-and-cdn"
+        },
+        {
+         "path": "saasapiworkflowautomation/developerclouddevopsandsecurity/devops-cloud-infrastructure/monitoring-and-error-tracking",
+         "leaves": [
+          "better-stack-automation",
+          "bugsnag-automation"
+         ],
+         "groups": [],
+         "description": "Use when monitoring uptime, logs, incidents, or application errors: covers monitoring, observability, incident response, error tracking; excludes CI/CD, cloud infrastructure, CDN, and container registry",
+         "name": "monitoring-and-error-tracking"
+        }
+       ],
+       "description": "Use when automating CI/CD, containers, cloud hosting, CDNs, backend services, monitoring, or code quality: covers CI/CD, containers, cloud/CDN, backends, monitoring, code quality; excludes identity, secrets, browser automation, and AI/IoT/blockchain tasks.",
+       "name": "devops-cloud-infrastructure"
+      },
+      {
+       "path": "saasapiworkflowautomation/developerclouddevopsandsecurity/security-identity-secrets",
+       "leaves": [
+        "abuselpdb-automation",
+        "auth0-automation",
+        "bitwarden-automation",
+        "borneo-automation",
+        "cloudflare-api-key-automation",
+        "control-d-automation",
+        "digicert-automation",
+        "dnsfilter-automation",
+        "doppler-secretops-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating identity, passwords, secrets, certificates, DNS filtering, threat intelligence, or data security: covers identity, secrets, certificates, DNS filtering, threat intel, data security; excludes cloud infrastructure, browser automation, and AI/IoT/blockchain tasks.",
+       "name": "security-identity-secrets"
+      },
+      {
+       "path": "saasapiworkflowautomation/developerclouddevopsandsecurity/browser-web-testing",
+       "leaves": [
+        "browser-tool-automation",
+        "browserbase-tool-automation",
+        "browserhub-automation",
+        "browserless-automation",
+        "bubble-automation",
+        "bugbug-automation",
+        "bugherd-automation",
+        "cloudflare-browser-rendering-automation",
+        "customjs-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating browsers, browser rendering, web testing, bug tracking, no-code web apps, or custom JavaScript: covers browser automation, rendering, testing, bug tracking, no-code apps, custom JS; excludes cloud infrastructure, identity/secrets, and AI/IoT/blockchain tasks.",
+       "name": "browser-web-testing"
+      },
+      {
+       "path": "saasapiworkflowautomation/developerclouddevopsandsecurity/ai-iot-realtime-blockchain",
+       "leaves": [
+        "ably-automation",
+        "alchemy-automation",
+        "anthropic-administrator-automation",
+        "anthropic_administrator-automation",
+        "apilio-automation",
+        "blocknative-automation",
+        "bolt-iot-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating AI administration, IoT devices, realtime messaging, or blockchain/Web3 services: covers AI administration, IoT, realtime messaging, blockchain; excludes cloud infrastructure, identity/secrets, and browser/web-testing tasks.",
+       "name": "ai-iot-realtime-blockchain"
+      }
+     ],
+     "description": "Use when a task involves building, deploying, monitoring, securing, or managing software infrastructure: covers CI/CD, containers, DNS, secrets, auth, logging, errors, uptime; excludes end-user productivity, marketing analytics, and business operations.",
+     "name": "developerclouddevopsandsecurity"
+    },
+    {
+     "path": "saasapiworkflowautomation/dataaianalyticsandresearch",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/dataaianalyticsandresearch/web-data-extraction",
+       "leaves": [
+        "affinda-automation",
+        "agentql-automation",
+        "agenty-automation",
+        "anchor-browser-automation",
+        "apify-automation",
+        "aryn-automation",
+        "brightdata-automation",
+        "browseai-automation",
+        "diffbot-automation",
+        "docsumo-automation",
+        "dromo-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task involves scraping sites, automating browsers, parsing documents, importing tabular data, or extracting structured web content: covers web scraping, browser automation, AI web querying, document parsing, data import, crawl extraction; excludes AI/media generation, contact validation, and general data lookups.",
+       "name": "web-data-extraction"
+      },
+      {
+       "path": "saasapiworkflowautomation/dataaianalyticsandresearch/ai-media-automation",
+       "leaves": [],
+       "groups": [
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/ai-media-automation/audio-speech-transcription",
+         "leaves": [
+          "castingwords-automation",
+          "deepgram-automation",
+          "elevenlabs-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating speech, voice, or transcription workflows: covers text-to-speech, speech-to-text, transcription, voice generation; excludes image generation, chatbot creation, and ML platform operations.",
+         "name": "audio-speech-transcription"
+        },
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/ai-media-automation/ai-ml-platforms",
+         "leaves": [
+          "ai-ml-api-automation",
+          "apipie-ai-automation",
+          "astica-ai-automation",
+          "bigml-automation",
+          "codeinterpreter-automation",
+          "datarobot-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating AI/ML service APIs, model platforms, or code execution: covers AI/ML APIs, ML platforms, model training, prediction, code execution, NLP/vision APIs; excludes speech, image generation, and chatbots.",
+         "name": "ai-ml-platforms"
+        },
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/ai-media-automation/generative-content-chat",
+         "leaves": [
+          "alttext-ai-automation",
+          "chatfai-automation",
+          "customgpt-automation",
+          "dovetail-automation",
+          "dreamstudio-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating generative content, conversational agents, or research analysis: covers image generation, alt-text creation, chatbot creation, custom GPT agents, research analysis; excludes speech, ML platforms, and code execution.",
+         "name": "generative-content-chat"
+        }
+       ],
+       "description": "Use when a task involves AI/ML models, image or audio generation, speech transcription, chat/LLM apps, code execution, or research analysis: covers AI/ML APIs, image/alt-text, speech/audio, chat/LLM, code execution, research analysis; excludes web scraping, contact validation, and general data lookups.",
+       "name": "ai-media-automation"
+      },
+      {
+       "path": "saasapiworkflowautomation/dataaianalyticsandresearch/contact-address-validation",
+       "leaves": [
+        "addresszen-automation",
+        "big-data-cloud-automation",
+        "callerapi-automation",
+        "clearout-automation",
+        "dadata-ru-automation",
+        "emailable-automation",
+        "emaillistverify-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task involves validating or enriching emails, addresses, phone numbers, contacts, or geodata: covers email verification, address validation, phone lookup, contact enrichment, geodata validation; excludes web scraping, AI/media generation, and general data lookups.",
+       "name": "contact-address-validation"
+      },
+      {
+       "path": "saasapiworkflowautomation/dataaianalyticsandresearch/business-search-platform",
+       "leaves": [
+        "algolia-automation",
+        "asin-data-api-automation",
+        "baserow-automation",
+        "builtwith-automation",
+        "composio-automation",
+        "composio-search-automation",
+        "crustdata-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task involves company, product, technology, search-index, no-code database, or Composio tool/platform automation: covers company/product/tech lookup, marketplace data, search indexes, no-code databases, tool search, platform automation; excludes contact validation, AI/media generation, and general data lookups.",
+       "name": "business-search-platform"
+      },
+      {
+       "path": "saasapiworkflowautomation/dataaianalyticsandresearch/general-data-apis",
+       "leaves": [],
+       "groups": [
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/general-data-apis/weather-environment",
+         "leaves": [
+          "ambee-automation",
+          "ambient-weather-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating weather, air quality, or personal weather station data via Rube MCP (Composio): covers air quality, weather, station readings; excludes sports, reference, blockchain, telecom, or general multi-API utility tasks.",
+         "name": "weather-environment"
+        },
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/general-data-apis/sports-data",
+         "leaves": [
+          "api-sports-automation",
+          "college-football-data-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating sports statistics, schedules, or football data via Rube MCP (Composio): covers sports stats, schedules, college football; excludes weather, reference, blockchain, telecom, or general multi-API utility tasks.",
+         "name": "sports-data"
+        },
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/general-data-apis/reference-data",
+         "leaves": [
+          "api-bible-automation",
+          "census-bureau-automation",
+          "currents-api-automation",
+          "dictionary-api-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating reference, demographic, or news content via Rube MCP (Composio): covers Bible verses, dictionary definitions, census data, news; excludes weather, sports, blockchain, telecom, or general multi-API utility tasks.",
+         "name": "reference-data"
+        },
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/general-data-apis/blockchain-telecom",
+         "leaves": [
+          "bitquery-automation",
+          "cdr-platform-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating blockchain or call-detail-record data via Rube MCP (Composio): covers blockchain queries, call detail records, telecom data; excludes weather, sports, reference, or general multi-API utility tasks.",
+         "name": "blockchain-telecom"
+        },
+        {
+         "path": "saasapiworkflowautomation/dataaianalyticsandresearch/general-data-apis/multi-api-utilities",
+         "leaves": [
+          "api-labz-automation",
+          "api-ninjas-automation",
+          "apiverve-automation"
+         ],
+         "groups": [],
+         "description": "Use when automating multi-purpose API utility tasks via Rube MCP (Composio): covers API Labz tasks, API Ninjas tasks, Apiverve tasks; excludes weather, sports, reference, blockchain, or telecom-specific tasks.",
+         "name": "multi-api-utilities"
+        }
+       ],
+       "description": "Use when a task involves domain-specific public data such as weather, environment, sports, news, census/geography, blockchain, dictionary, or utility APIs: covers weather/environment, sports/news, census/geography, blockchain, dictionary/utility, general API lookup; excludes web scraping, contact validation, and AI/media generation.",
+       "name": "general-data-apis"
+      }
+     ],
+     "description": "Use when a task involves extracting, transforming, searching, modeling, or generating insights/content with data or AI services: covers web scraping, datasets, ML models, speech/vision, search, enrichment, statistics; excludes CRM workflows, document signing, and team chat.",
+     "name": "dataaianalyticsandresearch"
+    },
+    {
+     "path": "saasapiworkflowautomation/productivityprojectmanagementschedulinga",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/productivityprojectmanagementschedulinga/scheduling-meetings",
+       "leaves": [
+        "appointo-automation",
+        "bart-automation",
+        "cal-automation",
+        "calendarhero-automation",
+        "clickmeeting-automation"
+       ],
+       "groups": [],
+       "description": "Use when booking appointments, coordinating calendars, or running web meetings: covers appointment scheduling, calendar coordination, AI meeting scheduling, webinar hosting; excludes email, chat, project management, forms, time tracking.",
+       "name": "scheduling-meetings"
+      },
+      {
+       "path": "saasapiworkflowautomation/productivityprojectmanagementschedulinga/communications-messaging",
+       "leaves": [
+        "agent-mail-automation",
+        "chatwork-automation",
+        "dailybot-automation",
+        "dialpad-automation",
+        "discordbot-automation",
+        "gmail-skill"
+       ],
+       "groups": [],
+       "description": "Use when sending email, chatting with teams, making calls, or running community messages: covers email, team chat, voice calls, community messaging, team check-ins; excludes scheduling, project management, forms, time tracking.",
+       "name": "communications-messaging"
+      },
+      {
+       "path": "saasapiworkflowautomation/productivityprojectmanagementschedulinga/project-work-management",
+       "leaves": [
+        "aero-workflow-automation",
+        "atlassian-automation",
+        "bigpicture-io-automation",
+        "breeze-automation",
+        "canny-automation"
+       ],
+       "groups": [],
+       "description": "Use when managing projects, issues, workflows, portfolios, or feedback roadmaps: covers project tracking, issue management, workflow automation, portfolio planning, feedback roadmaps; excludes scheduling, email/chat, forms, time tracking.",
+       "name": "project-work-management"
+      },
+      {
+       "path": "saasapiworkflowautomation/productivityprojectmanagementschedulinga/forms-tracking-assessment",
+       "leaves": [
+        "basin-automation",
+        "beeminder-automation",
+        "byteforms-automation",
+        "cabinpanda-automation",
+        "classmarker-automation",
+        "clockify-automation"
+       ],
+       "groups": [],
+       "description": "Use when building forms, collecting submissions, tracking time or goals, or running online assessments: covers form building, survey submissions, time tracking, goal tracking, online assessments; excludes scheduling, communications, project management.",
+       "name": "forms-tracking-assessment"
+      }
+     ],
+     "description": "Use when a task involves planning work, tracking tasks, scheduling meetings, time tracking, email, team communication, or knowledge bases: covers projects, tasks, calendars, meetings, chat, notes, forms; excludes code deployment, sales pipelines, and financial transactions.",
+     "name": "productivityprojectmanagementschedulinga"
+    },
+    {
+     "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera/documents-pdf",
+       "leaves": [],
+       "groups": [
+        {
+         "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera/documents-pdf/document-generation-automation",
+         "leaves": [
+          "algodocs-automation",
+          "apitemplate-io-automation",
+          "carbone-automation",
+          "craftmypdf-automation",
+          "docmosis-automation",
+          "docugenerate-automation",
+          "documint-automation",
+          "docupilot-automation"
+         ],
+         "groups": [],
+         "description": "Use when generating documents or automating document workflows: covers template-based document generation, data-driven PDFs, report creation, document merge, dynamic documents, document automation; excludes file format conversion, screenshot capture, document comparison, postal mail.",
+         "name": "document-generation-automation"
+        },
+        {
+         "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera/documents-pdf/file-conversion-comparison-automation",
+         "leaves": [
+          "api2pdf-automation",
+          "apiflash-automation",
+          "cloudconvert-automation",
+          "conversion-tools-automation",
+          "convertapi-automation",
+          "draftable-automation"
+         ],
+         "groups": [],
+         "description": "Use when converting, capturing, or comparing files and documents: covers file conversion, HTML-to-PDF, screenshot capture, format conversion, document comparison, diff detection; excludes template-based document generation, postal mail.",
+         "name": "file-conversion-comparison-automation"
+        },
+        {
+         "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera/documents-pdf/postal-mail-automation",
+         "leaves": [
+          "docupost-automation",
+          "echtpost-automation"
+         ],
+         "groups": [],
+         "description": "Use when sending physical mail or print-delivery jobs: covers postal mail, print delivery, letter sending, physical mail campaigns; excludes document generation, file conversion, document comparison.",
+         "name": "postal-mail-automation"
+        }
+       ],
+       "description": "Use when a task needs creating, converting, comparing, or distributing documents: covers document generation, PDF/file conversion, document comparison, print/mail distribution; excludes e-signatures/forms, certificates/credentials, CMS content, and media/localization.",
+       "name": "documents-pdf"
+      },
+      {
+       "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera/agreements-credentials",
+       "leaves": [
+        "accredible-certificates-automation",
+        "better-proposals-automation",
+        "bidsketch-automation",
+        "boldsign-automation",
+        "boloforms-automation",
+        "certifier-automation",
+        "dock-certs-automation",
+        "docnify-automation",
+        "documenso-automation",
+        "docuseal-automation",
+        "dropbox-sign-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task needs signing, approving, collecting forms, issuing proposals, or managing certificates: covers e-signature, forms, proposals, certificates, credentials; excludes document generation/PDF conversion, CMS content, and media/localization.",
+       "name": "agreements-credentials"
+      },
+      {
+       "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera/cms-web-content",
+       "leaves": [
+        "agility-cms-automation",
+        "appdrag-automation",
+        "brilliant-directories-automation",
+        "cloudpress-automation",
+        "contentful-automation",
+        "contentful-graphql-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task needs managing CMS, website, directory, or published content: covers CMS content, directories, publishing, website builders; excludes document generation/PDF conversion, e-signatures/forms/certificates, and media/localization.",
+       "name": "cms-web-content"
+      },
+      {
+       "path": "saasapiworkflowautomation/documentscontente-signatureandmediaopera/media-creative-localization",
+       "leaves": [
+        "abstract-automation",
+        "adobe-automation",
+        "aivoov-automation",
+        "all-images-ai-automation",
+        "amara-automation",
+        "bannerbear-automation",
+        "cincopa-automation",
+        "claid-ai-automation",
+        "cloudinary-automation",
+        "crowdin-automation"
+       ],
+       "groups": [],
+       "description": "Use when a task needs creating, editing, hosting, or translating creative/media assets: covers images, media management, video/audio, localization, design/creative; excludes document generation/PDF conversion, e-signatures/forms/certificates, and CMS content.",
+       "name": "media-creative-localization"
+      }
+     ],
+     "description": "Use when a task involves creating, converting, signing, translating, storing, or publishing documents and media: covers PDFs, contracts, e-signatures, CMS entries, image/video assets, localization; excludes CRM records, HR recruiting, and infrastructure monitoring.",
+     "name": "documentscontente-signatureandmediaopera"
+    },
+    {
+     "path": "saasapiworkflowautomation/commercesupportandverticalbusinessoperat",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "saasapiworkflowautomation/commercesupportandverticalbusinessoperat/conversational-ai-automation",
+       "leaves": [
+        "-2chat-automation",
+        "bolna-automation",
+        "botbaba-automation",
+        "botpress-automation",
+        "botsonic-automation",
+        "botstar-automation",
+        "chatbotkit-automation",
+        "docsbot-ai-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating chat, voice, or support bots and conversational AI platforms: covers chatbot, voice-agent, support-bot, docs-QA, conversational-AI; excludes commerce, logistics, field-service, property, education, and gaming app automation.",
+       "name": "conversational-ai-automation"
+      },
+      {
+       "path": "saasapiworkflowautomation/commercesupportandverticalbusinessoperat/commerce-logistics-automation",
+       "leaves": [
+        "amazon-automation",
+        "baselinker-automation",
+        "bestbuy-automation",
+        "booqable-automation",
+        "boxhero-automation",
+        "brightpearl-automation",
+        "cloudcart-automation",
+        "cults-automation",
+        "detrack-automation",
+        "dpd2-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating online sales, retail, inventory, rentals, shipping, or delivery workflows: covers ecommerce, marketplace, inventory, rental, shipping, delivery; excludes chat/voice bots, business-ops, property, education, and gaming app automation.",
+       "name": "commerce-logistics-automation"
+      },
+      {
+       "path": "saasapiworkflowautomation/commercesupportandverticalbusinessoperat/business-ops-automation",
+       "leaves": [
+        "-21risk-automation",
+        "acculynx-automation",
+        "apaleo-automation",
+        "ascora-automation",
+        "bookingmood-automation",
+        "chmeetings-automation",
+        "codereadr-automation",
+        "corrently-automation",
+        "drip-jobs-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating business operations, field service, property, booking, community, risk, barcode, or energy workflows: covers risk-compliance, contractor-CRM, property-booking, field-service, community-management, barcode-utility; excludes commerce/logistics, conversational AI, education, and gaming app automation.",
+       "name": "business-ops-automation"
+      },
+      {
+       "path": "saasapiworkflowautomation/commercesupportandverticalbusinessoperat/education-gaming-automation",
+       "leaves": [
+        "battlenet-automation",
+        "blackboard-automation",
+        "d2lbrightspace-automation",
+        "dungeon-fighter-online-automation"
+       ],
+       "groups": [],
+       "description": "Use when automating e-learning, LMS, or gaming platform tasks: covers e-learning, LMS, gaming, game-account; excludes commerce, business-ops, conversational AI, and logistics app automation.",
+       "name": "education-gaming-automation"
+      }
+     ],
+     "description": "Use when a task involves selling goods/services, fulfilling orders, managing inventory, supporting customers, or running industry-specific back-office workflows: covers e-commerce, POS, inventory, shipping, support tickets, chatbots, field service, bookings; excludes generic marketing, HR, and developer tooling.",
+     "name": "commercesupportandverticalbusinessoperat"
+    }
+   ],
+   "description": "Use when a task asks to operate a third-party SaaS product or API through Rube MCP/Composio: covers third-party SaaS automation; API operations; CRM/marketing/support/dev integrations; OAuth/API calls; app workflow triggers; excludes local file/media/document processing, code migration/testing, scientific simulation, security/network analysis, and agent/robotics planning.",
+   "name": "saasapiworkflowautomation"
+  },
+  {
+   "path": "documentsfilesandpublishing",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "documentsfilesandpublishing/pdf-processing",
+     "leaves": [
+      "academic-pdf-redaction",
+      "marker",
+      "pdf",
+      "pdf-reading"
+     ],
+     "groups": [],
+     "description": "Use when extracting, converting, reading, redacting, or manipulating PDF documents: covers PDF extraction, PDF-to-Markdown, PDF manipulation, PDF redaction; excludes office documents, spreadsheets, presentations, data reconciliation, file organization, and visual design.",
+     "name": "pdf-processing"
+    },
+    {
+     "path": "documentsfilesandpublishing/office-data-files",
+     "leaves": [
+      "data-reconciliation",
+      "docx",
+      "file-organizer",
+      "pptx",
+      "xlsx"
+     ],
+     "groups": [],
+     "description": "Use when creating or editing documents, presentations, or spreadsheets, reconciling missing data, or organizing files and folders: covers document authoring, presentations, spreadsheets, data reconciliation, file organization; excludes PDF extraction/redaction and visual design.",
+     "name": "office-data-files"
+    },
+    {
+     "path": "documentsfilesandpublishing/visual-artifacts",
+     "leaves": [
+      "artifacts-builder",
+      "brand-guidelines",
+      "canvas-design",
+      "d3-visualization"
+     ],
+     "groups": [],
+     "description": "Use when creating or styling visual artifacts, web components, brand-compliant designs, posters, or data visualizations: covers HTML artifacts, brand styling, visual art, D3 charts; excludes PDFs, office documents, spreadsheets, data reconciliation, and file organization.",
+     "name": "visual-artifacts"
+    }
+   ],
+   "description": "Use when creating, editing, extracting, converting, organizing, or redacting documents, spreadsheets, slides, PDFs, or visual publishing artifacts: covers PDF/Office files; extraction/redaction; spreadsheets/slides; branding/canvas; file organization; excludes media/audio/video processing, pure data analysis, SaaS automation, and software migration.",
+   "name": "documentsfilesandpublishing"
+  },
+  {
+   "path": "mediaspeechandmultimodalprocessing",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "mediaspeechandmultimodalprocessing/speech-audio",
+     "leaves": [
+      "audio-extractor",
+      "automatic-speech-recognition",
+      "energy-calculator",
+      "ffmpeg-audio-processing",
+      "multimodal-fusion",
+      "pause-detector",
+      "silence-detector",
+      "speaker-clustering",
+      "speech-to-text",
+      "voice-activity-detection",
+      "whisper-transcription"
+     ],
+     "groups": [],
+     "description": "Use when working with spoken audio or video soundtracks for transcription, voice activity, speaker separation, silence/pause/energy analysis, audio extraction, or audio-track processing: covers transcription, voice-activity, speaker-diarization, audio-analysis, audio-extraction; excludes text-to-speech, visual understanding/image editing, and general media conversion/editing.",
+     "name": "speech-audio"
+    },
+    {
+     "path": "mediaspeechandmultimodalprocessing/speech-synthesis",
+     "leaves": [
+      "audiobook",
+      "elevenlabs-tts",
+      "gtts",
+      "openai-tts",
+      "text-to-speech"
+     ],
+     "groups": [],
+     "description": "Use when converting text or web content into speech, selecting/operating TTS APIs, creating audiobooks, or mastering TTS audio: covers text-to-speech, audiobook-generation, tts-api, audio-mastering; excludes speech transcription/audio analysis, visual media, and general media conversion/editing.",
+     "name": "speech-synthesis"
+    },
+    {
+     "path": "mediaspeechandmultimodalprocessing/visual-media",
+     "leaves": [
+      "ffmpeg",
+      "gemini-count-in-video",
+      "gemini-video-understanding",
+      "gpt-multimodal",
+      "image-ocr",
+      "image_editing",
+      "object_counter",
+      "openai-vision",
+      "sampling-and-indexing",
+      "video-frame-extraction"
+     ],
+     "groups": [],
+     "description": "Use when analyzing images or videos, counting objects, extracting text via OCR, editing images, extracting/sampling video frames, or applying multimodal vision models: covers image-analysis, video-understanding, object-counting, ocr, image-editing, frame-sampling; excludes speech/audio, TTS, and media conversion/editing utilities.",
+     "name": "visual-media"
+    },
+    {
+     "path": "mediaspeechandmultimodalprocessing/media-processing",
+     "leaves": [
+      "dyn-object-masks",
+      "egomotion-estimation",
+      "ffmpeg-format-conversion",
+      "ffmpeg-media-info",
+      "ffmpeg-video-editing",
+      "ffmpeg-video-filters",
+      "filler-word-processing",
+      "report-generator",
+      "segment-combiner",
+      "video-processor"
+     ],
+     "groups": [],
+     "description": "Use when converting media formats, inspecting media metadata, editing/filtering video, processing/combining video segments, generating video-processing reports, processing filler annotations, or estimating camera motion/dynamic masks: covers format-conversion, media-info, video-editing, video-filtering, segment-processing, motion-analysis; excludes speech transcription/audio analysis, TTS, and visual understanding/image editing.",
+     "name": "media-processing"
+    }
+   ],
+   "description": "Use when working with audio, video, images, speech, transcription, TTS, or multimodal understanding: covers audio/video processing; speech-to-text/TTS; voice activity/diarization; image/video vision; frame/object analysis; excludes document/PDF creation, pure data science, SaaS integrations, and software migration.",
+   "name": "mediaspeechandmultimodalprocessing"
+  },
+  {
+   "path": "datasciencemlandnumericaloptimization",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "datasciencemlandnumericaloptimization/optimization-scheduling",
+     "leaves": [
+      "casadi-ipopt-nlp",
+      "fjsp-baseline-repair-with-downtime-and-policy",
+      "map-optimization-strategy",
+      "pareto-optimization"
+     ],
+     "groups": [],
+     "description": "Use when formulating or solving optimization problems, including nonlinear programs, multi-objective trade-offs, spatial map placement, and flexible job-shop schedule repair: covers nonlinear, multi-objective, spatial, scheduling optimization; excludes numerical/symbolic computation, ML training, and data cleaning.",
+     "name": "optimization-scheduling"
+    },
+    {
+     "path": "datasciencemlandnumericaloptimization/numerical-symbolic-parallel",
+     "leaves": [
+      "jax-skills",
+      "parallel-processing",
+      "scipy-curve-fit",
+      "sympy",
+      "workload-balancing"
+     ],
+     "groups": [],
+     "description": "Use when doing numerical or symbolic computation, curve fitting, JAX array/autodiff/JIT work, joblib parallel batch/grid search, or parallel workload balancing: covers curve fitting, symbolic math, JAX, joblib parallelism, workload balancing; excludes optimization modeling, GPU model training, and data analytics.",
+     "name": "numerical-symbolic-parallel"
+    },
+    {
+     "path": "datasciencemlandnumericaloptimization/ml-training-gpu",
+     "leaves": [
+      "mhc-algorithm",
+      "modal-gpu",
+      "nanogpt-training"
+     ],
+     "groups": [],
+     "description": "Use when training or running deep learning models on GPUs, including GPT-2 scale training, Modal cloud GPU jobs, and mHC residual-connection stabilization: covers GPU training, GPT training, mHC; excludes classical ML analytics, data engineering, and optimization solvers.",
+     "name": "ml-training-gpu"
+    },
+    {
+     "path": "datasciencemlandnumericaloptimization/data-science-analytics",
+     "leaves": [
+      "contribution-analysis",
+      "custom-distance-metrics",
+      "did_causal_analysis",
+      "feature_engineering",
+      "hierarchical-taxonomy-clustering",
+      "pca-decomposition",
+      "senior-data-scientist",
+      "time_series_anomaly_detection",
+      "timeseries-detrending",
+      "trend-analysis"
+     ],
+     "groups": [],
+     "description": "Use when analyzing data statistically or with ML, including causal inference, feature engineering, custom distance metrics, clustering/taxonomy building, PCA/factor reduction, contribution analysis, and time-series trend/anomaly/detrending tasks: covers causal inference, feature engineering, clustering, dimensionality reduction, time-series analytics; excludes data cleaning/ETL, numerical optimization, and GPU training.",
+     "name": "data-science-analytics"
+    },
+    {
+     "path": "datasciencemlandnumericaloptimization/data-engineering-spatial",
+     "leaves": [
+      "csv-processing",
+      "data_cleaning",
+      "fuzzy-match",
+      "hex-grid-spatial",
+      "lab-unit-harmonization",
+      "manufacturing-failure-reason-codebook-normalization",
+      "senior-data-engineer",
+      "sqlite-map-parser"
+     ],
+     "groups": [],
+     "description": "Use when ingesting, cleaning, reconciling, harmonizing, parsing, or spatially processing tabular/domain data, including CSV/time-series I/O, dirty-data cleaning, fuzzy entity matching, lab unit and failure-codebook normalization, SQLite map parsing, and hex-grid spatial queries: covers CSV/ETL, data cleaning, fuzzy matching, harmonization, SQLite/spatial parsing; excludes statistical modeling, ML training, and optimization.",
+     "name": "data-engineering-spatial"
+    }
+   ],
+   "description": "Use when analyzing data, building models, running statistics/causal inference, optimizing numerically, or doing ML/parallel computation: covers data cleaning/features; ML/statistics; causal/time-series; optimization/solvers; numerical/parallel; excludes SaaS automation, document/media processing, software migration, and domain simulation.",
+   "name": "datasciencemlandnumericaloptimization"
+  },
+  {
+   "path": "softwareengineeringcodemigrationandbuild",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "softwareengineeringcodemigrationandbuild/java-spring-modernization",
+     "leaves": [
+      "hibernate-upgrade",
+      "jakarta-namespace",
+      "maven-build-lifecycle",
+      "maven-dependency-management",
+      "maven-plugin-configuration",
+      "restclient-migration",
+      "senior-java",
+      "spring-boot-migration",
+      "spring-security-6"
+     ],
+     "groups": [],
+     "description": "Use when upgrading or maintaining Java/Spring applications, including Spring Boot 2.x to 3.x, Hibernate 5 to 6, javax to Jakarta namespace, Spring Security 5 to 6, RestTemplate to RestClient, Maven build lifecycle/dependency/plugin configuration, or writing enterprise Java/Spring code: covers Java, Spring, Maven, migration, enterprise, JVM; excludes Python, Scala translation, Erlang, Lean, frontend, dev workflow.",
+     "name": "java-spring-modernization"
+    },
+    {
+     "path": "softwareengineeringcodemigrationandbuild/python-engineering",
+     "leaves": [
+      "fuzzing-python",
+      "memory-optimization",
+      "nlp-research-repo-package-installment",
+      "python-parallelization",
+      "setup-env",
+      "temporal-python-testing",
+      "testing-python",
+      "uv-package-manager"
+     ],
+     "groups": [],
+     "description": "Use when setting up or managing Python projects, installing dependencies with uv, reproducing NLP research repos, writing/running pytest or Temporal workflow tests, fuzzing Python libraries, optimizing memory, or parallelizing Python code: covers Python, dependencies, testing, performance, fuzzing, NLP; excludes Python-to-Scala translation, Java/Spring, Erlang, Lean, frontend, dev workflow.",
+     "name": "python-engineering"
+    },
+    {
+     "path": "softwareengineeringcodemigrationandbuild/python-to-scala",
+     "leaves": [
+      "python-scala-collections",
+      "python-scala-functional",
+      "python-scala-idioms",
+      "python-scala-libraries",
+      "python-scala-oop",
+      "python-scala-syntax-mapping"
+     ],
+     "groups": [],
+     "description": "Use when translating Python code to idiomatic Scala, including syntax mapping, collections, OOP/classes, functional patterns, libraries, and idioms: covers Python, Scala, translation, collections, OOP, functional; excludes general Python engineering, Java/Spring, Erlang, Lean, frontend, dev workflow.",
+     "name": "python-to-scala"
+    },
+    {
+     "path": "softwareengineeringcodemigrationandbuild/erlang-otp",
+     "leaves": [
+      "erlang-concurrency",
+      "erlang-distribution",
+      "erlang-otp-behaviors"
+     ],
+     "groups": [],
+     "description": "Use when working with Erlang concurrency, distributed systems, or OTP behaviors such as gen_server, gen_statem, supervisors, and gen_event: covers Erlang, OTP, concurrency, distribution, processes, fault-tolerance; excludes Java/Spring, Python, Scala translation, Lean, frontend, dev workflow.",
+     "name": "erlang-otp"
+    },
+    {
+     "path": "softwareengineeringcodemigrationandbuild/lean4-proofs",
+     "leaves": [
+      "lean4-memories",
+      "lean4-theorem-proving"
+     ],
+     "groups": [],
+     "description": "Use when working on Lean 4 formalization, writing mathematical proofs, eliminating sorry/axioms, or maintaining persistent proof-project memories: covers Lean 4, theorem-proving, formalization, proofs, memories; excludes Java/Spring, Python, Erlang, Scala translation, frontend, dev workflow.",
+     "name": "lean4-proofs"
+    },
+    {
+     "path": "softwareengineeringcodemigrationandbuild/web-ui-testing",
+     "leaves": [
+      "browser-testing",
+      "react-best-practices",
+      "web-interface-guidelines"
+     ],
+     "groups": [],
+     "description": "Use when building/reviewing React/Next.js UI, following Vercel web interface accessibility/performance guidelines, or verifying browser changes/performance/CLS before and after edits: covers React, Next.js, UI, browser, accessibility, performance; excludes Java/Spring, Python, Erlang, Lean, Scala translation, dev workflow.",
+     "name": "web-ui-testing"
+    },
+    {
+     "path": "softwareengineeringcodemigrationandbuild/dev-workflow-tooling",
+     "leaves": [
+      "analyze-ci",
+      "changelog-generator",
+      "discover-important-function",
+      "find-bugs",
+      "gh-cli",
+      "yaml-config"
+     ],
+     "groups": [],
+     "description": "Use when reviewing local changes, triaging failed CI, interacting with GitHub, generating changelogs, discovering important codebase functions, or reading/writing YAML config: covers review, CI, GitHub, changelog, codebase, YAML; excludes Java/Spring, Python, Erlang, Lean, Scala translation, frontend UI.",
+     "name": "dev-workflow-tooling"
+    }
+   ],
+   "description": "Use when writing, migrating, testing, building, packaging, or refactoring application code and developer tooling: covers language/framework migration; testing/fuzzing; build/dependency/package management; code review/bug finding; project setup; excludes SaaS automation, security/network forensics, scientific simulation, and document/media tasks.",
+   "name": "softwareengineeringcodemigrationandbuild"
+  },
+  {
+   "path": "securityvulnerabilityandnetworkforensics",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "securityvulnerabilityandnetworkforensics/network-analysis",
+     "leaves": [
+      "azure-bgp",
+      "pcap-analysis",
+      "pcap-triage-tshark",
+      "suricata-offline-evejson",
+      "suricata-rules-basics",
+      "threat-detection"
+     ],
+     "groups": [],
+     "description": "Use when analyzing or troubleshooting network traffic, cloud BGP routing, IDS rules, or malicious network patterns: covers BGP, PCAP, tshark, Suricata, IDS rules, threat thresholds; excludes vulnerability scanning, application security, kernel fuzzing.",
+     "name": "network-analysis"
+    },
+    {
+     "path": "securityvulnerabilityandnetworkforensics/security-assessment",
+     "leaves": [
+      "cvss-score-extraction",
+      "jackson-security",
+      "senior-security",
+      "ssh-penetration-testing",
+      "trivy-offline-vulnerability-scanning",
+      "vulnerability-csv-reporting"
+     ],
+     "groups": [],
+     "description": "Use when assessing application security, pentesting services, scanning vulnerabilities, extracting CVSS, or reporting audit findings: covers appsec, pentest, SSH exploitation, Jackson deserialization, Trivy scanning, CVSS/CSV reporting; excludes network packet analysis, cloud BGP, kernel fuzzing.",
+     "name": "security-assessment"
+    },
+    {
+     "path": "securityvulnerabilityandnetworkforensics/syzkaller-fuzzing",
+     "leaves": [
+      "syz-extract-constants",
+      "syzkaller-build-loop",
+      "syzlang-ioctl-basics"
+     ],
+     "groups": [],
+     "description": "Use when describing or building syzkaller syscall support and kernel constants: covers syzlang, syscall descriptions, ioctl syntax, build workflow, kernel constants; excludes network analysis, security assessment.",
+     "name": "syzkaller-fuzzing"
+    }
+   ],
+   "description": "Use when detecting vulnerabilities, scoring CVEs, analyzing packets, running Suricata/Trivy, fuzzing kernel surfaces, or pentesting services: covers vulnerability/CVSS; PCAP/network forensics; IDS/Suricata rules; penetration testing; application/fuzzing security; excludes general software migration, SaaS automation, and data science.",
+   "name": "securityvulnerabilityandnetworkforensics"
+  },
+  {
+   "path": "scientificsimulationandengineeringdomain",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "scientificsimulationandengineeringdomain/power-systems",
+     "leaves": [
+      "ac-branch-pi-model",
+      "dc-power-flow",
+      "economic-dispatch",
+      "locational-marginal-prices",
+      "power-flow-data"
+     ],
+     "groups": [],
+     "description": "Use when analyzing electric power networks, power flow, dispatch, or electricity markets: covers power-flow, network-data, dispatch, LMPs; excludes control-system tuning, environmental water data, and astronomy signals.",
+     "name": "power-systems"
+    },
+    {
+     "path": "scientificsimulationandengineeringdomain/control-systems",
+     "leaves": [
+      "excitation-signal-design",
+      "finite-horizon-lqr",
+      "first-order-model-fitting",
+      "imc-tuning-rules",
+      "integral-action-design",
+      "mpc-horizon-tuning",
+      "pid-controller",
+      "safety-interlocks",
+      "simulation-metrics",
+      "state-space-linearization",
+      "vehicle-dynamics"
+     ],
+     "groups": [],
+     "description": "Use when designing, tuning, simulating, or safeguarding feedback controllers and vehicle dynamics: covers control-design, system-identification, PID/MPC-tuning, safety-interlocks, vehicle-dynamics, control-metrics; excludes power-system dispatch, seismic data, and manufacturing reflow.",
+     "name": "control-systems"
+    },
+    {
+     "path": "scientificsimulationandengineeringdomain/astro-time-series",
+     "leaves": [
+      "box-least-squares",
+      "conditioning",
+      "exoplanet-workflows",
+      "light-curve-preprocessing",
+      "lomb-scargle-periodogram",
+      "matched-filtering",
+      "transit-least-squares"
+     ],
+     "groups": [],
+     "description": "Use when detecting or characterizing signals in astronomical time series, including exoplanet transits and gravitational waves: covers light-curve-preprocessing, periodograms, transit-searches, exoplanet-workflows, GW-conditioning, matched-filtering; excludes seismology, power systems, and environmental water analysis.",
+     "name": "astro-time-series"
+    },
+    {
+     "path": "scientificsimulationandengineeringdomain/seismology",
+     "leaves": [
+      "gamma-phase-associator",
+      "obspy-data-api",
+      "obspy-datacenter-client",
+      "seisbench-model-api",
+      "seismic-picker-selection"
+     ],
+     "groups": [],
+     "description": "Use when processing earthquake/seismological data, picks, models, or data-center downloads: covers ObsPy-data, datacenter-downloads, phase-association, phase-picking, SeisBench-models; excludes astronomy light curves, environmental water levels, and control-system signals.",
+     "name": "seismology"
+    },
+    {
+     "path": "scientificsimulationandengineeringdomain/environmental-water",
+     "leaves": [
+      "flood-detection",
+      "geospatial-analysis",
+      "glm-basics",
+      "glm-calibration",
+      "glm-output",
+      "meteorology-driver-classification",
+      "nws-flood-thresholds",
+      "usgs-data-download"
+     ],
+     "groups": [],
+     "description": "Use when analyzing water levels, floods, lakes, meteorology, or geographic spatial data: covers flood-thresholds, water-level-downloads, lake-simulation, geospatial-analysis, meteorology-drivers; excludes power systems, seismology, and chemistry/materials.",
+     "name": "environmental-water"
+    },
+    {
+     "path": "scientificsimulationandengineeringdomain/scientific-research",
+     "leaves": [
+      "citation-management",
+      "pubchem-database",
+      "pymatgen",
+      "qutip",
+      "rdkit"
+     ],
+     "groups": [],
+     "description": "Use when performing computational chemistry, materials science, quantum simulation, or managing academic citations: covers chemical-databases, cheminformatics, materials-simulation, quantum-simulation, citation-management; excludes astronomy/light-curve analysis, seismology, and control-system design.",
+     "name": "scientific-research"
+    },
+    {
+     "path": "scientificsimulationandengineeringdomain/3d-manufacturing",
+     "leaves": [
+      "mesh-analysis",
+      "obj-exporter",
+      "reflow-profile-compliance-toolkit",
+      "reflow_machine_maintenance_guidance",
+      "threejs"
+     ],
+     "groups": [],
+     "description": "Use when working with 3D geometry export/mesh analysis or electronics manufacturing reflow processes: covers Three.js/OBJ-export, mesh-analysis, reflow-compliance, reflow-maintenance; excludes control-system design, power flow, and academic citation tasks.",
+     "name": "3d-manufacturing"
+    }
+   ],
+   "description": "Use when simulating or analyzing physical, power, control, astronomical, seismic, hydrological, chemical, materials, quantum, or 3D geometry systems: covers power/control systems; astronomy/seismology; hydrology/meteorology; chemistry/materials/quantum; academic/citation/3D; excludes generic data science, SaaS automation, document/media processing, and software migration.",
+   "name": "scientificsimulationandengineeringdomain"
+  },
+  {
+   "path": "agentroboticsplanningandskillevaluation",
+   "leaves": [],
+   "groups": [
+    {
+     "path": "agentroboticsplanningandskillevaluation/alfworld-search-navigation",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "agentroboticsplanningandskillevaluation/alfworld-search-navigation/task-setup",
+       "leaves": [
+        "alfworld-environment-scanner",
+        "alfworld-goal-interpreter"
+       ],
+       "groups": [],
+       "description": "Use when a new ALFWorld task is assigned or you first enter an environment and need to understand the goal or map visible objects/receptacles: covers goal parsing, sub-objective extraction, initial environment scanning, object inventory, receptacle inventory; excludes physical navigation and object/receptacle search.",
+       "name": "task-setup"
+      },
+      {
+       "path": "agentroboticsplanningandskillevaluation/alfworld-search-navigation/navigation",
+       "leaves": [
+        "alfworld-appliance-navigator",
+        "alfworld-location-navigator",
+        "alfworld-navigation-planner",
+        "alfworld-receptacle-navigator"
+       ],
+       "groups": [],
+       "description": "Use when the agent must physically approach a specified appliance, receptacle, object location, or plan a route between receptacles: covers appliance approach, location approach, path planning, receptacle movement; excludes goal parsing, environment scanning, unknown-object search, content inspection, and storage placement.",
+       "name": "navigation"
+      },
+      {
+       "path": "agentroboticsplanningandskillevaluation/alfworld-search-navigation/search-inspect-storage",
+       "leaves": [
+        "alfworld-locate-target-object",
+        "alfworld-object-locator",
+        "alfworld-object-state-inspector",
+        "alfworld-receptacle-searcher",
+        "alfworld-search-pattern-executor",
+        "alfworld-search-verifier",
+        "alfworld-storage-explorer",
+        "alfworld-tool-locator"
+       ],
+       "groups": [],
+       "description": "Use when a target object, receptacle, or tool location is unknown, a search must be planned/verified, receptacle contents need checking, or a storage/placement spot is needed: covers object search, receptacle search, content inspection, search verification, tool finding, storage placement; excludes goal parsing, initial environment scanning, and movement to already-known locations.",
+       "name": "search-inspect-storage"
+      }
+     ],
+     "description": "Use when an ALFWorld task needs initial environment scanning, goal interpretation, locating objects or receptacles or appliances or tools, moving/navigating to suspected locations, systematically searching, rechecking searched spots, exploring storage, or inspecting receptacle contents: covers scanning, goal parsing, location search, navigation, inspection; excludes picking/placing/opening and heating/cooling/cleaning.",
+     "name": "alfworld-search-navigation"
+    },
+    {
+     "path": "agentroboticsplanningandskillevaluation/alfworld-object-manipulation",
+     "leaves": [],
+     "groups": [
+      {
+       "path": "agentroboticsplanningandskillevaluation/alfworld-object-manipulation/object-acquisition-and-movement",
+       "leaves": [
+        "alfworld-inventory-management",
+        "alfworld-object-picker",
+        "alfworld-object-retriever",
+        "alfworld-object-transporter"
+       ],
+       "groups": [],
+       "description": "Use when the task is about acquiring, collecting, or moving objects in ALFWorld: covers picking, retrieving, transporting, inventory tracking; excludes placing, storing, disposing, receptacle finding/preparing, and opening/closing receptacles.",
+       "name": "object-acquisition-and-movement"
+      },
+      {
+       "path": "agentroboticsplanningandskillevaluation/alfworld-object-manipulation/object-placement-and-receptacle-prep",
+       "leaves": [
+        "alfworld-object-disposer",
+        "alfworld-object-placer",
+        "alfworld-object-storer",
+        "alfworld-receptacle-finder",
+        "alfworld-receptacle-preparer"
+       ],
+       "groups": [],
+       "description": "Use when the task is about depositing an object or preparing where it goes: covers placing, storing, disposing, receptacle finding, receptacle preparing; excludes picking, retrieving, transporting, inventory tracking, and opening/closing receptacles.",
+       "name": "object-placement-and-receptacle-prep"
+      },
+      {
+       "path": "agentroboticsplanningandskillevaluation/alfworld-object-manipulation/receptacle-access-and-control",
+       "leaves": [
+        "alfworld-open-receptacle",
+        "alfworld-receptacle-closer",
+        "alfworld-receptacle-opener",
+        "alfworld-receptacle-operator"
+       ],
+       "groups": [],
+       "description": "Use when the task is about opening, closing, or operating a receptacle: covers opening, closing, receptacle operation; excludes object pickup, movement, placement, disposal, inventory tracking, and receptacle preparation.",
+       "name": "receptacle-access-and-control"
+      }
+     ],
+     "description": "Use when an ALFWorld task needs picking/retrieving objects, placing/storing/transporting objects, tracking multiple object instances, finding a placement receptacle, disposing objects, or opening/closing/preparing/operating receptacles: covers pick-place, transport, inventory, receptacle access, disposal; excludes search/navigation and heating/cooling/cleaning/verification.",
+     "name": "alfworld-object-manipulation"
+    },
+    {
+     "path": "agentroboticsplanningandskillevaluation/alfworld-state-transformation",
+     "leaves": [
+      "alfworld-appliance-preparer",
+      "alfworld-clean-object",
+      "alfworld-device-operator",
+      "alfworld-heat-object-with-appliance",
+      "alfworld-object-cooler",
+      "alfworld-object-heater",
+      "alfworld-object-state-modifier",
+      "alfworld-task-verifier",
+      "alfworld-temperature-regulator",
+      "alfworld-tool-user"
+     ],
+     "groups": [],
+     "description": "Use when an ALFWorld task needs heating, cooling, cleaning, temperature regulation, appliance/device/tool operation for state change, preparing an appliance for use, or verifying task completion: covers heat-cool-clean, appliance prep, device/tool use, task verification; excludes navigation/search and pick-place/open-close.",
+     "name": "alfworld-state-transformation"
+    },
+    {
+     "path": "agentroboticsplanningandskillevaluation/skill-benchmark-authoring",
+     "leaves": [
+      "docs-to-skill",
+      "harbor",
+      "skill-creator",
+      "skillsbench"
+     ],
+     "groups": [],
+     "description": "Use when the task is authoring or updating agent skills, generating a skill from web documentation, creating/validating SkillsBench benchmark tasks, or running Harbor evaluation commands: covers skill authoring, docs-to-skill, benchmark tasks, Harbor workflows; excludes artifact/badge evaluation, enterprise search, output validation, and ALFWorld.",
+     "name": "skill-benchmark-authoring"
+    },
+    {
+     "path": "agentroboticsplanningandskillevaluation/artifact-evaluation-search",
+     "leaves": [
+      "artifact-evaluation",
+      "badge-evaluation",
+      "enterprise-artifact-search",
+      "output-validation"
+     ],
+     "groups": [],
+     "description": "Use when the task is evaluating research artifacts or NDSS badges, extracting evidence from enterprise artifact datasets, or locally validating instruction/mask outputs: covers artifact evaluation, badge checks, enterprise evidence search, output validation; excludes skill authoring, benchmark creation, planning, and ALFWorld.",
+     "name": "artifact-evaluation-search"
+    },
+    {
+     "path": "agentroboticsplanningandskillevaluation/planning-graph-constraint",
+     "leaves": [
+      "constraint-parser",
+      "dialogue_graph",
+      "pddl-skills",
+      "planning-with-files"
+     ],
+     "groups": [],
+     "description": "Use when the task is parsing scheduling constraints from email, building/validating/visualizing/serializing dialogue graphs, loading/validating/solving PDDL planning problems, or managing file-based plans for complex tasks: covers constraint parsing, dialogue graphs, PDDL planning, file-based planning; excludes skill authoring, artifact evaluation, and ALFWorld.",
+     "name": "planning-graph-constraint"
+    }
+   ],
+   "description": "Use when building agents, planning robot/environment actions, authoring/evaluating skills, or managing benchmark/artifact workflows: covers ALFWorld/PDDL planning; skill authoring/evaluation; agent benchmarks/harbor; dialogue/artifact search; file-based planning; excludes domain science, software migration, security, and SaaS automation.",
+   "name": "agentroboticsplanningandskillevaluation"
+  },
+  {
+   "path": "businessfinancetravelandverticallookup",
+   "leaves": [
+    "13f-analyzer",
+    "civ6lib",
+    "fuzzy-name-search",
+    "powerlifting",
+    "search-accommodations",
+    "search-attractions",
+    "search-cities",
+    "search-driving-distance",
+    "search-flights",
+    "search-restaurants"
+   ],
+   "groups": [],
+   "description": "Use when retrieving or scoring domain-specific business, finance, travel, sports, or game data without a generic SaaS automation wrapper: covers 13F/fund analysis; travel search; sports scoring; game mechanics; vertical datasets; excludes SaaS/API automation, document/media processing, data science modeling, and scientific simulation.",
+   "name": "businessfinancetravelandverticallookup"
+  }
+ ]
+}
