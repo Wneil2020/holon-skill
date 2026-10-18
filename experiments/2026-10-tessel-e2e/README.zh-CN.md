@@ -8,7 +8,7 @@
 
 ## 设置
 
-- **平台和 skill。** `tessel-frontend` 是为本实验虚构的前端平台，没有模型见过。手册（`skill/v1/full/SKILL.md`，833 行，42,836 字符）模仿真实团队 wiki，里面埋了十条约定 F1–F10：组件位置、`tessel.part` 包装、只用设计 token、CSS layer、所有可见文字走 `t()`、文案文件放在 `locales/<lang>/<name>.strings`、带 `data-ts-dismiss` 和翻译标签的关闭按钮、关闭状态用会话级 `tessel.store` 保存、用 `@tessel/testkit` 写测试、在 `changes/next/` 写变更说明。
+- **平台和 skill。** `tessel-frontend` 是为本实验虚构的前端平台，没有模型见过。手册（`skill/v1/full/tessel-frontend/SKILL.md`，833 行，42,836 字符）模仿真实团队 wiki，里面埋了十条约定 F1–F10：组件位置、`tessel.part` 包装、只用设计 token、CSS layer、所有可见文字走 `t()`、文案文件放在 `locales/<lang>/<name>.strings`、带 `data-ts-dismiss` 和翻译标签的关闭按钮、关闭状态用会话级 `tessel.store` 保存、用 `@tessel/testkit` 写测试、在 `changes/next/` 写变更说明。
 - **任务。** 新增一个可关闭的公告横幅组件，提供英文和简体中文，遵守团队约定，写测试，并记录到发布说明。agent 有 `read`、`list`、`write`、`shell` 工具，最多 25 轮。
 - **四种给法。** `none`；`full`（整个文件放进系统提示）；`heading`（每个超过 25 行的 `##` 小节移到 `references/`，共 12 个）；`holon`（按 holon 规则用 `holon.py split` 拆分：短核心、一个 `build-parts` 子 skill、10 个 references）。
 - **评分。** 静态：十条约定。真实：agent 自己的测试；隐藏的 jsdom 行为测试（两种语言都能渲染、有中文、关闭按钮有标签且能隐藏、重新挂载仍隐藏、新会话重新出现）；esbuild 打包后在 Chromium 中打开并截图，检查点击、刷新、新浏览器上下文。
