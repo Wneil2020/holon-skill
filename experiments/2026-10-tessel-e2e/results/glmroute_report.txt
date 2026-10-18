@@ -1,0 +1,28 @@
+mode       n  score     sd    prompt    compl  turns  reads
+holon      8   7.00   0.00     31167     1459    6.6    5.0
+
+per check (passes / runs)
+check                 holon
+F1_location             8/8
+F2_wrapper              8/8
+F3_tokens               0/8
+F4_layer                0/8
+F5_strings              8/8
+F6_string_files         8/8
+F7_dismiss              0/8
+F8_store                8/8
+F9_test                 8/8
+F10_change_note         8/8
+
+real run (passes / runs)
+check                   holon
+part_exists               8/8
+behavior_all              6/8
+own_tests_pass            4/8
+page_builds               8/8
+page_no_errors            7/8
+browser_dismiss           7/8
+browser_persist           7/8
+browser_new_session       7/8
+
+finished / errors: {'holon': (8, 0)}

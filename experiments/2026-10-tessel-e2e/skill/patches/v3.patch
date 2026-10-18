@@ -1,0 +1,63 @@
+diff -ruN data2/skills_1000/tessel-frontend/SKILL.md data3/skills_1000/tessel-frontend/SKILL.md
+--- data2/skills_1000/tessel-frontend/SKILL.md	2026-10-18 00:46:55.796913885 +0000
++++ data3/skills_1000/tessel-frontend/SKILL.md	2026-10-18 01:09:26.219234852 +0000
+@@ -156,7 +156,7 @@
+ A "part" is Tessel's smallest deployable UI unit. It is not just a React component; `@tessel/cli` registers, versions, and string-extracts it, so the wrapper is load-bearing.
+ 
+ ### Anatomy
+-Parts live in `src/parts/<kebab-name>/`: `index.tsx`, `strings.en.json`, `part.manifest.json`, plus `__tests__/` run by `@tessel/testkit`. Scaffold with `tessel new part`.
++Parts live in `src/parts/<kebab-name>/`: `index.tsx`, `<kebab-name>.module.css`, `part.manifest.json`, and `<kebab-name>.spec.tsx` run by `@tessel/testkit`; strings live outside the part in `locales/<lang>/<kebab-name>.strings`. Scaffold with `tessel new part`.
+ 
+ A part's default export must be wrapped: `export default tessel.part("<kebab-name>", function <PascalName>(props) { ... })`, with `import { tessel } from "@tessel/core";`. A plain exported React component is rejected by the build.
+ 
+@@ -179,7 +179,7 @@
+ ### Strings
+ No user-visible literal strings in parts. Use `const t = tessel.useStrings("<kebab-name>");` and `t("key")`.
+ 
+-This includes `aria-label`, `title`, `alt`, placeholders, empty states, and errors. Keys live in `strings.en.json`; other locales come from the localization pipeline. Missing keys render as the key in dev and throw in production unless `TESSEL_ALLOW_MISSING_STRINGS=1`.
++This includes `aria-label`, `title`, `alt`, placeholders, empty states, and errors. Keys live in `locales/en/<kebab-name>.strings`; other locales come from the localization pipeline. Missing keys render as the key in dev and throw in production unless `TESSEL_ALLOW_MISSING_STRINGS=1`.
+ 
+ Do not concatenate sentences. Interpolate: `t("branch", { branch: props.branch })`. Plurals use `t("count", { count })` and the ICU subset.
+ 
+diff -ruN splitwork2/trees/heading/tessel-frontend/references/building-parts.md splitwork3/trees/heading/tessel-frontend/references/building-parts.md
+--- splitwork2/trees/heading/tessel-frontend/references/building-parts.md	2026-10-17 15:07:45.996502338 +0000
++++ splitwork3/trees/heading/tessel-frontend/references/building-parts.md	2026-10-18 01:09:26.222755378 +0000
+@@ -2,7 +2,7 @@
+ A "part" is Tessel's smallest deployable UI unit. It is not just a React component; `@tessel/cli` registers, versions, and string-extracts it, so the wrapper is load-bearing.
+ 
+ ### Anatomy
+-Parts live in `src/parts/<kebab-name>/`: `index.tsx`, `strings.en.json`, `part.manifest.json`, plus `__tests__/` run by `@tessel/testkit`. Scaffold with `tessel new part`.
++Parts live in `src/parts/<kebab-name>/`: `index.tsx`, `<kebab-name>.module.css`, `part.manifest.json`, and `<kebab-name>.spec.tsx` run by `@tessel/testkit`; strings live outside the part in `locales/<lang>/<kebab-name>.strings`. Scaffold with `tessel new part`.
+ 
+ A part's default export must be wrapped: `export default tessel.part("<kebab-name>", function <PascalName>(props) { ... })`, with `import { tessel } from "@tessel/core";`. A plain exported React component is rejected by the build.
+ 
+@@ -25,7 +25,7 @@
+ ### Strings
+ No user-visible literal strings in parts. Use `const t = tessel.useStrings("<kebab-name>");` and `t("key")`.
+ 
+-This includes `aria-label`, `title`, `alt`, placeholders, empty states, and errors. Keys live in `strings.en.json`; other locales come from the localization pipeline. Missing keys render as the key in dev and throw in production unless `TESSEL_ALLOW_MISSING_STRINGS=1`.
++This includes `aria-label`, `title`, `alt`, placeholders, empty states, and errors. Keys live in `locales/en/<kebab-name>.strings`; other locales come from the localization pipeline. Missing keys render as the key in dev and throw in production unless `TESSEL_ALLOW_MISSING_STRINGS=1`.
+ 
+ Do not concatenate sentences. Interpolate: `t("branch", { branch: props.branch })`. Plurals use `t("count", { count })` and the ICU subset.
+ 
+diff -ruN splitwork2/trees/holon/tessel-frontend/build-parts/SKILL.md splitwork3/trees/holon/tessel-frontend/build-parts/SKILL.md
+--- splitwork2/trees/holon/tessel-frontend/build-parts/SKILL.md	2026-10-17 15:52:43.972165679 +0000
++++ splitwork3/trees/holon/tessel-frontend/build-parts/SKILL.md	2026-10-18 01:09:26.228113511 +0000
+@@ -15,7 +15,7 @@
+ A "part" is Tessel's smallest deployable UI unit. It is not just a React component; `@tessel/cli` registers, versions, and string-extracts it, so the wrapper is load-bearing.
+ 
+ ### Anatomy
+-Parts live in `src/parts/<kebab-name>/`: `index.tsx`, `strings.en.json`, `part.manifest.json`, plus `__tests__/` run by `@tessel/testkit`. Scaffold with `tessel new part`.
++Parts live in `src/parts/<kebab-name>/`: `index.tsx`, `<kebab-name>.module.css`, `part.manifest.json`, and `<kebab-name>.spec.tsx` run by `@tessel/testkit`; strings live outside the part in `locales/<lang>/<kebab-name>.strings`. Scaffold with `tessel new part`.
+ 
+ A part's default export must be wrapped: `export default tessel.part("<kebab-name>", function <PascalName>(props) { ... })`, with `import { tessel } from "@tessel/core";`. A plain exported React component is rejected by the build.
+ 
+@@ -38,7 +38,7 @@
+ ### Strings
+ No user-visible literal strings in parts. Use `const t = tessel.useStrings("<kebab-name>");` and `t("key")`.
+ 
+-This includes `aria-label`, `title`, `alt`, placeholders, empty states, and errors. Keys live in `strings.en.json`; other locales come from the localization pipeline. Missing keys render as the key in dev and throw in production unless `TESSEL_ALLOW_MISSING_STRINGS=1`.
++This includes `aria-label`, `title`, `alt`, placeholders, empty states, and errors. Keys live in `locales/en/<kebab-name>.strings`; other locales come from the localization pipeline. Missing keys render as the key in dev and throw in production unless `TESSEL_ALLOW_MISSING_STRINGS=1`.
+ 
+ Do not concatenate sentences. Interpolate: `t("branch", { branch: props.branch })`. Plurals use `t("count", { count })` and the ICU subset.
+ 

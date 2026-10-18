@@ -1,0 +1,63 @@
+{
+ "prompt": 39115,
+ "completion": 1684,
+ "cached": 25600,
+ "turns": 8,
+ "skill_reads": [
+  "tessel-frontend/build-parts/SKILL.md",
+  "tessel-frontend/references/localization.md",
+  "tessel-frontend/references/testing.md",
+  "tessel-frontend/references/git-pr-ci-release.md",
+  "tessel-frontend/references/design-tokens.md",
+  "tessel-frontend/references/accessibility.md"
+ ],
+ "skill_chars": 24318,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "src/parts/announcement-banner/part.manifest.json",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "changes/next/announcement-banner.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "holon",
+ "rep": 3,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": true,
+  "F4_layer": true,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": true,
+  "F8_store": false,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 9,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   1,
+   2
+  ],
+  "behavior": [
+   0,
+   2
+  ],
+  "behavior_log": "JSON report written to /workspace/work/e2e/runtime/work/holon-3-7577/vt.json\n",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Close\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "关闭\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": false,
+   "hidden_after_reload": false,
+   "back_in_new_session": true
+  }
+ }
+}

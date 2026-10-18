@@ -1,0 +1,57 @@
+{
+ "prompt": 79837,
+ "completion": 1506,
+ "cached": 72896,
+ "turns": 6,
+ "skill_reads": [],
+ "skill_chars": 0,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/strings.en.json",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "changes/next/announcement-banner.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "full",
+ "rep": 3,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": true,
+  "F4_layer": true,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": true,
+  "F8_store": true,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 10,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   2,
+   2
+  ],
+  "behavior": [
+   2,
+   2
+  ],
+  "behavior_log": "",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Dismiss\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "关闭\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

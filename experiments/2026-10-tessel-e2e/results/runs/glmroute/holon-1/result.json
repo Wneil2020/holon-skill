@@ -1,0 +1,62 @@
+{
+ "prompt": 29799,
+ "completion": 1496,
+ "cached": 16640,
+ "turns": 7,
+ "skill_reads": [
+  "tessel-frontend/build-parts/SKILL.md",
+  "tessel-frontend/references/localization.md",
+  "tessel-frontend/references/state-and-data.md",
+  "tessel-frontend/references/testing.md",
+  "tessel-frontend/references/git-pr-ci-release.md"
+ ],
+ "skill_chars": 18536,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "changes/next/announcement-banner.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "holon",
+ "rep": 1,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": false,
+  "F8_store": true,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 7,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   1,
+   2
+  ],
+  "behavior": [
+   0,
+   2
+  ],
+  "behavior_log": "JSON report written to /workspace/work/e2e/runtime/work/holon-1-7576/vt.json\n",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Scheduled maintenance this Saturday from 02:00 to 04:00 UTC.\n\nDismiss\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "本周六 02:00 至 04:00（UTC）进行计划内维护。\n\n关闭\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

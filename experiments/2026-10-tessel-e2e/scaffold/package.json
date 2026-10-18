@@ -1,0 +1,6 @@
+{
+  "name": "tessel-web",
+  "private": true,
+  "dependencies": { "@tessel/core": "^3.4.0", "react": "^18.3.0" },
+  "devDependencies": { "@tessel/cli": "^3.4.0", "@tessel/testkit": "^3.4.0" }
+}

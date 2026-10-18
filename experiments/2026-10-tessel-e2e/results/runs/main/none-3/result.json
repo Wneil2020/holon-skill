@@ -1,0 +1,29 @@
+{
+ "prompt": 81081,
+ "completion": 9262,
+ "cached": 69376,
+ "turns": 25,
+ "skill_reads": [],
+ "skill_chars": 0,
+ "writes": [],
+ "finished": false,
+ "error": null,
+ "mode": "none",
+ "rep": 3,
+ "checks": {
+  "F1_location": false,
+  "F2_wrapper": false,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": false,
+  "F6_string_files": false,
+  "F7_dismiss": false,
+  "F8_store": false,
+  "F9_test": false,
+  "F10_change_note": false
+ },
+ "score": 0,
+ "verify": {
+  "exists": false
+ }
+}

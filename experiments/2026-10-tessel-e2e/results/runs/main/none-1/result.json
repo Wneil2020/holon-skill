@@ -1,0 +1,52 @@
+{
+ "prompt": 93020,
+ "completion": 13165,
+ "cached": 83456,
+ "turns": 25,
+ "skill_reads": [],
+ "skill_chars": 0,
+ "writes": [
+  "src/parts/announcement-banner/messages.ts",
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/announcement-banner.test.tsx"
+ ],
+ "finished": false,
+ "error": null,
+ "mode": "none",
+ "rep": 1,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": false,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": false,
+  "F6_string_files": false,
+  "F7_dismiss": false,
+  "F8_store": false,
+  "F9_test": false,
+  "F10_change_note": false
+ },
+ "score": 1,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   0,
+   0
+  ],
+  "behavior": [
+   2,
+   2
+  ],
+  "behavior_log": "",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Tessel 3.4 is here — enjoy a faster cold start.\n\n×\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "Tessel 3.4 已发布——冷启动更快了。\n\n×\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "prompt": 97848,
+ "completion": 1970,
+ "cached": 83776,
+ "turns": 13,
+ "skill_reads": [
+  "tessel-frontend/references/building-parts.md",
+  "tessel-frontend/references/quick-start.md",
+  "tessel-frontend/references/localization.md",
+  "tessel-frontend/references/testing.md",
+  "tessel-frontend/references/git-prs-ci-and-release.md",
+  "tessel-frontend/references/accessibility.md",
+  "tessel-frontend/references/faq-and-troubleshooting.md"
+ ],
+ "skill_chars": 25151,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/strings.en.json",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "changes/next/announcement-banner.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "heading",
+ "rep": 4,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": true,
+  "F8_store": false,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 7,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   0,
+   2
+  ],
+  "behavior": [
+   0,
+   2
+  ],
+  "behavior_log": "atchEvent (/workspace/work/e2e/runtime/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17)\nTypeError: __vite_ssr_import_0__.tessel.useState is not a function or its return value is not iterable\n    at AnnouncementBanner (/workspace/work/e2e/runtime/work/heading-4-17067/src/parts/announcement-banner/index.tsx:15:44)\n    at renderWithHooks (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:15486:18)\n    at mountIndeterminateComponent (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:20103:13)\n    at beginWork (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:21626:16)\n    at HTMLUnknownElement.callCallback (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:4164:14)\n    at HTMLUnknownElement.callTheUserObjectsOperation (/workspace/work/e2e/runtime/node_modules/jsdom/lib/generated/idl/EventListener.js:26:30)\n    at innerInvokeEventListeners (/workspace/work/e2e/runtime/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16)\n    at invokeEventListeners (/workspace/work/e2e/runtime/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3)\n    at HTMLUnknownElementImpl._dispatch (/workspace/work/e2e/runtime/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9)\n    at HTMLUnknownElementImpl.dispatchEvent (/workspace/work/e2e/runtime/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17)\n",
+  "page": {
+   "build": true,
+   "errors": [
+    "tessel.useState is not a function or its return value is not iterable",
+    "tessel.useState is not a function or its return value is not iterable",
+    "tessel.useState is not a function or its return value is not iterable"
+   ],
+   "text_en": "",
+   "text_zh-Hans": "",
+   "dismiss_found": false
+  }
+ }
+}

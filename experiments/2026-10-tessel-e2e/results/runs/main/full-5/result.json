@@ -1,0 +1,63 @@
+{
+ "prompt": 562246,
+ "completion": 40909,
+ "cached": 482423,
+ "turns": 25,
+ "skill_reads": [
+  "tessel-frontend/SKILL.md"
+ ],
+ "skill_chars": 42836,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/strings.en.json",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "changes/next/announcement-banner.md",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx"
+ ],
+ "finished": false,
+ "error": null,
+ "mode": "full",
+ "rep": 5,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": true,
+  "F4_layer": true,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": true,
+  "F8_store": true,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 10,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   0,
+   1
+  ],
+  "behavior": [
+   2,
+   2
+  ],
+  "behavior_log": "",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Scheduled maintenance is planned for Friday. Some features may be briefly unavailable.\n\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "系统计划于本周五进行维护，部分功能可能会短暂不可用。\n\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

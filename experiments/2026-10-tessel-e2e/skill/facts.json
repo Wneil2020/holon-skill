@@ -1,0 +1,12 @@
+[
+ {"id":"F1","topic":"where parts live","text":"Every UI part lives in its own folder `src/parts/<kebab-name>/` and its entry file is `index.tsx` (never `<Name>.tsx`, never `src/components/`)."},
+ {"id":"F2","topic":"part wrapper","text":"A part's default export must be wrapped: `export default tessel.part(\"<kebab-name>\", function <PascalName>(props) { ... })`, with `import { tessel } from \"@tessel/core\";`. A plain exported React component is rejected by the build."},
+ {"id":"F3","topic":"colors","text":"Colors are only design tokens through CSS variables, e.g. `var(--ts-color-surface-info)` and `var(--ts-color-text-strong)`. Hex, rgb() and named colors are forbidden in parts; the token linter fails the build."},
+ {"id":"F4","topic":"stacking","text":"Never write a numeric z-index. Banners use `zIndex: \"var(--ts-layer-banner)\"`; modals use `var(--ts-layer-modal)`."},
+ {"id":"F5","topic":"strings","text":"No user-visible literal strings in parts. Use `const t = tessel.useStrings(\"<kebab-name>\");` and `t(\"key\")`."},
+ {"id":"F6","topic":"string files","text":"Strings live in `locales/<lang>/<kebab-name>.strings`, one per line as `key = \"value\"`. Keys are bare (no part prefix). Every part needs `en` and `zh-Hans` (not `zh`, not `zh-CN`)."},
+ {"id":"F7","topic":"dismiss controls","text":"Any control that closes or dismisses something must carry `data-ts-dismiss` and an `aria-label` that comes from `t(...)`, never a literal."},
+ {"id":"F8","topic":"remembering state","text":"Do not use localStorage or sessionStorage directly. Persist UI state with `tessel.store.session(\"<kebab-name>.<key>\")` which returns `[value, setValue]`."},
+ {"id":"F9","topic":"tests","text":"Each part has `src/parts/<kebab-name>/<kebab-name>.spec.tsx` that imports `renderPart` from `@tessel/testkit` and has at least one `it(` block."},
+ {"id":"F10","topic":"change notes","text":"Every user-visible change adds a file `changes/next/<kebab-name>.md` whose first line is `kind: feature` (or `kind: fix`), followed by one sentence. Never edit CHANGELOG.md by hand; it is generated at release."}
+]

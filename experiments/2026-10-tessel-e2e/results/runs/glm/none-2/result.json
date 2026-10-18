@@ -1,0 +1,53 @@
+{
+ "prompt": 52382,
+ "completion": 1878,
+ "cached": 37952,
+ "turns": 21,
+ "skill_reads": [],
+ "skill_chars": 0,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/index.test.tsx",
+  "src/parts/announcement-banner/locales.json",
+  "CHANGELOG.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "none",
+ "rep": 2,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": false,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": false,
+  "F6_string_files": false,
+  "F7_dismiss": false,
+  "F8_store": false,
+  "F9_test": false,
+  "F10_change_note": false
+ },
+ "score": 1,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   2,
+   2
+  ],
+  "behavior": [
+   1,
+   2
+  ],
+  "behavior_log": "JSON report written to /workspace/work/e2e/runtime/work/none-2-17067/vt.json\n",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Scheduled maintenance on Saturday, 02:00–04:00 UTC. Some features may be unavailable.\n\n×\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "Scheduled maintenance on Saturday, 02:00–04:00 UTC. Some features may be unavailable.\n\n×\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

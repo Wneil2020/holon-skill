@@ -1,0 +1,30 @@
+mode       n  score     sd    prompt    compl  turns  reads
+full       5   7.00   3.69    111696     1342    8.6    0.0
+heading    5   4.60   2.42     85726     1921   12.2    5.8
+holon      5   5.60   3.44    109650     2357   18.2    4.4
+
+per check (passes / runs)
+check                  full  heading    holon
+F1_location             4/5      4/5      4/5
+F2_wrapper              4/5      4/5      4/5
+F3_tokens               3/5      0/5      3/5
+F4_layer                2/5      0/5      3/5
+F5_strings              4/5      4/5      4/5
+F6_string_files         3/5      2/5      2/5
+F7_dismiss              4/5      1/5      1/5
+F8_store                3/5      0/5      1/5
+F9_test                 4/5      4/5      4/5
+F10_change_note         4/5      4/5      2/5
+
+real run (passes / runs)
+check                    full  heading    holon
+part_exists               4/5      4/5      4/5
+behavior_all              2/5      1/5      1/5
+own_tests_pass            3/5      1/5      1/5
+page_builds               4/5      4/5      4/5
+page_no_errors            3/5      2/5      1/5
+browser_dismiss           3/5      2/5      1/5
+browser_persist           3/5      2/5      1/5
+browser_new_session       3/5      2/5      1/5
+
+finished / errors: {'full': (4, 1), 'heading': (4, 1), 'holon': (4, 0)}

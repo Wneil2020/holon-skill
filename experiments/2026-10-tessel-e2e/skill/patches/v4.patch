@@ -1,0 +1,15 @@
+diff -ruN splitwork3/trees/holon/tessel-frontend/build-parts/SKILL.md splitwork4/trees/holon/tessel-frontend/build-parts/SKILL.md
+--- splitwork3/trees/holon/tessel-frontend/build-parts/SKILL.md	2026-10-18 01:09:26.228113511 +0000
++++ splitwork4/trees/holon/tessel-frontend/build-parts/SKILL.md	2026-10-18 01:21:05.675017152 +0000
+@@ -82,3 +82,11 @@
+ 
+ <!-- sub-skills -->
+ <!-- /sub-skills -->
++
++## Read next when creating a new part
++
++A new part touches four other areas. Read these before writing code, and skip the rest of `references/`:
++- `skills/tessel-frontend/references/localization.md` — where string files live and how keys are named.
++- `skills/tessel-frontend/references/state-and-data.md` — persisted UI state (e.g. dismissals) and which store to use.
++- `skills/tessel-frontend/references/testing.md` — the spec file, `renderPart`, and how to drive interactions.
++- `skills/tessel-frontend/references/git-pr-ci-release.md` — the change note every user-visible change needs.

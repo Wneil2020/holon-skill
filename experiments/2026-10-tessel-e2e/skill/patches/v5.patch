@@ -1,0 +1,14 @@
+diff -ruN splitwork4/trees/holon/tessel-frontend/build-parts/SKILL.md splitwork5/trees/holon/tessel-frontend/build-parts/SKILL.md
+--- splitwork4/trees/holon/tessel-frontend/build-parts/SKILL.md	2026-10-18 01:21:05.675017152 +0000
++++ splitwork5/trees/holon/tessel-frontend/build-parts/SKILL.md	2026-10-18 01:36:51.544212984 +0000
+@@ -85,7 +85,9 @@
+ 
+ ## Read next when creating a new part
+ 
+-A new part touches four other areas. Read these before writing code, and skip the rest of `references/`:
++A new part touches six other areas. Read these before writing code, and skip the rest of `references/`:
++- `skills/tessel-frontend/references/design-tokens.md` — token families, CSS Modules and layers for any styling.
++- `skills/tessel-frontend/references/accessibility.md` — dismiss/close controls and their labels.
+ - `skills/tessel-frontend/references/localization.md` — where string files live and how keys are named.
+ - `skills/tessel-frontend/references/state-and-data.md` — persisted UI state (e.g. dismissals) and which store to use.
+ - `skills/tessel-frontend/references/testing.md` — the spec file, `renderPart`, and how to drive interactions.

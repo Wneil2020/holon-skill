@@ -1,0 +1,56 @@
+{
+ "prompt": 164722,
+ "completion": 21206,
+ "cached": 118910,
+ "turns": 11,
+ "skill_reads": [],
+ "skill_chars": 0,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "changes/next/announcement-banner.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "full",
+ "rep": 7,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": true,
+  "F4_layer": true,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": true,
+  "F8_store": true,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 10,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   1,
+   2
+  ],
+  "behavior": [
+   2,
+   2
+  ],
+  "behavior_log": "",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Tessel 3.5 is rolling out this week. Some pages may load slowly while we deploy.\n\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "Tessel 3.5 将于本周逐步上线。部署期间部分页面可能加载缓慢。\n\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "prompt": 212844,
+ "completion": 27000,
+ "cached": 155822,
+ "turns": 14,
+ "skill_reads": [
+  "tessel-frontend/SKILL.md",
+  "tessel-frontend/build-parts/SKILL.md",
+  "tessel-frontend/references/design-tokens.md",
+  "tessel-frontend/references/localization.md",
+  "tessel-frontend/references/accessibility.md",
+  "tessel-frontend/references/testing.md",
+  "tessel-frontend/references/git-pr-ci-release.md",
+  "tessel-frontend/references/state-and-data.md",
+  "tessel-frontend/references/analytics-perf-browsers.md",
+  "tessel-frontend/references/monorepo-and-dev.md",
+  "tessel-frontend/references/faq-troubleshooting.md",
+  "tessel-frontend/references/migration-tessel2.md"
+ ],
+ "skill_chars": 45713,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "changes/next/announcement-banner.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "holon",
+ "rep": 6,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": true,
+  "F4_layer": true,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": true,
+  "F8_store": true,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 10,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   2,
+   2
+  ],
+  "behavior": [
+   2,
+   2
+  ],
+  "behavior_log": "",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Scheduled maintenance tonight from 22:00 to 23:00 UTC.\n\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "今晚 22:00 至 23:00（UTC）进行系统维护。\n\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

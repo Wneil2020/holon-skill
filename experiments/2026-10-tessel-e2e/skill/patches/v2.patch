@@ -1,0 +1,39 @@
+diff -ruN data/skills_1000/tessel-frontend/SKILL.md data2/skills_1000/tessel-frontend/SKILL.md
+--- data/skills_1000/tessel-frontend/SKILL.md	2026-10-17 15:07:27.468583121 +0000
++++ data2/skills_1000/tessel-frontend/SKILL.md	2026-10-18 00:46:55.796913885 +0000
+@@ -509,6 +509,9 @@
+ Each part has `src/parts/<kebab-name>/<kebab-name>.spec.tsx` that imports `renderPart` from `@tessel/testkit` and has at least one `it(` block. That's the floor, not the ceiling — `tessel doctor` warns (never fails) when a part
+ directory has no spec file.
+ 
++Drive interactions in a spec through the `user` that `renderPart` returns: `const { user, getByRole } = renderPart(<Part />); await user.click(getByRole("button"));` and make the `it` async. Never call `element.click()` or `fireEvent` directly in a part spec: those updates land outside React's act, are not flushed, and the assertion after them reads stale DOM. This is the single most common reason a part spec fails in CI.
++
++
+ ### Snapshots
+ 
+ Snapshots are allowed; unversioned drift is not.
+diff -ruN splitwork/trees/heading/tessel-frontend/references/testing.md splitwork2/trees/heading/tessel-frontend/references/testing.md
+--- splitwork/trees/heading/tessel-frontend/references/testing.md	2026-10-17 15:07:46.003052604 +0000
++++ splitwork2/trees/heading/tessel-frontend/references/testing.md	2026-10-18 00:46:55.798903208 +0000
+@@ -17,6 +17,9 @@
+ Each part has `src/parts/<kebab-name>/<kebab-name>.spec.tsx` that imports `renderPart` from `@tessel/testkit` and has at least one `it(` block. That's the floor, not the ceiling — `tessel doctor` warns (never fails) when a part
+ directory has no spec file.
+ 
++Drive interactions in a spec through the `user` that `renderPart` returns: `const { user, getByRole } = renderPart(<Part />); await user.click(getByRole("button"));` and make the `it` async. Never call `element.click()` or `fireEvent` directly in a part spec: those updates land outside React's act, are not flushed, and the assertion after them reads stale DOM. This is the single most common reason a part spec fails in CI.
++
++
+ ### Snapshots
+ 
+ Snapshots are allowed; unversioned drift is not.
+diff -ruN splitwork/trees/holon/tessel-frontend/references/testing.md splitwork2/trees/holon/tessel-frontend/references/testing.md
+--- splitwork/trees/holon/tessel-frontend/references/testing.md	2026-10-17 15:52:43.978819977 +0000
++++ splitwork2/trees/holon/tessel-frontend/references/testing.md	2026-10-18 00:46:55.800745171 +0000
+@@ -18,6 +18,9 @@
+ Each part has `src/parts/<kebab-name>/<kebab-name>.spec.tsx` that imports `renderPart` from `@tessel/testkit` and has at least one `it(` block. That's the floor, not the ceiling — `tessel doctor` warns (never fails) when a part
+ directory has no spec file.
+ 
++Drive interactions in a spec through the `user` that `renderPart` returns: `const { user, getByRole } = renderPart(<Part />); await user.click(getByRole("button"));` and make the `it` async. Never call `element.click()` or `fireEvent` directly in a part spec: those updates land outside React's act, are not flushed, and the assertion after them reads stale DOM. This is the single most common reason a part spec fails in CI.
++
++
+ ### Snapshots
+ 
+ Snapshots are allowed; unversioned drift is not.

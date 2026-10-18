@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 29,442 in the library (13%)
+read: 3 file(s), 3,828 bytes of 29,928 in the library (12%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 29,442 in the library (11%)
+read: 2 file(s), 3,372 bytes of 29,928 in the library (11%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 29,442 in the library (8%)
+read: 1 file(s), 2,374 bytes of 29,928 in the library (7%)
 ```
 
 ## Checking the tree
@@ -279,6 +279,8 @@ The context measurements in `organizer/references/design-notes.md` (§17) count 
 Routing at 500 skills was measured once, in [experiments/2026-10-gos-scale](../experiments/2026-10-gos-scale/README.md), with the Graph of Skills library and the 87 SkillsBench tasks. Reading the flat list, a model found 90% of the oracle skills; reading a tree a model had built in one pass, 70%, while reading about a twelfth as much. A tree is a way to read less, not to route better. One-hop `needs` edges written offline added 1.9 points, below the threshold set beforehand, and were not added.
 
 Splitting one long skill was measured once too. In [experiments/2026-10-split-big-skills](../experiments/2026-10-split-big-skills/README.md), four long files from the Graph of Skills library were split by an agent following these rules: no line was lost, and on questions the model could not answer without the file it answered 52 of 54 (whole file: 54) while reading 27% less. A mechanical split by heading read 44% *more* than the whole file, because its pointer lines did not say what was behind them; a file that repeats itself read more after splitting either way.
+
+Whether a split skill still gets real work done was measured once, in [experiments/2026-10-tessel-e2e](../experiments/2026-10-tessel-e2e/README.md): a coding agent built a dismissible bilingual banner from an 833-line handbook, checked by its own tests, a hidden behaviour test and a real Chromium page. With deepseek-v4.1-flash the holon split scored 10/10 on every run at about a third fewer prompt tokens than the whole file. glm-5.3-flash followed whatever a step listed and nothing else: a sub-skill that named four of the six references a new part needs lost the same three conventions on every run, and naming all six gave 10/10 on 8 of 8 at the lowest cost. Most other failures came from stale or missing sentences in the skill, not from the split.
 
 How to write the body of a skill, below its header, is a separate question with no settled answer yet. For now the rule is only that a body is numbered steps and that background goes into `references/`.
 

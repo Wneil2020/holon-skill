@@ -1,0 +1,44 @@
+{
+ "prompt": 305174,
+ "completion": 716,
+ "cached": 265472,
+ "turns": 25,
+ "skill_reads": [
+  "tessel-frontend/build-parts/SKILL.md",
+  "tessel-frontend/references/localization.md",
+  "tessel-frontend/references/git-pr-ci-release.md",
+  "tessel-frontend/references/design-tokens.md",
+  "tessel-frontend/references/testing.md",
+  "tessel-frontend/references/accessibility.md",
+  "tessel-frontend/references/state-and-data.md",
+  "tessel-frontend/references/faq-troubleshooting.md",
+  "tessel-frontend/references/monorepo-and-dev.md",
+  "tessel-frontend/references/migration-tessel2.md",
+  "tessel-frontend/references/analytics-perf-browsers.md",
+  "tessel-frontend/build-parts/SKILL.md",
+  "tessel-frontend/references/testing.md",
+  "tessel-frontend/references/design-tokens.md"
+ ],
+ "skill_chars": 52501,
+ "writes": [],
+ "finished": false,
+ "error": null,
+ "mode": "holon",
+ "rep": 2,
+ "checks": {
+  "F1_location": false,
+  "F2_wrapper": false,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": false,
+  "F6_string_files": false,
+  "F7_dismiss": false,
+  "F8_store": false,
+  "F9_test": false,
+  "F10_change_note": false
+ },
+ "score": 0,
+ "verify": {
+  "exists": false
+ }
+}

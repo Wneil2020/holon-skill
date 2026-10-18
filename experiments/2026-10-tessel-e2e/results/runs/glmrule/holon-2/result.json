@@ -1,0 +1,33 @@
+{
+ "prompt": 159942,
+ "completion": 1147,
+ "cached": 141440,
+ "turns": 25,
+ "skill_reads": [
+  "tessel-frontend/build-parts/SKILL.md",
+  "tessel-frontend/references/localization.md",
+  "tessel-frontend/references/testing.md"
+ ],
+ "skill_chars": 10686,
+ "writes": [],
+ "finished": false,
+ "error": null,
+ "mode": "holon",
+ "rep": 2,
+ "checks": {
+  "F1_location": false,
+  "F2_wrapper": false,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": false,
+  "F6_string_files": false,
+  "F7_dismiss": false,
+  "F8_store": false,
+  "F9_test": false,
+  "F10_change_note": false
+ },
+ "score": 0,
+ "verify": {
+  "exists": false
+ }
+}

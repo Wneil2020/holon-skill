@@ -1,0 +1,58 @@
+{
+ "prompt": 121964,
+ "completion": 17320,
+ "cached": 118400,
+ "turns": 9,
+ "skill_reads": [],
+ "skill_chars": 0,
+ "writes": [
+  "src/parts/announcement-banner/index.tsx",
+  "src/parts/announcement-banner/part.manifest.json",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "locales/en/announcement-banner.strings",
+  "locales/zh-Hans/announcement-banner.strings",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx",
+  "changes/next/announcement-banner.md",
+  "src/parts/announcement-banner/announcement-banner.module.css",
+  "src/parts/announcement-banner/announcement-banner.spec.tsx"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "full",
+ "rep": 4,
+ "checks": {
+  "F1_location": true,
+  "F2_wrapper": true,
+  "F3_tokens": true,
+  "F4_layer": true,
+  "F5_strings": true,
+  "F6_string_files": true,
+  "F7_dismiss": true,
+  "F8_store": true,
+  "F9_test": true,
+  "F10_change_note": true
+ },
+ "score": 10,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.tsx",
+  "own_tests": [
+   2,
+   3
+  ],
+  "behavior": [
+   2,
+   2
+  ],
+  "behavior_log": "",
+  "page": {
+   "build": true,
+   "errors": [],
+   "text_en": "Tessel will be read-only on Saturday while we upgrade the platform.\n\nTessel · Orders\nOrders\n#1041 · Shipped\n#1042 · Shipped\n#1043 · Shipped",
+   "text_zh-Hans": "我们将在周六升级平台，届时 Tessel 将处于只读状态。\n\nTessel · Orders\n订单\n#1041 · 已发货\n#1042 · 已发货\n#1043 · 已发货",
+   "dismiss_found": true,
+   "hidden_after_click": true,
+   "hidden_after_reload": true,
+   "back_in_new_session": true
+  }
+ }
+}

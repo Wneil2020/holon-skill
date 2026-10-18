@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 29,442 in the library (13%)
+read: 3 file(s), 3,828 bytes of 29,928 in the library (12%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 29,442 in the library (11%)
+read: 2 file(s), 3,372 bytes of 29,928 in the library (11%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 29,442 in the library (8%)
+read: 1 file(s), 2,374 bytes of 29,928 in the library (7%)
 ```
 
 ## 检查这棵树
@@ -279,6 +279,8 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 在 500 个 skill 的规模上也测过一次，见 [experiments/2026-10-gos-scale](../experiments/2026-10-gos-scale/README.zh-CN.md)。库是 Graph of Skills 的，任务是 87 个 SkillsBench 任务。模型读平铺列表，找到标准 skill 的 90%；读一棵由模型一次建成的树，只找到 70%，但读的内容只有平铺的约十二分之一。所以树是一种少读的办法，不是一种路由更准的办法。离线写的一跳 `needs` 依赖边只提高了 1.9 个百分点，没有达到事先定的门槛，因此没有加入。
 
 拆分单个长 skill 也测过一次。在 [experiments/2026-10-split-big-skills](../experiments/2026-10-split-big-skills/README.zh-CN.md) 里，我们从 Graph of Skills 库中取了四个长文件，由 agent 按这些规则拆分：没有丢任何一行；在不看文件就答不上的题目上，答对 54 题中的 52 题（读整个文件是 54 题），读的内容少了 27%。按标题机械拆分，读的反而比整个文件多 44%，原因是它的指引行没说明后面放的是什么。至于本身自我重复的文件，无论怎么拆，拆完读得都更多。
+
+拆分后的 skill 能否支撑真实工作也测过一次，见 [experiments/2026-10-tessel-e2e](../experiments/2026-10-tessel-e2e/README.zh-CN.md)：coding agent 根据一份 833 行的手册做一个可关闭的中英文横幅，用它自己的测试、隐藏行为测试和真实 Chromium 页面检验。deepseek-v4.1-flash 下 holon 拆分每次都 10/10，prompt 比整文件少约三分之一。glm-5.3-flash 只做步骤列出的事：子 skill 只列出新组件所需 6 个参考中的 4 个时，每次都丢同样三条约定；列全 6 个则 8 次全满分，成本最低。其余失败大多来自 skill 里过时或缺失的句子，而不是拆分本身。
 
 skill 的正文，也就是文件头以下那部分该怎么写，是另一个问题，还没有定论。目前的规则只有两条：正文写成编号的步骤，背景材料放进 `references/`。
 

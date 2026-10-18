@@ -1,0 +1,48 @@
+{
+ "prompt": 104577,
+ "completion": 14943,
+ "cached": 93312,
+ "turns": 24,
+ "skill_reads": [],
+ "skill_chars": 0,
+ "writes": [
+  "src/parts/announcement-banner/messages.ts",
+  "src/parts/announcement-banner/AnnouncementBanner.tsx",
+  "src/parts/announcement-banner/index.ts",
+  "src/parts/announcement-banner/AnnouncementBanner.test.tsx",
+  "CHANGELOG.md"
+ ],
+ "finished": true,
+ "error": null,
+ "mode": "none",
+ "rep": 0,
+ "checks": {
+  "F1_location": false,
+  "F2_wrapper": false,
+  "F3_tokens": false,
+  "F4_layer": false,
+  "F5_strings": false,
+  "F6_string_files": false,
+  "F7_dismiss": false,
+  "F8_store": false,
+  "F9_test": false,
+  "F10_change_note": false
+ },
+ "score": 0,
+ "verify": {
+  "entry": "src/parts/announcement-banner/index.ts",
+  "own_tests": [
+   0,
+   0
+  ],
+  "behavior": [
+   0,
+   2
+  ],
+  "behavior_log": "Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.\n    at createFiberFromTypeAndProps (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:28478:17)\n    at createFiberFromElement (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:28504:15)\n    at reconcileSingleElement (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:13986:23)\n    at reconcileChildFibers (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:14044:35)\n    at reconcileChildren (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:19193:28)\n    at updateHostRoot (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:19912:5)\n    at beginWork (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:21654:14)\n    at HTMLUnknownElement.callCallback (/workspace/work/e2e/runtime/node_modules/react-dom/cjs/react-dom.development.js:4164:14)\n    at HTMLUnknownElement.callTheUserObjectsOperation (/workspace/work/e2e/runtime/node_modules/jsdom/lib/generated/idl/EventListener.js:26:30)\n    at innerInvokeEventListeners (/workspace/work/e2e/runtime/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16)\n",
+  "page": {
+   "build": false,
+   "log": "✘ [ERROR] No matching export in \"src/parts/announcement-banner/index.ts\" for import \"default\"\n\n    page.jsx:2:7:\n      2 │ import Part from \"@part\"; import \"./tokens.css\";\n        ╵        ~~~~\n\n1 error\n"
+  }
+ }
+}

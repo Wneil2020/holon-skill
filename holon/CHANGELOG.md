@@ -5,6 +5,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### A coding agent building a real feature with a split skill (2026-10-18)
+- Gave a coding agent a synthetic 833-line front-end handbook (`tessel-frontend`, ten team conventions F1 to F10) as the whole file, a mechanical `##` split, or a holon split, and asked it to build a dismissible English/Chinese announcement banner. Each run was graded on the ten conventions and checked for real: the agent's own tests, a hidden behaviour test, an esbuild bundle opened in Chromium (both languages render, the close button hides it, a reload keeps it hidden, a new browser context shows it again). Without the skill: 0.1/10 (deepseek), 0.2/10 (glm). With it: 9.8 to 10.
+- deepseek-v4.1-flash: holon 10.0/10 on 8 of 8 runs at a mean of 157,537 prompt tokens, against the whole file's 9.78 at 233,227.
+- Two defects in the skill, not its layout, explained most failures. A stale line saying strings live in `strings.en.json` misled glm in 11 of 13 runs (deepseek ignored it); no step said to drive tests with `await user.click`, so most agents' own tests failed. Fixing both: deepseek's own tests passed 5/5 in all three conditions (was 1/9, 1/8, 5/8).
+- glm-5.3-flash with holon wandered through all twelve reference files. When the `build-parts` sub-skill listed the four files a new part needs and said to skip the rest, every run read only those and lost the same three conventions, which live in the two files not listed (8/8 runs at exactly 7/10). Listing all six: 8/8 runs at 10/10, every browser check passing, at 37,800 mean prompt tokens, the cheapest condition measured. Harness, skill versions, per-run results and the report: `experiments/2026-10-tessel-e2e/`.
+- organizer step 1: a step names every `references/` file it needs and no other, and passages that contradict each other are reconciled before a split.
+
 ### A tree of 500 skills (2026-10-17)
 - Routed the 87 SkillsBench tasks over the Graph of Skills `skills_500` library: flat list recall 0.900, a one-pass model-built tree 0.700 while reading a twelfth as much (8,228 against 95,188 characters). One-hop `needs` edges written offline added 1.9 points to the tree, below the +5 agreed beforehand, so no `needs` field is added. Scripts, the tree, the edges, the agents' debate and results: `experiments/2026-10-gos-scale/`; design notes §23.
 
