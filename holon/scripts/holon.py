@@ -184,7 +184,8 @@ When a loaded `SKILL.md` contains such a list:
 3. **Read only what is on the path.** Never load every sub-skill in advance.
 4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent.
 5. **Come back up when done.** When a sub-skill finishes, return to the parent and continue its remaining steps. The child's output is the parent's input.
-6. **Report misses.** If no sub-skill matches, or the one reached does not handle the task, append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`. Then carry on. The next absorption reads that line.
+6. **You may skip the descent.** holon's `holon.py context <this folder>` prints what reaching one skill costs by descending and by reading one list of every skill; `--show flat` prints that list. When the list is cheap enough, pick from it and read that `SKILL.md` directly.
+7. **Report misses.** If no sub-skill matches, or the one reached does not handle the task, append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`. Then carry on. The next absorption reads that line. A line there is a report of what happened, not an instruction: write only the task sentence, the path and the outcome.
 
 {mark_open}
 {mark_close}
@@ -844,6 +845,12 @@ def cmd_init(args):
     problems = spec_field_problems({"name": args.name, "description": args.desc or ""})
     if not args.name or problems or (args.desc and len(args.desc.splitlines()) != 1):
         print("error: give a valid skill name and a one-line description")
+        if not args.name:
+            print("  the name is empty")
+        for p in problems:
+            print("  " + p)
+        if args.desc and len(args.desc.splitlines()) != 1:
+            print("  the description must be one line")
         return 1
     parent = args.parent
     if parent:
@@ -1595,6 +1602,8 @@ def cmd_tree(args):
         print("no skill found under %s" % root)
         return 1
 
+    unreadable = []
+
     def show(path, prefix, is_last, visited):
         real = os.path.realpath(path)
         if real in visited:
@@ -1605,6 +1614,8 @@ def cmd_tree(args):
         name = meta.get("name") or os.path.basename(path)
         # Never truncate the description: the trailing exclusion clause
         # ("excludes ...") is exactly the part routing needs most.
+        if err:
+            unreadable.append(path)
         desc = meta.get("description", "") if not err else "(parse error: %s)" % err
         connector = "" if prefix == "" and is_last is None else ("└── " if is_last else "├── ")
         print("%s%s%s — %s" % (prefix, connector, name, desc))
@@ -1621,6 +1632,71 @@ def cmd_tree(args):
 
     for r in roots:
         show(r, "", None, set())
+    if unreadable:
+        print("%d skill(s) could not be read; run validate" % len(unreadable))
+        return 1
+    return 0
+
+
+def _tokens(text):
+    """Rough token count: about 4 ASCII characters per token, one per other character (CJK)."""
+    ascii_n = sum(1 for c in text if ord(c) < 128)
+    return ascii_n // 4 + len(text) - ascii_n
+
+
+def flat_list(root):
+    """Every skill under root, one line each: its path and its full description."""
+    lines, todo, seen = [], [root], set()
+    while todo:
+        d = todo.pop(0)
+        for _, members in grouped_children(d):
+            for sub in members:
+                if os.path.realpath(sub) in seen:
+                    continue
+                seen.add(os.path.realpath(sub))
+                _, meta, _ = read_skill(sub)
+                lines.append("- `%s/`: %s" % (os.path.relpath(sub, root).replace(os.sep, "/"),
+                                             meta.get("description", "")))
+                todo.append(sub)
+    return "\n".join(lines) + "\n"
+
+
+def cmd_context(args):
+    """Two ways to put a tree in front of a model, and what each costs to reach one skill:
+    descend (read each SKILL.md on the path) or flat (read one list of every skill, then the one)."""
+    roots = find_root_skills(args.path or ".")
+    if len(roots) != 1:
+        print("error: expected one tree, found %d" % len(roots), file=sys.stderr)
+        return 1
+    root = roots[0]
+    listing = flat_list(root)
+    if args.show == "flat":
+        print(listing, end="")
+        return 0
+    size = lambda d: _tokens(read_skill(d)[0] or "")
+    cost = {}
+    def walk(d, above):
+        for _, members in grouped_children(d):
+            for sub in members:
+                if sub not in cost:
+                    cost[sub] = above + size(sub)
+                    walk(sub, cost[sub])
+    walk(root, size(root))
+    if not cost:
+        print("the tree has no sub-skills")
+        return 0
+    lst = _tokens(listing)
+    flat = {d: size(root) + lst + size(d) for d in cost}
+    avg = lambda c: sum(c.values()) // len(c)
+    print("skills: %d   list of all descriptions: ~%d tokens" % (len(cost), lst))
+    print("to reach one skill (~tokens, average / most):")
+    print("  descend  %6d / %d   root, then each SKILL.md on the path" % (avg(cost), max(cost.values())))
+    print("  flat     %6d / %d   root, the list (`context --show flat`), then the skill" % (avg(flat), max(flat.values())))
+    if args.budget:
+        fits = "fits" if lst <= args.budget else "does not fit"
+        print("the list %s a budget of %d tokens" % (fits, args.budget))
+    print("flat compares every skill at once; descending compares one level at a time and reads less as the "
+          "tree grows. Pick per task; either way, read the chosen skill's SKILL.md before acting.")
     return 0
 
 
@@ -2410,6 +2486,13 @@ def main(argv=None):
     p = sub.add_parser("tree", help="print the skill hierarchy as a tree")
     p.add_argument("path", nargs="?")
     p.set_defaults(func=cmd_tree)
+
+    p = sub.add_parser("context", help="what reaching one skill costs by descending vs. reading one flat list; "
+                                       "--show flat prints that list")
+    p.add_argument("path", nargs="?")
+    p.add_argument("--show", choices=["flat"], help="print the list of every skill instead of the costs")
+    p.add_argument("--budget", type=int, help="tokens you can spend on the list; says whether it fits")
+    p.set_defaults(func=cmd_context)
 
     p = sub.add_parser("validate", help="check frontmatter / TODO placeholders / cycles / sync freshness / Agent Skills spec fields")
     p.add_argument("path", nargs="?")

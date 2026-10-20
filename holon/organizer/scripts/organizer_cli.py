@@ -148,7 +148,9 @@ def normalize(word, syn):
     return syn.get(word.lower(), word.lower())
 
 
-@functools.lru_cache(maxsize=4096)
+# Unbounded on purpose: a cache of 4,096 entries thrashed once a library had more distinct
+# cover words than that, and lint went from seconds to minutes.
+@functools.lru_cache(maxsize=None)
 def _clauses(desc):
     """description_clauses for one description string (a pure function of the string)."""
     covers, excludes, _ = ns.description_clauses(desc)
@@ -209,7 +211,7 @@ def body_lines(sk):
 
 # ---------------- lexical matching (mixed scripts) ----------------
 
-@functools.lru_cache(maxsize=4096)
+@functools.lru_cache(maxsize=None)
 def _pattern(w):
     """ASCII words match on word boundaries (so `db` does not hit `mongodb`);
     words containing other scripts match as substrings."""
@@ -391,23 +393,54 @@ def hits_under(cur, sentence_canon, skills, syn):
     return [k for k in children_of(cur, skills) if match_skill(sentence_canon, k, skills, syn)]
 
 
-def route(sentence, root, skills, syn):
+def _hit_words(d, sentence_canon, skills, syn):
+    """The canonical cover words of d (own or inherited) that the sentence hits."""
+    words = set(parse_desc(skills[d].meta.get("description", ""))[0])
+    words |= {c for c, _ in inherited_covers(d, skills)}
+    return frozenset(canonicalize(w, syn) for w in words if contains(sentence_canon, canonicalize(w, syn)))
+
+
+def _ranked(hits, sentence_canon, skills, syn):
+    """Several hit children, best first: most hit cover words, then their total length, then name."""
+    hs = {h: _hit_words(h, sentence_canon, skills, syn) for h in hits}
+    return sorted(hits, key=lambda h: (-len(hs[h]), -sum(len(w) for w in hs[h]), str(h)))
+
+
+def _descend(cur, sentence_canon, skills, syn, pick):
+    """Greedy single-route walk from cur down (used by route and by each root-beam start)."""
+    path = [cur]
+    while True:
+        hits = hits_under(cur, sentence_canon, skills, syn)
+        if pick and len(hits) > 1:
+            hits = _ranked(hits, sentence_canon, skills, syn)[:1]
+        if len(hits) == 1:
+            cur = hits[0]
+            path.append(cur)
+        elif len(hits) > 1 and cur == path[0]:
+            return path + [("AMBIG", hits)]
+        else:
+            return path
+
+
+def route(sentence, root, skills, syn, pick=False, beam=2):
     """Lexical descent. Returns the path as a list.
     Several children hit at one level: if that level is a skill (a parent), a sentence that
     spans two of its children is the parent's own step -- stop at the parent. If that level
     is the root (the root is not a skill; nobody can take it), it is an ambiguity and the
-    last item is ("AMBIG", [hit nodes...])."""
+    last item is ("AMBIG", [hit nodes...]).
+    pick=True never stops on several hits: it takes the best by _ranked (for a landing point,
+    not for review). beam=k with pick also tries the k best root children and keeps the path
+    with the most hit cover words; most misses go wrong at the first hop. The default keeps
+    the strict contract replay and lint use to surface overlapping cover words."""
     sentence_canon = canonicalize(sentence, syn)
-    cur, path = root, [root]
-    while True:
-        hits = hits_under(cur, sentence_canon, skills, syn)
-        if len(hits) == 1:
-            cur = hits[0]
-            path.append(cur)
-        elif len(hits) > 1 and cur == root:
-            return path + [("AMBIG", hits)]
-        else:
-            return path
+    if not (pick and beam > 1):
+        return _descend(root, sentence_canon, skills, syn, pick)
+    hits = hits_under(root, sentence_canon, skills, syn)
+    if len(hits) <= 1:
+        return _descend(root, sentence_canon, skills, syn, pick)
+    paths = [[root] + _descend(h, sentence_canon, skills, syn, True)
+             for h in _ranked(hits, sentence_canon, skills, syn)[:beam]]
+    return max(paths, key=lambda p: (sum(len(_hit_words(d, sentence_canon, skills, syn)) for d in p[1:]), str(p[-1])))
 
 
 def touched_nodes(path):
@@ -765,6 +798,7 @@ def cmd_lint(root):
             issues += check_triggers(r, sk, skills, root)
         issues += check_file_refs(r, d, root, sk)
         issues += hints_for(r, d, root, sk, kids)
+    issues += check_duplicate_names(root, skills)
     for line in issues:
         print(line)
     errs = sum(1 for i in issues if i.startswith("[E]"))
@@ -776,6 +810,22 @@ def cmd_lint(root):
     print(f"\nlint: {errs} errors, {warns} warnings{tail}, {len(skills)} skills{rt}")
     print(body_summary(root, skills))
     return 1 if errs else 0
+
+
+def check_duplicate_names(root, skills):
+    """Two skills with one name: a table or a person that says "use chart" cannot tell them apart.
+    A warning, not an error: the paths still differ, and some trees may want it."""
+    seen, out = {}, []
+    for d, sk in sorted(skills.items(), key=lambda kv: str(rel(root, kv[0]))):
+        name = (sk.meta.get("name") or "").strip()
+        if not name:
+            continue
+        if name in seen:
+            out.append(f"[W] {rel(root, d)}: has the same name as {rel(root, seen[name])}; "
+                       "rename one so the two can be told apart")
+        else:
+            seen[name] = d
+    return out
 
 
 def body_summary(root, skills):
@@ -922,7 +972,7 @@ def cmd_replay(root):
 
 # ---------------- route: where does this sentence land ----------------
 
-def cmd_route(root, sentence):
+def cmd_route(root, sentence, pick=False):
     """Walk one sentence down from the root, one line per gate: who takes it and by which cover
     word; children whose cover words would take it but whose own 'excludes' blocks them are named too."""
     skills, errors = find_skills(root)
@@ -943,6 +993,8 @@ def cmd_route(root, sentence):
             print(f"{name} -> no sub-skills")
             break
         hits = hits_under(cur, canon, skills, syn)
+        if pick and len(hits) > 1:
+            hits = _ranked(hits, canon, skills, syn)[:1]
         shy = [(k, blocked_by(canon, skills[k].meta, syn)) for k in kids if k not in hits]
         shy = [(k, ex) for k, ex in shy if ex]
         got = ", ".join(f"{rel(root, k)} (via {hit_text(canon, k, root, skills, syn)})" for k in hits) or "(none)"
@@ -964,6 +1016,8 @@ def cmd_route(root, sentence):
         else:
             break
     print(f"lands on: {where(root, cur)}")
+    if pick:
+        print(f"with the 2 best root children tried: {where(root, route(sentence, root, skills, syn, True)[-1])}")
     read = sum((d / ns.SKILL_FILE).stat().st_size for d in path)
     total = sum((d / ns.SKILL_FILE).stat().st_size for d in skills)
     print(f"read: {len(path)} file(s), {read:,} bytes of {total:,} in the library ({100 * read // max(total, 1)}%)")
@@ -974,8 +1028,14 @@ def cmd_route(root, sentence):
 
 def cmd_retire(root, target, reason):
     src = (root / target.strip("/")).resolve()
-    if src == root.resolve() or not (src / "SKILL.md").is_file() or root.resolve() not in src.parents:
-        print(f"error: '{target}' is not a skill in this library (the root cannot be retired)", file=sys.stderr)
+    if src == root.resolve():
+        print("error: the root cannot be retired", file=sys.stderr)
+        return 1
+    if root.resolve() not in src.parents:
+        print(f"error: '{target}' is outside the library (a path or link leads out of {root})", file=sys.stderr)
+        return 1
+    if not (src / "SKILL.md").is_file():
+        print(f"error: '{target}' has no SKILL.md, so it is not a skill in this library", file=sys.stderr)
         return 1
     if not reason or not reason.strip():
         print("error: --reason is required; it is written into the file header", file=sys.stderr)
@@ -1146,6 +1206,9 @@ def main(argv=None):
     ap.add_argument("target", nargs="?", help="retire: skill path to move (relative to root); route: the sentence to try")
     ap.add_argument("--reason", help="retire: reason, written into the first line of the file")
     ap.add_argument("--bump", action="store_true", help="counter: increment by 1")
+    ap.add_argument("--pick", action="store_true",
+                    help="route: when several children take the sentence, pick one deterministic winner "
+                         "instead of reporting an ambiguity / stopping at the parent")
     ap.add_argument("--threshold", type=float, default=OVERLAP,
                     help=f"overlap: Jaccard threshold (default OVERLAP={OVERLAP})")
     a = ap.parse_args(argv)
@@ -1164,7 +1227,7 @@ def main(argv=None):
         return 2
     fn = {"lint": lambda: cmd_lint(a.root),
           "replay": lambda: cmd_replay(a.root),
-          "route": lambda: cmd_route(a.root, a.target),
+          "route": lambda: cmd_route(a.root, a.target, a.pick),
           "overlap": lambda: cmd_overlap(a.root, a.threshold),
           "retire": lambda: cmd_retire(a.root, a.target, a.reason),
           "feedback": lambda: cmd_feedback(a.root),

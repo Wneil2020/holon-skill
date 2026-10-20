@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 29,928 in the library (12%)
+read: 3 file(s), 4,223 bytes of 30,777 in the library (13%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 29,928 in the library (11%)
+read: 2 file(s), 3,767 bytes of 30,777 in the library (12%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 29,928 in the library (7%)
+read: 1 file(s), 2,769 bytes of 30,777 in the library (8%)
 ```
 
 ## Checking the tree
@@ -241,11 +241,13 @@ Nothing is deleted. A skill that was merged or replaced moves whole into `.retir
 | `holon.py split DIR --show`, `split --plan FILE` | number a `SKILL.md` for the agent; then move the line ranges the agent chose into `references/` files or new sub-skills, verbatim, leave one pointer line, and re-sync |
 | `holon.py sync [DIR]` | regenerate every parent's list of sub-skills from the folders |
 | `holon.py tree [DIR]` | print the tree with descriptions |
+| `holon.py context ROOT` | what reaching one skill costs (~tokens) by descending vs. by reading one list of every skill; `--show flat` prints that list, `--budget N` says whether it fits |
 | `holon.py validate [DIR]` | check headers, placeholders, stale lists, loops and the Agent Skills spec; exit 1 on error |
 | `holon.py migrate [DIR]` | move pre-1.0 `triggers:` and `archive_count:` fields under `metadata:` |
 | `organizer_cli.py lint ROOT` | check each description, its cover words, its example sentences, and `ABSORB.md` |
 | `organizer_cli.py replay ROOT` | route every example sentence and report the ones that land wrong |
 | `organizer_cli.py route ROOT "sentence"` | show one sentence's path, level by level |
+| `organizer_cli.py route ROOT "sentence" --pick` | same, but take the best child instead of stopping when several take it (for picking a skill, not for review) |
 | `organizer_cli.py overlap ROOT` | list sibling skills whose cover words overlap by more than 0.4 |
 | `organizer_cli.py retire ROOT PATH --reason R` | move a skill into `.retired/` |
 | `organizer_cli.py feedback ROOT` | list routing misses recorded in `_feedback.md` and not yet handled |

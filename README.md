@@ -8,21 +8,19 @@ Rules and tools for keeping a large collection of AI agent skills in order: whic
 
 ## Quick start
 
-Python 3.8 or newer is the only requirement; git is not needed. Install with one command:
-
-```bash
-python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/main/install.py').read())"
-```
-
-On Windows, type the same line with `py` in place of `python3` (cmd or PowerShell). The command downloads `install.py` from this repository and runs it; read [install.py](install.py) first if you want to know what it does. Options go at the end, for example `... .read())" --host claude-code` or `--force` to back up and replace an earlier install. **Replacement is not an upgrade that merges your library:** custom skills and edits leave the active tree and are retained in the printed backup archive. See [replacement and recovery](holon/README.md#replacing-an-installation-that-contains-your-own-work).
-
-That line always installs the latest `main`. To install a fixed release, name its tag twice, once in the address and once as `--ref`:
+Python 3.8 or newer is the only requirement; git is not needed. Install a fixed release with one command:
 
 ```bash
 python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/v1.0.0/install.py').read())" --ref v1.0.0
 ```
 
-The tags are listed on the [Releases](https://github.com/Wneil2020/holon-skill/releases) page.
+On Windows, type the same line with `py` in place of `python3` (cmd or PowerShell). The command downloads `install.py` from this repository and runs it; read [install.py](install.py) first if you want to know what it does. Options go at the end, for example `... .read())" --host claude-code` or `--force` to back up and replace an earlier install. **Replacement is not an upgrade that merges your library:** custom skills and edits leave the active tree and are retained in the printed backup archive. See [replacement and recovery](holon/README.md#replacing-an-installation-that-contains-your-own-work).
+
+The tag is named twice, once in the address and once as `--ref`, so the script and the tree it installs come from the same release. A release tag is not moved after it is published, so the `install.py` you read at that tag is the one that runs. The tags are listed on the [Releases](https://github.com/Wneil2020/holon-skill/releases) page. To follow the latest `main` instead, which can change between two runs of the same line:
+
+```bash
+python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/main/install.py').read())"
+```
 
 From a downloaded copy of the repository the same thing is:
 
@@ -32,7 +30,7 @@ cd holon-skill
 python3 holon/scripts/holon.py install
 ```
 
-For a fixed release, add `--branch v1.0.0` to `git clone`, or download the zip attached to that release.
+For a fixed release, add `--branch v1.0.0` to `git clone`, or download the zip attached to that release. Run `install` from a copy you can write to: from a read-only checkout it stops with a permission error.
 
 Either way, this copies the skill tree to where the agent tools on this machine read skills (Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI and others), checks the copy, and prints what it did. [holon/README.md](holon/README.md) walks through building a first tree in five minutes.
 

@@ -8,21 +8,19 @@
 
 ## 快速开始
 
-只需要 Python 3.8 或更高版本，不需要 git。一条命令安装：
-
-```bash
-python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/main/install.py').read())"
-```
-
-在 Windows 上把 `python3` 换成 `py`，在 cmd 或 PowerShell 里输入同样这一行。这条命令会从本仓库下载 `install.py` 并运行它；想先知道它做什么，可以读一下 [install.py](install.py)。选项写在最后，比如 `... .read())" --host claude-code`，或者用 `--force` 先备份再替换以前装过的。**替换不等于合并升级自己的库：**自建 skill 和改动会离开当前使用的树，保存在命令打印出的备份归档中。详见[替换和恢复说明](holon/README.zh-CN.md#替换已经存有自己资料的安装)。
-
-这一行装的总是最新的 `main`。要装固定的版本，把版本的 tag 写两次，一次在地址里，一次作为 `--ref`：
+只需要 Python 3.8 或更高版本，不需要 git。一条命令安装固定版本：
 
 ```bash
 python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/v1.0.0/install.py').read())" --ref v1.0.0
 ```
 
-所有 tag 列在 [Releases](https://github.com/Wneil2020/holon-skill/releases) 页面上。
+在 Windows 上把 `python3` 换成 `py`，在 cmd 或 PowerShell 里输入同样这一行。这条命令会从本仓库下载 `install.py` 并运行它；想先知道它做什么，可以读一下 [install.py](install.py)。选项写在最后，比如 `... .read())" --host claude-code`，或者用 `--force` 先备份再替换以前装过的。**替换不等于合并升级自己的库：**自建 skill 和改动会离开当前使用的树，保存在命令打印出的备份归档中。详见[替换和恢复说明](holon/README.zh-CN.md#替换已经存有自己资料的安装)。
+
+tag 写两次，一次在地址里，一次作为 `--ref`，这样脚本和它装的树来自同一个版本。发布后的 tag 不会再挪动，所以你在那个 tag 下读到的 `install.py` 就是实际运行的那份。所有 tag 列在 [Releases](https://github.com/Wneil2020/holon-skill/releases) 页面上。如果想跟随最新的 `main`（同一行命令两次运行之间内容可能变）：
+
+```bash
+python3 -c "import urllib.request as u; exec(u.urlopen('https://raw.githubusercontent.com/Wneil2020/holon-skill/main/install.py').read())"
+```
 
 如果已经下载了仓库，等价的做法是：
 
@@ -32,7 +30,7 @@ cd holon-skill
 python3 holon/scripts/holon.py install
 ```
 
-要固定版本，在 `git clone` 后面加 `--branch v1.0.0`，或者下载那个 release 附带的 zip。
+要固定版本，在 `git clone` 后面加 `--branch v1.0.0`，或者下载那个 release 附带的 zip。请在可写的副本里运行 `install`：在只读的 checkout 里它会因权限错误停下。
 
 两种方式都会把 skill 树拷到这台机器上各个 agent 工具读 skill 的位置（Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI 等），检查拷过去的内容，并打印做了什么。[holon/README.zh-CN.md](holon/README.zh-CN.md) 带你五分钟建出第一棵树。
 

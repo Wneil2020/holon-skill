@@ -510,6 +510,40 @@ class TestTableShowsWordsFromBelow(unittest.TestCase):
         self.assertIn("done: 0 file(s) would be updated", out.getvalue())
 
 
+class TestContext(TestTableShowsWordsFromBelow):
+    """`context` prices the two ways to reach a skill; `--show flat` lists every skill once."""
+
+    def run_context(self, **kw):
+        import argparse
+        a = argparse.Namespace(path=self.root, show=None, budget=None)
+        a.__dict__.update(kw)
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            rc = ns.cmd_context(a)
+        return rc, out.getvalue()
+
+    def test_flat_lists_every_skill_with_its_whole_description(self):
+        rc, out = self.run_context(show="flat")
+        self.assertEqual(rc, 0)
+        self.assertEqual([l.split("`")[1] for l in out.splitlines()],
+                         ["office-docs/", "office-docs/pptx/", "office-docs/pptx/form/"])
+        self.assertIn("excludes theme", out)
+
+    def test_costs_count_the_path_and_the_list(self):
+        rc, out = self.run_context(budget=1)
+        self.assertEqual(rc, 0)
+        self.assertIn("skills: 3", out)
+        self.assertIn("does not fit a budget of 1 tokens", out)
+        descend, flat = (re.search(r"%s +(\d+) / (\d+)" % k, out).groups() for k in ("descend", "flat"))
+        size = lambda *p: ns._tokens(ns.read_skill(os.path.join(self.root, *p))[0])
+        deepest = size() + size("office-docs") + size("office-docs", "pptx") + size("office-docs", "pptx", "form")
+        self.assertEqual(int(descend[1]), deepest)
+        self.assertGreater(int(flat[0]), 0)
+
+    def test_tokens_counts_cjk_one_per_character(self):
+        self.assertEqual(ns._tokens("abcd" * 5), 5)
+        self.assertEqual(ns._tokens("建模"), 2)
+
+
 class TestInjectUnit(unittest.TestCase):
     def test_no_marker_status(self):
         text, status = ns.inject("plain text", "BLOCK")
@@ -1976,6 +2010,45 @@ def _walk_named(base, name):
             if d == name:
                 yield os.path.join(dirpath, d)
 
+
+
+class TestReviewFixes(unittest.TestCase):
+    """Found by an outside review: each test failed before its fix."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp)
+
+    def _quiet(self, fn, args):
+        import io, contextlib
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            code = fn(args)
+        return code, buf.getvalue()
+
+    def test_tree_fails_when_a_skill_cannot_be_read(self):
+        import argparse
+        root = os.path.join(self.tmp, "lib")
+        make_skill(root, "lib", "Use for a demo library", body="1. Read the table.")
+        os.makedirs(os.path.join(root, "broken"))
+        with open(os.path.join(root, "broken", "SKILL.md"), "w", encoding="utf-8") as f:
+            f.write("---\nname: [unclosed\n---\nbody\n")
+        code, out = self._quiet(ns.cmd_tree, argparse.Namespace(path=root))
+        self.assertIn("parse error", out)
+        self.assertEqual(code, 1)
+
+    def test_init_names_the_problem_with_the_description(self):
+        import argparse
+        code, out = self._quiet(ns.cmd_init, argparse.Namespace(
+            name="s", parent=None, root=self.tmp, desc="x" * 1100, dry_run=False))
+        self.assertEqual(code, 1)
+        self.assertIn("description is longer than 1024 characters", out)
+        code, out = self._quiet(ns.cmd_init, argparse.Namespace(
+            name="s", parent=None, root=self.tmp, desc="one\ntwo", dry_run=False))
+        self.assertEqual(code, 1)
+        self.assertIn("one line", out)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

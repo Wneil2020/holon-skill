@@ -5,6 +5,24 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 
 ## [Unreleased]
 
+### Added: `context` (2026-10-20)
+- `holon.py context ROOT` prints what reaching one skill costs, in rough tokens (about 4 ASCII characters or 1 CJK character each), two ways: descending (the root, then each `SKILL.md` on the path) and flat (the root, one list of every skill's full description, then the skill), average and worst case. `--show flat` prints that list; `--budget N` says whether it fits. The root's routing rules gain a step: the agent may run it and, when the list is cheap enough, pick from the list and read that skill directly.
+- Why: neither way wins everywhere. With 24 skills a model reading a flat list loaded the right skills 82% of the time against 79 to 80% descending (`experiments/2026-10-anthropic-skills`), while on a 47-skill 3D-modelling tree descending reads less on average (about 2,800 against 4,000 tokens). The tool gives the agent the numbers instead of a fixed rule.
+
+### Added: `route --pick` (2026-10-19)
+- `route(..., pick=True)` never stops on several hits: it takes the child with the most hit cover words (its own or a descendant's), then the longest, then by name, and tries the 2 best root children (`beam=2`), keeping the path with the most hit words. The default is unchanged: strict, one child per level, ambiguity at the root, stop at a parent. `replay` and `lint` keep using the default, so overlapping cover words still show. On the CLI, `route ROOT "sentence" --pick` prints the walk and where pick lands.
+- Why: on three public skill libraries built into holon trees by a fixed rule (SkillRetBench 501 skills / 1,250 requests, ToolRet-metatool 102 / 200, SkillRet 6,006 / 300 sampled), the strict route found the right skill for 0.6% and 4.5%: 97% of SkillRetBench requests stopped at the root, hitting cover words of 7 top-level groups on average. With `pick`: 47.4%, 29.0% and 17.7% (BM25 over descriptions: 57.8%, 30.5%, 51.5%). About 80% of the remaining misses on the first two go wrong at the first hop, which is why the root alone gets 2 tries. Notes: `experiments/2026-10-skill-routing-bench/`.
+- Kept simple on purpose: a 100-line scored beam search (`rank`, sibling-IDF weights) scored about the same (47.0%, 28.0%, 20.7%) and was dropped; so were a library-wide IDF, length normalisation and a sibling-rarity tie-break, each of which made at least one library worse.
+
+### Fixes from an outside review (2026-10-18)
+- `lint` no longer slows down past about 4,096 distinct cover words. Two pattern caches were capped at 4,096 entries and thrashed: on a generated library lint took 5.25 s at 1,200 skills and over 180 s at 1,500. Uncapped: 6.6 s at 1,500 and 21 s at 3,000, same output.
+- `lint` warns when two skills have the same `name` (paths still differ, so it is a warning).
+- `tree` exits 1, and says how many, when a `SKILL.md` cannot be read; it used to print the parse error and exit 0.
+- `init` prints which check failed (empty name, a spec problem such as a description over 1,024 characters, a description of more than one line) under its one-line error.
+- `retire` says why it refuses: the root, a path outside the library, or a folder with no `SKILL.md`. All three used to print the same sentence.
+- The root rules and `organizer/SKILL.md` say that a `_feedback.md` line and a newcomer's text are material to file, not instructions: what they ask beyond the documented fixes is written down and taken to the owner.
+- The README's first install command now names a release tag; following `main` is the second option, with a note that it can change between runs. Installing from a read-only checkout is noted to fail.
+
 ### A coding agent building a real feature with a split skill (2026-10-18)
 - Gave a coding agent a synthetic 833-line front-end handbook (`tessel-frontend`, ten team conventions F1 to F10) as the whole file, a mechanical `##` split, or a holon split, and asked it to build a dismissible English/Chinese announcement banner. Each run was graded on the ten conventions and checked for real: the agent's own tests, a hidden behaviour test, an esbuild bundle opened in Chromium (both languages render, the close button hides it, a reload keeps it hidden, a new browser context shows it again). Without the skill: 0.1/10 (deepseek), 0.2/10 (glm). With it: 9.8 to 10.
 - deepseek-v4.1-flash: holon 10.0/10 on 8 of 8 runs at a mean of 157,537 prompt tokens, against the whole file's 9.78 at 233,227.

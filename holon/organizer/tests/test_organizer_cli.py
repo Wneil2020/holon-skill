@@ -209,6 +209,30 @@ class TestRouting(TempTree):
         self.assertEqual(path[-1], self.root / "web")
         self.assertFalse(oc.still_reachable(self.root / "web/dark-mode", path))
 
+    def test_pick_takes_one_where_strict_route_reports_ambiguity(self):
+        """Two top-level skills take the sentence: the default stays an ambiguity (replay needs it),
+        pick=True lands on one of them, the same one every time."""
+        write(self.root / "lib-org" / "SKILL.md",
+              skill("lib-org", "Use when absorbing skills: covers library organization, absorb, page; excludes domain knowledge", ORG_TRIG))
+        syn = oc.load_synonyms(self.root)
+        self.assertIsInstance(oc.route("write a landing page", self.root, self.skills(), syn)[-1], tuple)
+        got = [oc.route("write a landing page", self.root, self.skills(), syn, pick=True)[-1] for _ in range(3)]
+        self.assertIn(got[0], {self.root / "lib-org", self.root / "web"})
+        self.assertEqual(len(set(got)), 1)
+
+    def test_pick_agrees_with_strict_route_when_one_child_takes_it(self):
+        syn = oc.load_synonyms(self.root)
+        for s in ("switch the site to night mode", "absorb this new skill into the library", "write a landing page"):
+            for beam in (1, 2, 3):
+                self.assertEqual(oc.route(s, self.root, self.skills(), syn, pick=True, beam=beam),
+                                 oc.route(s, self.root, self.skills(), syn))
+
+    def test_pick_prefers_the_child_with_more_hit_words(self):
+        syn = oc.load_synonyms(self.root)
+        got = oc.route("add dark mode to the chart page", self.root, self.skills(), syn, pick=True, beam=1)
+        self.assertEqual(len(got), 3)
+        self.assertIn(got[-1], {self.root / "web/dark-mode", self.root / "web/chart"} | set(self.skills()))
+
     def test_load_index_gives_the_same_answers_as_a_plain_dict(self):
         """find_skills returns a SkillMap whose per-load index replay and route reuse; a plain
         dict takes the original per-call scan. Both must give the same children, inherited
@@ -1248,6 +1272,33 @@ class TestDogfood(unittest.TestCase):
         # length gets that hint, not a failing package. 150 is the shipped value.
         self.assertLessEqual(lines, max(oc.MAX_BODY, 150))
 
+
+
+class TestReviewFixes(TempTree):
+    """Found by an outside review: each test failed before its fix."""
+
+    def test_pattern_caches_are_unbounded(self):
+        """A bounded cache thrashed once a library had more than 4,096 distinct cover words:
+        lint went from 5 seconds at 1,200 skills to over 3 minutes at 1,500."""
+        self.assertIsNone(oc._pattern.cache_info().maxsize)
+        self.assertIsNone(oc._clauses.cache_info().maxsize)
+
+    def test_lint_warns_when_two_skills_share_a_name(self):
+        write(self.root / "lib-org" / "chart" / "SKILL.md", skill("chart", CHART_DESC, CHART_TRIG))
+        code, out = self.lint()
+        self.assertIn("[W] web/chart: has the same name as lib-org/chart", out)
+        self.assertEqual(code, 0)
+
+    def test_retire_says_why_it_refuses(self):
+        code, out = run(CLI, "retire", self.root, ".", "--reason", "x")
+        self.assertEqual(code, 1)
+        self.assertIn("the root cannot be retired", out)
+        code, out = run(CLI, "retire", self.root, "nope", "--reason", "x")
+        self.assertEqual(code, 1)
+        self.assertIn("'nope' has no SKILL.md", out)
+        code, out = run(CLI, "retire", self.root, "../outside", "--reason", "x")
+        self.assertEqual(code, 1)
+        self.assertIn("'../outside' is outside the library", out)
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

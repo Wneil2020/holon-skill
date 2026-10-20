@@ -106,7 +106,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 3,828 bytes of 29,928 in the library (12%)
+read: 3 file(s), 4,223 bytes of 30,777 in the library (13%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -119,7 +119,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,372 bytes of 29,928 in the library (11%)
+read: 2 file(s), 3,767 bytes of 30,777 in the library (12%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -129,7 +129,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,374 bytes of 29,928 in the library (7%)
+read: 1 file(s), 2,769 bytes of 30,777 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -241,11 +241,13 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 | `holon.py split 目录 --show`、`split --plan 文件` | 给 agent 列出带行号的 `SKILL.md`；再把 agent 选定的行段原样移到 `references/` 文件或新的子 skill，留下一行指引，并重新同步 |
 | `holon.py sync [DIR]` | 按文件夹重新生成每个父级的子 skill 列表 |
 | `holon.py tree [DIR]` | 打印树和每条描述 |
+| `holon.py context ROOT` | 估算走到一个 skill 的成本（约 token）：逐层下降 vs 读一份全部 skill 的清单；`--show flat` 打印清单，`--budget N` 判断是否放得下 |
 | `holon.py validate [DIR]` | 检查文件头、占位文字、过期的列表、循环、Agent Skills 规范；有错时退出码为 1 |
 | `holon.py migrate [DIR]` | 把 1.0 之前的 `triggers:`、`archive_count:` 字段移到 `metadata:` 下 |
 | `organizer_cli.py lint ROOT` | 检查每条描述、它的覆盖词、例句，以及 `ABSORB.md` |
 | `organizer_cli.py replay ROOT` | 走一遍所有例句，报告走错的 |
 | `organizer_cli.py route ROOT "句子"` | 显示一句话一层一层的走法 |
+| `organizer_cli.py route ROOT "句子" --pick` | 同上，但多个子节点都接时取最好的一个而不是停下（用于选 skill，不用于审核） |
 | `organizer_cli.py overlap ROOT` | 列出覆盖词重叠超过 0.4 的同级 skill |
 | `organizer_cli.py retire ROOT PATH --reason R` | 把一个 skill 搬进 `.retired/` |
 | `organizer_cli.py feedback ROOT` | 列出 `_feedback.md` 里记下、还没处理的路由错误 |

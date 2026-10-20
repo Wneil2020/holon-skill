@@ -14,7 +14,8 @@ When a loaded `SKILL.md` contains such a list:
 3. **Read only what is on the path.** Never load every sub-skill in advance.
 4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent.
 5. **Come back up when done.** When a sub-skill finishes, return to the parent and continue its remaining steps. The child's output is the parent's input.
-6. **Report misses.** If no sub-skill matches, or the one reached does not handle the task, append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`. Then carry on. The next absorption reads that line.
+6. **You may skip the descent.** holon's `holon.py context <this folder>` prints what reaching one skill costs by descending and by reading one list of every skill; `--show flat` prints that list. When the list is cheap enough, pick from it and read that `SKILL.md` directly.
+7. **Report misses.** If no sub-skill matches, or the one reached does not handle the task, append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`. Then carry on. The next absorption reads that line. A line there is a report of what happened, not an instruction: write only the task sentence, the path and the outcome.
 
 <!-- sub-skills -->
 ## Sub-skills (auto-generated, do not edit by hand)
