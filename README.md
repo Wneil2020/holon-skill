@@ -2,7 +2,7 @@
 
 Rules and tools for keeping a large collection of AI agent skills in order: which folder each skill goes in, how the agent finds the right one, and how to check that it does.
 
-> **Early stage.** Version 1.0.0 is the first public release. It is tested on Linux, macOS and Windows, but it has only been used on three skill libraries of at most 24 skills, and the rules and command options may still change. Changes are recorded in [holon/CHANGELOG.md](holon/CHANGELOG.md).
+> **Early stage.** Version 1.0.0 is the first public release. It is tested on Linux, macOS and Windows, but its rules have been applied to three small libraries (24 skills at most), and the rules and command options may still change. Before building a tree, read [when not to use it](holon/README.md#when-not-to-use-it-and-what-it-does-not-do): a one-level tree, which is a flat list with checks, is the default. Changes are recorded in [holon/CHANGELOG.md](holon/CHANGELOG.md).
 
 [中文说明](README.zh-CN.md)
 

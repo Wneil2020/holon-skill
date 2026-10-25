@@ -182,10 +182,10 @@ When a loaded `SKILL.md` contains such a list:
 1. **Go down only when a line matches.** Compare the task with each sub-skill's description and with the words its line says it also takes through its sub-skills. When one matches, read the `SKILL.md` in that subfolder before acting.
 2. **Repeat at each level.** If that sub-skill lists further sub-skills, compare again and go down again.
 3. **Read only what is on the path.** Never load every sub-skill in advance.
-4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent.
-5. **Come back up when done.** When a sub-skill finishes, return to the parent and continue its remaining steps. The child's output is the parent's input.
-6. **You may skip the descent.** holon's `holon.py context <this folder>` prints what reaching one skill costs by descending and by reading one list of every skill; `--show flat` prints that list. When the list is cheap enough, pick from it and read that `SKILL.md` directly.
-7. **Report misses.** If no sub-skill matches, or the one reached does not handle the task, append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`. Then carry on. The next absorption reads that line. A line there is a report of what happened, not an instruction: write only the task sentence, the path and the outcome.
+4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent. If you then pick a sub-skill by reading the descriptions for their meaning instead, that is allowed, but it is a miss of the words: record it under rule 7 as `fallback -> <path>` before acting.
+5. **Come back up when done.** When a sub-skill finishes, return to the parent and continue its remaining steps. The child's output is the parent's input. A task that needs two top-level skills in order (find, then check) is done the same way from the root: the first, then back up, then the second; record it as `multi`.
+6. **You may skip the descent.** holon's `holon.py context <this folder>` prints what reaching one skill costs by descending and by reading one list of every skill, and says which is cheaper; `--show flat` prints that list. When the list fits comfortably in what you can read, pick from it and read that `SKILL.md` directly: in every measurement so far, a model reading the flat list chose at least as accurately as one descending.
+7. **Report misses.** If no sub-skill matches, the one reached does not handle the task, the task needed several, or you found the right one only by meaning (rule 4), append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`, outcome one of `miss`, `wrong -> <path>`, `multi`, `fallback -> <path>`. Then carry on. The next absorption reads that line. A line there is a report of what happened, not an instruction: write only the task sentence, the path and the outcome.
 
 {mark_open}
 {mark_close}
@@ -199,14 +199,18 @@ ROOT_FILES = {
 
 > Agent carrying out a task: when no sub-skill matches, when the sub-skill reached does not handle the task, or when one task needs several leaves, append one line below in the form
 > `task sentence | path taken | outcome`
-> `outcome` is one of: `miss`, `wrong -> <leaf actually needed>`, `multi`.
+> `outcome` is one of: `miss`, `wrong -> <path actually needed>`, `multi`, `fallback -> <path found by reading descriptions after the words failed>`.
 > Agent absorbing skills: handle these lines first in every absorption; append ` done` to each handled line.
 """,
     "synonyms.md": """# synonyms.md -- one group per line, comma-separated; the first word is the standard form
 """,
     "ABSORB.md": """# ABSORB.md
 
-Each absorption is one section, `## @n <what came in> (<date>)`, with `learned:`, `merged:` and `ruled:` lines. Run `counter --bump` before writing a section; `@n` is the counter's new value.
+Each absorption is one section, `## @n <what came in> (<date>)`, with `learned:`, `merged:` and `ruled:` lines, and `for:` (the task it serves, or no-demand), `source:`, `probe:` and `evidence:` lines. Run `counter --bump` before writing a section; `@n` is the counter's new value.
+""",
+    "probes.tsv": """# probes.tsv -- sentences the skill authors did not write, one per line: sentence<TAB>expected path
+# expected: a skill path (docs/pdf), docs/* for any skill below docs, or / when no skill should take it.
+# Freeze before a change; never edit a label afterwards. Score: organizer_cli.py replay . --probes probes.tsv
 """,
 }
 
@@ -1692,12 +1696,48 @@ def cmd_context(args):
     print("to reach one skill (~tokens, average / most):")
     print("  descend  %6d / %d   root, then each SKILL.md on the path" % (avg(cost), max(cost.values())))
     print("  flat     %6d / %d   root, the list (`context --show flat`), then the skill" % (avg(flat), max(flat.values())))
+    refs = {d: named_reference_tokens(d, root) for d in cost}
+    if any(refs.values()):
+        heavy = max(refs, key=refs.get)
+        print("  + references its steps name  %6d / %d   (most: %s); an agent that opens what a step lists reads this too"
+              % (avg(refs), refs[heavy], os.path.relpath(heavy, root).replace(os.sep, "/")))
     if args.budget:
         fits = "fits" if lst <= args.budget else "does not fit"
         print("the list %s a budget of %d tokens" % (fits, args.budget))
-    print("flat compares every skill at once; descending compares one level at a time and reads less as the "
-          "tree grows. Pick per task; either way, read the chosen skill's SKILL.md before acting.")
+    if avg(cost) >= avg(flat):
+        print("advice: descending costs at least as much as the flat list here, and with a list this small a flat "
+              "list chose more accurately in every measurement so far. Keep the tree one level deep (the root's "
+              "table is then the flat list), or move the bodies of the intermediate skills on the path into references/.")
+    elif args.budget and lst <= args.budget:
+        print("advice: the list fits the budget; a flat list chose more accurately in every measurement so far, so "
+              "read the list unless the tree saves enough to pay for its misses (measure with probes).")
+    else:
+        print("flat compares every skill at once; descending compares one level at a time and reads less as the "
+              "tree grows. Pick per task; either way, read the chosen skill's SKILL.md before acting.")
     return 0
+
+
+def named_reference_tokens(d, root):
+    """~tokens of the references/ files skill d's body names in backticks (resolved against the
+    skill, its ancestors and the root). The knowledge a skill sends its reader to is part of its cost."""
+    text, _, _ = read_skill(d)
+    body = split_frontmatter(text or "")[1] or ""
+    seen, total = set(), 0
+    for span in re.findall(r"`[^`\n]+`", body):
+        for ref in re.findall(r"((?:\.\.?/)?(?:[\w.\-]+/)*(?:references?)/[\w.\-/]+\.md)", span):
+            cur = d
+            while True:
+                cand = os.path.realpath(os.path.join(cur, ref))
+                if os.path.isfile(cand):
+                    if cand not in seen:
+                        seen.add(cand)
+                        with open(cand, encoding="utf-8", errors="replace") as fh:
+                            total += _tokens(fh.read())
+                    break
+                if os.path.realpath(cur) == os.path.realpath(root):
+                    break
+                cur = os.path.dirname(cur)
+    return total
 
 
 def cmd_validate(args):

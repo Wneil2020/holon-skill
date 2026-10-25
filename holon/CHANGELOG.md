@@ -3,7 +3,37 @@
 All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.1.0-rc1] - 2026-10-25
+
+Gaps found by three independent reviews of a 13-skill research-search library built with holon by weak models over 150 absorptions (109 sources, 672 KB of `references/`, 0 retirements, `replay` 42/42 while an outside set landed 49/60). Each item below names the failure it addresses. Old trees need no migration: every new ledger line and file header is optional, and old sections produce no new message except the probe reminder.
+
+### Fixed
+- **Synonym folding glued words together.** With `papers, 找文献`, "找文献pdf" folded to "paperspdf", matched neither `papers` nor `pdf` (nor a sibling's `excludes pdf`) and fell through to the root; two neighbouring CJK aliases glued the same way ("按相关度排个序" -> "sortsort"). A canonical form is now written with a space wherever it would touch a word character, and a multi-word alias keeps the word boundary of its first and last word.
+
+### Added: knowledge has a lifecycle
+- `lint` reads `references/` too: a file that no step and no named file points at is a warning (it is never opened); a relative path or Markdown link inside a references file that leads nowhere is a warning; identical references files are a warning; the files one skill's steps name are priced, with a hint above `REF_BUDGET` (12,000 tokens). In the reviewed library `search`'s steps named ~44k tokens.
+- Optional header in a references file's first lines: `source:`, `verified: YYYY-MM-DD`, `review-after: YYYY-MM-DD`, `applies-when:`, `supersedes:`. A passed review date is a warning; a date older than a year without one is a hint. (`last-verified` as a frontmatter field stays retired: the header belongs to the knowledge file, not to the skill.)
+- `retire ROOT <skill>/references/<file>.md --reason R` retires one knowledge file, keeps its path under `.retired/`, and lists the steps that still name it. Card-level retire never fired in a library that only grew knowledge.
+- `context` adds the references each skill's steps name, and says when descending costs as much as the flat list (the reviewed library: 2,889 vs 2,569 tokens).
+
+### Added: evidence beyond "the tree agrees with itself"
+- `replay ROOT --probes FILE` routes outside sentences (`sentence<TAB>expected`, `/` for "no skill", `dir/*` for "anything below dir") and prints their score apart; it never changes the exit code. `init` writes an empty `probes.tsv`.
+- `ABSORB.md` sections may carry `for:` (the task, feedback line or owner request served, or `no-demand`), `source:`, `repeat:`, `probe: x/y`, `evidence: structural | route | task`, `supersedes: @n.k`. `lint` flags a repeated `source:` without `repeat:` (the reviewed library absorbed two repositories twice unnoticed), `for: no-demand` next to `learned:`, malformed lines, and `PROBE_AFTER` (10) absorptions without a `probe:` line.
+- `_feedback.md` outcomes gain `fallback -> <path>` (the words failed, the reader found the skill by meaning) and `ok`; `lint` checks every line's form; `feedback --stats` counts lines by outcome and skill.
+- `ask --grep RE`, `--since N`, `--current` (leaves out rulings a later `supersedes:` names). The reviewed library's `ask` printed 198 KB.
+
+### Added: hints for drift the line count missed
+- A numbered step over `STEP_WORDS` (120) words; `MAX_BODY` counts lines and missed a 31-line skill with 128-word steps.
+- More `excludes` than `EXCLUDES_MAX` (5), or more than twice the cover words: the skill is defined by what it refuses (the reviewed `search` had 18 against 4).
+- Parameters changed from the shipped values are named in every `lint`; an `organizer/` or `editing/` folder without `SKILL.md` is a warning (the reviewed library had renamed both and dropped them from routing and checks).
+
+### Changed: rules
+- organizer: step 0, name the demand before absorbing; rule 1's removal test is asked of a named reader against the result's acceptance condition and does not decide duplicates; rule 2 defines "used" as needed, not named, and asks for the knowledge header; rule 3 says whether a parent selects or composes; cover words name a result, not a medium or topic; `excludes` name a sibling's action, not a shared noun; two top-level skills taking a two-stage sentence is `multi`, not a duplicate; step 5 records an evidence level; a stop rule replaces "new rules per source" as the convergence signal.
+- Root rules: reading descriptions after the words failed is allowed and recorded as `fallback`; a two-skill task is done in order from the root; the flat list is recommended whenever it fits.
+- README: a "When not to use it" section; a one-level tree is the default; the scale statements agree.
+
+
+## 1.0.x changes after the 1.0.0 tag (unreleased until 1.1)
 
 ### Added: `context` (2026-10-20)
 - `holon.py context ROOT` prints what reaching one skill costs, in rough tokens (about 4 ASCII characters or 1 CJK character each), two ways: descending (the root, then each `SKILL.md` on the path) and flat (the root, one list of every skill's full description, then the skill), average and worst case. `--show flat` prints that list; `--budget N` says whether it fits. The root's routing rules gain a step: the agent may run it and, when the list is cheap enough, pick from the list and read that skill directly.
@@ -76,7 +106,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); ver
 - Until now `init` only created empty templates and folders had to be moved by hand. `move` is the mechanical half of placement; where each skill goes is still decided with `organizer/SKILL.md`, and the plan file is where that decision is written down.
 
 ### Repository scope
-- Experimental agent-evaluation tools and examples are kept outside this repository. The public repository contains the skill package, installer, documentation and package checks. No result with a real agent has been published yet.
+- Experimental agent-evaluation tools and examples were kept outside this repository at the time; later entries above (`experiments/`) publish four measurements with real agents.
 - The six `holon.py move` regression tests are part of `holon/tests/test_holon.py`, so the existing Linux, Windows and macOS package checks still run them without an evaluation harness.
 
 ### Documentation

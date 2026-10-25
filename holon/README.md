@@ -2,13 +2,33 @@
 
 This folder, `holon/`, is the package. It installs as a skill folder named `holon`, and its two tools are `holon.py` and `organizer_cli.py`.
 
-> **Early stage.** holon skill works and is tested, but it has been used on two small libraries only (about thirty skills in total). The rules, the description format and the command options may still change between versions. Anything that changes is listed in [CHANGELOG.md](CHANGELOG.md), and `holon.py migrate` rewrites older files where it can.
+> **Early stage.** holon skill works and is tested, but its rules have been applied to three small libraries (24 skills at most), one generated tree of 500 skills was routed once, and one outside 13-skill research library was used to find the gaps fixed in 1.1. The rules, the description format and the command options may still change between versions. Anything that changes is listed in [CHANGELOG.md](CHANGELOG.md), and `holon.py migrate` rewrites older files where it can.
 
 holon organizes skills in a tree and generates a routing table at each parent. Its reading instructions ask an agent to descend into the matching branch instead of loading every skill. Whether a particular host and model follows that path, chooses more accurately or uses fewer tokens than a comparable flat library still requires real-task measurements.
 
 holon is a set of plain folders and two Python scripts. The scripts use only the standard library and need Python 3.8 or newer. They keep the tree consistent, and they check that each skill is reached by the sentences it is meant to be reached by.
 
 [中文说明](README.zh-CN.md)
+
+## When not to use it, and what it does not do
+
+Start flat. A one-level holon tree **is** a flat list: the root's routing table lists every skill, and the checks still run. Add levels only when `holon.py context ROOT` says descending costs clearly less than the flat list, **and** probe sentences show the tree still finds the right skill. In every measurement so far (24 skills, 500 skills, three public benchmarks) a model reading the flat list chose at least as accurately as one descending; the tree only reads less.
+
+Probably not worth a tree:
+
+- the whole list of descriptions fits comfortably in the model's context (a few hundred skills at 40 to 50 tokens each);
+- `context` shows descending costing as much as the flat list or more, usually because intermediate skills have long bodies on every path;
+- many requests need two or more top-level skills (above about one in ten);
+- the skills share their objects (papers, documents, code) and differ by what they do to them, so words cannot separate them without long `excludes` lists;
+- the library's value is mostly knowledge (how to do it right) rather than a choice among jobs: then `references/` is the part to manage, and `lint`'s references checks matter more than the tree;
+- new material is absorbed automatically and often, with no owner to rule on conflicts (rule 5 needs one).
+
+What holon does not do:
+
+- Routing compares words. It does not understand negation, subject and object, or "apply Y to X"; `replay` and `route` check the word model, not the reader.
+- `validate`, `lint` and `replay` show that the tree agrees with itself. Whether a reader finds the right skill for sentences nobody here wrote is measured by `replay --probes`; whether the job is done well is measured only by running it. Each `ABSORB.md` section says which of the three it reached (`evidence:`).
+- It does not judge whether a skill's text or knowledge is correct. It records where knowledge came from and when it was checked (`source:`, `verified:`, `review-after:`), and warns when a review date passes.
+- It has no rule for a skill that applies alongside every task (a way of answering, a style); keep such a skill top-level and expect it to be missed.
 
 ## Installing
 
@@ -106,7 +126,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 4,223 bytes of 30,777 in the library (13%)
+read: 3 file(s), 4,888 bytes of 40,871 in the library (11%)
 ```
 
 The agent read three files and nothing else. The last line is that cost: the bytes on the path, against every `SKILL.md` in the tree. Lowering that number is what the tree is for.
@@ -119,7 +139,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,767 bytes of 30,777 in the library (12%)
+read: 2 file(s), 4,432 bytes of 40,871 in the library (10%)
 ```
 
 A sentence that matches nothing stays at the root, and the agent works from the root's instructions:
@@ -129,7 +149,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,769 bytes of 30,777 in the library (8%)
+read: 1 file(s), 3,434 bytes of 40,871 in the library (8%)
 ```
 
 ## Checking the tree
@@ -154,7 +174,7 @@ $ python3 organizer/scripts/organizer_cli.py lint .
 [E] office-docs/pdf: triggers are still the TODO placeholders from init; write 2 sentences it should take + 1 it should not
 
 lint: 3 errors, 0 warnings, 6 skills
-bodies: 5 skills, 4 to 86 non-blank lines, median 9, 0 over 150
+bodies: 5 skills, 4 to 108 non-blank lines, median 9, 0 over 150
 ```
 
 The last line of `lint` shows how evenly the work is divided: the shortest and longest body, the median, and how many are over 150 lines. It is information, not an error.
@@ -246,13 +266,14 @@ Nothing is deleted. A skill that was merged or replaced moves whole into `.retir
 | `holon.py migrate [DIR]` | move pre-1.0 `triggers:` and `archive_count:` fields under `metadata:` |
 | `organizer_cli.py lint ROOT` | check each description, its cover words, its example sentences, and `ABSORB.md` |
 | `organizer_cli.py replay ROOT` | route every example sentence and report the ones that land wrong |
+| `organizer_cli.py replay ROOT --probes FILE` | also route outside sentences (`sentence<TAB>expected`) and print their score separately; never changes the exit code |
 | `organizer_cli.py route ROOT "sentence"` | show one sentence's path, level by level |
 | `organizer_cli.py route ROOT "sentence" --pick` | same, but take the best child instead of stopping when several take it (for picking a skill, not for review) |
 | `organizer_cli.py overlap ROOT` | list sibling skills whose cover words overlap by more than 0.4 |
-| `organizer_cli.py retire ROOT PATH --reason R` | move a skill into `.retired/` |
-| `organizer_cli.py feedback ROOT` | list routing misses recorded in `_feedback.md` and not yet handled |
+| `organizer_cli.py retire ROOT PATH --reason R` | move a skill, or a single `references/` file, into `.retired/` |
+| `organizer_cli.py feedback ROOT [--stats]` | list routing misses recorded in `_feedback.md` and not yet handled; `--stats` counts all lines by outcome and skill |
 | `organizer_cli.py counter --bump ROOT` | increase the counter before adding a skill someone else wrote |
-| `organizer_cli.py ask ROOT` | print the placement checklist and every earlier decision |
+| `organizer_cli.py ask ROOT [--grep RE] [--since N] [--current]` | print the placement checklist and every earlier decision, or the ones matching the filter |
 
 The writing commands of `holon.py` accept `--dry-run`.
 

@@ -26,6 +26,9 @@ python3 organizer/scripts/organizer_cli.py retire   . <path> --reason R   # 把�
 python3 organizer/scripts/organizer_cli.py feedback .                     # _feedback.md 里还没处理的行
 python3 organizer/scripts/organizer_cli.py counter  . [--bump]            # 查看或增加吸收计数
 python3 organizer/scripts/organizer_cli.py ask      .                     # 步骤清单和以前的所有决定
+python3 organizer/scripts/organizer_cli.py replay   . --probes probes.tsv # outside sentences, scored apart; exit code unchanged
+python3 organizer/scripts/organizer_cli.py feedback . --stats             # every _feedback.md line, by outcome and skill
+python3 organizer/scripts/organizer_cli.py ask      . --grep W --current  # only rulings about W that were not superseded
 ```
 
 每次改树，最后都要跑三条命令，三条都通过才算完成：

@@ -2,13 +2,33 @@
 
 这个文件夹 `holon/` 就是主体包。安装后它是一个名叫 `holon` 的 skill 文件夹，两个工具是 `holon.py` 和 `organizer_cli.py`。
 
-> **项目处于早期阶段。** holon skill 能用，也有完整的测试，但目前只在两个小型 skill 库上用过（合计约三十个 skill）。规则、描述格式和命令参数在后续版本里仍可能调整。每一处改动都会写进 [CHANGELOG.md](CHANGELOG.md)；能自动迁移的旧文件，用 `holon.py migrate` 改写。
+> **项目处于早期阶段。** holon skill 能用，也有完整的测试，但规则只在三个小库上用过（最多 24 个 skill），一棵生成的 500 skill 树路由过一次，另有一个外部 13 skill 的科研库用来找出 1.1 修补的缺口。规则、描述格式和命令参数在后续版本里仍可能调整。每一处改动都会写进 [CHANGELOG.md](CHANGELOG.md)；能自动迁移的旧文件，用 `holon.py migrate` 改写。
 
 holon 把 skill 组织成树，并在每个父级生成路由表。它的阅读指令要求 agent 进入匹配的分支，而不是加载所有 skill。某个宿主和模型是否照着走、选择是否更准确、是否比可比的平铺库少用 token，仍需真实任务测量。
 
 holon 就是一些普通文件夹，加两个 Python 脚本。脚本只用标准库，需要 Python 3.8 或更高版本。它们负责让树保持一致，并检查每个 skill 能不能被它该接的句子找到。
 
 [English](README.md)
+
+## 什么时候不该用，以及它不做什么
+
+先用一层。一层深的 holon 树**就是**扁平列表：根路由表列出全部 skill，检查照常运行。只有当 `holon.py context ROOT` 显示逐层下降明显比读扁平列表便宜，**并且**外部探针句显示树仍能找到对的 skill 时，才加深。到目前为止的每次测量（24 个 skill、500 个 skill、三个公开基准）里，读扁平列表的模型选对率都不低于逐层下降；树只是读得少。
+
+大概不值得建树的情况：
+
+- 全部描述列表能舒服地放进模型上下文（每条 40 到 50 token，几百个 skill 以内）；
+- `context` 显示下降的成本不低于扁平列表，通常是因为中间节点有很长的正文挡在每条路径上；
+- 很多请求需要两个以上顶层 skill（大约超过十分之一）；
+- skill 共享同一类对象（论文、文档、代码），区别只在对它做什么，于是只能靠长长的 `excludes` 划界；
+- 库的价值主要在知识（怎么做对）而不在选哪个 skill：这时要管的是 `references/`，`lint` 的 references 检查比树更重要；
+- 自动、高频地吸收新材料，没有 owner 裁决冲突（规则 5 需要 owner）。
+
+holon 不做的事：
+
+- 路由比较的是词。不理解否定、主宾，也不理解"对 X 做 Y"；`replay` 和 `route` 检查的是字面模型，不是阅读的模型。
+- `validate`、`lint`、`replay` 只说明树与自己一致。读者能否为没人在这里写过的句子找到对的 skill，用 `replay --probes` 测；事情做得好不好，只有真去做才知道。每个 `ABSORB.md` 节要写明到达哪一级（`evidence:`）。
+- 它不判断 skill 正文或知识是否正确。它记录知识的来源和核实日期（`source:`、`verified:`、`review-after:`），过期时警告。
+- 对"伴随所有任务"的 skill（回答方式、风格类）没有规则；放顶层，并预期它会被漏掉。
 
 ## 安装
 
@@ -106,7 +126,7 @@ root -> taken by: office-docs (via 'PDF')
 office-docs -> taken by: office-docs/pdf (via 'PDF','form','fill in')
 office-docs/pdf -> no sub-skills
 lands on: office-docs/pdf
-read: 3 file(s), 4,223 bytes of 30,777 in the library (13%)
+read: 3 file(s), 4,888 bytes of 40,871 in the library (11%)
 ```
 
 agent 只读了三个文件。最后一行就是这次的开销：路径上的字节数，和整棵树所有 `SKILL.md` 的字节数相比。树存在的意义，就是把这个数字压低。
@@ -119,7 +139,7 @@ sentence: "convert the Word report to a PDF"
 root -> taken by: office-docs (via 'Word','PDF')
 office-docs -> taken by: office-docs/docx (via 'Word','report'), office-docs/pdf (via 'PDF') -> two or more children take it; a sentence spanning children is the parent's job, stop at office-docs
 lands on: office-docs
-read: 2 file(s), 3,767 bytes of 30,777 in the library (12%)
+read: 2 file(s), 4,432 bytes of 40,871 in the library (10%)
 ```
 
 什么都对不上的句子停在根上，agent 按根的说明做事：
@@ -129,7 +149,7 @@ $ python3 organizer/scripts/organizer_cli.py route . "draw a poster for the laun
 sentence: "draw a poster for the launch"
 root -> taken by: (none)
 lands on: root (nobody took it)
-read: 1 file(s), 2,769 bytes of 30,777 in the library (8%)
+read: 1 file(s), 3,434 bytes of 40,871 in the library (8%)
 ```
 
 ## 检查这棵树
@@ -154,7 +174,7 @@ $ python3 organizer/scripts/organizer_cli.py lint .
 [E] office-docs/pdf: triggers are still the TODO placeholders from init; write 2 sentences it should take + 1 it should not
 
 lint: 3 errors, 0 warnings, 6 skills
-bodies: 5 skills, 4 to 86 non-blank lines, median 9, 0 over 150
+bodies: 5 skills, 4 to 108 non-blank lines, median 9, 0 over 150
 ```
 
 `lint` 的最后一行显示活分得匀不匀：最短和最长的正文、中位数、有几个超过 150 行。它只是参考信息，不算错误。
@@ -246,13 +266,14 @@ python3 holon/scripts/holon.py init mylib --root ~/.agents/skills
 | `holon.py migrate [DIR]` | 把 1.0 之前的 `triggers:`、`archive_count:` 字段移到 `metadata:` 下 |
 | `organizer_cli.py lint ROOT` | 检查每条描述、它的覆盖词、例句，以及 `ABSORB.md` |
 | `organizer_cli.py replay ROOT` | 走一遍所有例句，报告走错的 |
+| `organizer_cli.py replay ROOT --probes FILE` | 另外走一遍外部句子（`句子<TAB>期望路径`），单独计分；不影响退出码 |
 | `organizer_cli.py route ROOT "句子"` | 显示一句话一层一层的走法 |
 | `organizer_cli.py route ROOT "句子" --pick` | 同上，但多个子节点都接时取最好的一个而不是停下（用于选 skill，不用于审核） |
 | `organizer_cli.py overlap ROOT` | 列出覆盖词重叠超过 0.4 的同级 skill |
-| `organizer_cli.py retire ROOT PATH --reason R` | 把一个 skill 搬进 `.retired/` |
-| `organizer_cli.py feedback ROOT` | 列出 `_feedback.md` 里记下、还没处理的路由错误 |
+| `organizer_cli.py retire ROOT PATH --reason R` | 把一个 skill 或单个 `references/` 文件搬进 `.retired/` |
+| `organizer_cli.py feedback ROOT [--stats]` | 列出 `_feedback.md` 里记下、还没处理的路由错误；`--stats` 按结果和 skill 统计全部行 |
 | `organizer_cli.py counter --bump ROOT` | 每次加入别人写的 skill 之前，把计数加一 |
-| `organizer_cli.py ask ROOT` | 打印放置步骤和以前的所有决定 |
+| `organizer_cli.py ask ROOT [--grep RE] [--since N] [--current]` | 打印放置步骤和以前的所有决定，或按条件过滤后的决定 |
 
 `holon.py` 中会写文件的命令支持 `--dry-run`。
 

@@ -1224,7 +1224,12 @@ class TestDogfood(unittest.TestCase):
         self.assertEqual(table["FANOUT"], str(oc.FANOUT))
         self.assertEqual(table["OVERLAP"], str(oc.OVERLAP))
         self.assertEqual(table["COVER_MIN"], f"{oc.COVER_MIN} characters")
-        self.assertEqual(set(table) - {"Parameter"}, {"COVER_MAX", "COVER_MIN", "DESC_MAX", "MAX_BODY", "FANOUT", "OVERLAP"})
+        self.assertEqual(table["EXCLUDES_MAX"], f"{oc.EXCLUDES_MAX} words")
+        self.assertEqual(table["STEP_WORDS"], f"{oc.STEP_WORDS} words")
+        self.assertEqual(table["REF_BUDGET"], f"{oc.REF_BUDGET} tokens")
+        self.assertEqual(table["PROBE_AFTER"], f"{oc.PROBE_AFTER} absorptions")
+        self.assertEqual(set(table) - {"Parameter"}, {"COVER_MAX", "COVER_MIN", "DESC_MAX", "MAX_BODY", "FANOUT", "OVERLAP",
+                                                      "EXCLUDES_MAX", "STEP_WORDS", "REF_BUDGET", "PROBE_AFTER"})
 
     def test_rule_text_has_no_legacy_machinery(self):
         """Machinery from the earlier design must not reappear in the rulebook."""
@@ -1299,6 +1304,195 @@ class TestReviewFixes(TempTree):
         code, out = run(CLI, "retire", self.root, "../outside", "--reason", "x")
         self.assertEqual(code, 1)
         self.assertIn("'../outside' is outside the library", out)
+
+
+# ---------------------------------------------------------------- 1.1: knowledge, probes, ledger, feedback
+
+class TestFoldDoesNotGlue(TempTree):
+    def test_cjk_alias_next_to_latin_word_keeps_both_words(self):
+        syn = {"papers": "papers", "找文献": "papers", "sort": "sort", "按相关度": "sort", "排个序": "sort"}
+        self.assertEqual(oc.canonicalize("找文献pdf", syn), "papers pdf")
+        self.assertEqual(oc.canonicalize("按相关度排个序", syn), "sort sort")
+        self.assertEqual(oc.canonicalize("pdf找文献pdf", syn), "pdf papers pdf")
+        self.assertEqual(oc.canonicalize("the papers", syn), "the papers")
+
+    def test_glued_sentence_is_routed(self):
+        write(self.root / "synonyms.md", "dark mode,夜间模式\nchart,图表\n")
+        skills = self.skills()
+        path = oc.route("夜间模式dashboard", self.root, skills, oc.load_synonyms(self.root))
+        self.assertNotEqual(path[-1], self.root)
+
+
+class TestReferences(TempTree):
+    def ref(self, rel_path, text):
+        write(self.root / rel_path, text)
+
+    def test_orphan_reference_is_a_warning_and_a_named_one_is_not(self):
+        self.ref("web/references/used.md", "# used\n" + "x " * 50)
+        self.ref("web/references/unused.md", "# unused\n")
+        self.write_dark(body="1. Read `../references/used.md` before choosing colours.\n2. Apply.\n3. Check.\n4. Ship.\n5. Done.")
+        rc, out = self.lint()
+        self.assertIn("web/references/unused.md: no step names this file", out)
+        self.assertNotIn("web/references/used.md: no step names", out)
+
+    def test_a_file_named_by_a_named_file_is_reached(self):
+        self.ref("lib-org/references/a.md", "see [b](b.md)\n")
+        self.ref("lib-org/references/b.md", "b\n")
+        write(self.root / "lib-org" / "SKILL.md", skill("lib-org", ORG_DESC, ORG_TRIG,
+              body="1. Read `references/a.md`.\n2. x\n3. y\n4. z\n5. w"))
+        rc, out = self.lint()
+        self.assertNotIn("no step names", out)
+
+    def test_broken_relative_pointer_inside_a_reference(self):
+        self.ref("lib-org/references/a.md", "see `../../references/missing.md`\n")
+        write(self.root / "lib-org" / "SKILL.md", skill("lib-org", ORG_DESC, ORG_TRIG,
+              body="1. Read `references/a.md`.\n2. x\n3. y\n4. z\n5. w"))
+        rc, out = self.lint()
+        self.assertIn("points at `../../references/missing.md`", out)
+
+    def test_passed_review_date_and_bad_date(self):
+        self.ref("lib-org/references/api.md", "source: https://example.org/docs\nverified: 2020-01-01\n"
+                 "review-after: 2020-06-01\n\n# api\n")
+        self.ref("lib-org/references/b.md", "verified: last week\n")
+        write(self.root / "lib-org" / "SKILL.md", skill("lib-org", ORG_DESC, ORG_TRIG,
+              body="1. Read `references/api.md` and `references/b.md`.\n2. x\n3. y\n4. z\n5. w"))
+        rc, out = self.lint()
+        self.assertIn("review-after 2020-06-01 has passed", out)
+        self.assertIn("`verified: last week` is not a date", out)
+        self.assertEqual(rc, 0)
+
+    def test_header_reader(self):
+        self.ref("x/references/h.md", "<!-- source: s -->\n- verified: 2026-01-02\n# t\n")
+        h = oc.reference_header(self.root / "x/references/h.md")
+        self.assertEqual(h, {"source": "s", "verified": "2026-01-02"})
+
+    def test_budget_hint(self):
+        self.ref("lib-org/references/big.md", "word " * (oc.REF_BUDGET * 4 + 40))
+        write(self.root / "lib-org" / "SKILL.md", skill("lib-org", ORG_DESC, ORG_TRIG,
+              body="1. Read `references/big.md`.\n2. x\n3. y\n4. z\n5. w"))
+        rc, out = self.lint()
+        self.assertIn("lib-org: its steps name 1 references files", out)
+
+    def test_retire_one_reference_file(self):
+        self.ref("lib-org/references/old.md", "# old\n")
+        write(self.root / "lib-org" / "SKILL.md", skill("lib-org", ORG_DESC, ORG_TRIG,
+              body="1. Read `references/old.md`.\n2. x\n3. y\n4. z\n5. w"))
+        rc, out = run(CLI, "retire", self.root, "lib-org/references/old.md", "--reason", "superseded by new.md")
+        self.assertEqual(rc, 0, out)
+        dst = self.root / ".retired/lib-org/references/old.md"
+        self.assertTrue(dst.is_file())
+        self.assertFalse((self.root / "lib-org/references/old.md").exists())
+        self.assertTrue(dst.read_text(encoding="utf-8").startswith("retired @12 superseded by new.md\n"))
+        self.assertIn("check: lib-org/SKILL.md names `references/old.md`", out)
+        rc, out = self.lint()
+        self.assertIn("1 retired references file(s)", out)
+
+    def test_retire_refuses_a_plain_file_outside_references(self):
+        write(self.root / "lib-org" / "notes.md", "x\n")
+        rc, out = run(CLI, "retire", self.root, "lib-org/notes.md", "--reason", "r")
+        self.assertEqual(rc, 1)
+
+
+class TestStepsAndExcludes(TempTree):
+    def test_long_step_is_a_hint(self):
+        long = "1. " + " ".join(["word"] * (oc.STEP_WORDS + 5)) + "\n2. short\n3. a\n4. b\n5. c"
+        self.write_dark(body=long)
+        rc, out = self.lint()
+        self.assertIn("web/dark-mode: 1 numbered step(s) over STEP_WORDS", out)
+        self.assertEqual(rc, 0)
+
+    def test_many_excludes_is_a_hint(self):
+        desc = "Use when doing dark mode: covers dark mode; excludes chart, dashboard, page layout"
+        self.write_dark(desc=desc)
+        rc, out = self.lint()
+        self.assertIn("web/dark-mode: 3 excludes words against 1 cover words", out)
+
+
+class TestProbes(TempTree):
+    def test_probe_score_is_separate_and_never_fails(self):
+        write(self.root / "probes.tsv", "# comment\nadapt the whole site to dark mode\tweb/dark-mode\n"
+              "build a data dashboard\tweb/*\nbake a cake\t/\nbuild a data dashboard\tlib-org\nbroken line\n")
+        rc, out = run(CLI, "replay", self.root, "--probes", "probes.tsv")
+        self.assertEqual(rc, 0, out)
+        self.assertIn("probes (strict, probes.tsv): 3/4 landed where expected (should take: 2/3, should stay at the root: 1/1)", out)
+        self.assertIn("[MISS] probes.tsv:5: expected lib-org, landed on web/chart", out)
+        self.assertIn("[SKIP] probes.tsv:6", out)
+
+    def test_missing_probe_file(self):
+        rc, out = run(CLI, "replay", self.root, "--probes", "nope.tsv")
+        self.assertEqual(rc, 2)
+
+
+class TestLedger(TempTree):
+    def absorb(self, text):
+        write(self.root / "ABSORB.md", "# ABSORB.md\n\n" + text)
+
+    def test_repeated_source_needs_repeat_line(self):
+        self.absorb("## @1 a\nsource: https://github.com/x/y\nlearned: web\n\n## @2 b\nsource: x/y.git\nlearned: web\n\n"
+                    "## @3 c\nsource: github.com/x/y\nrepeat: the CLI part this time\nlearned: web\n")
+        rc, out = self.lint()
+        self.assertIn("'@2 b' absorbs `x/y.git` again (first in '@1 a')", out)
+        self.assertNotIn("'@3 c' absorbs", out)
+
+    def test_no_demand_with_learned(self):
+        self.absorb("## @1 a\nfor: no-demand\nlearned: web\n")
+        rc, out = self.lint()
+        self.assertIn("says `for: no-demand` and still has a learned: line", out)
+
+    def test_probe_reminder_counts_sections_since_last_probe(self):
+        secs = "".join(f"## @{i} s\nlearned: web\n\n" for i in range(1, 12))
+        self.absorb(secs)
+        rc, out = self.lint()
+        self.assertIn("11 absorptions with no outside probe result recorded (ever)", out)
+        self.absorb(secs + "## @12 p\nruled: x -> y\nprobe: 8/10 probes.tsv strict\nevidence: route 6/10 -> 8/10\n")
+        rc, out = self.lint()
+        self.assertNotIn("no outside probe result", out)
+
+    def test_malformed_evidence_and_supersedes(self):
+        self.absorb("## @1 a\nlearned: web\nevidence: looks fine\nsupersedes: @9.1\n")
+        rc, out = self.lint()
+        self.assertIn("`evidence: looks fine` should start with one of", out)
+        self.assertIn("`supersedes: @9.1` names no section", out)
+
+    def test_ask_filters_and_current(self):
+        self.absorb("## @1 a\nruled: openalex pages are 200 -> per docs\nruled: web is top-level -> rule 3\n\n"
+                    "## @2 b\nruled: openalex pages are 100 -> docs 2026\nsupersedes: @1.1 the API changed\n")
+        rc, out = run(CLI, "ask", self.root, "--grep", "openalex")
+        self.assertIn("showing 2 of 3", out)
+        self.assertNotIn("web is top-level", out)
+        rc, out = run(CLI, "ask", self.root, "--current")
+        self.assertNotIn("pages are 200", out)
+        self.assertIn("pages are 100", out)
+        self.assertIn("[@2.1]", out)
+        rc, out = run(CLI, "ask", self.root, "--since", "2")
+        self.assertIn("showing 1 of 3", out)
+
+
+class TestFeedbackForm(TempTree):
+    def test_malformed_lines_are_warned(self):
+        write(self.root / "_feedback.md", "# h\n> note\na | web | miss done\nb | . | wrong -> - done done\n"
+              "c | web | fallback -> web/chart\nd | web\n")
+        rc, out = self.lint()
+        self.assertIn("_feedback.md:4:", out)
+        self.assertIn("_feedback.md:6:", out)
+        self.assertNotIn("_feedback.md:3:", out)
+        self.assertNotIn("_feedback.md:5:", out)
+
+    def test_stats(self):
+        write(self.root / "_feedback.md", "a | web | miss done\nc | . | fallback -> web/chart\n"
+              "e | . | fallback -> web/chart done\nf | web | wrong -> lib-org\n")
+        rc, out = run(CLI, "feedback", self.root, "--stats")
+        self.assertIn("feedback: 4 line(s)", out)
+        self.assertIn("web/chart: fallback 2", out)
+        self.assertIn("lib-org: wrong 1", out)
+
+
+class TestSetupVisibility(TempTree):
+    def test_rulebook_without_skill_md_is_warned(self):
+        write(self.root / "organizer" / "organizer.md", "# rules\n")
+        rc, out = self.lint()
+        self.assertIn("organizer/ has no SKILL.md", out)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

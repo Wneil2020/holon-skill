@@ -2,7 +2,7 @@
 
 一套帮 AI agent 管理大量 skill 的规则和工具：每个 skill 放在哪个文件夹，agent 怎么找到对的那个，以及怎么检查它确实找得到。
 
-> **项目处于早期阶段。** 1.0.0 是第一个公开版本。它在 Linux、macOS、Windows 上都有测试，但目前只在三个不超过 24 个 skill 的库上用过，规则和命令参数以后仍可能调整。每次改动都记在 [holon/CHANGELOG.md](holon/CHANGELOG.md)。
+> **项目处于早期阶段。** 1.0.0 是第一个公开版本。它在 Linux、macOS、Windows 上都有测试，但规则只在三个小库上用过（最多 24 个 skill），规则和命令参数以后仍可能调整。建树之前先读[什么时候不该用](holon/README.zh-CN.md#什么时候不该用以及它不做什么)：默认是一层树，也就是带检查的扁平列表。每次改动都记在 [holon/CHANGELOG.md](holon/CHANGELOG.md)。
 
 [English](README.md)
 

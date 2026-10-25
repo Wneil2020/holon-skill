@@ -26,6 +26,9 @@ python3 organizer/scripts/organizer_cli.py retire   . <path> --reason R   # move
 python3 organizer/scripts/organizer_cli.py feedback .                     # unhandled lines in _feedback.md
 python3 organizer/scripts/organizer_cli.py counter  . [--bump]            # show or increase the absorption counter
 python3 organizer/scripts/organizer_cli.py ask      .                     # the checklist and every earlier ruling
+python3 organizer/scripts/organizer_cli.py replay   . --probes probes.tsv # outside sentences, scored apart; exit code unchanged
+python3 organizer/scripts/organizer_cli.py feedback . --stats             # every _feedback.md line, by outcome and skill
+python3 organizer/scripts/organizer_cli.py ask      . --grep W --current  # only rulings about W that were not superseded
 ```
 
 Every change to a tree ends with three commands, and all three must pass:

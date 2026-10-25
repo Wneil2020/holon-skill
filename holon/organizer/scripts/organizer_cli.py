@@ -20,8 +20,14 @@ Commands:
   feedback <root>                       List unprocessed lines in _feedback.md
   counter  <root> [--bump]              Read the root archive_count; --bump increments it (bump BEFORE you
                                         start, so retire headers and the ABSORB.md section share one number)
-  ask      <root>                       Print the checklist section of organizer/SKILL.md verbatim plus every
-                                        `ruled:` line in the library's ABSORB.md
+  ask      <root> [--grep RE] [--since N] [--current]
+                                        Print the checklist section of organizer/SKILL.md verbatim plus the
+                                        `ruled:` lines in the library's ABSORB.md (all, or the filtered ones)
+  replay   <root> --probes FILE         Also route outside sentences (`sentence<TAB>expected`) and score them
+                                        separately; the score never changes the exit code
+  feedback <root> --stats               Count _feedback.md lines by outcome (miss/wrong/multi/fallback/ok) and skill
+  retire   <root> <dir/references/x.md> --reason R
+                                        Retire a single knowledge file the same way a card is retired
 
 Frontmatter parsing and the definition of "what counts as a skill" are
 imported from the mechanism layer, scripts/holon.py.
@@ -52,9 +58,19 @@ MAX_BODY = 150       # body longer than this (non-blank lines) -> hint
 FANOUT = 9           # more siblings than this under one parent -> hint
 OVERLAP = 0.4        # sibling cover-word Jaccard above this -> suspected duplicate
 COVER_MIN = 2        # cover words shorter than this almost always over-match
+EXCLUDES_MAX = 5     # more excludes words than this -> hint: the skill is being defined by what it refuses
+STEP_WORDS = 120     # a numbered step longer than this many words -> hint: several steps, or knowledge, in one
+REF_BUDGET = 12000   # ~tokens of references/ files one skill's steps name; above it -> hint
+PROBE_AFTER = 10     # after this many absorptions with no outside probe result recorded -> warning
+# The values this package ships with. lint names any parameter a library has changed, so a
+# changed rulebook is visible in every lint run instead of only in a diff of this file.
+SHIPPED = {"COVER_MAX": 5, "DESC_MAX": 200, "MAX_BODY": 150, "FANOUT": 9, "OVERLAP": 0.4, "COVER_MIN": 2,
+           "EXCLUDES_MAX": 5, "STEP_WORDS": 120, "REF_BUDGET": 12000, "PROBE_AFTER": 10}
 # ---- Fixed internal thresholds (not rules; they only decide when a hint appears) ----
 SHORT_BODY = 5       # body shorter than this -> "very short" hint
 HOLLOW_BODY = 3      # parent body at most this long with exactly one child -> "hollow" hint
+STALE_DAYS = 365     # a references/ file verified longer ago than this, with no review-after date -> hint
+PROBES_FILE = "probes.tsv"   # sentences someone other than the skill authors wrote, with where each should land
 FEEDBACK_FILE = "_feedback.md"
 ABSORB_FILE = "ABSORB.md"
 RULES_FILE = _HERE.parent / "SKILL.md"      # the organizer rulebook; `ask` reads the checklist from it
@@ -65,6 +81,17 @@ ANTI_KEYWORD = "should go to"
 ANTI_RE = re.compile(r"^(?P<sent>.*?)\s+should go to\s+(?P<target>\S+)\s*$")
 RETIRED_HEAD_RE = re.compile(r"^retired @(\d+) \S")
 ABSORB_LINE_RE = re.compile(r"(learned|merged|ruled):")
+# Lines an absorption section may carry beyond the three above. lint reads them; none is required
+# in an old section, so a library written before they existed needs no migration.
+#   for:      the task sentence, _feedback.md line or owner request this absorption serves, or `no-demand`
+#   source:   where the newcomer came from (repository, URL, document)
+#   repeat:   why a source absorbed before is absorbed again
+#   probe:    the outside probe score after the change, `x/y` (from `replay --probes`)
+#   evidence: structural | route x/y | task <what was run and what it showed>
+#   supersedes: @n.k -- a ruling of an earlier section that this section replaces
+EXTRA_LINE_RE = re.compile(r"(for|source|repeat|probe|evidence|supersedes):\s*(.*)$")
+FEEDBACK_OUTCOMES = ("miss", "wrong", "multi", "fallback", "ok")
+EVIDENCE_LEVELS = ("structural", "route", "task")
 RULED_RE = re.compile(r"ruled:")
 WORD_SPLIT = r"[,\uff0c\u3001/]"   # comma, full-width comma, ideographic comma, slash
 ROOT_LABEL = "root (nobody took it)"
@@ -228,6 +255,11 @@ def _piece(w):
     """Regex fragment (uncompiled) for one word; same rule as _pattern."""
     if re.fullmatch(r"[A-Za-z0-9_.\-]+", w):
         return r"(?<![A-Za-z0-9_])" + re.escape(w) + r"(?![A-Za-z0-9_])"
+    if re.fullmatch(r"[A-Za-z0-9_.\- ]+", w) and " " in w:
+        # A multi-word alias is matched as one phrase, but the word boundary belongs to
+        # its first and its last word: "author ids" must not match inside "author idsX",
+        # where the trailing "s" is the first letter of the next word.
+        return r"(?<![A-Za-z0-9_])" + re.escape(w) + r"(?![A-Za-z0-9_])"
     return re.escape(w)
 
 
@@ -240,7 +272,40 @@ def canonicalize(text, syn):
     if not syn:
         return s
     big = _fold_pattern(frozenset(syn.items()))
-    return big.sub(lambda m: syn.get(m.group(0).lower(), m.group(0)), s)
+    return _fold_padded(s, big, syn)
+
+
+_WORDCH = set("abcdefghijklmnopqrstuvwxyz0123456789_")
+
+
+def _fold_padded(s, big, table):
+    """Replace every alias with its canonical form, keeping a word boundary on each side.
+
+    Without padding, a canonical form written where a CJK alias stood is glued to its
+    neighbour: with `papers, 找文献`, "找文献pdf" became "paperspdf", one word, so neither
+    the cover word `papers` nor `pdf` (nor a sibling's `excludes pdf`) matched and the
+    sentence fell through to the root. Two neighbouring aliases glued the same way
+    ("按相关度排个序" -> "sortsort"). A space is put between the canonical form and any
+    word character it would touch, on the left by looking at what has already been
+    written (so two replacements in a row are separated too), on the right by looking at
+    the next character of the input. One pass; cover words go through the same function,
+    so a sentence and a cover word are always folded alike."""
+    out = []
+    pos = 0
+    for m in big.finditer(s):
+        out.append(s[pos:m.start()])
+        canon = table.get(m.group(0).lower(), m.group(0))
+        prev = out[-1][-1:] if out and out[-1] else ""
+        if not prev:
+            prev = next((piece[-1] for piece in reversed(out) if piece), "")
+        if prev in _WORDCH and canon[:1] in _WORDCH:
+            out.append(" ")
+        out.append(canon)
+        if m.end() < len(s) and s[m.end()] in _WORDCH and canon[-1:] in _WORDCH:
+            out.append(" ")
+        pos = m.end()
+    out.append(s[pos:])
+    return "".join(out)
 
 
 @functools.lru_cache(maxsize=64)
@@ -572,6 +637,205 @@ def check_file_refs(r, d, root, sk):
     return issues
 
 
+# ---------------- knowledge: references/ files ----------------
+#
+# A step names the files it needs; that is how knowledge is reached (organizer rule 2). The
+# checks below treat references/ as part of the library rather than as an attic: a file no
+# step and no other file names is never opened; a file can say where it came from and when
+# it was last checked; the files one skill's steps name are what an agent following that
+# skill reads, so their size is the real cost of the skill.
+
+REF_HEADER_RE = re.compile(r"^\s*(?:[-*>]\s*|<!--\s*)?(source|verified|review-after|applies-when|supersedes)\s*:\s*(.*?)\s*(?:-->)?\s*$",
+                           re.I)
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+MD_LINK = re.compile(r"\]\(([^)\s#]+\.md)(?:#[^)]*)?\)")
+
+
+def reference_files(root, skills):
+    """Every Markdown file under a references/ (or reference/) folder of a skill in this tree,
+    as {path: owning skill dir}. Files in sub-skill folders belong to the sub-skill."""
+    out = {}
+    for d in skills:
+        for name in ("references", "reference"):
+            base = d / name
+            if base.is_dir():
+                for f in sorted(base.rglob("*.md")):
+                    if RETIRED_DIR not in f.relative_to(root).parts:
+                        out[f] = d
+    return out
+
+
+def reference_header(path):
+    """The optional header of a references/ file: `source:`, `verified:`, `review-after:`,
+    `applies-when:`, `supersedes:` lines among the first twelve lines (plain, as a list item,
+    in a quote or in an HTML comment). Returns {field: value} with lower-case keys."""
+    out = {}
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()[:12]
+    except (OSError, UnicodeError):
+        return out
+    for line in lines:
+        m = REF_HEADER_RE.match(line)
+        if m and m.group(1).lower() not in out:
+            out[m.group(1).lower()] = m.group(2).strip()
+    return out
+
+
+def named_paths(text):
+    """Paths a document names: in backticks (as check_file_refs reads them) and as Markdown links."""
+    found = []
+    for span in re.finditer(r"`[^`\n]+`", text):
+        found += [m.group(1) for m in PATH_IN_TICKS.finditer(span.group(0))]
+    found += MD_LINK.findall(text)
+    return [f for f in found if "*" not in f and "{" not in f and "://" not in f]
+
+
+def resolve_named(ref, here, d, root):
+    """Where a named path can point: next to the naming file, under its skill, under any
+    ancestor skill, or at the tree root. Returns the existing resolved paths."""
+    if ref.split("/", 1)[0] in (".", ".."):
+        # An explicitly relative path means relative to the file that writes it, as in Markdown.
+        c = here / ref
+        return [c.resolve()] if c.is_file() else []
+    cands = [here / ref, d / ref, root / ref]
+    cur = d
+    while cur != root and root in cur.parents:
+        cur = cur.parent
+        cands.append(cur / ref)
+    out = []
+    for c in cands:
+        try:
+            if c.is_file():
+                out.append(c.resolve())
+        except OSError:
+            pass
+    return out
+
+
+def step_named_refs(d, sk, root, refs):
+    """The references/ files that skill d's body names, resolved, as a set of paths."""
+    resolved = {f.resolve(): f for f in refs}
+    got = set()
+    for ref in named_paths(sk.body):
+        for c in resolve_named(ref, d, d, root):
+            if c in resolved:
+                got.add(resolved[c])
+    return got
+
+
+def check_references(root, skills, today=None):
+    """Orphans, stale or malformed headers, broken pointers inside references/, identical
+    copies, and the references/ cost of each skill's steps."""
+    import datetime
+    today = today or datetime.date.today()
+    refs = reference_files(root, skills)
+    resolved = {f.resolve(): f for f in refs}
+    named_by = {f: set() for f in refs}
+    issues = []
+    # who names whom: skill bodies, then other references files
+    for d, sk in skills.items():
+        for f in step_named_refs(d, sk, root, refs):
+            named_by[f].add(d)
+    for f, d in refs.items():
+        try:
+            text = f.read_text(encoding="utf-8")
+        except (OSError, UnicodeError):
+            continue
+        links = set(MD_LINK.findall(text))
+        for ref in named_paths(text):
+            hits = resolve_named(ref, f.parent, d, root)
+            for c in hits:
+                if c in resolved and resolved[c] != f:
+                    named_by[resolved[c]].add(f)
+            # Inside a references file, prose often mentions paths of other libraries as examples.
+            # Only a relative path (./ or ../) or a Markdown link is read as a pointer to follow.
+            if not hits and (ref.split("/", 1)[0] in (".", "..") or ref in links):
+                issues.append(f"[W] {rel(root, f)}: points at `{ref}`, which does not exist next to it, under "
+                              f"{rel(root, d)}/ or any skill above it -- a reader who follows the pointer finds nothing")
+    # orphans: a file nobody names is never opened. A file named only by other orphans is an orphan too.
+    reach, todo = set(), [f for f, by in named_by.items() if any(isinstance(b, Path) and b in skills for b in by)]
+    while todo:
+        f = todo.pop()
+        if f in reach:
+            continue
+        reach.add(f)
+        todo += [g for g, by in named_by.items() if f in by and g not in reach]
+    for f in sorted(refs):
+        if f not in reach:
+            issues.append(f"[W] {rel(root, f)}: no step names this file (nor any file a step names), so an agent "
+                          f"following the skills never opens it -- name it in the step that needs it, or retire it "
+                          f"(`retire <root> {rel(root, f)} --reason R`)")
+    # headers
+    for f in sorted(refs):
+        h = reference_header(f)
+        for key in ("verified", "review-after"):
+            if key in h and not DATE_RE.match(h[key]):
+                issues.append(f"[W] {rel(root, f)}: `{key}: {h[key]}` is not a date (YYYY-MM-DD)")
+        if "review-after" in h and DATE_RE.match(h["review-after"]):
+            if datetime.date.fromisoformat(h["review-after"]) < today:
+                issues.append(f"[W] {rel(root, f)}: review-after {h['review-after']} has passed -- check the facts "
+                              f"against `source:` and write a new `verified:` date, or retire the file")
+        elif "verified" in h and DATE_RE.match(h["verified"]):
+            age = (today - datetime.date.fromisoformat(h["verified"])).days
+            if age > STALE_DAYS:
+                issues.append(f"[·] {rel(root, f)}: verified {age} days ago and no review-after date -- "
+                              "re-check it if it describes an outside API, tool or service")
+        if ("verified" in h or "review-after" in h) and not h.get("source"):
+            issues.append(f"[·] {rel(root, f)}: has a date but no `source:` -- a later reader cannot re-check it")
+    # identical copies
+    by_hash = {}
+    for f in refs:
+        try:
+            body = re.sub(r"\s+", " ", f.read_text(encoding="utf-8")).strip()
+        except (OSError, UnicodeError):
+            continue
+        if len(body) >= 200:
+            by_hash.setdefault(hash(body), []).append(f)
+    for fs in by_hash.values():
+        if len(fs) > 1:
+            names = ", ".join(str(rel(root, f)) for f in sorted(fs))
+            issues.append(f"[W] identical references files: {names} -- keep one under the common parent and point to it")
+    # the cost of each skill's steps
+    for d, sk in sorted(skills.items()):
+        files = step_named_refs(d, sk, root, refs)
+        cost = sum(ns._tokens(f.read_text(encoding="utf-8", errors="replace")) for f in files)
+        if cost > REF_BUDGET:
+            issues.append(f"[·] {rel(root, d)}: its steps name {len(files)} references files, ~{cost:,} tokens "
+                          f"> REF_BUDGET {REF_BUDGET:,} -- an agent that opens what the steps list reads all of it; "
+                          "is some of it never needed by this job, or does one step name what only a later step needs?")
+    return issues
+
+
+def ref_cost(d, sk, root, refs):
+    """~tokens of the references/ files skill d's body names."""
+    return sum(ns._tokens(f.read_text(encoding="utf-8", errors="replace")) for f in step_named_refs(d, sk, root, refs))
+
+
+# ---------------- steps ----------------
+
+STEP_RE = re.compile(r"^(\d+)[.)]\s", re.M)
+
+
+def _words(text):
+    """Words, counting two CJK characters as one word (a rough cross-script measure)."""
+    cjk = sum(1 for c in text if "\u3000" <= c <= "\u9fff" or "\uac00" <= c <= "\ud7af")
+    return len(re.findall(r"[A-Za-z0-9_'`/.\-]+", text)) + cjk // 2
+
+
+def numbered_steps(body):
+    """The numbered steps of a body: a line starting `N.` or `N)` at column 0, up to the next blank
+    line (the step's own paragraph), within the text before the sub-skills block."""
+    body = body.split(ns.MARK_OPEN, 1)[0]
+    starts = [m.start() for m in STEP_RE.finditer(body)]
+    out = []
+    for i, a in enumerate(starts):
+        b = starts[i + 1] if i + 1 < len(starts) else len(body)
+        # A step is its own paragraph: indented paragraphs and sub-lists after a blank line are
+        # structure the writer already gave it. One long paragraph is what a line count misses.
+        out.append(re.split(r"\n\s*\n", body[a:b], maxsplit=1)[0])
+    return out
+
+
 def hints_for(r, d, root, sk, kids):
     """Hints, not rules: a nudge to look again, never counted as a warning."""
     hints = []
@@ -591,6 +855,19 @@ def hints_for(r, d, root, sk, kids):
     if d != root and len(kids) == 1 and lines <= HOLLOW_BODY:
         hints.append(f"[·] {r}: exactly one sub-skill and a {lines}-line body -- looks hollow; "
                      "promote the child and retire the parent")
+    steps = numbered_steps(sk.body)
+    long_steps = [(i + 1, _words(t)) for i, t in enumerate(steps) if _words(t) > STEP_WORDS]
+    if long_steps:
+        worst = max(long_steps, key=lambda x: x[1])
+        hints.append(f"[·] {r}: {len(long_steps)} numbered step(s) over STEP_WORDS {STEP_WORDS} words, the longest "
+                     f"step {worst[0]} at {worst[1]} -- a long step is usually several steps, or a rule list that "
+                     "belongs in references/ (line counts do not see this: one line can hold a page)")
+    covers, excl = parse_desc(sk.meta.get("description", "") or "")
+    if len(excl) > EXCLUDES_MAX or (len(excl) > 2 and len(excl) > 2 * max(len(covers), 1)):
+        hints.append(f"[·] {r}: {len(excl)} excludes words against {len(covers)} cover words -- the skill is being "
+                     "defined by what it refuses; every excludes word also removes a sentence the parent could take. "
+                     "Is the boundary a result (keep it) or a noun shared with a sibling (drop it, or state it as the "
+                     "deliverable in Use when ...)?")
     return hints
 
 
@@ -752,6 +1029,90 @@ def check_absorb(root, counter):
     return issues
 
 
+def absorb_sections(root):
+    """ABSORB.md as a list of sections: (number or None, heading, [stripped lines])."""
+    f = root / ABSORB_FILE
+    if not f.is_file():
+        return []
+    out = []
+    for line in f.read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            m = re.match(r"## @(\d+) \S", line)
+            out.append((int(m.group(1)) if m else None, line[3:].strip(), []))
+        elif out:
+            out[-1][2].append(line.strip())
+    return out
+
+
+def section_extras(lines):
+    """The extra lines of one section: {key: [values]} for for/source/repeat/probe/evidence/supersedes."""
+    got = {}
+    for l in lines:
+        m = EXTRA_LINE_RE.match(l)
+        if m:
+            got.setdefault(m.group(1), []).append(m.group(2).strip())
+    return got
+
+
+def _source_key(value):
+    """A source as a comparable key: lower case, no scheme, no trailing .git or slash."""
+    v = value.strip().lower()
+    v = re.sub(r"^(https?://)?(www\.)?(github\.com/)?", "", v)
+    v = re.sub(r"(\.git)?/*$", "", v)
+    return v.split()[0] if v.split() else v
+
+
+def check_ledger(root, counter):
+    """What the absorption ledger can show mechanically about demand, repeats and evidence.
+    Every check here reads an optional line, so a ledger written before those lines existed
+    produces no message except the probe reminder, which is the point of it."""
+    secs = absorb_sections(root)
+    issues = []
+    if not secs:
+        return issues
+    seen_src, uses_for = {}, False
+    last_probe, numbered = None, [n for n, _, _ in secs if n is not None]
+    for n, head, lines in secs:
+        ex = section_extras(lines)
+        learned = any(l.startswith("learned:") and l[8:].strip() for l in lines)
+        if "for" in ex:
+            uses_for = True
+            if any(v.lower().startswith("no-demand") for v in ex["for"]) and learned:
+                issues.append(f"[W] {ABSORB_FILE}: '{head}' says `for: no-demand` and still has a learned: line -- "
+                              "an absorption that serves no task, feedback line or owner request stops at step 0")
+        elif uses_for and n is not None and learned:
+            issues.append(f"[·] {ABSORB_FILE}: '{head}' has no `for:` line -- which task sentence, feedback line or "
+                          "owner request did it serve? (`for: no-demand` if none, and then learn nothing)")
+        for src in ex.get("source", []):
+            key = _source_key(src)
+            if key in seen_src and "repeat" not in ex:
+                issues.append(f"[W] {ABSORB_FILE}: '{head}' absorbs `{src}` again (first in '{seen_src[key]}') -- "
+                              "say what is new in a `repeat:` line, or merge into the earlier section's skills")
+            seen_src.setdefault(key, head)
+        for ev in ex.get("evidence", []):
+            if not ev.split() or ev.split()[0].lower() not in EVIDENCE_LEVELS:
+                issues.append(f"[W] {ABSORB_FILE}: '{head}': `evidence: {ev}` should start with one of "
+                              f"{', '.join(EVIDENCE_LEVELS)}")
+        for pr in ex.get("probe", []):
+            if not re.match(r"^\d+/\d+\b", pr):
+                issues.append(f"[W] {ABSORB_FILE}: '{head}': `probe: {pr}` should start with x/y")
+            elif n is not None:
+                last_probe = n
+        for sup in ex.get("supersedes", []):
+            m = re.match(r"@(\d+)", sup)
+            if not m or int(m.group(1)) not in numbered:
+                issues.append(f"[W] {ABSORB_FILE}: '{head}': `supersedes: {sup}` names no section of this ledger")
+    if numbered:
+        since = sum(1 for n in numbered if last_probe is None or n > last_probe)
+        if since >= PROBE_AFTER:
+            when = f"since @{last_probe}" if last_probe is not None else "ever"
+            issues.append(f"[W] {ABSORB_FILE}: {since} absorptions with no outside probe result recorded ({when}) -- "
+                          f"run `replay <root> --probes {PROBES_FILE}` on sentences the skill authors did not write and "
+                          "add a `probe: x/y` line to the next section; replay on the skills' own examples only shows "
+                          "the tree agrees with itself")
+    return issues
+
+
 def absorb_heads(root):
     """Set of section numbers {N,...} that appear in ABSORB.md."""
     f = root / ABSORB_FILE
@@ -766,7 +1127,14 @@ def check_retired(root):
     if not base.is_dir():
         return issues
     heads = absorb_heads(root)
-    for f in sorted(base.rglob("SKILL.md")):
+    retired_files = [f for f in base.rglob("*.md")
+                     if f.name == "SKILL.md" or "references" in f.parts or "reference" in f.parts]
+    for f in sorted(retired_files):
+        if f.name != "SKILL.md" and (f.parent / "SKILL.md").exists():
+            continue
+        if f.name != "SKILL.md" and any((p / "SKILL.md").is_file() and RETIRED_HEAD_RE.match(
+                (p / "SKILL.md").read_text(encoding="utf-8").split("\n", 1)[0]) for p in f.parents if base in p.parents):
+            continue   # a references file inside a retired card: the card's header covers it
         first = f.read_text(encoding="utf-8").split("\n", 1)[0]
         m = RETIRED_HEAD_RE.match(first)
         if not m:
@@ -784,6 +1152,60 @@ def count_retired(root):
     return sum(1 for _ in d.rglob("SKILL.md")) if d.is_dir() else 0
 
 
+def count_retired_files(root):
+    """How many single references files sit in .retired/ (retired on their own, not inside a card)."""
+    d = root / RETIRED_DIR
+    if not d.is_dir():
+        return 0
+    n = 0
+    for f in d.rglob("*.md"):
+        if f.name == "SKILL.md":
+            continue
+        if not any((p / "SKILL.md").is_file() for p in f.parents if d in p.parents or p == d):
+            n += 1
+    return n
+
+
+def check_feedback_lines(root):
+    """A _feedback.md line is `task sentence | path taken | outcome`; outcome starts with one of
+    FEEDBACK_OUTCOMES. A malformed line cannot be counted and is usually skipped by the reader."""
+    f = root / FEEDBACK_FILE
+    if not f.is_file():
+        return []
+    issues = []
+    for i, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip() or line.lstrip().startswith(("#", ">")):
+            continue
+        parts = [p.strip() for p in line.split("|")]
+        outcome = re.sub(r"(\s+done)+$", "", parts[2]).strip() if len(parts) >= 3 else ""
+        kind = outcome.split()[0].lower() if outcome.split() else ""
+        target_ok = True
+        if kind in ("wrong", "fallback"):
+            m = re.match(r"^\w+\s*->\s*([\w./-]*[\w])\s*$", outcome)
+            target_ok = bool(m)
+        if len(parts) != 3 or not parts[0] or kind not in FEEDBACK_OUTCOMES or not target_ok:
+            issues.append(f"[W] {FEEDBACK_FILE}:{i}: not `task sentence | path taken | outcome` with outcome one of "
+                          f"{', '.join(FEEDBACK_OUTCOMES)} (`wrong -> <path>` and `fallback -> <path>` name the skill): "
+                          f"{line.strip()[:90]}")
+    return issues
+
+
+def check_setup(root):
+    """Parameters changed from the shipped values, and a rulebook that is no longer a skill."""
+    issues = []
+    here = globals()
+    changed = [f"{k} {here[k]} (shipped {v})" for k, v in SHIPPED.items() if here.get(k) != v]
+    if changed:
+        issues.append("[·] parameters changed from the shipped values: " + ", ".join(changed)
+                      + " -- record each change as a ruled: line; upgrading the tools resets them")
+    for part in ("organizer", "editing"):
+        d = root / part
+        if d.is_dir() and not (d / "SKILL.md").is_file():
+            issues.append(f"[W] {part}/ has no SKILL.md: the rules are no longer a skill of this tree, so they are not "
+                          "routed to and not checked -- rename the file back to SKILL.md")
+    return issues
+
+
 def cmd_lint(root):
     skills, errors = find_skills(root)
     issues = [f"[E] {e}" for e in errors]
@@ -799,6 +1221,10 @@ def cmd_lint(root):
         issues += check_file_refs(r, d, root, sk)
         issues += hints_for(r, d, root, sk, kids)
     issues += check_duplicate_names(root, skills)
+    issues += check_references(root, skills)
+    issues += check_ledger(root, read_counter(root))
+    issues += check_feedback_lines(root)
+    issues += check_setup(root)
     for line in issues:
         print(line)
     errs = sum(1 for i in issues if i.startswith("[E]"))
@@ -806,7 +1232,9 @@ def cmd_lint(root):
     warns = len(issues) - errs - hints
     tail = f", {hints} hints" if hints else ""
     retired = count_retired(root)
+    rfiles = count_retired_files(root)
     rt = f", {retired} retired" if retired else ""
+    rt += f", {rfiles} retired references file(s)" if rfiles else ""
     print(f"\nlint: {errs} errors, {warns} warnings{tail}, {len(skills)} skills{rt}")
     print(body_summary(root, skills))
     return 1 if errs else 0
@@ -970,6 +1398,81 @@ def cmd_replay(root):
     return 1 if all_fails else 0
 
 
+def read_probes(path):
+    """A probe file: one `sentence<TAB>expected` per line; `#` lines and blank lines are skipped.
+    expected is a skill path (`office-docs/pdf`), `/` or `root` for "no skill should take it",
+    and may end in `/*` to accept any skill below that path. Returns [(line no, sentence, expected)]
+    and a list of malformed line numbers."""
+    rows, bad = [], []
+    for i, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        parts = line.split("\t")
+        if len(parts) < 2 or not parts[0].strip() or not parts[1].strip():
+            bad.append(i)
+            continue
+        rows.append((i, parts[0].strip(), parts[1].strip()))
+    return rows, bad
+
+
+def probe_verdict(path, expected, root):
+    """Did the route end where the probe expects? Returns (ok, where it landed as text)."""
+    last = path[-1]
+    if isinstance(last, tuple):
+        return False, "ambiguous [" + ", ".join(str(rel(root, h)) for h in last[1]) + "]"
+    got = "/" if last == root else str(rel(root, last))
+    want = expected.strip()
+    if want in ("/", "root", "."):
+        return last == root, got
+    want = want.strip("/")
+    if want.endswith("/*"):
+        base = root / want[:-2]
+        return last == base or base in last.parents, got
+    return last == root / want, got
+
+
+def cmd_probes(root, probe_file, pick=False):
+    """Route sentences that the skill authors did not write, and score them on their own.
+    This never changes the exit code of replay: the score is a measurement to record in
+    ABSORB.md (`probe: x/y`), not a gate the tree can be tuned to pass sentence by sentence."""
+    skills, errors = find_skills(root)
+    if errors:
+        print("\n".join("[E] " + error for error in errors))
+        return 1
+    f = Path(probe_file)
+    if not f.is_file() and (root / probe_file).is_file():
+        f = root / probe_file
+    if not f.is_file():
+        print(f"error: probe file {probe_file} not found (one `sentence<TAB>expected path` per line)", file=sys.stderr)
+        return 2
+    rows, bad = read_probes(f)
+    syn = load_synonyms(root)
+    ok_n, pos, pos_ok, neg, neg_ok, misses = 0, 0, 0, 0, 0, []
+    for i, sent, want in rows:
+        ok, got = probe_verdict(route(sent, root, skills, syn, pick=pick), want, root)
+        is_neg = want.strip() in ("/", "root", ".")
+        neg += is_neg
+        pos += not is_neg
+        if ok:
+            ok_n += 1
+            neg_ok += is_neg
+            pos_ok += not is_neg
+        else:
+            misses.append(f"[MISS] {f.name}:{i}: expected {want}, landed on {got}")
+    for m in misses:
+        print(m)
+    for i in bad:
+        print(f"[SKIP] {f.name}:{i}: not `sentence<TAB>expected`")
+    mode = "pick" if pick else "strict"
+    print(f"\nprobes ({mode}, {f.name}): {ok_n}/{len(rows)} landed where expected "
+          f"(should take: {pos_ok}/{pos}, should stay at the root: {neg_ok}/{neg})")
+    print(f"A measurement, not a check: the exit code does not change. Record it as `probe: {ok_n}/{len(rows)} "
+          f"{f.name} {mode}` in this absorption's {ABSORB_FILE} section. Do not edit the tree to pass one sentence: "
+          "a miss names wording the tree lacks, and the fix is the general one (a synonym group, a word users say, "
+          "a boundary between results).")
+    return 0
+
+
 # ---------------- route: where does this sentence land ----------------
 
 def cmd_route(root, sentence, pick=False):
@@ -1034,8 +1537,11 @@ def cmd_retire(root, target, reason):
     if root.resolve() not in src.parents:
         print(f"error: '{target}' is outside the library (a path or link leads out of {root})", file=sys.stderr)
         return 1
-    if not (src / "SKILL.md").is_file():
-        print(f"error: '{target}' has no SKILL.md, so it is not a skill in this library", file=sys.stderr)
+    is_file = src.is_file() and src.suffix == ".md" and ("references" in src.parts or "reference" in src.parts)
+    if not is_file and not (src / "SKILL.md").is_file():
+        print(f"error: '{target}' has no SKILL.md, so it is not a skill in this library "
+              "(a single knowledge file can be retired too: name a .md file under a references/ folder)",
+              file=sys.stderr)
         return 1
     if not reason or not reason.strip():
         print("error: --reason is required; it is written into the file header", file=sys.stderr)
@@ -1046,6 +1552,8 @@ def cmd_retire(root, target, reason):
     if not ns.path_within(dst, root) or ns.path_within(dst, src):
         print("error: retirement destination must stay inside the library", file=sys.stderr)
         return 1
+    if is_file:
+        return _retire_file(root, src, dst, counter, reason.strip())
     try:
         ns._check_copy_source(str(src))
     except (OSError, ValueError) as e:
@@ -1066,6 +1574,36 @@ def cmd_retire(root, target, reason):
     print(f"moved to {rel(root, dst)}, first line 'retired @{counter} {reason.strip()}' "
           f"(this absorption's section heading in {ABSORB_FILE} should also be @{counter}; if you have not bumped yet, "
           "run counter --bump before retire); parent routing table re-synced")
+    return 0
+
+
+def _retire_file(root, src, dst, counter, reason):
+    """Retire one references/ file: move it to .retired/<same path> with a first line
+    `retired @n reason`. Continuous absorption grows knowledge files, not cards, so a
+    card-only retire never fires for what actually accumulates."""
+    if src.is_symlink():
+        print("error: refusing to retire a link", file=sys.stderr)
+        return 1
+    if dst.exists():
+        n = 2
+        while (dst.parent / f"{dst.stem}~{n}{dst.suffix}").exists():
+            n += 1
+        dst = dst.parent / f"{dst.stem}~{n}{dst.suffix}"
+    old = src.resolve()
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    text = src.read_text(encoding="utf-8")
+    with dst.open("w", encoding="utf-8", newline="\n") as stream:
+        stream.write(f"retired @{counter} {reason}\n" + text)
+    src.unlink()
+    left = []
+    for d, sk in find_skills(root)[0].items():
+        for ref in named_paths(sk.body):
+            if (d / ref).resolve() == old or (root / ref).resolve() == old:
+                left.append(f"{rel(root, d)}/SKILL.md names `{ref}`")
+    print(f"moved to {rel(root, dst)}, first line 'retired @{counter} {reason}' "
+          f"(this absorption's section heading in {ABSORB_FILE} should also be @{counter})")
+    for l in left:
+        print(f"check: {l}, which is now retired -- remove the pointer or name the file that replaces it")
     return 0
 
 
@@ -1098,7 +1636,19 @@ def ruling_lines(root):
     return out
 
 
-def cmd_ask(root):
+def superseded_rulings(root):
+    """Ruling ids that a later `supersedes:` line names: `@n.k` (the k-th ruled: line of section
+    @n, counting from 1) or `@n` for every ruling of that section."""
+    out = set()
+    for _, _, lines in absorb_sections(root):
+        for v in section_extras(lines).get("supersedes", []):
+            m = re.match(r"(@\d+(?:\.\d+)?)", v)
+            if m:
+                out.add(m.group(1))
+    return out
+
+
+def cmd_ask(root, grep=None, since=None, current=False):
     sec = checklist_section()
     if sec is None:
         print(f"error: section '{CHECKLIST_HEAD}' not found in {RULES_FILE} -- has the rulebook been edited?",
@@ -1107,6 +1657,29 @@ def cmd_ask(root):
     print(sec)
     print()
     rulings = ruling_lines(root)
+    total = len(rulings)
+    if since is not None or grep or current:
+        sup = superseded_rulings(root) if current else set()
+        kept, k_in = [], {}
+        for head, line in rulings:
+            m = re.match(r"@(\d+)", head)
+            n = int(m.group(1)) if m else None
+            k_in[head] = k_in.get(head, 0) + 1
+            rid = f"@{n}.{k_in[head]}" if n is not None else None
+            if since is not None and (n is None or n < since):
+                continue
+            if grep and not re.search(grep, line + " " + head, re.I):
+                continue
+            if current and n is not None and (rid in sup or f"@{n}" in sup):
+                continue
+            kept.append((head, line if rid is None else f"{line}  [{rid}]"))
+        rulings = kept
+        flt = [x for x in (f"--grep {grep}" if grep else "", f"--since {since}" if since is not None else "",
+                           "--current" if current else "") if x]
+        print(f"(showing {len(rulings)} of {total} ruling(s): {', '.join(flt)})")
+        if not rulings and total:
+            print("No ruling matches; widen the filter before deciding a matter the library may already have ruled on.")
+            return 0
     if not rulings:
         print(f"This library has no ruled: lines yet ({ABSORB_FILE} records no owner rulings). "
               "Answer the four questions and go ahead.")
@@ -1123,17 +1696,53 @@ def cmd_ask(root):
 
 # ---------------- feedback / counter ----------------
 
-def cmd_feedback(root):
+def cmd_feedback(root, stats=False):
     f = root / FEEDBACK_FILE
     if not f.exists():
         print(f"(no {FEEDBACK_FILE})")
         return 0
+    if stats:
+        return feedback_stats(f)
     pending = [l for l in f.read_text(encoding="utf-8").splitlines()
                if l.strip() and not l.lstrip().startswith(("#", ">"))
                and not l.rstrip().endswith(" done")]
     for l in pending:
         print(l)
     print(f"\nfeedback: {len(pending)} line(s) pending (process them before absorbing)")
+    return 0
+
+
+def feedback_stats(f):
+    """Count every line, handled or not, by outcome and by the skill named after `->`. A skill
+    often reached only by `fallback` is one the word layer does not find; a skill often named in
+    `wrong` is one something else takes from it."""
+    by_kind, by_skill, bad = {}, {}, 0
+    for line in f.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or line.lstrip().startswith(("#", ">")):
+            continue
+        parts = [p.strip() for p in line.split("|")]
+        outcome = re.sub(r"(\s+done)+$", "", parts[2]).strip() if len(parts) == 3 else ""
+        kind = outcome.split()[0].lower() if outcome.split() else ""
+        if kind not in FEEDBACK_OUTCOMES:
+            bad += 1
+            continue
+        by_kind[kind] = by_kind.get(kind, 0) + 1
+        m = re.match(r"^\w+\s*->\s*([\w./-]*\w)", outcome)
+        if m and m.group(1).strip("/"):
+            kinds = by_skill.setdefault(m.group(1).strip("/"), {})
+            kinds[kind] = kinds.get(kind, 0) + 1
+    total = sum(by_kind.values())
+    print(f"feedback: {total} line(s)" + (f", {bad} malformed (lint lists them)" if bad else ""))
+    for k in FEEDBACK_OUTCOMES:
+        if by_kind.get(k):
+            print(f"  {k:9} {by_kind[k]}")
+    if by_skill:
+        print("by skill named after '->':")
+        for name, kinds in sorted(by_skill.items(), key=lambda kv: (-sum(kv[1].values()), kv[0])):
+            print(f"  {name}: " + ", ".join(f"{k} {n}" for k, n in sorted(kinds.items())))
+    if total == 0:
+        print("No line is not evidence that routing works: the agent writes a line only when it notices. "
+              "If the tree is in use, check that the root's rule 7 is being followed.")
     return 0
 
 
@@ -1197,6 +1806,16 @@ def write_counter(text, n):
     return lines[0] + header + "".join(lines[end:])
 
 
+def _replay_and_probes(root, probes, pick):
+    """replay's exit code is the skills' own examples only; probes are printed after and never change it."""
+    rc = cmd_replay(root)
+    if probes:
+        print()
+        if cmd_probes(root, probes, pick) == 2:
+            return 2
+    return rc
+
+
 def main(argv=None):
     ns._tolerate_console_encoding()   # same reason as in holon.py: [·] hints must not crash a cp1252 console
     ap = argparse.ArgumentParser(prog="organizer", description=__doc__,
@@ -1209,6 +1828,13 @@ def main(argv=None):
     ap.add_argument("--pick", action="store_true",
                     help="route: when several children take the sentence, pick one deterministic winner "
                          "instead of reporting an ambiguity / stopping at the parent")
+    ap.add_argument("--probes", metavar="FILE",
+                    help=f"replay: also route the sentences in FILE (`sentence<TAB>expected path`, conventionally "
+                         f"{PROBES_FILE}) and print their score separately; it never changes the exit code")
+    ap.add_argument("--grep", help="ask: only rulings matching this regular expression")
+    ap.add_argument("--since", type=int, help="ask: only rulings from absorption @N on")
+    ap.add_argument("--current", action="store_true", help="ask: leave out rulings a later `supersedes:` line replaced")
+    ap.add_argument("--stats", action="store_true", help="feedback: count every line by outcome and by skill")
     ap.add_argument("--threshold", type=float, default=OVERLAP,
                     help=f"overlap: Jaccard threshold (default OVERLAP={OVERLAP})")
     a = ap.parse_args(argv)
@@ -1226,13 +1852,13 @@ def main(argv=None):
         print('error: route needs a sentence, e.g. route <root> "convert this report to PDF"', file=sys.stderr)
         return 2
     fn = {"lint": lambda: cmd_lint(a.root),
-          "replay": lambda: cmd_replay(a.root),
+          "replay": lambda: _replay_and_probes(a.root, a.probes, a.pick),
           "route": lambda: cmd_route(a.root, a.target, a.pick),
           "overlap": lambda: cmd_overlap(a.root, a.threshold),
           "retire": lambda: cmd_retire(a.root, a.target, a.reason),
-          "feedback": lambda: cmd_feedback(a.root),
+          "feedback": lambda: cmd_feedback(a.root, a.stats),
           "counter": lambda: cmd_counter(a.root, a.bump),
-          "ask": lambda: cmd_ask(a.root)}[a.command]
+          "ask": lambda: cmd_ask(a.root, a.grep, a.since, a.current)}[a.command]
     try:
         return fn()
     except (OSError, UnicodeError) as e:

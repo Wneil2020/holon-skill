@@ -73,9 +73,11 @@ OFFICE_SKILL = finished(
 # walkthrough runs on a copy whose checker is set back to these values, so the test keeps
 # checking the documents and does not fail because an owner chose other numbers.
 README_PARAMS = {"COVER_MAX": "5", "DESC_MAX": "200", "MAX_BODY": "150", "FANOUT": "9",
-                 "OVERLAP": "0.4", "COVER_MIN": "2"}
+                 "OVERLAP": "0.4", "COVER_MIN": "2", "EXCLUDES_MAX": "5", "STEP_WORDS": "120",
+                 "REF_BUDGET": "12000", "PROBE_AFTER": "10"}
 README_TABLE = {"COVER_MAX": "5 words", "COVER_MIN": "2 characters", "DESC_MAX": "200 characters",
-                "MAX_BODY": "150 lines", "FANOUT": "9", "OVERLAP": "0.4"}
+                "MAX_BODY": "150 lines", "FANOUT": "9", "OVERLAP": "0.4", "EXCLUDES_MAX": "5 words",
+                "STEP_WORDS": "120 words", "REF_BUDGET": "12000 tokens", "PROBE_AFTER": "10 absorptions"}
 
 
 def reset_params(tree):

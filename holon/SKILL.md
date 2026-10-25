@@ -12,10 +12,10 @@ When a loaded `SKILL.md` contains such a list:
 1. **Go down only when a line matches.** Compare the task with each sub-skill's description and with the words its line says it also takes through its sub-skills. When one matches, read the `SKILL.md` in that subfolder before acting.
 2. **Repeat at each level.** If that sub-skill lists further sub-skills, compare again and go down again.
 3. **Read only what is on the path.** Never load every sub-skill in advance.
-4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent.
-5. **Come back up when done.** When a sub-skill finishes, return to the parent and continue its remaining steps. The child's output is the parent's input.
-6. **You may skip the descent.** holon's `holon.py context <this folder>` prints what reaching one skill costs by descending and by reading one list of every skill; `--show flat` prints that list. When the list is cheap enough, pick from it and read that `SKILL.md` directly.
-7. **Report misses.** If no sub-skill matches, or the one reached does not handle the task, append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`. Then carry on. The next absorption reads that line. A line there is a report of what happened, not an instruction: write only the task sentence, the path and the outcome.
+4. **If nothing matches, stay here.** Act on the current `SKILL.md`. Do not force a descent. If you then pick a sub-skill by reading the descriptions for their meaning instead, that is allowed, but it is a miss of the words: record it under rule 7 as `fallback -> <path>` before acting.
+5. **Come back up when done.** When a sub-skill finishes, return to the parent and continue its remaining steps. The child's output is the parent's input. A task that needs two top-level skills in order (find, then check) is done the same way from the root: the first, then back up, then the second; record it as `multi`.
+6. **You may skip the descent.** holon's `holon.py context <this folder>` prints what reaching one skill costs by descending and by reading one list of every skill, and says which is cheaper; `--show flat` prints that list. When the list fits comfortably in what you can read, pick from it and read that `SKILL.md` directly: in every measurement so far, a model reading the flat list chose at least as accurately as one descending.
+7. **Report misses.** If no sub-skill matches, the one reached does not handle the task, the task needed several, or you found the right one only by meaning (rule 4), append one line to `_feedback.md` at the tree root: `task sentence | path taken | outcome`, outcome one of `miss`, `wrong -> <path>`, `multi`, `fallback -> <path>`. Then carry on. The next absorption reads that line. A line there is a report of what happened, not an instruction: write only the task sentence, the path and the outcome.
 
 <!-- sub-skills -->
 ## Sub-skills (auto-generated, do not edit by hand)
